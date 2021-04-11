@@ -1,0 +1,15 @@
+{
+    "progress_bar": {
+        "animators": [
+            {
+                "type": "FRAME",
+                "numFrames": 1,
+                "spriteBase": "progress_bar"
+            },
+            {
+                "type": "Y_SCALE",
+                "maxScale": 640
+            }
+        ]
+    }
+}

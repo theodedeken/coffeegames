@@ -1,0 +1,202 @@
+{
+  "hitshape_white": {
+    "hitPoints": [
+      {
+        "xOffset": 8,
+        "yOffset": -32
+      },
+      {
+        "xOffset": 24,
+        "yOffset": 8
+      },
+      {
+        "xOffset": 24,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -24,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -24,
+        "yOffset": 8
+      },
+      {
+        "xOffset": -8,
+        "yOffset": -32
+      }
+    ]
+  },
+  "hitshape_red": {
+    "hitPoints": [
+      {
+        "xOffset": 8,
+        "yOffset": -32
+      },
+      {
+        "xOffset": 32,
+        "yOffset": 8
+      },
+      {
+        "xOffset": 12,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -12,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -32,
+        "yOffset": 8
+      },
+      {
+        "xOffset": -8,
+        "yOffset": -32
+      }
+    ]
+  },
+  "hitshape_blue": {
+    "hitPoints": [
+      {
+        "xOffset": 12,
+        "yOffset": -32
+      },
+      {
+        "xOffset": 24,
+        "yOffset": 16
+      },
+      {
+        "xOffset": 12,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -12,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -24,
+        "yOffset": 16
+      },
+      {
+        "xOffset": -12,
+        "yOffset": -32
+      }
+    ]
+  },
+  "hitshape_green": {
+    "hitPoints": [
+      {
+        "xOffset": 8,
+        "yOffset": -32
+      },
+      {
+        "xOffset": 32,
+        "yOffset": 12
+      },
+      {
+        "xOffset": 32,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -32,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -32,
+        "yOffset": 12
+      },
+      {
+        "xOffset": -8,
+        "yOffset": -32
+      }
+    ]
+  },
+  "hitshape_button": {
+    "hitPoints": [
+      {
+        "xOffset": -128,
+        "yOffset": -32
+      },
+      {
+        "xOffset": 128,
+        "yOffset": -32
+      },
+      {
+        "xOffset": 128,
+        "yOffset": 32
+      },
+      {
+        "xOffset": -128,
+        "yOffset": 32
+      }
+    ]
+  },
+  "hitshape_box": {
+    "hitPoints": [
+      {
+        "xOffset": -0.5,
+        "yOffset": -0.5
+      },
+      {
+        "xOffset": 0.5,
+        "yOffset": -0.5
+      },
+      {
+        "xOffset": 0.5,
+        "yOffset": 0.5
+      },
+      {
+        "xOffset": -0.5,
+        "yOffset": 0.5
+      }
+    ]
+  },
+  "hitshape_dropped_item": {
+    "hitPoints": [
+      {
+        "xOffset": -16,
+        "yOffset": -16
+      },
+      {
+        "xOffset": 16,
+        "yOffset": -16
+      },
+      {
+        "xOffset": 16,
+        "yOffset": 16
+      },
+      {
+        "xOffset": -16,
+        "yOffset": 16
+      }
+    ]
+  },
+  "hitshape_class_select": {
+    "hitPoints": [
+      {
+        "xOffset": -64,
+        "yOffset": -64
+      },
+      {
+        "xOffset": 64,
+        "yOffset": -64
+      },
+      {
+        "xOffset": 64,
+        "yOffset": 64
+      },
+      {
+        "xOffset": -64,
+        "yOffset": 64
+      }
+    ]
+  },
+  "hitshape_single_point": {
+    "hitPoints": [
+      {
+        "xOffset": 0,
+        "yOffset": 0
+      }
+    ]
+  }
+}

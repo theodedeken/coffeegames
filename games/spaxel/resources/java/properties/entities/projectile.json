@@ -1,0 +1,470 @@
+{
+  "basic_laser_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "basic_laser_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 20
+      },
+      {
+        "type": "HIT",
+        "hitType": "BASIC_LASER",
+        "damage": 10
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "white_laser_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 100,
+        "maxLife": 100
+      }
+    ]
+  },
+  "piercing_laser_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "piercing_laser_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 30
+      },
+      {
+        "type": "HIT",
+        "hitType": "PIERCING_LASER",
+        "damage": 5
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "red_laser_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 75,
+        "maxLife": 75
+      }
+    ]
+  },
+  "disrupt_laser_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "disrupt_laser_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 20
+      },
+      {
+        "type": "HIT",
+        "hitType": "DISRUPT_LASER",
+        "damage": 5
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "green_laser_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 100,
+        "maxLife": 100
+      }
+    ]
+  },
+  "slowing_laser_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "slowing_laser_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 15
+      },
+      {
+        "type": "HIT",
+        "hitType": "SLOWING_LASER",
+        "damage": 10
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "blue_laser_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 125,
+        "maxLife": 125
+      }
+    ]
+  },
+  "basic_missile_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "basic_missile_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 25
+      },
+      {
+        "type": "HIT",
+        "hitType": "BASIC_MISSILE",
+        "damage": 25
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "white_missile_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 150,
+        "maxLife": 150
+      }
+    ]
+  },
+  "cluster_missile_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "cluster_missile_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 15
+      },
+      {
+        "type": "HIT",
+        "hitType": "CLUSTER_MISSILE",
+        "damage": 20
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "blue_missile_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 30,
+        "maxLife": 30
+      },
+      {
+        "type": "DEATH",
+        "deathType": "CLUSTER_MISSILE"
+      }
+    ]
+  },
+  "cluster_shrapnel_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "cluster_missile_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 10
+      },
+      {
+        "type": "HIT",
+        "hitType": "BASIC_MISSILE",
+        "damage": 10
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "blue_laser_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 25,
+        "maxLife": 25
+      }
+    ]
+  },
+  "hacking_missile_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "hacking_missile_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 15
+      },
+      {
+        "type": "HIT",
+        "hitType": "HACKING_MISSILE",
+        "damage": 20
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "green_missile_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 125,
+        "maxLife": 125
+      }
+    ]
+  },
+  "homing_missile_projectile_industry": {
+    "type": "PROJECTILE",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "homing_missile_projectile",
+        "scale": 2
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 20,
+        "turnRate": 0.25
+      },
+      {
+        "type": "HIT",
+        "hitType": "HOMING_MISSILE",
+        "damage": 25
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_single_point"
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "TRAILSEGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "red_missile_trail",
+        "scale": 2
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "AGE",
+        "life": 100,
+        "maxLife": 100
+      },
+      {
+        "type": "AI",
+        "subType": "HOMING_MISSILE"
+      }
+    ]
+  }
+}

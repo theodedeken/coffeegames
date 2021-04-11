@@ -1,0 +1,12 @@
+<ui type="MAIN" controller="code.ui.controllers.MainController">
+    <style>/ui/styles/common.json</style>
+    <style>/ui/styles/main.json</style>
+    <body id="root">
+        <element id="title_label"></element>
+        <element id="play_button" class="large_button"></element>
+        <element id="achievements_button" class="large_button locked"></element>
+        <element id="options_button" class="large_button"></element>
+        <element id="credits_button" class="large_button"></element>
+        <element id="quit_button" class="large_button"></element>
+    </body>
+</ui>

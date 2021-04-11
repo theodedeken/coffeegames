@@ -1,0 +1,13 @@
+load("//bazel:macros.bzl", "cg_java_library")
+
+package(default_visibility = ["//games/spaxel:__subpackages__"])
+
+cg_java_library(
+    name = "animation",
+    srcs = glob(["*.java"]),
+    deps = [
+        "//games/spaxel/src/graphics/buffer:render_job",
+        "//games/spaxel/src/graphics/texture:renderable",
+        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
+    ],
+)

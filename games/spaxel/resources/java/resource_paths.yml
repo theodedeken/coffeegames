@@ -1,0 +1,32 @@
+music:
+  - /resources/sound.json
+hitshape:
+  - /resources/hitshape.json
+item:
+  - /resources/itemProperties.json
+stylesheet:
+  - /ui/styles/common.json
+  - /ui/styles/main.json
+  - /ui/styles/play.json
+  - /ui/styles/credits.json
+  - /ui/styles/options.json
+  - /ui/styles/class_select.json
+  - /ui/styles/game_over.json
+ui:
+  - /ui/main.xml
+  - /ui/play.xml
+  - /ui/credits.xml
+  - /ui/options.xml
+  - /ui/class_selection.xml
+  - /ui/game_over.xml
+industry:
+  - /properties/entities/particle.json
+  - /properties/entities/spawner.json
+  - /properties/entities/actor.json
+  - /properties/entities/projectile.json
+  - /properties/entities/item.json
+  - /properties/entities/player.json
+  - /properties/entities/effect.json
+  - /properties/entities/marker.json
+keys:
+  - /keys/default.yml

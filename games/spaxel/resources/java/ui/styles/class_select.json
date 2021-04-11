@@ -1,0 +1,73 @@
+{
+    ".class_select": {
+        "y": 360,
+        "scale": 4,
+        "width": 128,
+        "height": 128,
+        "hit-shape": "hitshape_box",
+        "rot": 0
+    },
+    ".class_select:hover": {
+        "sprite": "class_select_hover"
+    },
+    ".class_select:click": {
+        "sprite": "class_select_click"
+    },
+    ".class_description": {
+        "text-scale": 1,
+        "y": 300
+    },
+    "#root": {
+        "onUpdate": "escCheck"
+    },
+    "#select_white": {
+        "x": 190,
+        "onClick": "selectWhite"
+    },
+    "#select_red": {
+        "x": 490,
+        "onClick": "selectRed"
+    },
+    "#select_green": {
+        "x": 790,
+        "onClick": "selectGreen"
+    },
+    "#select_blue": {
+        "x": 1090,
+        "onClick": "selectBlue"
+    },
+    "#white_image": {
+        "sprite": "white"
+    },
+    "#red_image": {
+        "sprite": "red"
+    },
+    "#green_image": {
+        "sprite": "green"
+    },
+    "#blue_image": {
+        "sprite": "blue"
+    },
+    "#white_description": {
+        "x": 190,
+        "text": "white\\Standard ship"
+    },
+    "#red_description": {
+        "x": 490,
+        "text": "red\\more speed\\weaker weapons"
+    },
+    "#green_description": {
+        "x": 790,
+        "text": "green\\stronger weapons\\less health"
+    },
+    "#blue_description": {
+        "x": 1090,
+        "text": "blue\\more health\\slower"
+    },
+    "#back_button": {
+        "text": "Back",
+        "onClick": "back",
+        "x": 640,
+        "y": 80
+    }
+}

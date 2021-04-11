@@ -1,0 +1,138 @@
+{
+  "marker_white_industry": {
+    "type": "VISUAL_EFFECT",
+    "blueprints": [
+      {
+        "type": "RENDER",
+        "visible": false,
+        "layer": "UI",
+        "renderers": [
+          {
+            "type": "ABSOLUTE"
+          },
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "MARKER"
+          }
+        ]
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "marker_white",
+        "scale": 4
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      }
+    ]
+  },
+  "marker_red_industry": {
+    "type": "VISUAL_EFFECT",
+    "blueprints": [
+      {
+        "type": "RENDER",
+        "visible": false,
+        "layer": "UI",
+        "renderers": [
+          {
+            "type": "ABSOLUTE"
+          },
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "MARKER"
+          }
+        ]
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "marker_red",
+        "scale": 4
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      }
+    ]
+  },
+  "marker_green_industry": {
+    "type": "VISUAL_EFFECT",
+    "blueprints": [
+      {
+        "type": "RENDER",
+        "visible": false,
+        "layer": "UI",
+        "renderers": [
+          {
+            "type": "ABSOLUTE"
+          },
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "MARKER"
+          }
+        ]
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "marker_green",
+        "scale": 4
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      }
+    ]
+  },
+  "marker_blue_industry": {
+    "type": "VISUAL_EFFECT",
+    "blueprints": [
+      {
+        "type": "RENDER",
+        "visible": false,
+        "layer": "UI",
+        "renderers": [
+          {
+            "type": "ABSOLUTE"
+          },
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "MARKER"
+          }
+        ]
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "marker_blue",
+        "scale": 4
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      }
+    ]
+  }
+}

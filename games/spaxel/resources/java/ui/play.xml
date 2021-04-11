@@ -1,0 +1,23 @@
+<ui type="PLAY" controller="code.ui.controllers.PlayController">
+    <style>/ui/styles/common.json</style>
+    <style>/ui/styles/play.json</style>
+    <body id="root">
+        <element id="score_counter"></element>
+        <element id="game_time"></element>
+        <element id="pause_controls">
+            <element id="resume" class="large_button"></element>
+            <element id="quit" class="large_button"></element>
+        </element>
+        <element class="bar play_bar" id="hp_bar">
+            <element id="hp_label"></element>
+        </element>
+        <element class="bar play_bar" id="xp_bar">
+            <element id="xp_label"></element>
+        </element>
+        <element class="inventory_container" id="primary_container"></element>
+        <element class="inventory_container" id="secondary_container"></element>
+        <element class="inventory_container" id="ship_container"></element>
+        <element id="debug_overlay"></element>
+        <element id="logging_overlay"></element>
+    </body>
+</ui>

@@ -1,0 +1,57 @@
+{
+  "slow_effect_industry": {
+    "type": "EFFECT",
+    "blueprints": [
+      {
+        "type": "AGE",
+        "life": 150,
+        "maxLife": 150
+      },
+      {
+        "type": "AFFECT",
+        "affectType": "SLOW",
+        "factor": 0.5
+      },
+      {
+        "type": "DEATH",
+        "deathType": "SLOW_AFFECT"
+      }
+    ]
+  },
+  "disable_shoot_effect_industry": {
+    "type": "EFFECT",
+    "blueprints": [
+      {
+        "type": "AGE",
+        "life": 150,
+        "maxLife": 150
+      },
+      {
+        "type": "AFFECT",
+        "affectType": "DISABLE_SHOOT"
+      },
+      {
+        "type": "DEATH",
+        "deathType": "DISABLE_SHOOT_AFFECT"
+      }
+    ]
+  },
+  "disable_move_effect_industry": {
+    "type": "EFFECT",
+    "blueprints": [
+      {
+        "type": "AGE",
+        "life": 150,
+        "maxLife": 150
+      },
+      {
+        "type": "AFFECT",
+        "affectType": "DISABLE_MOVE"
+      },
+      {
+        "type": "DEATH",
+        "deathType": "DISABLE_MOVE_AFFECT"
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "name": "basic_laser",
+    "industry": "basic_laser_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "PRIMARY"
+  },
+  {
+    "name": "piercing_laser",
+    "industry": "piercing_laser_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "PRIMARY"
+  },
+  {
+    "name": "disrupt_laser",
+    "industry": "disrupt_laser_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "PRIMARY"
+  },
+  {
+    "name": "slowing_laser",
+    "industry": "slowing_laser_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "PRIMARY"
+  },
+  {
+    "name": "basic_missile",
+    "industry": "basic_missile_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SECONDARY"
+  },
+  {
+    "name": "cluster_missile",
+    "industry": "cluster_missile_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SECONDARY"
+  },
+  {
+    "name": "hacking_missile",
+    "industry": "hacking_missile_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SECONDARY"
+  },
+  {
+    "name": "homing_missile",
+    "industry": "homing_missile_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SECONDARY"
+  },
+  {
+    "name": "basic_shield",
+    "industry": "basic_shield_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SHIP"
+  },
+  {
+    "name": "anti_shield",
+    "industry": "anti_shield_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SHIP"
+  },
+  {
+    "name": "active_shield",
+    "industry": "active_shield_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SHIP"
+  },
+  {
+    "name": "force_shield",
+    "industry": "force_shield_item_industry",
+    "spawnRate": 100,
+    "rarety": "COMMON",
+    "type": "SHIP"
+  }
+]

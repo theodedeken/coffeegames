@@ -1,0 +1,14 @@
+UP:
+  code: "87"
+DOWN:
+  code: "83"
+LEFT:
+  code: "65"
+RIGHT:
+  code: "68"
+DEBUG:
+  code: "73"
+LOG:
+  code: "76"
+ESC:
+  code: "256"

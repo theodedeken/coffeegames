@@ -1,0 +1,68 @@
+{
+    "laser_hit_particle_spawner_industry": {
+        "type": "SPAWNER",
+        "blueprints": [
+            {
+                "type": "AGE",
+                "life": 2,
+                "maxLife": 2
+            },
+            {
+                "type": "SPAWN_STORE",
+                "rate": 5,
+                "maxDeltaRot": 0.1,
+                "maxSpeed": 2,
+                "maxLife": 100,
+                "industry": "hit_particle_industry"
+            },
+            {
+                "type": "SPAWN",
+                "spawner": "RANDOM"
+            }
+        ]
+    },
+    "missile_hit_particle_spawner_industry": {
+        "type": "SPAWNER",
+        "blueprints": [
+            {
+                "type": "AGE",
+                "life": 3,
+                "maxLife": 3
+            },
+            {
+                "type": "SPAWN_STORE",
+                "rate": 4,
+                "maxDeltaRot": 0.15,
+                "maxSpeed": 5,
+                "maxLife": 125,
+                "industry": "hit_particle_industry"
+            },
+            {
+                "type": "SPAWN",
+                "spawner": "RANDOM"
+            }
+        ]
+    },
+    "enemy_death_particle_spawner_industry": {
+        "type": "SPAWNER",
+        "blueprints": [
+            {
+                "type": "AGE",
+                "life": 5,
+                "maxLife": 5
+            },
+            {
+                "type": "SPAWN_STORE",
+                "rate": 4,
+                "maxDeltaRot": 0.05,
+                "maxSpeed": 3,
+                "maxLife": 150,
+                "industry": "ship_fragment_industry"
+            },
+            {
+                "type": "SPAWN",
+                "spawner": "RANDOM"
+            }
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+<ui type="CREDITS" controller="code.ui.controllers.CreditsController">
+    <style>/ui/styles/common.json</style>
+    <style>/ui/styles/credits.json</style>
+    <body id="root">
+        <element class="label" id="prog_graph_label"></element>
+        <element class="credit" id="prog_graph_credit"></element>
+        <element class="label" id="music_label"></element>
+        <element class="credit" id="music_credit"></element>
+        <element class="large_button" id="back_button"></element>
+    </body>
+</ui>

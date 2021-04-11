@@ -1,0 +1,37 @@
+{
+    "dot": {
+        "dim": {
+            "x": 2,
+            "y": 2
+        },
+        "color": "ffffffff"
+    },
+    "progress_bar": {
+        "dim": {
+            "x": 1,
+            "y": 8
+        },
+        "color": "ffffffff"
+    },
+    "hp_bar": {
+        "dim": {
+            "x": 1,
+            "y": 4
+        },
+        "color": "ff00ff00"
+    },
+    "xp_bar": {
+        "dim": {
+            "x": 1,
+            "y": 4
+        },
+        "color": "ff0000ff"
+    },
+    "load_overlay": {
+        "dim": {
+            "x": 1280,
+            "y": 720
+        },
+        "color": "ff000000"
+    }
+}

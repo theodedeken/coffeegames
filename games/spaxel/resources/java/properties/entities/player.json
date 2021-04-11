@@ -1,0 +1,426 @@
+{
+  "player_white_industry": {
+    "type": "PLAYER",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_white"
+      },
+      {
+        "type": "CHANGE",
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "deltaRot": 0
+      },
+      {
+        "type": "HEALTH",
+        "health": 100,
+        "baseHealth": 100
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "white",
+        "scale": 4
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 20,
+        "turnRate": 0.25,
+        "acc": 0.25
+      },
+      {
+        "type": "INPUT",
+        "inputType": "PLAYER"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "PRIMARY",
+        "itemIndustries": [
+          "basic_laser_item_industry"
+        ]
+      },
+      {
+        "type": "SECONDARY",
+        "itemIndustries": [
+          "basic_missile_item_industry"
+        ]
+      },
+      {
+        "type": "SHIP",
+        "itemIndustries": [
+          "active_shield_item_industry"
+        ]
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      },
+      {
+        "type": "DEATH",
+        "deathType": "PLAYER"
+      },
+      {
+        "type": "EXPERIENCE",
+        "xp": 0,
+        "level": 0
+      },
+      {
+        "type": "EFFECT"
+      },
+      {
+        "type": "ACTOR",
+        "canShoot": true,
+        "canMove": true
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "SHIP_FRAGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "white",
+        "scale": 4
+      }
+    ]
+  },
+  "player_red_industry": {
+    "type": "PLAYER",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_red"
+      },
+      {
+        "type": "CHANGE",
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "deltaRot": 0
+      },
+      {
+        "type": "HEALTH",
+        "health": 50,
+        "baseHealth": 50
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "red",
+        "scale": 4
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 25,
+        "turnRate": 0.3,
+        "acc": 0.3
+      },
+      {
+        "type": "INPUT",
+        "inputType": "PLAYER"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "PRIMARY",
+        "itemIndustries": [
+          "piercing_laser_item_industry"
+        ]
+      },
+      {
+        "type": "SECONDARY",
+        "itemIndustries": [
+          "homing_missile_item_industry"
+        ]
+      },
+      {
+        "type": "SHIP",
+        "itemIndustries": [
+          "force_shield_item_industry"
+        ]
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      },
+      {
+        "type": "DEATH",
+        "deathType": "PLAYER"
+      },
+      {
+        "type": "EXPERIENCE",
+        "xp": 0,
+        "level": 0
+      },
+      {
+        "type": "EFFECT"
+      },
+      {
+        "type": "ACTOR",
+        "canShoot": true,
+        "canMove": true
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "SHIP_FRAGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "red",
+        "scale": 4
+      }
+    ]
+  },
+  "player_green_industry": {
+    "type": "PLAYER",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_green"
+      },
+      {
+        "type": "CHANGE",
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "deltaRot": 0
+      },
+      {
+        "type": "HEALTH",
+        "health": 100,
+        "baseHealth": 100
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "green",
+        "scale": 4
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 15,
+        "turnRate": 0.2,
+        "acc": 0.2
+      },
+      {
+        "type": "INPUT",
+        "inputType": "PLAYER"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "PRIMARY",
+        "itemIndustries": [
+          "disrupt_laser_item_industry"
+        ]
+      },
+      {
+        "type": "SECONDARY",
+        "itemIndustries": [
+          "hacking_missile_item_industry"
+        ]
+      },
+      {
+        "type": "SHIP",
+        "itemIndustries": [
+          "anti_shield_item_industry"
+        ]
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      },
+      {
+        "type": "DEATH",
+        "deathType": "PLAYER"
+      },
+      {
+        "type": "EXPERIENCE",
+        "xp": 0,
+        "level": 0
+      },
+      {
+        "type": "EFFECT"
+      },
+      {
+        "type": "ACTOR",
+        "canShoot": true,
+        "canMove": true
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "SHIP_FRAGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "green",
+        "scale": 4
+      }
+    ]
+  },
+  "player_blue_industry": {
+    "type": "PLAYER",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_blue"
+      },
+      {
+        "type": "CHANGE",
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "deltaRot": 0
+      },
+      {
+        "type": "HEALTH",
+        "health": 200,
+        "baseHealth": 200
+      },
+      {
+        "type": "RENDERABLE",
+        "sprite": "blue",
+        "scale": 4
+      },
+      {
+        "type": "RENDER",
+        "visible": true,
+        "layer": "GAME",
+        "renderers": [
+          {
+            "type": "RENDERABLESHEET"
+          },
+          {
+            "type": "VELOCITY"
+          }
+        ]
+      },
+      {
+        "type": "MOVE",
+        "maxSpeed": 20,
+        "turnRate": 0.25,
+        "acc": 0.25
+      },
+      {
+        "type": "INPUT",
+        "inputType": "PLAYER"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "PRIMARY",
+        "itemIndustries": [
+          "slowing_laser_item_industry"
+        ]
+      },
+      {
+        "type": "SECONDARY",
+        "itemIndustries": [
+          "cluster_missile_item_industry"
+        ]
+      },
+      {
+        "type": "SHIP",
+        "itemIndustries": [
+          "basic_shield_item_industry"
+        ]
+      },
+      {
+        "type": "TRANSFORMATION",
+        "coord": {
+          "x": 0,
+          "y": 0
+        },
+        "rot": 0
+      },
+      {
+        "type": "DEATH",
+        "deathType": "PLAYER"
+      },
+      {
+        "type": "EXPERIENCE",
+        "xp": 0,
+        "level": 0
+      },
+      {
+        "type": "EFFECT"
+      },
+      {
+        "type": "ACTOR",
+        "canShoot": true,
+        "canMove": true
+      },
+      {
+        "type": "SPAWNER",
+        "spawnerType": "SHIP_FRAGMENT",
+        "rate": 1
+      },
+      {
+        "type": "PARTICLE",
+        "particle": "blue",
+        "scale": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "basic_laser_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "basic_laser",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 20
+      },
+      {
+        "type": "ITEM",
+        "name": "basic_laser"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "piercing_laser_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "piercing_laser",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 30
+      },
+      {
+        "type": "ITEM",
+        "name": "piercing_laser"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "disrupt_laser_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "disrupt_laser",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 25
+      },
+      {
+        "type": "ITEM",
+        "name": "disrupt_laser"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "slowing_laser_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "slowing_laser",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 25
+      },
+      {
+        "type": "ITEM",
+        "name": "slowing_laser"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "basic_missile_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "basic_missile",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 75
+      },
+      {
+        "type": "ITEM",
+        "name": "basic_missile"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "cluster_missile_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "cluster_missile",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 85
+      },
+      {
+        "type": "ITEM",
+        "name": "cluster_missile"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "hacking_missile_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "hacking_missile",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 65
+      },
+      {
+        "type": "ITEM",
+        "name": "hacking_missile"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "homing_missile_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "homing_missile",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 90
+      },
+      {
+        "type": "ITEM",
+        "name": "homing_missile"
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "basic_shield_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "basic_shield",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 100
+      },
+      {
+        "type": "ITEM",
+        "name": "basic_shield",
+        "capacity": 50,
+        "maxCapacity": 50,
+        "effectIndustry": {
+          "type": "VISUAL_EFFECT",
+          "blueprints": [
+            {
+              "type": "RENDERABLE",
+              "sprite": "basic_shield_effect",
+              "scale": 4
+            },
+            {
+              "type": "RENDER",
+              "visible": false,
+              "layer": "GAME",
+              "renderers": [
+                {
+                  "type": "RENDERABLESHEET"
+                },
+                {
+                  "type": "LINK_LINK_VELOCITY"
+                },
+                {
+                  "type": "SHIELD"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "anti_shield_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "anti_shield",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 75
+      },
+      {
+        "type": "ITEM",
+        "name": "anti_shield",
+        "capacity": 35,
+        "maxCapacity": 35,
+        "effectIndustry": {
+          "type": "VISUAL_EFFECT",
+          "blueprints": [
+            {
+              "type": "RENDERABLE",
+              "sprite": "anti_shield_effect",
+              "scale": 4
+            },
+            {
+              "type": "RENDER",
+              "visible": false,
+              "layer": "GAME",
+              "renderers": [
+                {
+                  "type": "RENDERABLESHEET"
+                },
+                {
+                  "type": "LINK_LINK_VELOCITY"
+                },
+                {
+                  "type": "SHIELD"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "active_shield_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "active_shield",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 75
+      },
+      {
+        "type": "ITEM",
+        "name": "active_shield",
+        "capacity": 35,
+        "maxCapacity": 35,
+        "effectIndustry": {
+          "type": "VISUAL_EFFECT",
+          "blueprints": [
+            {
+              "type": "RENDERABLE",
+              "sprite": "active_shield_effect",
+              "scale": 4
+            },
+            {
+              "type": "RENDER",
+              "visible": false,
+              "layer": "GAME",
+              "renderers": [
+                {
+                  "type": "RENDERABLESHEET"
+                },
+                {
+                  "type": "LINK_LINK_VELOCITY"
+                },
+                {
+                  "type": "SHIELD"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  },
+  "force_shield_item_industry": {
+    "type": "ITEM",
+    "blueprints": [
+      {
+        "type": "RENDERABLE",
+        "sprite": "force_shield",
+        "scale": 1
+      },
+      {
+        "type": "COOLDOWN",
+        "cd": 0,
+        "cdAmount": 75
+      },
+      {
+        "type": "ITEM",
+        "name": "force_shield",
+        "capacity": 35,
+        "maxCapacity": 35,
+        "effectIndustry": {
+          "type": "VISUAL_EFFECT",
+          "blueprints": [
+            {
+              "type": "RENDERABLE",
+              "sprite": "force_shield_effect",
+              "scale": 4
+            },
+            {
+              "type": "RENDER",
+              "visible": false,
+              "layer": "GAME",
+              "renderers": [
+                {
+                  "type": "RENDERABLESHEET"
+                },
+                {
+                  "type": "LINK_LINK_VELOCITY"
+                },
+                {
+                  "type": "SHIELD"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "STACK",
+        "stacks": 1
+      },
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_dropped_item"
+      }
+    ]
+  }
+}

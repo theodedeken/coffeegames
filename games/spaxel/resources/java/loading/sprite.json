@@ -1,0 +1,27 @@
+{
+    "progress_bar": {
+        "dim": {
+            "x": 1,
+            "y": 8
+        },
+        "color": "ffffffff"
+    },
+    "load_overlay": {
+        "dim": {
+            "x": 1280,
+            "y": 720
+        },
+        "color": "ff000000"
+    },
+    "white": {
+        "sheetName": "ships",
+        "dim": {
+            "x": 16,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 0
+        }
+    }
+}

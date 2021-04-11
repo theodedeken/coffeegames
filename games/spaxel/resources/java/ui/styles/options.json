@@ -1,0 +1,31 @@
+{
+    "#root": {
+        "x": 640,
+        "onUpdate": "escCheck"
+    },
+    "#game_button": {
+        "y": 480,
+        "text": "Game",
+        "onClick": "gameSettings"
+    },
+    "#graphics_button": {
+        "y": 400,
+        "text": "Graphics",
+        "onClick": "graphicsSettings"
+    },
+    "#controls_button": {
+        "y": 320,
+        "text": "Controls",
+        "onClick": "controlsSettings"
+    },
+    "#sound_button": {
+        "y": 240,
+        "text": "Sound",
+        "onClick": "soundSettings"
+    },
+    "#back_button": {
+        "y": 80,
+        "text": "Back",
+        "onClick": "back"
+    }
+}

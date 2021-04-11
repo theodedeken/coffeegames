@@ -1,0 +1,660 @@
+{
+  "q": {
+    "path": "/textures/font/q.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "v": {
+    "path": "/textures/font/v.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "C": {
+    "path": "/textures/font/C.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "r": {
+    "path": "/textures/font/r.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "%": {
+    "path": "/textures/font/%.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "e": {
+    "path": "/textures/font/e.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "m": {
+    "path": "/textures/font/m.png",
+    "dim": {
+      "x": 11,
+      "y": 16
+    }
+  },
+  "A": {
+    "path": "/textures/font/A.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "i": {
+    "path": "/textures/font/i.png",
+    "dim": {
+      "x": 3,
+      "y": 16
+    }
+  },
+  "R": {
+    "path": "/textures/font/R.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "[": {
+    "path": "/textures/font/[.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "l": {
+    "path": "/textures/font/l.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "T": {
+    "path": "/textures/font/T.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "L": {
+    "path": "/textures/font/L.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "n": {
+    "path": "/textures/font/n.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "u": {
+    "path": "/textures/font/u.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "Q": {
+    "path": "/textures/font/Q.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "6": {
+    "path": "/textures/font/6.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "p": {
+    "path": "/textures/font/p.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "K": {
+    "path": "/textures/font/K.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "9": {
+    "path": "/textures/font/9.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "~": {
+    "path": "/textures/font/swung.png",
+    "dim": {
+      "x": 12,
+      "y": 16
+    }
+  },
+  " ": {
+    "path": "/textures/font/space.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "E": {
+    "path": "/textures/font/E.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "f": {
+    "path": "/textures/font/f.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "D": {
+    "path": "/textures/font/D.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "k": {
+    "path": "/textures/font/k.png",
+    "dim": {
+      "x": 7,
+      "y": 16
+    }
+  },
+  "1": {
+    "path": "/textures/font/1.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "G": {
+    "path": "/textures/font/G.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "]": {
+    "path": "/textures/font/].png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "g": {
+    "path": "/textures/font/g.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "8": {
+    "path": "/textures/font/8.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "Z": {
+    "path": "/textures/font/Z.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "N": {
+    "path": "/textures/font/N.png",
+    "dim": {
+      "x": 12,
+      "y": 16
+    }
+  },
+  "x": {
+    "path": "/textures/font/x.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "*": {
+    "path": "/textures/font/*.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "J": {
+    "path": "/textures/font/J.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "h": {
+    "path": "/textures/font/h.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "^": {
+    "path": "/textures/font/^.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "7": {
+    "path": "/textures/font/7.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "t": {
+    "path": "/textures/font/t.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "4": {
+    "path": "/textures/font/4.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "S": {
+    "path": "/textures/font/S.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "(": {
+    "path": "/textures/font/(.png",
+    "dim": {
+      "x": 7,
+      "y": 16
+    }
+  },
+  "<": {
+    "path": "/textures/font/<.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  ":": {
+    "path": "/textures/font/colon.png",
+    "dim": {
+      "x": 4,
+      "y": 16
+    }
+  },
+  "@": {
+    "path": "/textures/font/@.png",
+    "dim": {
+      "x": 13,
+      "y": 16
+    }
+  },
+  "y": {
+    "path": "/textures/font/y.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "o": {
+    "path": "/textures/font/o.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "c": {
+    "path": "/textures/font/c.png",
+    "dim": {
+      "x": 7,
+      "y": 16
+    }
+  },
+  "U": {
+    "path": "/textures/font/U.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "F": {
+    "path": "/textures/font/F.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "}": {
+    "path": "/textures/font/}.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  ">": {
+    "path": "/textures/font/>.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "V": {
+    "path": "/textures/font/V.png",
+    "dim": {
+      "x": 12,
+      "y": 16
+    }
+  },
+  "Y": {
+    "path": "/textures/font/Y.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "'": {
+    "path": "/textures/font/'.png",
+    "dim": {
+      "x": 4,
+      "y": 16
+    }
+  },
+  "\"": {
+    "path": "/textures/font/\".png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "j": {
+    "path": "/textures/font/j.png",
+    "dim": {
+      "x": 7,
+      "y": 16
+    }
+  },
+  "z": {
+    "path": "/textures/font/z.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "2": {
+    "path": "/textures/font/2.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "d": {
+    "path": "/textures/font/d.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "X": {
+    "path": "/textures/font/X.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "+": {
+    "path": "/textures/font/+.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "#": {
+    "path": "/textures/font/#.png",
+    "dim": {
+      "x": 14,
+      "y": 16
+    }
+  },
+  "?": {
+    "path": "/textures/font/?.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "w": {
+    "path": "/textures/font/w.png",
+    "dim": {
+      "x": 12,
+      "y": 16
+    }
+  },
+  "I": {
+    "path": "/textures/font/I.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "B": {
+    "path": "/textures/font/B.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  ".": {
+    "path": "/textures/font/dot.png",
+    "dim": {
+      "x": 4,
+      "y": 16
+    }
+  },
+  "O": {
+    "path": "/textures/font/O.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "&": {
+    "path": "/textures/font/&.png",
+    "dim": {
+      "x": 12,
+      "y": 16
+    }
+  },
+  "M": {
+    "path": "/textures/font/M.png",
+    "dim": {
+      "x": 14,
+      "y": 16
+    }
+  },
+  "$": {
+    "path": "/textures/font/$.png",
+    "dim": {
+      "x": 12,
+      "y": 16
+    }
+  },
+  "|": {
+    "path": "/textures/font/|.png",
+    "dim": {
+      "x": 4,
+      "y": 16
+    }
+  },
+  "!": {
+    "path": "/textures/font/!.png",
+    "dim": {
+      "x": 4,
+      "y": 16
+    }
+  },
+  "`": {
+    "path": "/textures/font/`.png",
+    "dim": {
+      "x": 5,
+      "y": 16
+    }
+  },
+  "a": {
+    "path": "/textures/font/a.png",
+    "dim": {
+      "x": 9,
+      "y": 16
+    }
+  },
+  "s": {
+    "path": "/textures/font/s.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "0": {
+    "path": "/textures/font/0.png",
+    "dim": {
+      "x": 12,
+      "y": 16
+    }
+  },
+  ";": {
+    "path": "/textures/font/;.png",
+    "dim": {
+      "x": 4,
+      "y": 16
+    }
+  },
+  "=": {
+    "path": "/textures/font/=.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "W": {
+    "path": "/textures/font/W.png",
+    "dim": {
+      "x": 14,
+      "y": 16
+    }
+  },
+  "3": {
+    "path": "/textures/font/3.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "P": {
+    "path": "/textures/font/P.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "b": {
+    "path": "/textures/font/b.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  "5": {
+    "path": "/textures/font/5.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "/": {
+    "path": "/textures/font/slash.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  },
+  ",": {
+    "path": "/textures/font/,.png",
+    "dim": {
+      "x": 4,
+      "y": 16
+    }
+  },
+  "H": {
+    "path": "/textures/font/H.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  "{": {
+    "path": "/textures/font/{.png",
+    "dim": {
+      "x": 6,
+      "y": 16
+    }
+  },
+  "_": {
+    "path": "/textures/font/_.png",
+    "dim": {
+      "x": 10,
+      "y": 16
+    }
+  },
+  ")": {
+    "path": "/textures/font/).png",
+    "dim": {
+      "x": 7,
+      "y": 16
+    }
+  },
+  "-": {
+    "path": "/textures/font/-.png",
+    "dim": {
+      "x": 8,
+      "y": 16
+    }
+  }
+}

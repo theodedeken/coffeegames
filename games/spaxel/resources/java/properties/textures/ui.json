@@ -1,0 +1,112 @@
+{
+    "button_normal": {
+        "sheetName": "button",
+        "dim": {
+            "x": 64,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 0
+        }
+    },
+    "button_hover": {
+        "sheetName": "button",
+        "dim": {
+            "x": 64,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 16
+        }
+    },
+    "button_click": {
+        "sheetName": "button",
+        "dim": {
+            "x": 64,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 32
+        }
+    },
+    "button_locked": {
+        "sheetName": "button",
+        "dim": {
+            "x": 64,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 48
+        }
+    },
+    "large_button_normal": {
+        "sheetName": "large_button",
+        "dim": {
+            "x": 80,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 0
+        }
+    },
+    "large_button_hover": {
+        "sheetName": "large_button",
+        "dim": {
+            "x": 80,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 16
+        }
+    },
+    "large_button_click": {
+        "sheetName": "large_button",
+        "dim": {
+            "x": 80,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 32
+        }
+    },
+    "large_button_locked": {
+        "sheetName": "large_button",
+        "dim": {
+            "x": 80,
+            "y": 16
+        },
+        "pos": {
+            "x": 0,
+            "y": 48
+        }
+    },
+    "class_select_hover": {
+        "sheetName": "class_select",
+        "dim": {
+            "x": 24,
+            "y": 24
+        },
+        "pos": {
+            "x": 0,
+            "y": 0
+        }
+    },
+    "class_select_click": {
+        "sheetName": "class_select",
+        "dim": {
+            "x": 24,
+            "y": 24
+        },
+        "pos": {
+            "x": 24,
+            "y": 0
+        }
+    }
+}

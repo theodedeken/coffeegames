@@ -1,0 +1,33 @@
+{
+    "#root": {
+        "x": 640,
+        "onUpdate": "escCheck"
+    },
+    ".label": {
+        "text-scale": 3
+    },
+    ".credit": {
+        "text-scale": 2
+    },
+    "#prog_graph_label": {
+        "y": 600,
+        "text": "Programming / Graphics"
+    },
+    "#prog_graph_credit": {
+        "y": 540,
+        "text": "Theo Dedeken\\@TheOZoneBE"
+    },
+    "#music_label": {
+        "y": 360,
+        "text": "Music"
+    },
+    "#music_credit": {
+        "y": 300,
+        "text": "Goncalo Gomes\\@azureflux_"
+    },
+    "#back_button": {
+        "y": 80,
+        "text": "Back",
+        "onClick": "back"
+    }
+}

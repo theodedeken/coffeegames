@@ -1,0 +1,23 @@
+load("//bazel:macros.bzl", "cg_java_library")
+
+package(default_visibility = ["//games/spaxel:__subpackages__"])
+
+cg_java_library(
+    name = "loaders",
+    srcs = glob(["*.java"]),
+    deps = [
+        "//games/spaxel/src/collision",
+        "//games/spaxel/src/engine:item_catalogue",
+        "//games/spaxel/src/factories/entities",
+        "//games/spaxel/src/graphics/animation",
+        "//games/spaxel/src/graphics/texture",
+        "//games/spaxel/src/input",
+        "//games/spaxel/src/sound",
+        "//games/spaxel/src/ui/elements:ui",
+        "//games/spaxel/src/ui/elements:ui_type",
+        "@maven//:com_fasterxml_jackson_core_jackson_core",
+        "@maven//:com_fasterxml_jackson_core_jackson_databind",
+        "@maven//:com_fasterxml_jackson_dataformat_jackson_dataformat_xml",
+        "@maven//:com_fasterxml_jackson_dataformat_jackson_dataformat_yaml",
+    ],
+)

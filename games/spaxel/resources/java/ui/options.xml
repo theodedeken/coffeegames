@@ -1,0 +1,11 @@
+<ui type="OPTIONS" controller="code.ui.controllers.OptionsController">
+    <style>/ui/styles/common.json</style>
+    <style>/ui/styles/options.json</style>
+    <body id="root">
+        <element id="game_button" class="large_button"></element>
+        <element id="controls_button" class="large_button"></element>
+        <element id="graphics_button" class="large_button"></element>
+        <element id="sound_button" class="large_button"></element>
+        <element id="back_button" class="large_button"></element>
+    </body>
+</ui>

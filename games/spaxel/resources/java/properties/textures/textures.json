@@ -1,0 +1,65 @@
+{
+    "laser_projectiles": {
+        "path": "/textures/projectiles/laser_projectiles.png",
+        "dim": {
+            "x": 16,
+            "y": 16
+        }
+    },
+    "missile_projectiles": {
+        "path": "/textures/projectiles/missile_projectiles.png",
+        "dim": {
+            "x": 24,
+            "y": 12
+        }
+    },
+    "ships": {
+        "path": "/textures/ships.png",
+        "dim": {
+            "x": 32,
+            "y": 32
+        }
+    },
+    "button": {
+        "path": "/textures/ui/button.png",
+        "dim": {
+            "x": 64,
+            "y": 64
+        }
+    },
+    "ui_play": {
+        "path": "/spritesheets/ui_play.png",
+        "dim": {
+            "x": 640,
+            "y": 360
+        }
+    },
+    "laser_trails": {
+        "path": "/textures/effects/laser_trails.png",
+        "dim": {
+            "x": 4,
+            "y": 4
+        }
+    },
+    "missile_trails": {
+        "path": "/textures/effects/missile_trails.png",
+        "dim": {
+            "x": 8,
+            "y": 8
+        }
+    },
+    "class_select": {
+        "path": "/textures/ui/class_select.png",
+        "dim": {
+            "x": 48,
+            "y": 24
+        }
+    },
+    "large_button": {
+        "path": "/textures/ui/large_button.png",
+        "dim": {
+            "x": 80,
+            "y": 64
+        }
+    }
+}

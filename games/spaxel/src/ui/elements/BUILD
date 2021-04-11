@@ -1,0 +1,42 @@
+load("//bazel:macros.bzl", "cg_java_library")
+
+package(default_visibility = ["//games/spaxel:__subpackages__"])
+
+"""
+cg_java_library(
+    name = "element",
+    srcs = ["Element.java"] + glob(["logic/*.java"]),
+    deps = [
+        "//games/spaxel/src/collision",
+        "//games/spaxel/src/graphics/buffer:master_buffer",
+        "//games/spaxel/src/input",
+        "//games/spaxel/src/math",
+        "//games/spaxel/src/ui/render",
+        "//games/spaxel/src/ui/state",
+        "//games/spaxel/src/ui/styles",
+        "//games/spaxel/src/util:matrix_util",
+        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
+    ],
+)
+
+cg_java_library(
+    name = "ui",
+    srcs = ["UI.java"],
+    deps = [
+        ":element",
+        ":ui_type",
+        "//games/spaxel/src/graphics/buffer:master_buffer",
+        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
+    ],
+)
+"""
+
+cg_java_library(
+    name = "ui_type",
+    srcs = ["UIType.java"],
+)
+
+filegroup(
+    name = "files",
+    srcs = glob(["**/*.java"]),
+)

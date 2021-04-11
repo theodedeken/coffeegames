@@ -1,0 +1,242 @@
+{
+  "enemy_white_industry": {
+    "type": "ENEMY",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_white"
+      },
+      {
+        "type": "CHANGE",
+        "positionChange": {
+          "x": 0,
+          "y": 0
+        },
+        "rotationChange": 0
+      },
+      {
+        "type": "HEALTH",
+        "currentHealth": 20,
+        "baseHealth": 20
+      },
+      {
+        "type": "RENDERABLE",
+        "renderable": "white"
+      },
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
+      },
+      {
+        "type": "RENDER",
+        "renderers": [
+          "TEXTURE_PART",
+          "VELOCITY"
+        ]
+      },
+      {
+        "type": "MOVE",
+        "speed": 20,
+        "turnRate": 0.25,
+        "acceleration": 0.25
+      },
+      {
+        "type": "AI",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "DEATH",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "STATUS",
+        "canShoot": true,
+        "canMove": true
+      }
+    ]
+  },
+  "enemy_red_industry": {
+    "type": "ENEMY",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_red"
+      },
+      {
+        "type": "CHANGE",
+        "positionChange": {
+          "x": 0,
+          "y": 0
+        },
+        "rotationChange": 0
+      },
+      {
+        "type": "HEALTH",
+        "currentHealth": 10,
+        "baseHealth": 10
+      },
+      {
+        "type": "RENDERABLE",
+        "renderable": "red"
+      },
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
+      },
+      {
+        "type": "RENDER",
+        "renderers": [
+          "TEXTURE_PART",
+          "VELOCITY"
+        ]
+      },
+      {
+        "type": "MOVE",
+        "speed": 25,
+        "turnRate": 0.3,
+        "acceleration": 0.3
+      },
+      {
+        "type": "AI",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "DEATH",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "STATUS",
+        "canShoot": true,
+        "canMove": true
+      }
+    ]
+  },
+  "enemy_green_industry": {
+    "type": "ENEMY",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_green"
+      },
+      {
+        "type": "CHANGE",
+        "positionChange": {
+          "x": 0,
+          "y": 0
+        },
+        "rotationChange": 0
+      },
+      {
+        "type": "HEALTH",
+        "currentHealth": 20,
+        "baseHealth": 20
+      },
+      {
+        "type": "RENDERABLE",
+        "renderable": "green"
+      },
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
+      },
+      {
+        "type": "RENDER",
+        "renderers": [
+          "TEXTURE_PART",
+          "VELOCITY"
+        ]
+      },
+      {
+        "type": "MOVE",
+        "speed": 15,
+        "turnRate": 0.2,
+        "acceleration": 0.2
+      },
+      {
+        "type": "AI",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "DEATH",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "STATUS",
+        "canShoot": true,
+        "canMove": true
+      }
+    ]
+  },
+  "enemy_blue_industry": {
+    "type": "ENEMY",
+    "blueprints": [
+      {
+        "type": "HITSHAPE",
+        "hitShape": "hitshape_blue"
+      },
+      {
+        "type": "CHANGE",
+        "positionChange": {
+          "x": 0,
+          "y": 0
+        },
+        "rotationChange": 0
+      },
+      {
+        "type": "HEALTH",
+        "currentHealth": 40,
+        "baseHealth": 40
+      },
+      {
+        "type": "RENDERABLE",
+        "renderable": "blue"
+      },
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
+      },
+      {
+        "type": "RENDER",
+        "renderers": [
+          "TEXTURE_PART",
+          "VELOCITY"
+        ]
+      },
+      {
+        "type": "MOVE",
+        "speed": 20,
+        "turnRate": 0.25,
+        "acceleration": 0.25
+      },
+      {
+        "type": "AI",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "DAMAGE"
+      },
+      {
+        "type": "DEATH",
+        "handler": "BASIC_ENEMY"
+      },
+      {
+        "type": "STATUS",
+        "canShoot": true,
+        "canMove": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+    "#root": {
+        "width": 1280,
+        "height": 720,
+        "x": 640,
+        "y": 360
+    },
+    "#title_label": {
+        "y": 600,
+        "text-scale": 8,
+        "text": "SP{white}XEL"
+    },
+    "#play_button": {
+        "y": 480,
+        "text": "Play",
+        "onClick": "startGame"
+    },
+    "#achievements_button": {
+        "y": 400,
+        "text": "Achievements",
+        "onClick": "achievements"
+    },
+    "#options_button": {
+        "y": 320,
+        "text": "Options",
+        "onClick": "options"
+    },
+    "#credits_button": {
+        "y": 240,
+        "text": "Credits",
+        "onClick": "credits"
+    },
+    "#quit_button": {
+        "y": 80,
+        "text": "Quit",
+        "onClick": "quit"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "#root": {
+        "rot": 0,
+        "x": 640
+    },
+    "#play_again_button": {
+        "onClick": "play",
+        "text": "Play Again",
+        "y": 160
+    },
+    "#quit_button": {
+        "onClick": "main",
+        "text": "Main Menu",
+        "y": 80
+    },
+    "#game_over": {
+        "text": "GAME OVER",
+        "text-scale": 12,
+        "y": 480
+    }
+}

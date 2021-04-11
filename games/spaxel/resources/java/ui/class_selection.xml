@@ -1,0 +1,23 @@
+<ui type="CLASS_SELECTION" controller="code.ui.controllers.ClassSelectionController">
+    <style>/ui/styles/common.json</style>
+    <style>/ui/styles/class_select.json</style>
+    <body id="root">
+        <element class="class_select" id="select_white">
+            <element class="class_image" id="white_image"></element>
+        </element>
+        <element class="class_description" id="white_description"></element>
+        <element class="class_select" id="select_red">
+            <element class="class_image" id="red_image"></element>
+        </element>
+        <element class="class_description" id="red_description"></element>
+        <element class="class_select" id="select_green">
+            <element class="class_image" id="green_image"></element>
+        </element>
+        <element class="class_description" id="green_description"></element>
+        <element class="class_select" id="select_blue">
+            <element class="class_image" id="blue_image"></element>
+        </element>
+        <element class="class_description" id="blue_description"></element>
+        <element class="large_button" id="back_button"></element>
+    </body>
+</ui>

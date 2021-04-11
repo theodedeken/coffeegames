@@ -1,0 +1,58 @@
+{
+    "marker_white": {
+        "path": "/textures/effects/white_marker.png",
+        "dim": {
+            "x": 8,
+            "y": 4
+        }
+    },
+    "marker_red": {
+        "path": "/textures/effects/red_marker.png",
+        "dim": {
+            "x": 8,
+            "y": 4
+        }
+    },
+    "marker_green": {
+        "path": "/textures/effects/green_marker.png",
+        "dim": {
+            "x": 8,
+            "y": 4
+        }
+    },
+    "marker_blue": {
+        "path": "/textures/effects/blue_marker.png",
+        "dim": {
+            "x": 8,
+            "y": 4
+        }
+    },
+    "active_shield_effect": {
+        "path": "/textures/effects/active_shield_effect.png",
+        "dim": {
+            "x": 32,
+            "y": 32
+        }
+    },
+    "basic_shield_effect": {
+        "path": "/textures/effects/basic_shield_effect.png",
+        "dim": {
+            "x": 32,
+            "y": 32
+        }
+    },
+    "force_shield_effect": {
+        "path": "/textures/effects/force_shield_effect.png",
+        "dim": {
+            "x": 32,
+            "y": 32
+        }
+    },
+    "anti_shield_effect": {
+        "path": "/textures/effects/anti_shield_effect.png",
+        "dim": {
+            "x": 32,
+            "y": 32
+        }
+    }
+}

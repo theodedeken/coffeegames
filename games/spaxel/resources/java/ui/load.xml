@@ -1,0 +1,7 @@
+<ui type="LOAD" controller="code.ui.controllers.LoadController">
+    <style>/ui/styles/common.json</style>
+    <style>/ui/styles/load.json</style>
+    <body id="root">
+        <element id="title"></element>
+    </body>
+</ui>

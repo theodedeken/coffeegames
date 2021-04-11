@@ -1,0 +1,20 @@
+{
+    "#root": {
+        "x": 640,
+        "y": 360,
+        "rot": 0,
+        "sprite": "load_overlay",
+        "scale": 1
+    },
+    "#title": {
+        "text": "SP{white}XEL",
+        "text-scale": 16
+    },
+    "#progress_bar": {
+        "y": 80
+    },
+    "#progress_label": {
+        "y": 40,
+        "text-scale": 2
+    }
+}
