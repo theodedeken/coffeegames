@@ -1,4 +1,4 @@
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 RULES_JVM_EXTERNAL_TAG = "4.0"
 
@@ -100,4 +100,11 @@ maven_install(
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
+)
+
+http_file(
+    name = "checkstyle",
+    downloaded_file_path = "checkstyle.jar",
+    sha256 = "cd6ea08d1bb96041f4e3109bb16db415e15f98183e8be696dd6a558814228172",
+    urls = ["https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.41.1/checkstyle-8.41.1-all.jar"],
 )

@@ -76,7 +76,8 @@ public class MatrixD {
 	}
 
 	/**
-	 * Perform a matrix multiplication with the given matrix and return a new matrix with the result
+	 * Perform a matrix multiplication with the given matrix and return a new matrix
+	 * with the result
 	 * 
 	 * @param mat the matrix to multiplicate with
 	 * 
@@ -136,7 +137,8 @@ public class MatrixD {
 	}
 
 	/**
-	 * Multiply all values of the matrix with the given value an return a new matrix with the result
+	 * Multiply all values of the matrix with the given value an return a new matrix
+	 * with the result
 	 * 
 	 * @param value the value to multiply with
 	 * 
