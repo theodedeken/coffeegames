@@ -29,8 +29,8 @@ public final class BufferUtils {
 	}
 
 	/**
-	 * Create a FloatBuffer and fill it with the given array of doubles. Will first convert the
-	 * doubles to floats.
+	 * Create a FloatBuffer and fill it with the given array of doubles. Will first
+	 * convert the doubles to floats.
 	 * 
 	 * @param array the contents of the floatbuffer
 	 * 
@@ -53,8 +53,8 @@ public final class BufferUtils {
 	 * @return A FloatBuffer with the array data
 	 */
 	public static FloatBuffer createFloatBuffer(float[] array) {
-		FloatBuffer result = ByteBuffer.allocateDirect(array.length * BYTES_IN_FLOAT)
-				.order(ByteOrder.nativeOrder()).asFloatBuffer();
+		FloatBuffer result = ByteBuffer.allocateDirect(array.length * BYTES_IN_FLOAT).order(ByteOrder.nativeOrder())
+				.asFloatBuffer();
 		result.put(array).flip();
 		return result;
 	}
@@ -67,8 +67,7 @@ public final class BufferUtils {
 	 * @return A new FloatBuffer object with the given size
 	 */
 	public static FloatBuffer allocateFloatBuffer(int size) {
-		return ByteBuffer.allocateDirect(size * BYTES_IN_FLOAT).order(ByteOrder.nativeOrder())
-				.asFloatBuffer();
+		return ByteBuffer.allocateDirect(size * BYTES_IN_FLOAT).order(ByteOrder.nativeOrder()).asFloatBuffer();
 	}
 
 	/**
@@ -79,8 +78,8 @@ public final class BufferUtils {
 	 * @return An IntBuffer with the array data
 	 */
 	public static IntBuffer createIntBuffer(int[] array) {
-		IntBuffer result = ByteBuffer.allocateDirect(array.length * BYTES_IN_INT)
-				.order(ByteOrder.nativeOrder()).asIntBuffer();
+		IntBuffer result = ByteBuffer.allocateDirect(array.length * BYTES_IN_INT).order(ByteOrder.nativeOrder())
+				.asIntBuffer();
 		result.put(array).flip();
 		return result;
 	}

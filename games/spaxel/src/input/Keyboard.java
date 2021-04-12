@@ -2,7 +2,6 @@ package spaxel.input;
 
 import java.util.Map;
 
-
 /**
  * Keeps the state of the keyboard
  */

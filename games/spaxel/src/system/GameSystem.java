@@ -1,6 +1,5 @@
 package spaxel.system;
 
-
 /**
  * Abstract base class of each system of the game
  */

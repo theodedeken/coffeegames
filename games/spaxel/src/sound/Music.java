@@ -1,10 +1,10 @@
 package spaxel.sound;
 
-public class Music extends Sound{
+public class Music extends Sound {
 	private String name;
 	private int intensity;
 
-	public Music(){
+	public Music() {
 
 	}
 

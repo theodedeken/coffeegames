@@ -29,8 +29,7 @@ public class FileToStringLoader {
 	public String loadAsString(String file) {
 		StringBuilder result = new StringBuilder();
 		try {
-			InputStreamReader isreader =
-					new InputStreamReader(getClass().getResourceAsStream(file));
+			InputStreamReader isreader = new InputStreamReader(getClass().getResourceAsStream(file));
 			BufferedReader reader = new BufferedReader(isreader);
 			String buffer;
 			while ((buffer = reader.readLine()) != null) {

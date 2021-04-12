@@ -1,1 +1,1 @@
-{checkstyle} -c {config_file} {files}
+{checkstyle} -c {config_file} {files} | sed 's/^.*__main__\///g'

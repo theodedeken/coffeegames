@@ -48,7 +48,8 @@ public class HitShape {
 	}
 
 	/**
-	 * Transform the hitshape with the given matrix and return a new hitshape with the result
+	 * Transform the hitshape with the given matrix and return a new hitshape with
+	 * the result
 	 * 
 	 * @param updateMatrix the transformation matrix
 	 * 
@@ -86,7 +87,8 @@ public class HitShape {
 	}
 
 	/**
-	 * Checks whether this hitshape collides with the given hitshape. This uses the SAT algorithm.
+	 * Checks whether this hitshape collides with the given hitshape. This uses the
+	 * SAT algorithm.
 	 * 
 	 * @param hitshape the hitshape to check collision
 	 * 

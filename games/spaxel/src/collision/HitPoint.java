@@ -35,9 +35,8 @@ public class HitPoint {
 	 * @param yOffset the y offset
 	 */
 	@JsonCreator
-	public HitPoint(@JsonProperty("xOffset") double xOffset,
-			@JsonProperty("yOffset") double yOffset) {
-		this.vector = new VectorD(new double[] {xOffset, yOffset, 1});
+	public HitPoint(@JsonProperty("xOffset") double xOffset, @JsonProperty("yOffset") double yOffset) {
+		this.vector = new VectorD(new double[] { xOffset, yOffset, 1 });
 	}
 
 	/**
@@ -54,8 +53,8 @@ public class HitPoint {
 	}
 
 	/**
-	 * Transform the hitpoint with the given matrix and return a new hitpoint with the updated
-	 * elements
+	 * Transform the hitpoint with the given matrix and return a new hitpoint with
+	 * the updated elements
 	 * 
 	 * @param updateMatrix the transformation matrix
 	 * 
