@@ -4,16 +4,18 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "basic_laser_projectile",
-        "scale": 2
+        "renderable": "basic_laser_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 20
+        "speed": 20
       },
       {
         "type": "HIT",
-        "hitType": "BASIC_LASER",
+        "handler": "BASIC_LASER"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 10
       },
       {
@@ -21,32 +23,34 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
-        "rate": 1
+        "type": "SPAWN",
+        "spawner": "STATIC"
       },
       {
-        "type": "PARTICLE",
-        "particle": "white_laser_trail",
-        "scale": 2
+        "type": "SPAWN_STORE",
+        "rate": 1,
+        "industry": "white_laser_trail"
+      },
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
         "type": "AGE",
         "life": 100,
         "maxLife": 100
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -55,16 +59,18 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "piercing_laser_projectile",
-        "scale": 2
+        "renderable": "piercing_laser_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 30
+        "speed": 30
       },
       {
         "type": "HIT",
-        "hitType": "PIERCING_LASER",
+        "handler": "PIERCING_LASER"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 5
       },
       {
@@ -72,32 +78,34 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "red_laser_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "red_laser_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
         "type": "AGE",
         "life": 75,
         "maxLife": 75
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -106,49 +114,53 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "disrupt_laser_projectile",
-        "scale": 2
+        "renderable": "disrupt_laser_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 20
+        "speed": 20
       },
       {
         "type": "HIT",
-        "hitType": "DISRUPT_LASER",
-        "damage": 5
+        "handler": "DISRUPT_LASER"
+      },
+      {
+        "type": "PROJECTILE",
+        "damage": 5 
       },
       {
         "type": "HITSHAPE",
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "green_laser_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "green_laser_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
         "type": "AGE",
         "life": 100,
         "maxLife": 100
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -157,16 +169,18 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "slowing_laser_projectile",
-        "scale": 2
+        "renderable": "slowing_laser_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 15
+        "speed": 15
       },
       {
         "type": "HIT",
-        "hitType": "SLOWING_LASER",
+        "handler": "SLOWING_LASER"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 10
       },
       {
@@ -174,32 +188,34 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "blue_laser_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "blue_laser_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
         "type": "AGE",
         "life": 125,
         "maxLife": 125
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -208,16 +224,18 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "basic_missile_projectile",
-        "scale": 2
+        "renderable": "basic_missile_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 25
+        "speed": 25
       },
       {
         "type": "HIT",
-        "hitType": "BASIC_MISSILE",
+        "handler": "BASIC_MISSILE"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 25
       },
       {
@@ -225,32 +243,34 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "white_missile_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "white_missile_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
         "type": "AGE",
         "life": 150,
         "maxLife": 150
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -259,16 +279,18 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "cluster_missile_projectile",
-        "scale": 2
+        "renderable": "cluster_missile_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 15
+        "speed": 15
       },
       {
         "type": "HIT",
-        "hitType": "CLUSTER_MISSILE",
+        "handler": "CLUSTER_MISSILE"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 20
       },
       {
@@ -276,26 +298,24 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "blue_missile_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "blue_missile_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
@@ -305,7 +325,11 @@
       },
       {
         "type": "DEATH",
-        "deathType": "CLUSTER_MISSILE"
+        "handler": "CLUSTER_MISSILE"
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -314,16 +338,18 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "cluster_missile_projectile",
-        "scale": 2
+        "renderable": "cluster_missile_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 10
+        "speed": 10
       },
       {
         "type": "HIT",
-        "hitType": "BASIC_MISSILE",
+        "handler": "BASIC_MISSILE"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 10
       },
       {
@@ -331,32 +357,34 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "blue_laser_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "blue_laser_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
         "type": "AGE",
         "life": 25,
         "maxLife": 25
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -365,16 +393,18 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "hacking_missile_projectile",
-        "scale": 2
+        "renderable": "hacking_missile_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 15
+        "speed": 15
       },
       {
         "type": "HIT",
-        "hitType": "HACKING_MISSILE",
+        "handler": "HACKING_MISSILE"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 20
       },
       {
@@ -382,32 +412,34 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "green_missile_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "green_missile_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
         "type": "AGE",
         "life": 125,
         "maxLife": 125
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   },
@@ -416,17 +448,19 @@
     "blueprints": [
       {
         "type": "RENDERABLE",
-        "sprite": "homing_missile_projectile",
-        "scale": 2
+        "renderable": "homing_missile_projectile"
       },
       {
         "type": "MOVE",
-        "maxSpeed": 20,
+        "speed": 20,
         "turnRate": 0.25
       },
       {
         "type": "HIT",
-        "hitType": "HOMING_MISSILE",
+        "handler": "HOMING_MISSILE"
+      },
+      {
+        "type": "PROJECTILE",
         "damage": 25
       },
       {
@@ -434,26 +468,24 @@
         "hitShape": "hitshape_single_point"
       },
       {
-        "type": "SPAWNER",
-        "spawnerType": "TRAILSEGMENT",
+        "type": "SPAWN",
+        "spawner": "STATIC"
+      },
+      {
+        "type": "SPAWN_STORE",
+        "industry": "red_missile_trail",
         "rate": 1
       },
       {
-        "type": "PARTICLE",
-        "particle": "red_missile_trail",
-        "scale": 2
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
       },
       {
         "type": "RENDER",
-        "visible": true,
-        "layer": "GAME",
         "renderers": [
-          {
-            "type": "RENDERABLESHEET"
-          },
-          {
-            "type": "VELOCITY"
-          }
+          "TEXTURE_PART",
+          "VELOCITY"
         ]
       },
       {
@@ -463,7 +495,11 @@
       },
       {
         "type": "AI",
-        "subType": "HOMING_MISSILE"
+        "handler": "HOMING_MISSILE"
+      },
+      {
+        "type": "TRANSFORMATION",
+        "scale": 2
       }
     ]
   }

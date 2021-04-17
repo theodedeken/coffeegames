@@ -30,17 +30,14 @@ public class HitBehaviour extends Behaviour {
         Set<Entity> colliders = entity.getStream().getEntities(ComponentType.HITSHAPE);
         // Entity parent = entity.getParent();
         HitshapeStorage cc = (HitshapeStorage) entity.getComponent(ComponentType.HITSHAPE);
-        TransformationStorage pc =
-                (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage pc = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
         MatrixD eTransform = MatrixUtil.getTransRotationMatrix(pc.getPosition(), pc.getRotation());
         HitShape updated = cc.getHitShape().update(eTransform);
         for (Entity collider : colliders) {
             // if (collider != parent) {
             HitshapeStorage ccc = (HitshapeStorage) collider.getComponent(ComponentType.HITSHAPE);
-            TransformationStorage cpc =
-                    (TransformationStorage) collider.getComponent(ComponentType.TRANSFORMATION);
-            MatrixD cTransform =
-                    MatrixUtil.getTransRotationMatrix(cpc.getPosition(), cpc.getRotation());
+            TransformationStorage cpc = (TransformationStorage) collider.getComponent(ComponentType.TRANSFORMATION);
+            MatrixD cTransform = MatrixUtil.getTransRotationMatrix(cpc.getPosition(), cpc.getRotation());
             if (ccc.getHitShape().update(cTransform).collision(updated)) {
                 handler.hit(entity, collider);
             }
@@ -50,5 +47,9 @@ public class HitBehaviour extends Behaviour {
 
     public HitBehaviour copy() {
         return new HitBehaviour(handler);
+    }
+
+    public void setHandler(HitType type) {
+        this.handler = HitHandler.createHandler(type);
     }
 }

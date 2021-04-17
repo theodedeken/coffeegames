@@ -9,6 +9,10 @@ import spaxel.entity.ComponentType;
 public class StackStorage extends Storage {
     private int stacks;
 
+    public StackStorage() {
+        super(ComponentType.STACK);
+    }
+
     public StackStorage(int stacks) {
         super(ComponentType.STACK);
         this.stacks = stacks;
