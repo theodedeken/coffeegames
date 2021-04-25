@@ -1,15 +1,25 @@
 <script lang="ts">
-  import DirectoryOverview from "./DirectoryOverview.svelte";
-  import File from "./File.svelte";
-  import Router from 'svelte-spa-router';
-  import {routes} from "./routes";
+  import Router from "svelte-spa-router";
+  import { routes } from "./routes";
 
   export let subpath;
   export let entries;
 </script>
 
+<svelte:head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Overpass+Mono&display=swap"
+    rel="stylesheet"
+  />
+</svelte:head>
+
 <main>
-  <Router {routes}/>
+  <Router {routes} />
 </main>
 
 <style>
@@ -17,6 +27,7 @@
     padding: 1em;
     max-width: none;
     margin: 0 auto;
+    font-family: "Overpass Mono", monospace;
   }
 
   h1 {

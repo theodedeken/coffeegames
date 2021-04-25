@@ -6,12 +6,18 @@ import json
 def convert(input_file, output_file):
     tree = ET.parse(input_file)
     root = tree.getroot()
-    out = {"files": []}
+    out = {"project": {}}
     for file_check in root:
-        out_file = {"name": file_check.attrib["name"], "checks": []}
+        full_path = file_check.attrib["name"].split("__main__/")[-1]
+        current = out["project"]
+        for path_el in full_path.split("/"):
+            if path_el not in current:
+                current[path_el] = {}
+            current = current[path_el]
+
+        current["checks"] = []
         for error in file_check:
-            out_file["checks"].append(error.attrib)
-        out["files"].append(out_file)
+            current["checks"].append(error.attrib)
     json.dump(out, open(output_file, "w"))
 
 

@@ -3,4 +3,4 @@
   export let path;
 </script>
 
-<a href="#/project{path}">{directory}</a>/
+<a href="#/tree{path}">{directory}</a>/
