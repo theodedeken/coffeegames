@@ -1,0 +1,11 @@
+{
+    "subpath": "games/spaxel/src/math",
+    "entries": [
+        {
+            "name": "Axis.java"
+        },
+        {
+            "name": "VectorD.java"
+        }
+    ]
+}

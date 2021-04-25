@@ -49,6 +49,52 @@ def _checkstyle_lint_impl(ctx):
         runfiles = runfiles,
     )
 
+CheckstyleInfo = provider(
+    doc = "Provider containing the outcome of a checkstyle run",
+    fields = {
+        "output": "Output file",
+        "exit": "Exit code",
+    },
+)
+
+def _checkstyle_build_impl(ctx):
+    output_file = ctx.actions.declare_file(ctx.label.name + ".checkstyle")
+    config_file = ctx.attr._configuration_file.files.to_list()[0]
+    args = [
+        "-c",
+        config_file.short_path,
+        "-o",
+        output_file.path,
+        "-f",
+        "xml",
+    ] + [f.short_path for f in ctx.attr.label[JavaSourceFilesInfo].files]
+
+    input_files = depset(
+        ctx.attr.label[JavaSourceFilesInfo].files + [config_file],
+    )
+
+    # Action to call the script.
+    ctx.actions.run(
+        mnemonic = "CheckstyleRun",
+        inputs = input_files,
+        outputs = [output_file],
+        arguments = args,
+        progress_message = "Running Checkstyle on %s" % ctx.attr.label.label.name,
+        executable = ctx.executable._checkstyle_runner,
+    )
+    return DefaultInfo(files = depset([output_file]))
+
+def checkstyle_two_stage(name, label):
+    checkstyle_build(
+        name = "%s.artifacts" % name,
+        label = label,
+    )
+    """
+    checkstyle_test_2(
+        name = name,
+        artifacts = "%s.artifacts" % name,
+    )"""
+
 checkstyle_test = rule(
     implementation = _checkstyle_lint_impl,
     attrs = {
@@ -58,4 +104,21 @@ checkstyle_test = rule(
         "_checkstyle_runner": attr.label(default = Label("//bazel/checkstyle:checkstyle_runner")),
     },
     test = True,
+)
+
+checkstyle_build = rule(
+    implementation = _checkstyle_build_impl,
+    attrs = {
+        "label": attr.label(mandatory = True, aspects = [java_source_files]),
+        "_configuration_file": attr.label(allow_single_file = True, default = Label("//bazel/checkstyle:checks.xml")),
+        "_script": attr.label(
+            allow_single_file = True,
+            default = Label("//bazel/checkstyle:checkstyle_script.sh"),
+        ),
+        "_checkstyle_runner": attr.label(
+            cfg = "exec",
+            executable = True,
+            default = Label("//bazel/checkstyle:checkstyle_runner"),
+        ),
+    },
 )

@@ -1,0 +1,21 @@
+// Eventual output format for linters
+namespace Oregano;
+
+table Check {
+    name:string;
+    tool:string;
+    message:string;
+    severity:string;
+    line:uint16;
+    column:uint16;
+}
+
+table File {
+    file_name:string;
+    checks:[Check];
+}
+
+table Target {
+    files:[File];
+}
+

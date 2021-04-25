@@ -19,7 +19,7 @@
 <module name = "Checker">
   <property name="charset" value="UTF-8"/>
 
-  <property name="severity" value="error"/>
+  <property name="severity" value="warning"/>
 
   <property name="fileExtensions" value="java, properties, xml"/>
   <!-- Excludes all 'module-info.java' files              -->
@@ -32,6 +32,10 @@
     <property name="file" value="${org.checkstyle.google.suppressionfilter.config}"
            default="checkstyle-suppressions.xml" />
     <property name="optional" value="true"/>
+  </module>
+    <module name="Header">
+    <property name="header"
+      value="/* This Source Code Form is subject to the terms of the Mozilla Public\n * License, v. 2.0. If a copy of the MPL was not distributed with this\n * file, You can obtain one at https://mozilla.org/MPL/2.0/. */"/>
   </module>
 
   <!-- Checks for whitespace                               -->
@@ -47,6 +51,40 @@
   </module>
 
   <module name="TreeWalker">
+    <!-- new modules -->
+    <module name="AvoidNestedBlocks"/>
+    <module name="FinalClass"/>
+    <module name="HideUtilityClassConstructor"/>
+    <module name="InnerTypeLast"/>
+    <module name="InterfaceIsType"/>
+    <module name="MutableException"/>
+    <module name="ThrowsCount">
+      <property name="max" value="3"/>
+    </module>
+    <module name="VisibilityModifier"/>
+
+    <!--TODO coding section-->
+    <!--TODO imports section-->
+    <!--TODO javadoc section-->
+    <!-- metrics section-->
+    <module name="BooleanExpressionComplexity"/>
+    <module name="ClassDataAbstractionCoupling"/>
+    <module name="ClassFanOutComplexity"/>
+    <module name="CyclomaticComplexity">
+      <property name="switchBlockAsSingleDecisionPoint" value="true"/>
+    </module>
+    <module name="JavaNCSS"/>
+    <module name="NPathComplexity"/>
+
+    <!--TODO miscellaneous section-->
+    <!--TODO modifiers section-->
+    <!--TODO naming conventions section-->
+    <!--TODO regexp section-->
+    <!--TODO size violations section-->
+    <!--TODO whitespace section-->
+
+
+    <!-- adapted modules -->
     <module name="OuterTypeFilename"/>
     <module name="IllegalTokenText">
       <property name="tokens" value="STRING_LITERAL, CHAR_LITERAL"/>

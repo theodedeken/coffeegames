@@ -1,0 +1,427 @@
+{
+    "files": [
+        {
+            "name": "/home/theod/.cache/bazel/_bazel_theod/b2522fe812c867bbb74443d4c40248b5/sandbox/linux-sandbox/20/execroot/__main__/games/spaxel/src/math/Axis.java",
+            "checks": [
+                {
+                    "line": "1",
+                    "severity": "warning",
+                    "message": "Line does not match expected header line of '/* This Source Code Form is subject to the terms of the Mozilla Public'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.header.HeaderCheck"
+                },
+                {
+                    "line": "3",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "11",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "18",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "22",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "29",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "33",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "40",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "43",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                }
+            ]
+        },
+        {
+            "name": "/home/theod/.cache/bazel/_bazel_theod/b2522fe812c867bbb74443d4c40248b5/sandbox/linux-sandbox/20/execroot/__main__/games/spaxel/src/math/LineSegment.java",
+            "checks": [
+                {
+                    "line": "1",
+                    "severity": "warning",
+                    "message": "Line does not match expected header line of '/* This Source Code Form is subject to the terms of the Mozilla Public'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.header.HeaderCheck"
+                },
+                {
+                    "line": "3",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "10",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "13",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "21",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "24",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "48",
+                    "severity": "warning",
+                    "message": "Summary javadoc is missing.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "55",
+                    "severity": "warning",
+                    "message": "Summary javadoc is missing.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "62",
+                    "severity": "warning",
+                    "message": "Summary javadoc is missing.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "69",
+                    "severity": "warning",
+                    "message": "Summary javadoc is missing.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                }
+            ]
+        },
+        {
+            "name": "/home/theod/.cache/bazel/_bazel_theod/b2522fe812c867bbb74443d4c40248b5/sandbox/linux-sandbox/20/execroot/__main__/games/spaxel/src/math/MatrixD.java",
+            "checks": [
+                {
+                    "line": "1",
+                    "severity": "warning",
+                    "message": "Line does not match expected header line of '/* This Source Code Form is subject to the terms of the Mozilla Public'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.header.HeaderCheck"
+                },
+                {
+                    "line": "4",
+                    "column": "1",
+                    "severity": "warning",
+                    "message": "Wrong lexicographical order for 'java.nio.FloatBuffer' import. Should be before 'spaxel.util.BufferUtils'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"
+                },
+                {
+                    "line": "6",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "10",
+                    "column": "17",
+                    "severity": "warning",
+                    "message": "Member name 'm' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"
+                },
+                {
+                    "line": "11",
+                    "column": "17",
+                    "severity": "warning",
+                    "message": "Member name 'n' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"
+                },
+                {
+                    "line": "14",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "17",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "26",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "29",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "39",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "42",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "50",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "53",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "78",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "82",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "100",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "103",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "119",
+                    "column": "5",
+                    "severity": "warning",
+                    "message": "Missing a Javadoc comment.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"
+                },
+                {
+                    "line": "130",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "133",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@return' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "139",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "143",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "155",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "158",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@return' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "170",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "173",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                }
+            ]
+        },
+        {
+            "name": "/home/theod/.cache/bazel/_bazel_theod/b2522fe812c867bbb74443d4c40248b5/sandbox/linux-sandbox/20/execroot/__main__/games/spaxel/src/math/Projection.java",
+            "checks": [
+                {
+                    "line": "4",
+                    "column": "1",
+                    "severity": "warning",
+                    "message": "'package' should be separated from previous statement.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"
+                },
+                {
+                    "line": "6",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "11",
+                    "column": "20",
+                    "severity": "warning",
+                    "message": "Member name 'xMin' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"
+                },
+                {
+                    "line": "12",
+                    "column": "20",
+                    "severity": "warning",
+                    "message": "Member name 'xMax' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"
+                },
+                {
+                    "line": "13",
+                    "column": "20",
+                    "severity": "warning",
+                    "message": "Member name 'yMin' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"
+                },
+                {
+                    "line": "14",
+                    "column": "20",
+                    "severity": "warning",
+                    "message": "Member name 'yMax' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"
+                },
+                {
+                    "line": "17",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "20",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "30",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "37",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "40",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                },
+                {
+                    "line": "67",
+                    "column": "19",
+                    "severity": "warning",
+                    "message": "Abbreviation in name 'getXMin' must contain no more than '1' consecutive capital letters.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"
+                },
+                {
+                    "line": "71",
+                    "column": "19",
+                    "severity": "warning",
+                    "message": "Abbreviation in name 'getXMax' must contain no more than '1' consecutive capital letters.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"
+                },
+                {
+                    "line": "75",
+                    "column": "19",
+                    "severity": "warning",
+                    "message": "Abbreviation in name 'getYMin' must contain no more than '1' consecutive capital letters.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"
+                },
+                {
+                    "line": "79",
+                    "column": "19",
+                    "severity": "warning",
+                    "message": "Abbreviation in name 'getYMax' must contain no more than '1' consecutive capital letters.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"
+                },
+                {
+                    "line": "83",
+                    "severity": "warning",
+                    "message": "First sentence of Javadoc is missing an ending period.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"
+                },
+                {
+                    "line": "86",
+                    "severity": "warning",
+                    "message": "Javadoc tag '@param' should be preceded with an empty line.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.javadoc.RequireEmptyLineBeforeBlockTagGroupCheck"
+                }
+            ]
+        },
+        {
+            "name": "/home/theod/.cache/bazel/_bazel_theod/b2522fe812c867bbb74443d4c40248b5/sandbox/linux-sandbox/20/execroot/__main__/games/spaxel/src/math/VectorD.java",
+            "checks": [
+                {
+                    "line": "1",
+                    "severity": "warning",
+                    "message": "Line does not match expected header line of '/* This Source Code Form is subject to the terms of the Mozilla Public'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.header.HeaderCheck"
+                },
+                {
+                    "line": "12",
+                    "column": "17",
+                    "severity": "warning",
+                    "message": "Member name 'm' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.",
+                    "source": "com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"
+                }
+            ]
+        }
+    ]
+}
