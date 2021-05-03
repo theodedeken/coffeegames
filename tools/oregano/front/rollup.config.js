@@ -1,86 +1,75 @@
-import svelte from 'rollup-plugin-svelte';
-import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import livereload from 'rollup-plugin-livereload';
-import { terser } from 'rollup-plugin-terser';
-import sveltePreprocess from 'svelte-preprocess';
-import typescript from '@rollup/plugin-typescript';
-import css from 'rollup-plugin-css-only';
-import json from '@rollup/plugin-json';
+import svelte from "rollup-plugin-svelte";
+import commonjs from "@rollup/plugin-commonjs";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import sveltePreprocess from "svelte-preprocess";
+import css from "rollup-plugin-css-only";
+import json from "@rollup/plugin-json";
 
-const production = !process.env.ROLLUP_WATCH;
+class ResolveInternal {
+  resolveId(source) {
+    console.log(source);
+    const workspace = process.env.BAZEL_WORKSPACE;
 
-function serve() {
-	let server;
+    if (
+      (workspace && source.startsWith("./") && source.includes("svelte")) ||
+      source == "./data.json"
+    ) {
+      const importPath = source.substring(2);
+      const compilation_mode = process.env.COMPILATION_MODE;
+      let k8Folder = "";
+      if (compilation_mode === "fastbuild") {
+        k8Folder = "k8-fastbuild"; // might be different on your system, e.g. "k8-opt"
+      } else if (compilation_mode === "opt") {
+        k8Folder = "k8-opt";
+      }
 
-	function toExit() {
-		if (server) server.kill(0);
-	}
-
-	return {
-		writeBundle() {
-			if (server) return;
-			server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
-				stdio: ['ignore', 'inherit', 'inherit'],
-				shell: true
-			});
-
-			process.on('SIGTERM', toExit);
-			process.on('exit', toExit);
-		}
-	};
+      return {
+        id: `bazel-out/${k8Folder}/bin/tools/oregano/front/src/${importPath}${
+          source.includes("svelte") ? ".js" : ""
+        }`,
+        external: false,
+      };
+    } else if (source.startsWith("./")) {
+      return {
+        id: process.cwd() + "/tools/oregano/front/src" + source.substring(1),
+        external: false,
+      };
+    }
+    return null; // default resolution
+  }
 }
 
-export default {
-	input: 'src/main.ts',
-	output: {
-		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js'
-	},
-	plugins: [
-		svelte({
-			preprocess: sveltePreprocess({ sourceMap: !production }),
-			compilerOptions: {
-				// enable run-time checks when not in production
-				dev: !production
-			}
-		}),
-		// we'll extract any component CSS out into
-		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+module.exports = {
+  output: {
+    name: "app",
+  },
+  plugins: [
+    svelte({
+      preprocess: sveltePreprocess({ sourceMap: true }),
+      compilerOptions: {
+        // enable run-time checks when not in production
+        dev: false,
+      },
+    }),
 
-		// If you have external dependencies installed from
-		// npm, you'll most likely need these plugins. In
-		// some cases you'll need additional configuration -
-		// consult the documentation for details:
-		// https://github.com/rollup/plugins/tree/master/packages/commonjs
-		resolve({
-			browser: true,
-			dedupe: ['svelte']
-		}),
-		commonjs(),
-		typescript({
-			sourceMap: !production,
-			inlineSources: !production
-		}),
+    // If you have external dependencies installed from
+    // npm, you'll most likely need these plugins. In
+    // some cases you'll need additional configuration -
+    // consult the documentation for details:
+    // https://github.com/rollup/plugins/tree/master/packages/commonjs
+    nodeResolve({
+      browser: true,
+      dedupe: ["svelte"],
+      moduleDirectories: ["external/npm/node_modules"],
+    }),
+    commonjs(),
+    new ResolveInternal(),
 
-		// In dev mode, call `npm run start` once
-		// the bundle has been generated
-		!production && serve(),
+    // we'll extract any component CSS out into
+    // a separate file - better for performance
+    css({ output: "bundle.css" }),
 
-		// Watch the `public` directory and refresh the
-		// browser on changes when not in production
-		!production && livereload('public'),
-
-		// If we're building for production (npm run build
-		// instead of npm run dev), minify
-		production && terser(),
-		// JSON plugin
-		json()
-	],
-	watch: {
-		clearScreen: false
-	}
+    // JSON plugin
+    json(),
+  ],
 };

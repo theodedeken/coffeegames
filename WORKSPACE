@@ -1,3 +1,8 @@
+workspace(
+    name = "coffeegames",
+    managed_directories = {"@npm": ["tools/oregano/front/node_modules"]},
+)
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 RULES_JVM_EXTERNAL_TAG = "4.0"
@@ -108,3 +113,36 @@ http_file(
     sha256 = "cd6ea08d1bb96041f4e3109bb16db415e15f98183e8be696dd6a558814228172",
     urls = ["https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.41.1/checkstyle-8.41.1-all.jar"],
 )
+
+# Rules nodejs
+http_archive(
+    name = "build_bazel_rules_nodejs",
+    sha256 = "1134ec9b7baee008f1d54f0483049a97e53a57cd3913ec9d6db625549c98395a",
+    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/3.4.0/rules_nodejs-3.4.0.tar.gz"],
+)
+
+load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
+
+yarn_install(
+    name = "npm",
+    package_json = "//tools/oregano/front:package.json",
+    yarn_lock = "//tools/oregano/front:yarn.lock",
+)
+
+# Closure rules
+http_archive(
+    name = "io_bazel_rules_closure",
+    patches = ["//:rules_closure_roots_fix.patch"],
+    sha256 = "7d206c2383811f378a5ef03f4aacbcf5f47fd8650f6abbc3fa89f3a27dd8b176",
+    strip_prefix = "rules_closure-0.10.0",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_closure/archive/0.10.0.tar.gz",
+        "https://github.com/bazelbuild/rules_closure/archive/0.10.0.tar.gz",
+    ],
+)
+
+load("@io_bazel_rules_closure//closure:repositories.bzl", "rules_closure_dependencies", "rules_closure_toolchains")
+
+rules_closure_dependencies()
+
+rules_closure_toolchains()

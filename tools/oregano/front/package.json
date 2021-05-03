@@ -9,11 +9,20 @@
     "validate": "svelte-check"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "@bazel/esbuild": "^3.4.2",
+    "@bazel/rollup": "^3.4.1",
+    "@bazel/typescript": "^3.4.1",
+    "@bazel/worker": "^3.4.2",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-typescript": "^8.0.0",
     "@tsconfig/svelte": "^1.0.0",
+    "http-server": "^0.12.3",
+    "karma": ">=4.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
@@ -26,6 +35,7 @@
     "typescript": "^4.0.0"
   },
   "dependencies": {
+    "@bazel/ibazel": "^0.15.10",
     "highlight.js": "^10.7.2",
     "sirv-cli": "^1.0.0",
     "svelte-spa-router": "^3.1.0"

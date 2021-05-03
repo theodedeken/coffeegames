@@ -5,6 +5,7 @@ def checkstyle_test(name, label):
     checkstyle_build(
         name = "%s.rgno" % name,
         label = label,
+        visibility = ["//visibility:public"],
     )
     oregano_test(
         name = name,

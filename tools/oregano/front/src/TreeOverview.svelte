@@ -1,35 +1,34 @@
 <script lang="ts">
   import DirectoryEntry from "./DirectoryEntry.svelte";
   import DirectoryHeader from "./DirectoryHeader.svelte";
-  import * as testData from "./data.json";
+  import { getTree } from "./api.js";
   export let params;
 
-  let subpath;
-  let entries;
-  let wild;
-  $: {
-    entries = testData["project"];
-    if (params) {
-      let wild = params.wild;
-      let parts = wild.split("/");
-      for (let el of parts) {
-        entries = entries[el];
-      }
-      subpath = wild;
+  let tree;
+
+  function sortEntries(first, second) {
+    // If both elements are files or directories, sort by name
+    if (first.file === second.file) {
+      return first.name.toLowerCase() > second.name.toLowerCase();
     } else {
-      subpath = "";
+      return first.file > second.file;
     }
-    entries = Object.keys(entries).map((el) => ({
-      name: el,
-      subpath: subpath,
-      file: el.includes("."),
-    }));
+  }
+
+  $: {
+    if (params) {
+      tree = getTree(params.wild);
+    } else {
+      tree = getTree("");
+    }
+
+    tree.entries.sort(sortEntries);
   }
 </script>
 
 <div>
-  <DirectoryHeader {subpath} />
-  {#each entries as entry}
-    <DirectoryEntry {...entry} />
+  <DirectoryHeader subpath={tree.subpath} />
+  {#each tree.entries as entry}
+    <DirectoryEntry {...entry} subpath={tree.subpath} />
   {/each}
 </div>

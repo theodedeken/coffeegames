@@ -3,7 +3,7 @@
   import "highlight.js/styles/atom-one-dark.css";
   import Line from "./Line.svelte";
   import * as testdata from "./file.json";
-  import BreadCrumb from "./BreadCrumb.svelte";
+  import FileHeader from "./FileHeader.svelte";
 
   export let content = testdata.content;
   export let name = testdata.name;
@@ -22,10 +22,7 @@
 </script>
 
 <div>
-  {#each breadcrumbs as breadcrumb}
-    <BreadCrumb {...breadcrumb} />
-  {/each}
-  <h2>{filename}</h2>
+  <FileHeader {filename} {breadcrumbs} />
   <div class="wrapper">
     <div class="child">
       {#each lines as line, i}

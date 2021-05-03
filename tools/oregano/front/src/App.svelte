@@ -1,9 +1,6 @@
 <script lang="ts">
   import Router from "svelte-spa-router";
-  import { routes } from "./routes";
-
-  export let subpath;
-  export let entries;
+  import { routes } from "./routes.js";
 </script>
 
 <svelte:head>
