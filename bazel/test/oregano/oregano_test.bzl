@@ -1,5 +1,7 @@
+load("//bazel/build/oregano:providers.bzl", "OreganoInfo")
+
 def _oregano_test_impl(ctx):
-    oregano_file = ctx.attr.checks.files.to_list()[0]
+    oregano_file = ctx.attr.checks[OreganoInfo].output_file
     wrapper = ctx.actions.declare_file(ctx.label.name + ".wrapper")
 
     # Write wrapper script
@@ -10,7 +12,7 @@ def _oregano_test_impl(ctx):
     )
 
     runfiles = ctx.runfiles(
-        files = [oregano_file],
+        files = [oregano_file] + ctx.attr.checks[OreganoInfo].input_files,
         transitive_files = ctx.attr._check[DefaultInfo].default_runfiles.files,
     )
 

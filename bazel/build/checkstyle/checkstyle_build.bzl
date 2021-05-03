@@ -1,4 +1,5 @@
 load("//bazel/build/checkstyle:aspects.bzl", "JavaSourceFilesInfo", "java_source_files")
+load("//bazel/build/oregano:providers.bzl", "OreganoInfo")
 
 def _checkstyle_build_impl(ctx):
     output_file = ctx.actions.declare_file(ctx.label.name + ".output")
@@ -53,7 +54,13 @@ def _checkstyle_build_impl(ctx):
         arguments = [args],
     )
 
-    return DefaultInfo(files = depset([oregano_output]))
+    return [
+        DefaultInfo(files = depset([oregano_output])),
+        OreganoInfo(
+            input_files = ctx.attr.label[JavaSourceFilesInfo].files,
+            output_file = oregano_output,
+        ),
+    ]
 
 checkstyle_build = rule(
     implementation = _checkstyle_build_impl,
