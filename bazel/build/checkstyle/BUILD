@@ -1,3 +1,9 @@
+py_binary(
+    name = "checkstyle_xml_to_json",
+    srcs = ["checkstyle_xml_to_json.py"],
+    visibility = ["//visibility:public"],
+)
+
 java_import(
     name = "checkstyle_import",
     jars = ["@checkstyle//file"],
@@ -12,5 +18,5 @@ java_binary(
 
 exports_files([
     "checks.xml",
-    "checkstyle_script.sh",
+    "checkstyle_build.template.sh",
 ])
