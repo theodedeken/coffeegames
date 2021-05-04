@@ -10,5 +10,8 @@
 <style>
   div {
     margin-left: auto;
+    background-color: var(--background-3);
+    padding: 0.33em;
+    border-radius: 0.25em;
   }
 </style>

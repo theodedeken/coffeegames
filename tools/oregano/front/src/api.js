@@ -3,6 +3,9 @@ import * as testData from "./data.json";
 export function getTree(subpath) {
   let current = testData["tree"];
   if (subpath) {
+    if (subpath.endsWith("/")) {
+      subpath = subpath.substring(0, subpath.length - 1);
+    }
     let parts = subpath.split("/");
     for (let part of parts) {
       current = current[part];

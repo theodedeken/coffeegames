@@ -25,6 +25,7 @@
     max-width: none;
     margin: 0 auto;
     font-family: "Overpass Mono", monospace;
+    background-color: var(--background-2);
   }
 
   h1 {
@@ -38,5 +39,13 @@
     main {
       max-width: none;
     }
+  }
+  :global(:root) {
+    --background-1: #1b1c22;
+    --background-2: #24262d;
+    --background-3: #2d3039;
+    --background-4: #363a45;
+    --background-5: #3f4350;
+    --error: #ff220cff;
   }
 </style>

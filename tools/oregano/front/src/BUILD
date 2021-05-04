@@ -76,8 +76,8 @@ svelte_component(
     name = "DirectoryEntry",
     component = "DirectoryEntry.svelte",
     deps = [
+        "ErrorHue",
         "ErrorSnippet",
-        "@npm//svelte-spa-router",
     ],
 )
 
@@ -89,6 +89,11 @@ svelte_component(
 svelte_component(
     name = "ErrorSnippet",
     component = "ErrorSnippet.svelte",
+)
+
+svelte_component(
+    name = "ErrorHue",
+    component = "ErrorHue.svelte",
 )
 
 """
