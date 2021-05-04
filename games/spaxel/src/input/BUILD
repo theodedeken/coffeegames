@@ -6,8 +6,8 @@ cg_java_library(
     name = "input",
     srcs = glob(["*.java"]),
     deps = [
+        "//engines/voide/src/math",
         "//games/spaxel/src:constants",
-        "//games/spaxel/src/math",
         "@maven//:org_lwjgl_lwjgl_glfw",
     ],
 )

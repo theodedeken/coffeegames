@@ -1,6 +1,6 @@
-package spaxel.math;
+package voide.math;
 
-import spaxel.util.BufferUtils;
+import voide.buffer.BufferUtils;
 import java.nio.FloatBuffer;
 
 /**

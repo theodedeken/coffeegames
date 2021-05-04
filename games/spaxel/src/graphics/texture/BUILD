@@ -9,9 +9,9 @@ cg_java_library(
         ":renderable",
         ":texture",
         ":texture_node",
+        "//engines/voide/src/math",
         "//games/spaxel/src:constants",
         "//games/spaxel/src/graphics/buffer:render_job",
-        "//games/spaxel/src/math",
         "//games/spaxel/src/util:texture_util",
     ],
 )
@@ -20,8 +20,8 @@ cg_java_library(
     name = "renderable",
     srcs = ["Renderable.java"],
     deps = [
+        "//engines/voide/src/math",
         "//games/spaxel/src/graphics/buffer:render_job",
-        "//games/spaxel/src/math",
     ],
 )
 
@@ -30,9 +30,9 @@ cg_java_library(
     srcs = ["Texture.java"],
     deps = [
         ":renderable",
+        "//engines/voide/src/math",
         "//games/spaxel/src:constants",
         "//games/spaxel/src/graphics/buffer:render_job",
-        "//games/spaxel/src/math",
     ],
 )
 
@@ -41,8 +41,8 @@ cg_java_library(
     srcs = ["ColorBox.java"],
     deps = [
         ":renderable",
+        "//engines/voide/src/math",
         "//games/spaxel/src/graphics/buffer:render_job",
-        "//games/spaxel/src/math",
         "@maven//:com_fasterxml_jackson_core_jackson_annotations",
     ],
 )
@@ -52,7 +52,7 @@ cg_java_library(
     srcs = ["TexturePart.java"],
     deps = [
         ":texture",
-        "//games/spaxel/src/math",
+        "//engines/voide/src/math",
     ],
 )
 
@@ -61,6 +61,6 @@ cg_java_library(
     srcs = ["TextureNode.java"],
     deps = [
         ":texture",
-        "//games/spaxel/src/math",
+        "//engines/voide/src/math",
     ],
 )

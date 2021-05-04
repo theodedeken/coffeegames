@@ -1,6 +1,6 @@
 package spaxel.graphics.texture;
 
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 /**
  * Represents a part of an image texture

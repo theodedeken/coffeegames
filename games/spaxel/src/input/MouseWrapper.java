@@ -2,7 +2,7 @@ package spaxel.input;
 
 import org.lwjgl.glfw.GLFWCursorPosCallback;
 import spaxel.Constants;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import static org.lwjgl.glfw.GLFW.*;
 
 /**

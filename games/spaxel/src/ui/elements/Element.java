@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import spaxel.ui.elements.logic.HoverLogic;
 import spaxel.ui.elements.logic.ClickLogic;
 import spaxel.input.MouseWrapper;
-import spaxel.collision.HitShape;
+import voide.collision.HitShape;
 import spaxel.engine.Resources;
 
 /**

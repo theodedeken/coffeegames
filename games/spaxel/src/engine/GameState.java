@@ -1,7 +1,7 @@
 package spaxel.engine;
 
 import spaxel.Constants;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 /**
  * Represents the state of the current game
@@ -17,7 +17,6 @@ public class GameState {
     private VectorD cursorFollow;
     private VectorD screenOffset;
     private double updateTime;
-
 
     /**
      * Create a new GameState

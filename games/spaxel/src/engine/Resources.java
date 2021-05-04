@@ -3,7 +3,7 @@ package spaxel.engine;
 import static spaxel.loaders.Loader.*;
 import java.util.Map;
 import java.util.List;
-import spaxel.collision.HitShape;
+import voide.collision.HitShape;
 import spaxel.factories.entities.EntityIndustry;
 import spaxel.graphics.animation.Animation;
 import spaxel.ui.elements.UI;

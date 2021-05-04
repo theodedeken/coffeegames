@@ -7,7 +7,7 @@ import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.entity.EntityUtil;
 import java.util.Set;
 
@@ -22,8 +22,7 @@ public class HomingMissileAIHandler extends AIHandler {
     }
 
     public void execute(Entity entity) {
-        TransformationStorage pc =
-                (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage pc = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
         MoveStorage mc = (MoveStorage) entity.getComponent(ComponentType.MOVE);
         ChangeStorage vc = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
 
@@ -33,8 +32,7 @@ public class HomingMissileAIHandler extends AIHandler {
         Entity closest = null;
         for (Entity e : enemies) {
             if (e != entity.getParent()) {
-                TransformationStorage epc =
-                        (TransformationStorage) e.getComponent(ComponentType.TRANSFORMATION);
+                TransformationStorage epc = (TransformationStorage) e.getComponent(ComponentType.TRANSFORMATION);
                 double dist = epc.getPosition().sum(pc.getPosition().multiplicate(-1)).length();
                 if (minDist < 0 || dist < minDist) {
                     minDist = dist;
@@ -43,8 +41,7 @@ public class HomingMissileAIHandler extends AIHandler {
             }
         }
         if (closest != null && minDist < DISTANCE_THRESHOLD) {
-            TransformationStorage cpc =
-                    (TransformationStorage) closest.getComponent(ComponentType.TRANSFORMATION);
+            TransformationStorage cpc = (TransformationStorage) closest.getComponent(ComponentType.TRANSFORMATION);
 
             VectorD diff = cpc.getPosition().sum(pc.getPosition().multiplicate(-1));
             double rotToGet = Math.atan2(diff.getValue(0), diff.getValue(1));
@@ -54,8 +51,8 @@ public class HomingMissileAIHandler extends AIHandler {
             double rotChange = rotToGet - pc.getRotation();
             vc.setRotationChange(EntityUtil.calculateDeltaRot(rotChange, mc.getTurnRate()));
 
-            vc.setPositionChange(new VectorD(Math.sin(pc.getRotation()), Math.cos(pc.getRotation()))
-                    .multiplicate(mc.getSpeed()));
+            vc.setPositionChange(
+                    new VectorD(Math.sin(pc.getRotation()), Math.cos(pc.getRotation())).multiplicate(mc.getSpeed()));
         }
     }
 }

@@ -2,7 +2,7 @@ package spaxel.entity.storage.transformation;
 
 import spaxel.entity.ComponentType;
 import spaxel.entity.Storage;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 public class TransformationStorage extends Storage {
     private VectorD position;
@@ -20,14 +20,12 @@ public class TransformationStorage extends Storage {
         this.scale = scale;
     }
 
-
     /**
      * @return the position
      */
     public VectorD getPosition() {
         return position;
     }
-
 
     /**
      * @param position the position to set
@@ -36,14 +34,12 @@ public class TransformationStorage extends Storage {
         this.position = position;
     }
 
-
     /**
      * @return the rotation
      */
     public double getRotation() {
         return rotation;
     }
-
 
     /**
      * @param rotation the rotation to set
@@ -52,14 +48,12 @@ public class TransformationStorage extends Storage {
         this.rotation = rotation;
     }
 
-
     /**
      * @return the scale
      */
     public double getScale() {
         return scale;
     }
-
 
     /**
      * @param scale the scale to set

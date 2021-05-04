@@ -6,7 +6,7 @@ cg_java_library(
     name = "geometry",
     srcs = glob(["*.java"]),
     deps = [
-        "//games/spaxel/src/util:buffer_utils",
+        "//engines/voide/src/buffer:buffer_utils",
         "@maven//:org_lwjgl_lwjgl_opengl",
     ],
 )

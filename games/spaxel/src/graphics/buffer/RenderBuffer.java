@@ -1,11 +1,12 @@
 package spaxel.graphics.buffer;
 
-import spaxel.util.BufferUtils;
+import voide.buffer.BufferUtils;
 import java.nio.FloatBuffer;
 import java.util.List;
 
 /**
- * Respresents the Buffer data to be sent to the gpu as part of the rendering of instanced elements
+ * Respresents the Buffer data to be sent to the gpu as part of the rendering of
+ * instanced elements
  */
 public class RenderBuffer {
     private static final int RENDERDATA_ELEMENTS = 4;

@@ -17,6 +17,8 @@ async function compileSvelte(args) {
     format: "esm",
     generate: "dom",
     filename: outputJs,
+    //TODO this should be false but then we need to handle css bundling
+    css: true,
   });
 
   await writeFile(outputJs, result.js.code);

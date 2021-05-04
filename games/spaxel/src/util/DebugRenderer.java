@@ -7,7 +7,7 @@ import spaxel.graphics.buffer.MasterBuffer;
 import spaxel.graphics.buffer.RenderJob;
 import spaxel.graphics.buffer.RenderLayer;
 import spaxel.graphics.texture.Renderable;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.ui.elements.Element;
 import spaxel.Constants;
 import spaxel.engine.Resources;

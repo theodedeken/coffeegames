@@ -1,4 +1,4 @@
-package spaxel.math;
+package voide.math;
 
 /**
  * Represents an axis through the origin with a direction vector

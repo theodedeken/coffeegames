@@ -20,8 +20,8 @@ cg_java_library(
     name = "gamestate",
     srcs = ["GameState.java"],
     deps = [
+        "//engines/voide/src/math",
         "//games/spaxel/src:constants",
-        "//games/spaxel/src/math",
     ],
 )
 
@@ -42,8 +42,8 @@ cg_java_library(
     name = "resources",
     srcs = ["Resources.java"],
     deps = [
+        "//engines/voide/src/collision",
         "//games/spaxel/src:constants",
-        "//games/spaxel/src/collision",
         "//games/spaxel/src/factories/entities",
         "//games/spaxel/src/graphics/animation",
         "//games/spaxel/src/graphics/texture",

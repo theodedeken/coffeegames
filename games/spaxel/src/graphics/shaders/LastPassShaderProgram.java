@@ -1,6 +1,6 @@
 package spaxel.graphics.shaders;
 
-import spaxel.math.MatrixD;
+import voide.math.MatrixD;
 import static org.lwjgl.opengl.GL20.glGetUniformLocation;
 import static org.lwjgl.opengl.GL20.glUniform1i;
 import static org.lwjgl.opengl.GL20.glUniformMatrix4fv;

@@ -7,10 +7,10 @@ cg_java_library(
     name = "element",
     srcs = ["Element.java"] + glob(["logic/*.java"]),
     deps = [
-        "//games/spaxel/src/collision",
+        "//engines/voide/src/collision",
         "//games/spaxel/src/graphics/buffer:master_buffer",
         "//games/spaxel/src/input",
-        "//games/spaxel/src/math",
+        "//engines/voide/src/math",
         "//games/spaxel/src/ui/render",
         "//games/spaxel/src/ui/state",
         "//games/spaxel/src/ui/styles",

@@ -1,6 +1,6 @@
 package spaxel.graphics.texture;
 
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.util.TextureUtil;
 import spaxel.graphics.buffer.RenderJob;
 import spaxel.Constants;
@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+
 /**
  * Represents a texture tree packed together
  */
@@ -16,8 +17,7 @@ public class PackedTexture extends Renderable {
     private int id;
 
     private int fullSize(Map<Integer, List<TextureNode>> nodes) {
-        return nodes.values().stream().map(List::size).reduce(0,
-                (Integer accSize, Integer size) -> accSize += size);
+        return nodes.values().stream().map(List::size).reduce(0, (Integer accSize, Integer size) -> accSize += size);
     }
 
     /**
@@ -76,8 +76,7 @@ public class PackedTexture extends Renderable {
      * Load the data of this texture tree and generate a new texture with it.
      */
     public void load() {
-        this.id = TextureUtil.createGPUTexture(root.getDim(), root.getDim(),
-                root.loadTextureTree());
+        this.id = TextureUtil.createGPUTexture(root.getDim(), root.getDim(), root.loadTextureTree());
         this.dim = new VectorD(root.getDim(), root.getDim());
     }
 
@@ -86,7 +85,7 @@ public class PackedTexture extends Renderable {
     }
 
     public void apply(RenderJob data) {
-        data.setTexOffset(new float[] {0.0F, 0.0F, 1.0F, 1.0F});
+        data.setTexOffset(new float[] { 0.0F, 0.0F, 1.0F, 1.0F });
         data.setSpriteSheetID(id);
         data.applyScale(dim);
     }

@@ -10,7 +10,7 @@ import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.entity.storage.event.EventStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.entity.EntityUtil;
 
 /**
@@ -25,12 +25,11 @@ public class BasicEnemyHandler extends AIHandler {
     }
 
     public void execute(Entity entity) {
-        TransformationStorage playerPos = (TransformationStorage) entity.getStream()
-                .getPlayer().getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage playerPos = (TransformationStorage) entity.getStream().getPlayer()
+                .getComponent(ComponentType.TRANSFORMATION);
 
         StatusStorage ac = (StatusStorage) entity.getComponent(ComponentType.STATUS);
-        TransformationStorage entityPos =
-                (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage entityPos = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
         MoveStorage entityMov = (MoveStorage) entity.getComponent(ComponentType.MOVE);
         ChangeStorage entityVel = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
         VectorD diff = playerPos.getPosition().sum(entityPos.getPosition().multiplicate(-1));
@@ -40,27 +39,25 @@ public class BasicEnemyHandler extends AIHandler {
                 rotToGet += Constants.FULL_CIRCLE;
             }
             double rotChange = rotToGet - entityPos.getRotation();
-            entityVel.setRotationChange(
-                    EntityUtil.calculateDeltaRot(rotChange, entityMov.getTurnRate()));
+            entityVel.setRotationChange(EntityUtil.calculateDeltaRot(rotChange, entityMov.getTurnRate()));
 
-            VectorD velChange = new VectorD(Math.sin(entityPos.getRotation()),
-                    Math.cos(entityPos.getRotation())).multiplicate(entityMov.getAcceleration());
+            VectorD velChange = new VectorD(Math.sin(entityPos.getRotation()), Math.cos(entityPos.getRotation()))
+                    .multiplicate(entityMov.getAcceleration());
 
-            double dist =
-                    playerPos.getPosition().sum(entityPos.getPosition().multiplicate(-1)).length();
+            double dist = playerPos.getPosition().sum(entityPos.getPosition().multiplicate(-1)).length();
             if (dist > DISTANCE_THRESHOLD) {
                 if (entityVel.getPositionChange().sum(velChange).length() < entityMov.getSpeed()) {
                     entityVel.setPositionChange(entityVel.getPositionChange().sum(velChange));
                 } else {
                     // TODO needs a rewrite
-                    entityVel.setPositionChange(entityVel.getPositionChange()
-                            .sum(entityVel.getPositionChange()
-                                    .multiplicate(-1 / entityMov.getSpeed() * SPEED_MULTIPLIER))
-                            .sum(velChange));
+                    entityVel
+                            .setPositionChange(entityVel.getPositionChange()
+                                    .sum(entityVel.getPositionChange()
+                                            .multiplicate(-1 / entityMov.getSpeed() * SPEED_MULTIPLIER))
+                                    .sum(velChange));
                 }
             } else {
-                entityVel.setPositionChange(
-                        entityVel.getPositionChange().sum(velChange.multiplicate(-1)));
+                entityVel.setPositionChange(entityVel.getPositionChange().sum(velChange.multiplicate(-1)));
             }
         }
         if (ac.canShoot()) {

@@ -13,7 +13,7 @@ import spaxel.graphics.buffer.MasterBuffer;
 import spaxel.graphics.texture.PackedTexture;
 import spaxel.graphics.MasterRenderer;
 import spaxel.input.MouseWrapper;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 /**
  * The RenderSystem is responsible for rendering each frame

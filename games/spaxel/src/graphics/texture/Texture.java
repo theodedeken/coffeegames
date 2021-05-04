@@ -1,6 +1,6 @@
 package spaxel.graphics.texture;
 
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.graphics.buffer.RenderJob;
 import java.util.logging.Level;
 import java.util.logging.Logger;

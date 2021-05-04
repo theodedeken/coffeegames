@@ -9,7 +9,7 @@ import spaxel.entity.EntityType;
 import spaxel.entity.Entity;
 import spaxel.system.SystemType;
 import spaxel.factories.entities.EnemyIndustry;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.entity.EntityUtil;
 import spaxel.util.SpaxelRandom;
 import java.util.Set;

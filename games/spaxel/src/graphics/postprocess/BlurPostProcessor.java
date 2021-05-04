@@ -3,7 +3,7 @@ package spaxel.graphics.postprocess;
 import spaxel.Constants;
 import spaxel.graphics.shaders.BlurShaderProgram;
 import spaxel.graphics.shaders.ShaderProgram;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import static org.lwjgl.opengl.GL11.*;
 
 /**

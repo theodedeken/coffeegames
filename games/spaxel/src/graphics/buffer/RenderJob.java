@@ -1,7 +1,7 @@
 
 package spaxel.graphics.buffer;
 
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 /**
  * Represents all data attributes for one render job
@@ -24,7 +24,7 @@ public class RenderJob {
      * Create a new RenderData
      */
     public RenderJob() {
-        trSc = new float[] {0.0F, 0.0F, 1.0F, 1.0F};
+        trSc = new float[] { 0.0F, 0.0F, 1.0F, 1.0F };
         sinCos = new float[ATTRIB_DIM];
         texOffset = new float[ATTRIB_DIM];
         sinCos[ALPHA_INDEX] = 1;

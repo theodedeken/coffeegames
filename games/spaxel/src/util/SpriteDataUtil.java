@@ -2,7 +2,7 @@ package spaxel.util;
 
 import spaxel.graphics.texture.TexturePart;
 import spaxel.graphics.texture.Texture;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 /**
  * Created by theo on 15/07/17.
@@ -22,8 +22,8 @@ public final class SpriteDataUtil {
      * @param width      The width of the generated part.
      * @param height     The height of the generated part.
      * 
-     * @return A new {@link code.graphics.texture.TexturePart} object containing with the properties
-     *         of the generated part.
+     * @return A new {@link code.graphics.texture.TexturePart} object containing
+     *         with the properties of the generated part.
      */
     public static TexturePart getRandomPart(Texture spriteData, int width, int height) {
         int x = random.nextInt((int) spriteData.getDim().getValue(0) - width);

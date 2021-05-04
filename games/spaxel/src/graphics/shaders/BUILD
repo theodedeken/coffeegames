@@ -6,7 +6,7 @@ cg_java_library(
     name = "shaders",
     srcs = glob(["*.java"]),
     deps = [
-        "//games/spaxel/src/math",
+        "//engines/voide/src/math",
         "//games/spaxel/src/util:shader_utils",
         "@maven//:org_lwjgl_lwjgl_opengl",
     ],

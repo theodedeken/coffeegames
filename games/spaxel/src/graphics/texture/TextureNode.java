@@ -1,6 +1,6 @@
 package spaxel.graphics.texture;
 
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 /**
  * Represents a node in the tree representing the sprites in the packed texture
@@ -176,28 +176,27 @@ public class TextureNode {
                         this.getTopLeft().loadTextureTree(), dest);
             }
             if (this.getTopRight() != null) {
-                blitData(this.getDim() / DIM_BASE, 0, this.getDim(), this.getDim() / DIM_BASE,
-                        this.getDim() / DIM_BASE, this.getTopRight().loadTextureTree(), dest);
+                blitData(this.getDim() / DIM_BASE, 0, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
+                        this.getTopRight().loadTextureTree(), dest);
             }
             if (this.getBotLeft() != null) {
-                blitData(0, this.getDim() / DIM_BASE, this.getDim(), this.getDim() / DIM_BASE,
-                        this.getDim() / DIM_BASE, this.getBotLeft().loadTextureTree(), dest);
+                blitData(0, this.getDim() / DIM_BASE, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
+                        this.getBotLeft().loadTextureTree(), dest);
             }
             if (this.getBotRight() != null) {
-                blitData(this.getDim() / DIM_BASE, this.getDim() / DIM_BASE, this.getDim(),
-                        this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
-                        this.getBotRight().loadTextureTree(), dest);
+                blitData(this.getDim() / DIM_BASE, this.getDim() / DIM_BASE, this.getDim(), this.getDim() / DIM_BASE,
+                        this.getDim() / DIM_BASE, this.getBotRight().loadTextureTree(), dest);
             }
             return dest;
         } else {
             Texture texture = this.getTexture();
-            blitData(0, 0, this.getDim(), (int) texture.getDim().getValue(0),
-                    (int) texture.getDim().getValue(1), texture.load(), dest);
+            blitData(0, 0, this.getDim(), (int) texture.getDim().getValue(0), (int) texture.getDim().getValue(1),
+                    texture.load(), dest);
             return dest;
         }
     }
-    private void blitData(int x, int y, int width, int sourceWidth, int sourceHeight,
-            int[] source, int[] dest) {
+
+    private void blitData(int x, int y, int width, int sourceWidth, int sourceHeight, int[] source, int[] dest) {
         for (int i = 0; i < sourceHeight; i++) {
             for (int j = 0; j < sourceWidth; j++) {
                 dest[x + j + ((y + i) * width)] = source[j + i * sourceWidth];

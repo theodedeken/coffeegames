@@ -10,7 +10,7 @@ import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
 import spaxel.factories.entities.ProjectileIndustry;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.engine.Resources;
 
 /**
@@ -24,8 +24,7 @@ public class ClusterMissileDeathComponent extends DeathHandler {
     }
 
     public void die(Entity entity) {
-        TransformationStorage pc =
-                (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage pc = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
         ProjectileIndustry pri = (ProjectileIndustry) Resources.get().getIndustryMap()
                 .get("cluster_shrapnel_projectile_industry");
         double rot = 0;

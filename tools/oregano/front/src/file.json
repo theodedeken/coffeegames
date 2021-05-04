@@ -1,7 +1,7 @@
 {
     "name": "games/spaxel/src/math/Axis.java",
     "content": [
-        "package spaxel.math;",
+        "package voide.math;",
         "",
         "/**",
         " * Represents an axis through the origin with a direction vector",

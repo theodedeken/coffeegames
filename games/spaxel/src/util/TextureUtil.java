@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.HashMap;
 */
 import static org.lwjgl.opengl.GL11.*;
+import voide.buffer.BufferUtils;
 
 /**
  * Provides utility functions for the creation and packing of textures
@@ -18,8 +19,7 @@ public final class TextureUtil {
 
     }
 
-    private static void blitData(int x, int y, int width, int sourceWidth, int sourceHeight,
-            int[] source, int[] dest) {
+    private static void blitData(int x, int y, int width, int sourceWidth, int sourceHeight, int[] source, int[] dest) {
         for (int i = 0; i < sourceHeight; i++) {
             for (int j = 0; j < sourceWidth; j++) {
                 dest[x + j + ((y + i) * width)] = source[j + i * sourceWidth];

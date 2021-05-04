@@ -1,4 +1,4 @@
-package spaxel.math;
+package voide.math;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;

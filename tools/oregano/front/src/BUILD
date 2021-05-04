@@ -14,7 +14,7 @@ filegroup(
 
 genrule(
     name = "dynamic_data",
-    srcs = ["//games/spaxel/src/math:math.checkstyle.rgno"],
+    srcs = ["//engines/voide/src/math:math.checkstyle.rgno"],
     outs = ["data.json"],
     cmd = "cp $< $@",
 )

@@ -10,7 +10,7 @@ import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
 import spaxel.factories.entities.ProjectileIndustry;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.engine.Resources;
 
 /**
@@ -28,8 +28,7 @@ public class ShootHandler extends EventHandler {
         CooldownStorage cdStore = (CooldownStorage) entity.getComponent(ComponentType.COOLDOWN);
         if (cdStore.getCurrentCooldown() == 0) {
             Entity parent = entity.getParent();
-            TransformationStorage pc =
-                    (TransformationStorage) parent.getComponent(ComponentType.TRANSFORMATION);
+            TransformationStorage pc = (TransformationStorage) parent.getComponent(ComponentType.TRANSFORMATION);
             StackStorage sc = (StackStorage) entity.getComponent(ComponentType.STACK);
             ShootStorage shtStore = (ShootStorage) entity.getComponent(ComponentType.SHOOT);
             ProjectileIndustry pri = (ProjectileIndustry) Resources.get().getIndustryMap()

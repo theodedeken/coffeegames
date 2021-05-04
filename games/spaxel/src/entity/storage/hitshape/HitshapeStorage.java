@@ -1,6 +1,6 @@
 package spaxel.entity.storage.hitshape;
 
-import spaxel.collision.HitShape;
+import voide.collision.HitShape;
 import spaxel.entity.Storage;
 import spaxel.entity.ComponentType;
 import spaxel.engine.Resources;

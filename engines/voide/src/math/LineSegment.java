@@ -1,4 +1,4 @@
-package spaxel.math;
+package voide.math;
 
 /**
  * Represents a line segment between two vectors

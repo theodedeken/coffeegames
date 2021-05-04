@@ -1,6 +1,6 @@
 package spaxel.graphics.texture;
 
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import spaxel.graphics.buffer.RenderJob;
 

@@ -1,7 +1,7 @@
-package spaxel.collision;
+package voide.collision;
 
-import spaxel.math.MatrixD;
-import spaxel.math.VectorD;
+import voide.math.MatrixD;
+import voide.math.VectorD;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

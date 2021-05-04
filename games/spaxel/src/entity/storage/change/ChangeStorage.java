@@ -2,7 +2,7 @@ package spaxel.entity.storage.change;
 
 import spaxel.entity.Storage;
 import spaxel.entity.ComponentType;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 /**
  * Created by theo on 3/06/17.

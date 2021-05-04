@@ -1,6 +1,6 @@
 package spaxel.graphics.geometry;
 
-import spaxel.util.BufferUtils;
+import voide.buffer.BufferUtils;
 import static org.lwjgl.opengl.GL11.GL_FLOAT;
 import static org.lwjgl.opengl.GL15.*;
 import static org.lwjgl.opengl.GL20.*;
@@ -15,12 +15,11 @@ public class Quad {
     private int vbo;
     private int ibo;
     private int tbo;
-    private static final float[] VERTICES =
-            new float[] {-.5F, -.5F, 0, -.5F, .5F, 0, .5F, .5F, 0, .5F, -.5F, 0};
+    private static final float[] VERTICES = new float[] { -.5F, -.5F, 0, -.5F, .5F, 0, .5F, .5F, 0, .5F, -.5F, 0 };
 
-    private static final byte[] INDICES = new byte[] {0, 1, 3, 3, 1, 2};
+    private static final byte[] INDICES = new byte[] { 0, 1, 3, 3, 1, 2 };
 
-    private static final float[] TEX_COORDS = new float[] {0, 1, 0, 0, 1, 0, 1, 1};
+    private static final float[] TEX_COORDS = new float[] { 0, 1, 0, 0, 1, 0, 1, 1 };
 
     private static final int VERTEX_DIM = 3;
     private static final int TEXTURE_DIM = 2;
@@ -46,8 +45,7 @@ public class Quad {
 
         ibo = glGenBuffers();
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, BufferUtils.createByteBuffer(INDICES),
-                GL_STATIC_DRAW);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, BufferUtils.createByteBuffer(INDICES), GL_STATIC_DRAW);
     }
 
     /**

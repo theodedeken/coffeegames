@@ -3,7 +3,7 @@ package spaxel.ui.render;
 import spaxel.ui.styles.Style;
 import spaxel.graphics.buffer.MasterBuffer;
 import spaxel.graphics.texture.Renderable;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.graphics.buffer.RenderJob;
 import spaxel.graphics.buffer.RenderLayer;
 import spaxel.ui.state.State;
@@ -54,7 +54,7 @@ public class StyleRenderer {
                         Double.parseDouble(style.getProperty("y", currentState)))
                                 .sum(derivePosition(style.getParent(), currentState, index));
             case "flow":
-                return deriveFlowPosition(style, currentState,  index);
+                return deriveFlowPosition(style, currentState, index);
             case "absolute":
             default:
                 return new VectorD(Double.parseDouble(style.getProperty("x", currentState)),
@@ -91,8 +91,7 @@ public class StyleRenderer {
     private void renderAnimation(VectorD position, double rot, double scale, Style style, State currentState,
             MasterBuffer buffer) {
         double completion = Double.parseDouble(style.getProperty("completion", currentState));
-        RenderJob data = animationAtlas.get(style.getProperty("animation", currentState))
-                .getDataAt(completion);
+        RenderJob data = animationAtlas.get(style.getProperty("animation", currentState)).getDataAt(completion);
         data.applyTranslation(position);
         data.applyRot(rot);
         data.applyScale(scale);

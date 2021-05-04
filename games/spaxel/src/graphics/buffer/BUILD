@@ -5,7 +5,7 @@ package(default_visibility = ["//games/spaxel:__subpackages__"])
 cg_java_library(
     name = "render_job",
     srcs = ["RenderJob.java"],
-    deps = ["//games/spaxel/src/math"],
+    deps = ["//engines/voide/src/math"],
 )
 
 cg_java_library(
@@ -32,7 +32,7 @@ cg_java_library(
     srcs = ["RenderBuffer.java"],
     deps = [
         ":render_job",
-        "//games/spaxel/src/util:buffer_utils",
+        "//engines/voide/src/buffer:buffer_utils",
     ],
 )
 

@@ -12,7 +12,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import spaxel.collision.HitShape;
+import voide.collision.HitShape;
 import spaxel.engine.ItemCatalogue;
 import spaxel.engine.ItemProperties;
 import spaxel.factories.entities.EntityIndustry;

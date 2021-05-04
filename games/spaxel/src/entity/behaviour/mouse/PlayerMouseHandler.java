@@ -11,7 +11,7 @@ import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
 import spaxel.input.MouseWrapper;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.entity.EntityUtil;
 
 public class PlayerMouseHandler extends MouseHandler {
@@ -22,15 +22,14 @@ public class PlayerMouseHandler extends MouseHandler {
     public void handle(Entity entity, MouseWrapper mouse) {
         StatusStorage statStore = (StatusStorage) entity.getComponent(ComponentType.STATUS);
 
-        TransformationStorage trnsStore =
-                (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage trnsStore = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
         ChangeStorage chngStore = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
         MoveStorage mvStore = (MoveStorage) entity.getComponent(ComponentType.MOVE);
 
         VectorD mousePos = mouse.getPos();
 
-        VectorD diff = mousePos.sum(trnsStore.getPosition()
-                .sum(Engine.get().getGameState().getScreenOffset()).multiplicate(-1));
+        VectorD diff = mousePos
+                .sum(trnsStore.getPosition().sum(Engine.get().getGameState().getScreenOffset()).multiplicate(-1));
         double rotToGet = diff.angle();
 
         if (rotToGet < 0) {

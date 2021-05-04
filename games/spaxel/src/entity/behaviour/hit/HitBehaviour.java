@@ -1,14 +1,14 @@
 package spaxel.entity.behaviour.hit;
 
 import java.util.Set;
-import spaxel.collision.HitShape;
+import voide.collision.HitShape;
 import spaxel.entity.Behaviour;
 import spaxel.entity.ComponentType;
 import spaxel.entity.storage.hitshape.HitshapeStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
-import spaxel.math.MatrixD;
+import voide.math.MatrixD;
 import spaxel.util.MatrixUtil;
 
 /**

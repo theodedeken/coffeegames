@@ -9,7 +9,7 @@ import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.Entity;
 import spaxel.input.Key;
 import spaxel.input.Keyboard;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 
 public class PlayerKeyboardHandler extends KeyboardHandler {
     public PlayerKeyboardHandler() {
@@ -22,18 +22,17 @@ public class PlayerKeyboardHandler extends KeyboardHandler {
         if (statStore.canMove()) {
             ChangeStorage chngStore = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
             MoveStorage mvStore = (MoveStorage) entity.getComponent(ComponentType.MOVE);
-            TransformationStorage trnsStore =
-                    (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+            TransformationStorage trnsStore = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
 
             VectorD velChange = chngStore.getPositionChange()
                     .multiplicate(-1 / (mvStore.getSpeed() * Constants.SPEED_MULT));
             if (keyboard.get(Key.DOWN).isDown()) {
-                velChange = new VectorD(-Math.sin(trnsStore.getRotation()),
-                        -Math.cos(trnsStore.getRotation())).multiplicate(mvStore.getAcceleration());
+                velChange = new VectorD(-Math.sin(trnsStore.getRotation()), -Math.cos(trnsStore.getRotation()))
+                        .multiplicate(mvStore.getAcceleration());
             }
             if (keyboard.get(Key.UP).isDown()) {
-                velChange = new VectorD(Math.sin(trnsStore.getRotation()),
-                        Math.cos(trnsStore.getRotation())).multiplicate(mvStore.getAcceleration());
+                velChange = new VectorD(Math.sin(trnsStore.getRotation()), Math.cos(trnsStore.getRotation()))
+                        .multiplicate(mvStore.getAcceleration());
             }
             if (keyboard.get(Key.LEFT).isDown()) {
                 velChange = new VectorD(Math.sin(trnsStore.getRotation() - Constants.HALF_CIRLCE),
@@ -49,8 +48,8 @@ public class PlayerKeyboardHandler extends KeyboardHandler {
             if (chngStore.getPositionChange().sum(velChange).length() < mvStore.getSpeed()) {
                 chngStore.setPositionChange(chngStore.getPositionChange().sum(velChange));
             } else {
-                chngStore.setPositionChange(chngStore.getPositionChange().sum(chngStore
-                        .getPositionChange().multiplicate(-1 / (mvStore.getSpeed() * Constants.SPEED_MULT))));
+                chngStore.setPositionChange(chngStore.getPositionChange().sum(
+                        chngStore.getPositionChange().multiplicate(-1 / (mvStore.getSpeed() * Constants.SPEED_MULT))));
             }
         }
     }

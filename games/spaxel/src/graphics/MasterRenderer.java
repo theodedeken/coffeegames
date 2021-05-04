@@ -19,14 +19,14 @@ import spaxel.graphics.buffer.RenderJob;
 import spaxel.graphics.buffer.RenderBuffer;
 import spaxel.graphics.geometry.Quad;
 import spaxel.graphics.geometry.InstancedQuad;
-import spaxel.math.MatrixD;
+import voide.math.MatrixD;
 import spaxel.util.MatrixUtil;
-import spaxel.math.VectorD;
+import voide.math.VectorD;
 import spaxel.Constants;
 
 /**
- * holds all the spritesheets and data of shaders, vertices, can switch between spritesheets, load
- * the buffers and render instanced.
+ * holds all the spritesheets and data of shaders, vertices, can switch between
+ * spritesheets, load the buffers and render instanced.
  *
  *
  */
@@ -49,12 +49,10 @@ public class MasterRenderer {
     }
 
     private void initialize() {
-        MatrixD projectionMatrix =
-                MatrixUtil.orthographic(-Constants.GAME_WIDTH / TWO, Constants.GAME_WIDTH / TWO,
-                        -Constants.GAME_HEIGHT / TWO, Constants.GAME_HEIGHT / TWO, -1.0, 1.0);
+        MatrixD projectionMatrix = MatrixUtil.orthographic(-Constants.GAME_WIDTH / TWO, Constants.GAME_WIDTH / TWO,
+                -Constants.GAME_HEIGHT / TWO, Constants.GAME_HEIGHT / TWO, -1.0, 1.0);
 
-        BlurShaderProgram blurPassProgram =
-                new BlurShaderProgram("/shaders/blur_pass.vert", "/shaders/blur_pass.frag");
+        BlurShaderProgram blurPassProgram = new BlurShaderProgram("/shaders/blur_pass.vert", "/shaders/blur_pass.frag");
         blurPassProgram.enable();
         blurPassProgram.setTexSampler(1);
         blurPassProgram.setRadius(1);
@@ -62,16 +60,14 @@ public class MasterRenderer {
         blurPassProgram.setSize(BLUR_SIZE);
         blurPostProcessor = new BlurPostProcessor(blurPassProgram);
 
-        lastPassProgram =
-                new LastPassShaderProgram("/shaders/last_pass.vert", "/shaders/last_pass.frag");
+        lastPassProgram = new LastPassShaderProgram("/shaders/last_pass.vert", "/shaders/last_pass.frag");
         lastPassProgram.enable();
         lastPassProgram.setTexSampler(1);
         lastPassProgram.setProjectionMatrix(projectionMatrix);
-        lastPassProgram.setTranslationMatrix(MatrixUtil.getTransformationMatrix(new VectorD(0, 0),
-                0, new VectorD(Constants.GAME_WIDTH, Constants.GAME_HEIGHT)));
+        lastPassProgram.setTranslationMatrix(MatrixUtil.getTransformationMatrix(new VectorD(0, 0), 0,
+                new VectorD(Constants.GAME_WIDTH, Constants.GAME_HEIGHT)));
 
-        instancedShader =
-                new InstancedShaderProgram("/shaders/2Dsprite.vert", "/shaders/2Dsprite.frag");
+        instancedShader = new InstancedShaderProgram("/shaders/2Dsprite.vert", "/shaders/2Dsprite.frag");
         instancedShader.enable();
         instancedShader.setTexSampler(1);
         instancedShader.setProjectionMatrix(projectionMatrix);
@@ -131,8 +127,7 @@ public class MasterRenderer {
 
             glBindTexture(GL_TEXTURE_2D, spritesheet);
 
-            glDrawElementsInstanced(GL_TRIANGLES, allQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0,
-                    buffer.size());
+            glDrawElementsInstanced(GL_TRIANGLES, allQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0, buffer.size());
         }
     }
 
