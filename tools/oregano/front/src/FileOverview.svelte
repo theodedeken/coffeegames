@@ -2,23 +2,35 @@
   import hljs from "highlight.js";
   import "highlight.js/styles/atom-one-dark.css";
   import Line from "./Line.svelte";
-  import * as testdata from "./file.json";
   import FileHeader from "./FileHeader.svelte";
+  import { getFile } from "./api.js";
 
-  export let content = testdata.content;
-  export let name = testdata.name;
+  export let params;
+  let file;
+  let content;
+  let name;
+  let filename;
+  let rest;
+  let breadcrumbs;
+  let lines;
 
-  const highlightedCode = hljs.highlight(content.join("\n"), {
-    language: "java",
-  }).value;
-  const lines = highlightedCode.split("\n");
-  let rest = "";
-  let breadcrumbs = name.split("/").map((el) => {
-    rest += "/" + el;
-    return { directory: el, path: rest };
-  });
-  breadcrumbs.pop();
-  let filename = name.split("/")[breadcrumbs.length];
+  $: {
+    file = getFile(params.wild);
+    content = file.content;
+    name = params.wild;
+
+    const highlightedCode = hljs.highlight(content.join("\n"), {
+      language: "java",
+    }).value;
+    lines = highlightedCode.split("\n");
+    rest = "";
+    breadcrumbs = name.split("/").map((el) => {
+      rest += "/" + el;
+      return { directory: el, path: rest };
+    });
+    breadcrumbs.pop();
+    filename = name.split("/")[breadcrumbs.length];
+  }
 </script>
 
 <div>

@@ -14,6 +14,14 @@ export function getTree(subpath) {
   }
 }
 
+export function getFile(path) {
+  let file = testData.default
+    .map((el) => el.files)
+    .flat()
+    .filter((el) => el.file_name === path)[0];
+  return { ...file, overview: computeSummary(file.checks) };
+}
+
 function createTreeResponse(files, subpath) {
   let entries = createEntries(files, subpath);
   let checks = combineCheckSummaries(entries.map((entry) => entry.checks));

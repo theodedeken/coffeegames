@@ -16,7 +16,6 @@
   }
 
   $: {
-    console.log(params);
     if (params) {
       tree = getTree(params.wild);
     } else {
