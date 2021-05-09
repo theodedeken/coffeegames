@@ -38,6 +38,7 @@ http_server(
     name = "serve_oregano",
     args = ["tools/oregano/front/oregano"],
     data = [":oregano"],
+    visibility = ["//visibility:public"],
 )
 
 """

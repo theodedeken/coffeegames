@@ -3,3 +3,9 @@ py_binary(
     srcs = ["oregano_merger.py"],
     visibility = ["//visibility:public"],
 )
+
+py_binary(
+    name = "oregano_autoupdate",
+    srcs = ["oregano_autoupdate.py"],
+    visibility = ["//visibility:public"],
+)

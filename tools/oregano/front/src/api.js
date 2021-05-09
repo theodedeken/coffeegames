@@ -28,7 +28,6 @@ function createEntries(files, subpath) {
   let entries = new Map();
   for (let file of files) {
     let first = file.file_name.replace(subpath, "").split("/")[0];
-    console.log(first);
     if (!entries.has(first)) {
       entries.set(first, []);
     }
