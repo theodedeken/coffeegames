@@ -10,20 +10,16 @@ def convert(input_file, error_code, file_prefix, output_file):
     out = {
         "exit_code": int(open(error_code, "r").read()),
         "file_prefix": prefix,
-        "tree": {},
+        "files": [],
     }
     for file_check in root:
         full_path = file_check.attrib["name"].replace(prefix + "/", "")
-        current = out["tree"]
-        for path_el in full_path.split("/"):
-            if path_el not in current:
-                current[path_el] = {}
-            current = current[path_el]
+        file_info = {"file_name": full_path, "checks": []}
 
-        current["checks"] = []
         for error in file_check:
-            current["checks"].append(error.attrib)
-    json.dump(out, open(output_file, "w"))
+            file_info["checks"].append(error.attrib)
+        out["files"].append(file_info)
+    json.dump([out], open(output_file, "w"))
 
 
 if __name__ == "__main__":

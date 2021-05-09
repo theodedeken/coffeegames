@@ -6,6 +6,7 @@ def checkstyle_test(name, label):
         name = "%s.rgno" % name,
         label = label,
         visibility = ["//visibility:public"],
+        tags = ["RGNO", "JAVA"],
     )
     oregano_test(
         name = name,

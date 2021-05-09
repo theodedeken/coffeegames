@@ -82,33 +82,36 @@ def print_message(message, severity, column=None):
         print(color_string(shifted, "red"))
 
 
-def print_checks(tree, subpath):
-    for el in tree:
-        if el == "checks":
-            file_path = "/".join(subpath)
-            for check in tree[el]:
-                location = f":{check['line']}"
-                if "column" in check:
-                    location += f":{check['column']}"
-                print(
-                    f"{format_severity(check['severity'])}\u001b[30;1m{check['source']}\u001b[0m"
-                )
-                print(f"  --> \u001b[36m{file_path}{location}\u001b[0m")
-                if "column" in check:
-                    column = int(check["column"])
-                else:
-                    column = None
-                print_code_excerpt(
-                    file_path,
-                    check["message"],
-                    check["severity"],
-                    int(check["line"]),
-                    column=column,
-                )
-                print()
+def print_check(check, file_path):
+    location = f":{check['line']}"
+    if "column" in check:
+        location += f":{check['column']}"
+    print(
+        f"{format_severity(check['severity'])}\u001b[30;1m{check['source']}\u001b[0m"
+    )
+    print(f"  --> \u001b[36m{file_path}{location}\u001b[0m")
+    if "column" in check:
+        column = int(check["column"])
+    else:
+        column = None
+    print_code_excerpt(
+        file_path,
+        check["message"],
+        check["severity"],
+        int(check["line"]),
+        column=column,
+    )
+    print()
 
-        else:
-            print_checks(tree[el], subpath + [el])
+
+def print_file(file_obj):
+    for check in file_obj["checks"]:
+        print_check(check, file_obj["file_name"])
+
+
+def print_run(run):
+    for f in run["files"]:
+        print_file(f)
 
 
 if __name__ == "__main__":
@@ -121,6 +124,7 @@ if __name__ == "__main__":
         help="The file to check",
     )
     args = parser.parse_args()
-    checks = json.load(open(args.oregano_file))
-    print_checks(checks["tree"], [])
-    exit(checks["exit_code"])
+    runs = json.load(open(args.oregano_file))
+    print_run(runs[0])
+
+    exit(runs[0]["exit_code"])

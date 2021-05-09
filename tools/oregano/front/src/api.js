@@ -1,48 +1,56 @@
 import * as testData from "./data.json";
 
 export function getTree(subpath) {
-  let current = testData["tree"];
+  let files = testData.default.map((el) => el.files).flat();
+
   if (subpath) {
-    if (subpath.endsWith("/")) {
-      subpath = subpath.substring(0, subpath.length - 1);
+    if (!subpath.endsWith("/")) {
+      subpath += "/";
     }
-    let parts = subpath.split("/");
-    for (let part of parts) {
-      current = current[part];
-    }
+    let selected = files.filter((f) => f.file_name.includes(subpath));
+    return createTreeResponse(selected, subpath);
+  } else {
+    return createTreeResponse(files, "");
   }
-  return treeResponse(current, subpath);
 }
 
-function treeResponse(tree, subpath) {
+function createTreeResponse(files, subpath) {
+  let entries = createEntries(files, subpath);
+  let checks = combineCheckSummaries(entries.map((entry) => entry.checks));
   return {
     subpath: subpath,
-    checks: computeCheckSummary(tree),
-    entries: Object.keys(tree).map((el) => ({
-      name: el,
-      file: el.includes("."),
-      checks: computeCheckSummary(tree[el]),
-    })),
+    checks: checks,
+    entries: entries,
   };
 }
 
-function computeCheckSummary(tree) {
+function createEntries(files, subpath) {
+  let entries = new Map();
+  for (let file of files) {
+    let first = file.file_name.replace(subpath, "").split("/")[0];
+    console.log(first);
+    if (!entries.has(first)) {
+      entries.set(first, []);
+    }
+    entries.get(first).push(file);
+  }
+  return [...entries.entries()].map((pair) => ({
+    name: pair[0],
+    file: pair[0].includes("."),
+    checks: combineCheckSummaries(
+      pair[1].map((file) => computeSummary(file.checks))
+    ),
+  }));
+}
+
+function combineCheckSummaries(summaries) {
   let errors = 0;
   let warnings = 0;
   let infos = 0;
-  if ("checks" in tree) {
-    let overview = computeSummary(tree.checks);
-    errors += overview.errors;
-    warnings += overview.warnings;
-    infos += overview.infos;
-  } else {
-    let children = Object.keys(tree);
-    for (let child of children) {
-      let overview = computeCheckSummary(tree[child]);
-      errors += overview.errors;
-      warnings += overview.warnings;
-      infos += overview.infos;
-    }
+  for (let summary of summaries) {
+    errors += summary.errors;
+    warnings += summary.warnings;
+    infos += summary.infos;
   }
   return {
     errors: errors,

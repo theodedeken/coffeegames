@@ -10,7 +10,7 @@
   $: {
     entryLink = file ? "/file/" : "/tree/";
     if (subpath != "") {
-      entryLink += subpath + "/" + name;
+      entryLink += subpath + name;
     } else {
       entryLink += name;
     }

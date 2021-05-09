@@ -15,7 +15,11 @@ table File {
     checks:[Check];
 }
 
-table Target {
+table Run {
     files:[File];
+    exit_code:uint16;
+    file_prefix:string;
 }
+
+root_type:[Run];
 

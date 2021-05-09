@@ -1,4 +1,4 @@
-load("//bazel/build:defs.bzl", "svelte_component")
+load("//bazel/build:defs.bzl", "oregano_merge", "svelte_component")
 
 exports_files(["main.js"])
 
@@ -12,9 +12,18 @@ filegroup(
     ],
 )
 
+oregano_merge(
+    name = "more_data",
+    srcs = [
+        "//engines/voide/src/buffer:buffer_utils.checkstyle.rgno",
+        "//engines/voide/src/collision:collision.checkstyle.rgno",
+        "//engines/voide/src/math:math.checkstyle.rgno",
+    ],
+)
+
 genrule(
     name = "dynamic_data",
-    srcs = ["//engines/voide/src/math:math.checkstyle.rgno"],
+    srcs = [":more_data"],
     outs = ["data.json"],
     cmd = "cp $< $@",
 )
