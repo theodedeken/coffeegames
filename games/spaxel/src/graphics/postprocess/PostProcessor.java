@@ -1,6 +1,6 @@
 package spaxel.graphics.postprocess;
 
-import spaxel.graphics.geometry.Quad;
+import voide.graphics.geometry.Quad;
 import spaxel.graphics.shaders.ShaderProgram;
 
 /**
@@ -23,7 +23,8 @@ public abstract class PostProcessor {
     }
 
     /**
-     * Execute the postprocessing step on the in data writing the result to the out data
+     * Execute the postprocessing step on the in data writing the result to the out
+     * data
      * 
      * @param in  framebuffer object with the inputdata
      * @param out framebuffer object with the outputdata

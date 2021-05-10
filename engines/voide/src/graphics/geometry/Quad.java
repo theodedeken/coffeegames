@@ -1,4 +1,4 @@
-package spaxel.graphics.geometry;
+package voide.graphics.geometry;
 
 import voide.buffer.BufferUtils;
 import static org.lwjgl.opengl.GL11.GL_FLOAT;
