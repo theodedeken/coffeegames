@@ -1,4 +1,4 @@
-package spaxel.input;
+package voide.input;
 
 /**
  * The different keys in the game

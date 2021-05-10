@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.keyboard;
 
 import spaxel.entity.Entity;
-import spaxel.input.Keyboard;
+import voide.input.Keyboard;
 
 public abstract class KeyboardHandler {
     private KeyboardHandlerType type;
@@ -25,6 +25,5 @@ public abstract class KeyboardHandler {
     public void setType(KeyboardHandlerType type) {
         this.type = type;
     }
-
 
 }

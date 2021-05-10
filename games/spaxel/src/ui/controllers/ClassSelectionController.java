@@ -3,8 +3,8 @@ package spaxel.ui.controllers;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
 import spaxel.engine.Resources;
-import spaxel.input.Key;
-import spaxel.input.Keyboard;
+import voide.input.Key;
+import voide.input.Keyboard;
 import spaxel.ui.elements.UIType;
 import spaxel.ui.elements.Element;
 

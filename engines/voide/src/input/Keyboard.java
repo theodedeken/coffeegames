@@ -1,4 +1,4 @@
-package spaxel.input;
+package voide.input;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package spaxel.input;
+package voide.input;
 
 import static org.lwjgl.glfw.GLFW.*;
 

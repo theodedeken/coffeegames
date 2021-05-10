@@ -5,7 +5,7 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.*;
 import spaxel.engine.Engine;
-import spaxel.input.MouseWrapper;
+import voide.input.MouseWrapper;
 import spaxel.system.RenderSystem;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import java.util.logging.Level;
@@ -55,7 +55,7 @@ public class DisplayRunner implements Runnable {
         LOGGER.log(Level.INFO, "OpenGL: {0}", glGetString(GL_VERSION));
 
         // Setup mouse callback
-        MouseWrapper mouseWrapper = new MouseWrapper(window);
+        MouseWrapper mouseWrapper = new MouseWrapper(window, Constants.GAME_HEIGHT);
         glfwSetCursorPosCallback(window, mouseWrapper);
         // Set mouse and window in engine
         Engine.get().setMouseWrapper(mouseWrapper);

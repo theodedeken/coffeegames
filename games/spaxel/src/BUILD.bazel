@@ -30,6 +30,7 @@ cg_java_binary(
     deps = [
         "//engines/voide/src/collision",
         "//engines/voide/src/graphics/geometry",
+        "//engines/voide/src/input",
         "//engines/voide/src/math",
         "//engines/voide/src/sound",
         "//games/spaxel/src/graphics/animation",
@@ -45,7 +46,6 @@ cg_java_binary(
         "//games/spaxel/src/graphics/texture:packed_texture",
         "//games/spaxel/src/graphics/texture:renderable",
         "//games/spaxel/src/graphics/texture:texture_part",
-        "//games/spaxel/src/input",
         "//games/spaxel/src/logger",
         "//games/spaxel/src/sound:music_list",
         "//games/spaxel/src/ui/elements:ui_type",

@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.mouse;
 
 import spaxel.entity.Entity;
-import spaxel.input.MouseWrapper;
+import voide.input.MouseWrapper;
 
 public class ShootPrimaryMouseHandler extends MouseHandler {
     public ShootPrimaryMouseHandler() {

@@ -10,14 +10,14 @@ import spaxel.entity.Entity;
 import spaxel.engine.Resources;
 import spaxel.system.SystemType;
 import spaxel.factories.elements.ElementCreator;
-import spaxel.input.Keyboard;
+import voide.input.Keyboard;
 import spaxel.util.DebugRenderer;
 import spaxel.ui.elements.Element;
 import spaxel.ui.elements.UIType;
 import java.util.Set;
 import spaxel.Constants;
 import spaxel.logger.Logger;
-import spaxel.input.Key;
+import voide.input.Key;
 
 /**
  * Callbacks for the elements in the play UI.

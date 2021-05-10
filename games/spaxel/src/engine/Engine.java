@@ -1,8 +1,8 @@
 package spaxel.engine;
 
 import spaxel.Game;
-import spaxel.input.Keyboard;
-import spaxel.input.MouseWrapper;
+import voide.input.Keyboard;
+import voide.input.MouseWrapper;
 import spaxel.logger.Logger;
 import spaxel.ui.elements.UIType;
 import spaxel.ui.elements.UI;

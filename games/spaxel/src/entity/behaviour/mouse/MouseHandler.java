@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.mouse;
 
 import spaxel.entity.Entity;
-import spaxel.input.MouseWrapper;
+import voide.input.MouseWrapper;
 
 public abstract class MouseHandler {
     private MouseHandlerType type;
@@ -25,6 +25,5 @@ public abstract class MouseHandler {
     public void setType(MouseHandlerType type) {
         this.type = type;
     }
-
 
 }

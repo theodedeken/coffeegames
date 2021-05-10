@@ -12,7 +12,7 @@ import spaxel.system.SystemType;
 import spaxel.graphics.buffer.MasterBuffer;
 import spaxel.graphics.texture.PackedTexture;
 import spaxel.graphics.MasterRenderer;
-import spaxel.input.MouseWrapper;
+import voide.input.MouseWrapper;
 import voide.math.VectorD;
 
 /**

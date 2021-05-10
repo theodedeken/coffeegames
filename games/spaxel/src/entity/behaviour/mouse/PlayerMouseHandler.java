@@ -10,7 +10,7 @@ import spaxel.entity.storage.status.StatusStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
-import spaxel.input.MouseWrapper;
+import voide.input.MouseWrapper;
 import voide.math.VectorD;
 import spaxel.entity.EntityUtil;
 

@@ -1,7 +1,6 @@
-package spaxel.input;
+package voide.input;
 
 import org.lwjgl.glfw.GLFWCursorPosCallback;
-import spaxel.Constants;
 import voide.math.VectorD;
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -16,14 +15,16 @@ public class MouseWrapper extends GLFWCursorPosCallback {
 	private KeyState mouse2;
 	private KeyState mouse3;
 	private long window;
+	private int gameHeight;
 
 	/**
 	 * Create a new MouseWrapper
 	 * 
 	 * @param window the window in which the mouse lives
 	 */
-	public MouseWrapper(long window) {
+	public MouseWrapper(long window, int gameHeight) {
 		this.window = window;
+		this.gameHeight = gameHeight;
 		mouse1 = new KeyState();
 		mouse2 = new KeyState();
 		mouse3 = new KeyState();
@@ -53,7 +54,7 @@ public class MouseWrapper extends GLFWCursorPosCallback {
 	@Override
 	public void invoke(long l, double xPos, double yPos) {
 		x = (int) xPos;
-		y = Constants.GAME_HEIGHT - (int) yPos;
+		y = this.gameHeight - (int) yPos;
 	}
 
 	/**

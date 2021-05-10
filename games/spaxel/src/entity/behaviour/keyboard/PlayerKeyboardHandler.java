@@ -7,8 +7,8 @@ import spaxel.entity.storage.move.MoveStorage;
 import spaxel.entity.storage.status.StatusStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.Entity;
-import spaxel.input.Key;
-import spaxel.input.Keyboard;
+import voide.input.Key;
+import voide.input.Keyboard;
 import voide.math.VectorD;
 
 public class PlayerKeyboardHandler extends KeyboardHandler {

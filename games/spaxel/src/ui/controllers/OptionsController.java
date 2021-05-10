@@ -1,11 +1,11 @@
 package spaxel.ui.controllers;
 
 import spaxel.engine.Engine;
-import spaxel.input.Keyboard;
+import voide.input.Keyboard;
 import spaxel.ui.elements.UIType;
 import spaxel.ui.elements.Element;
 import spaxel.engine.Resources;
-import spaxel.input.Key;
+import voide.input.Key;
 
 /**
  * Callbacks for elements in the options UI
@@ -46,7 +46,8 @@ public final class OptionsController {
     }
 
     /**
-     * Checks whether the esc key is pressed and goes to the previous screen if that is the case
+     * Checks whether the esc key is pressed and goes to the previous screen if that
+     * is the case
      * 
      * @param element the calling element
      */

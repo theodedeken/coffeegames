@@ -2,7 +2,7 @@ package spaxel.ui.elements.logic;
 
 import voide.collision.HitShape;
 import voide.collision.HitPoint;
-import spaxel.input.MouseWrapper;
+import voide.input.MouseWrapper;
 import voide.math.VectorD;
 import voide.math.MatrixD;
 import spaxel.ui.elements.Element;
