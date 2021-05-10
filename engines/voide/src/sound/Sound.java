@@ -1,4 +1,4 @@
-package spaxel.sound;
+package voide.sound;
 
 import java.io.IOException;
 import java.net.URL;

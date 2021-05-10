@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import spaxel.util.SpaxelRandom;
 import spaxel.engine.GameState;
+import voide.sound.Music;
 
 /**
  * Created by theo on 12/01/18.
@@ -14,7 +15,7 @@ public class MusicList {
     private List<Music> alreadyPlayed;
     private Map<String, Music> music;
     private SpaxelRandom random;
-    private static final int[] PROBABILITIES = {0, 0, 0, 10, 5, 1, 3, 10, 3, 1, 5, 10};
+    private static final int[] PROBABILITIES = { 0, 0, 0, 10, 5, 1, 3, 10, 3, 1, 5, 10 };
     private static final int TIME_THRESHOLD_1 = 600;
     private static final int TIME_THRESHOLD_2 = 1200;
     private static final int OFFSET_1 = 3;

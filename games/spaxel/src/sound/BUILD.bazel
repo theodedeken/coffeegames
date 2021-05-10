@@ -3,9 +3,10 @@ load("//bazel:macros.bzl", "cg_java_library")
 package(default_visibility = ["//games/spaxel:__subpackages__"])
 
 cg_java_library(
-    name = "sound",
-    srcs = glob(["*.java"]),
+    name = "music_list",
+    srcs = ["MusicList.java"],
     deps = [
+        "//engines/voide/src/sound",
         "//games/spaxel/src/engine:gamestate",
         "//games/spaxel/src/util:spaxel_random",
     ],

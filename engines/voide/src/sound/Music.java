@@ -1,4 +1,4 @@
-package spaxel.sound;
+package voide.sound;
 
 public class Music extends Sound {
 	private String name;

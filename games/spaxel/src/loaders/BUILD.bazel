@@ -7,12 +7,12 @@ cg_java_library(
     srcs = glob(["*.java"]),
     deps = [
         "//engines/voide/src/collision",
+        "//engines/voide/src/sound",
         "//games/spaxel/src/engine:item_catalogue",
         "//games/spaxel/src/factories/entities",
         "//games/spaxel/src/graphics/animation",
         "//games/spaxel/src/graphics/texture",
         "//games/spaxel/src/input",
-        "//games/spaxel/src/sound",
         "//games/spaxel/src/ui/elements:ui",
         "//games/spaxel/src/ui/elements:ui_type",
         "@maven//:com_fasterxml_jackson_core_jackson_core",
