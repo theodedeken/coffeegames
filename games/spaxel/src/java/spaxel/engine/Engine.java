@@ -8,6 +8,7 @@ import spaxel.ui.elements.UIType;
 import spaxel.ui.elements.UI;
 import spaxel.sound.MusicList;
 import spaxel.entity.EntityStream;
+import voide.sound.Music;
 
 public final class Engine {
 	private static final Engine engine = new Engine();
@@ -42,7 +43,7 @@ public final class Engine {
 	}
 
 	public void finishLoading() {
-		musicList = new MusicList(Resources.get().getMusic());
+		musicList = new MusicList(voide.resources.Resources.get().getNamespaceResources("music", Music.class));
 		this.keys = new Keyboard(window, Resources.get().getKeyConfiguration());
 
 		nentities.cleanup();

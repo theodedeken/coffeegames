@@ -32,6 +32,7 @@ cg_java_binary(
         "//engines/voide/src/java/voide/graphics/geometry",
         "//engines/voide/src/java/voide/input",
         "//engines/voide/src/java/voide/math",
+        "//engines/voide/src/java/voide/resources",
         "//engines/voide/src/java/voide/sound",
         "//games/spaxel/src/java/spaxel/graphics/animation",
         "//games/spaxel/src/java/spaxel/graphics/buffer:layer_fbo",

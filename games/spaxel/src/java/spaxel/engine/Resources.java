@@ -84,7 +84,9 @@ public final class Resources {
 	public void startLoading() {
 		Map<String, List<String>> resourcePaths = loadResourcePaths(Constants.RESOURCE_PATH);
 
-		music = loadMusic(resourcePaths.get("music"));
+		voide.resources.Resources.get().load(Constants.RESOURCE_MAP);
+
+		// music = loadMusic(resourcePaths.get("music"));
 
 		// sounds = loadSounds(resourcePaths.get("sounds"));
 
@@ -104,10 +106,10 @@ public final class Resources {
 	}
 
 	public void exit() {
-		for (Music m : music.values()) {
-			m.close();
-		}
-		music.clear();
+		// TODO this should still happen somehow
+		/*
+		 * for (Music m : music.values()) { m.close(); } music.clear();
+		 */
 		// TODO sounds
 	}
 

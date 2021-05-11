@@ -26,7 +26,7 @@ public class SoundSystem extends GameSystem {
 			currentMusic = engine.getMusicList().getRandomSong(engine.getGameState());
 			play();
 		} else {
-			currentMusic = engine.getMusicList().getSong("Intro");
+			currentMusic = engine.getMusicList().getSong("music.Intro");
 			play();
 		}
 

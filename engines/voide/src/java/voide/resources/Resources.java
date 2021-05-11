@@ -26,4 +26,14 @@ public final class Resources {
     public <T extends Resource> T getResource(String key, Class<T> resourceClass) {
         return resourceClass.cast(resourceMap.get(key));
     }
+
+    public <T extends Resource> Map<String, T> getNamespaceResources(String namespace, Class<T> resourceClass) {
+        Map<String, T> output = new HashMap<>();
+        for (Entry<String, Resource> resource : resourceMap.entrySet()) {
+            if (resource.getKey().startsWith(namespace + ".")) {
+                output.put(resource.getKey(), resourceClass.cast(resource.getValue()));
+            }
+        }
+        return output;
+    }
 }
