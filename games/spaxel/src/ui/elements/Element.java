@@ -79,12 +79,14 @@ public class Element {
     /**
      * Update this element
      */
-    public void update() {
+    public void update(MouseWrapper mouse) {
+        // TODO improve: mouse should not be reset each time
+        this.mouse = mouse;
         for (Logic l : logic) {
             l.execute(this);
         }
         for (Element element : children) {
-            element.update();
+            element.update(mouse);
         }
     }
 
@@ -244,7 +246,7 @@ public class Element {
     }
 
     public Map<String, HitShape> getHitShapeAtlas() {
-        return hitShapeAtlas;
+        return Resources.get().getHitShapeAtlas();
     }
 
     public void setHitStylesheets(List<Map<String, Map<String, String>>> stylesheets) {

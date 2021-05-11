@@ -8,7 +8,7 @@ cg_java_library(
         "DebugRenderer.java",
     ],
     deps = [
-        "//engines/voide/src/math",
+        "//engines/voide/src/java/voide/math",
         "//games/spaxel/src:constants",
         "//games/spaxel/src/engine",
         "//games/spaxel/src/engine:resources",
@@ -29,7 +29,7 @@ cg_java_library(
         "TextureUtil.java",
     ],
     deps = [
-        "//engines/voide/src/buffer:buffer_utils",
+        "//engines/voide/src/java/voide/buffer:buffer_utils",
         "@maven//:org_lwjgl_lwjgl_opengl",
     ],
 )
@@ -60,7 +60,7 @@ cg_java_library(
         "MatrixUtil.java",
     ],
     deps = [
-        "//engines/voide/src/math",
+        "//engines/voide/src/java/voide/math",
     ],
 )
 
@@ -89,7 +89,7 @@ cg_java_library(
     ],
     deps = [
         ":spaxel_random",
-        "//engines/voide/src/math",
+        "//engines/voide/src/java/voide/math",
         "//games/spaxel/src/graphics/texture",
         "//games/spaxel/src/graphics/texture:texture_part",
     ],

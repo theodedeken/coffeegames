@@ -14,4 +14,6 @@ java_library(
         "//games/spaxel/resources/java/textures",
     ],
     resources = glob(["**"]),
+    #TODO: remove
+    visibility = ["//visibility:public"],
 )

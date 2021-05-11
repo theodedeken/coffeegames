@@ -9,8 +9,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import voide.resources.Resource;
 
-public class Sound {
+public class Sound implements Resource {
 	private static final Logger LOGGER = Logger.getLogger(Sound.class.getName());
 
 	private String path;

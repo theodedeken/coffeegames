@@ -1,0 +1,27 @@
+music:
+  className: voide.sound.Music
+  files:
+    - /resources/sound.json
+hitshape:
+  className: voide.collision.HitShape
+  files:
+    - /resources/hitshape.json
+#item:
+#  - /resources/itemProperties.json
+#stylesheet:
+#  - /ui/styles/common.json
+#  - /ui/styles/main.json
+#  - /ui/styles/play.json
+#  - /ui/styles/credits.json
+#  - /ui/styles/options.json
+#  - /ui/styles/class_select.json
+#  - /ui/styles/game_over.json
+#industry:
+#  - /properties/entities/particle.json
+#  - /properties/entities/spawner.json
+#  - /properties/entities/actor.json
+#  - /properties/entities/projectile.json
+#  - /properties/entities/item.json
+#TODO- /properties/entities/player.json
+#- /properties/entities/effect.json
+#- /properties/entities/marker.json

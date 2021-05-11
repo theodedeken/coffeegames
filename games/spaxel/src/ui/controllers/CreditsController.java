@@ -24,6 +24,7 @@ public final class CreditsController {
      * @param element the calling element
      */
     public static void escCheck(Element element) {
+        // TODO: is this dump doing something?
         element.dump("nothing", "nothing");
         Keyboard k = Engine.get().getKeyboard();
         if (k.get(Key.ESC).isRelease()) {

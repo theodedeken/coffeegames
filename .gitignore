@@ -1,3 +1,6 @@
 bazel-*
 node_modules
 tools/oregano/front/public
+java-bin
+.project
+.classpath

@@ -6,7 +6,7 @@ cg_java_library(
     name = "render",
     srcs = glob(["*.java"]),
     deps = [
-        "//engines/voide/src/math",
+        "//engines/voide/src/java/voide/math",
         "//games/spaxel/src/graphics/animation",
         "//games/spaxel/src/graphics/buffer:master_buffer",
         "//games/spaxel/src/graphics/buffer:render_job",

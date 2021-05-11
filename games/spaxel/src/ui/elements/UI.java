@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import spaxel.graphics.buffer.MasterBuffer;
+import voide.input.MouseWrapper;
 
 /**
  * Root class of an ui structure
@@ -25,8 +26,8 @@ public class UI {
     }
 
     /**
-     * Initialize the ui by setting giving its reference to its children and initializing their
-     * styles
+     * Initialize the ui by setting giving its reference to its children and
+     * initializing their styles
      */
     public void initialize(Map<String, Map<String, Map<String, String>>> stylesheets) {
 
@@ -40,8 +41,8 @@ public class UI {
     /**
      * Update this UI.
      */
-    public void update() {
-        body.update();
+    public void update(MouseWrapper mouse) {
+        body.update(mouse);
     }
 
     /**
@@ -122,7 +123,5 @@ public class UI {
     public void addStylesheetPath(String style) {
         this.styles.add(style);
     }
-
-
 
 }

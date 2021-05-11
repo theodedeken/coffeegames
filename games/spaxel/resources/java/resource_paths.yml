@@ -25,8 +25,8 @@ industry:
   - /properties/entities/actor.json
   - /properties/entities/projectile.json
   - /properties/entities/item.json
-  - /properties/entities/player.json
-  - /properties/entities/effect.json
-  - /properties/entities/marker.json
+  #TODO- /properties/entities/player.json
+  #- /properties/entities/effect.json
+  #- /properties/entities/marker.json
 keys:
   - /keys/default.yml

@@ -15,6 +15,6 @@ public class UISystem extends GameSystem {
 	}
 
 	public void update() {
-		Engine.get().getCurrentUI().update();
+		Engine.get().getCurrentUI().update(Engine.get().getMouseWrapper());
 	}
 }

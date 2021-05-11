@@ -6,11 +6,12 @@ import voide.math.Axis;
 import voide.math.MatrixD;
 import voide.math.Projection;
 import voide.math.VectorD;
+import voide.resources.Resource;
 
 /**
  * Represents a collection of hitpoints forming a hitshape
  */
-public class HitShape {
+public class HitShape implements Resource {
     private List<HitPoint> hitPoints;
 
     /**
@@ -18,6 +19,9 @@ public class HitShape {
      */
     public HitShape() {
         hitPoints = new ArrayList<>();
+    }
+
+    public void initialize() {
     }
 
     /**

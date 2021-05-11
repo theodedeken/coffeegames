@@ -29,4 +29,8 @@ public class Music extends Sound {
 	public void setIntensity(int intensity) {
 		this.intensity = intensity;
 	}
+
+	public String toString() {
+		return "Music - " + name + " [" + intensity + "]";
+	}
 }

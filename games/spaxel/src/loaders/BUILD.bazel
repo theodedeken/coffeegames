@@ -6,8 +6,8 @@ cg_java_library(
     name = "loaders",
     srcs = glob(["*.java"]),
     deps = [
-        "//engines/voide/src/collision",
-        "//engines/voide/src/sound",
+        "//engines/voide/src/java/voide/collision",
+        "//engines/voide/src/java/voide/sound",
         "//games/spaxel/src/engine:item_catalogue",
         "//games/spaxel/src/factories/entities",
         "//games/spaxel/src/graphics/animation",
