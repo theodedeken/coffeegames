@@ -16,6 +16,7 @@ cg_java_library(
     ],
 )
 
+#TODO remove once fully integrated
 java_binary(
     name = "test_resources",
     srcs = ["Main.java"],
