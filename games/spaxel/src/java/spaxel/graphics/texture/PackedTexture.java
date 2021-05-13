@@ -1,8 +1,9 @@
 package spaxel.graphics.texture;
 
+import voide.graphics.renderable.Renderable;
 import voide.math.VectorD;
+import voide.render.RenderJob;
 import spaxel.util.TextureUtil;
-import spaxel.graphics.buffer.RenderJob;
 import spaxel.Constants;
 import java.util.List;
 import java.util.ArrayList;

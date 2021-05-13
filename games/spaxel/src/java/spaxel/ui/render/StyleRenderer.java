@@ -2,12 +2,13 @@ package spaxel.ui.render;
 
 import spaxel.ui.styles.Style;
 import spaxel.graphics.buffer.MasterBuffer;
-import spaxel.graphics.texture.Renderable;
+import voide.graphics.animation.Animation;
+import voide.graphics.renderable.Renderable;
 import voide.math.VectorD;
-import spaxel.graphics.buffer.RenderJob;
+import voide.render.RenderJob;
 import spaxel.graphics.buffer.RenderLayer;
 import spaxel.ui.state.State;
-import spaxel.graphics.animation.Animation;
+
 import java.util.Map;
 
 /**

@@ -1,7 +1,7 @@
-package spaxel.graphics.texture;
+package voide.graphics.renderable;
 
-import spaxel.graphics.buffer.RenderJob;
 import voide.math.VectorD;
+import voide.render.RenderJob;
 
 /**
  * Represents a Renderable part of the game

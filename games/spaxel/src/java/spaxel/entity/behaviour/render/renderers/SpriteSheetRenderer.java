@@ -2,8 +2,8 @@ package spaxel.entity.behaviour.render.renderers;
 
 import spaxel.entity.ComponentType;
 import spaxel.entity.storage.renderable.RenderableStorage;
+import voide.render.RenderJob;
 import spaxel.entity.Entity;
-import spaxel.graphics.buffer.RenderJob;
 
 /**
  * Created by theo on 5/06/17.

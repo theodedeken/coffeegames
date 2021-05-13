@@ -1,7 +1,8 @@
-package spaxel.graphics.animation;
+package voide.graphics.animation;
 
-import spaxel.graphics.buffer.RenderJob;
-import spaxel.graphics.texture.Renderable;
+import voide.graphics.renderable.Renderable;
+import voide.render.RenderJob;
+
 import java.util.Map;
 
 /**

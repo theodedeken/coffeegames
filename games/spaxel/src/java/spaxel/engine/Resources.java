@@ -4,8 +4,9 @@ import static spaxel.loaders.Loader.*;
 import java.util.Map;
 import java.util.List;
 import voide.collision.HitShape;
+import voide.graphics.animation.Animation;
+import voide.graphics.renderable.Renderable;
 import spaxel.factories.entities.EntityIndustry;
-import spaxel.graphics.animation.Animation;
 import spaxel.ui.elements.UI;
 import spaxel.ui.elements.UIType;
 import spaxel.util.TextureUtil;
@@ -18,7 +19,7 @@ import spaxel.graphics.texture.Texture;
 import spaxel.graphics.texture.TexturePart;
 import spaxel.graphics.texture.ColorBox;
 import spaxel.graphics.texture.PackedTexture;
-import spaxel.graphics.texture.Renderable;
+
 import java.util.HashMap;
 
 /**

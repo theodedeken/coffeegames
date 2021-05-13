@@ -6,7 +6,8 @@ import spaxel.entity.behaviour.render.renderers.Renderer;
 import spaxel.entity.storage.render.RenderStorage;
 import spaxel.entity.Entity;
 import spaxel.graphics.buffer.MasterBuffer;
-import spaxel.graphics.buffer.RenderJob;
+import voide.render.RenderJob;
+
 import java.util.List;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;

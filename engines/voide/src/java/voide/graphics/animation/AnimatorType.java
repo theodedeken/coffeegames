@@ -1,4 +1,4 @@
-package spaxel.graphics.animation;
+package voide.graphics.animation;
 
 /**
  * The different types of animators

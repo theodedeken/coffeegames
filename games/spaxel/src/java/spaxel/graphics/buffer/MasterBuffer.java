@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import spaxel.graphics.texture.PackedTexture;
+import voide.render.RenderJob;
 
 /**
  * Buffers all render jobs

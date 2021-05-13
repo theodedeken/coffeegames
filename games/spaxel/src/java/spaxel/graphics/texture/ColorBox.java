@@ -1,8 +1,10 @@
 package spaxel.graphics.texture;
 
+import voide.graphics.renderable.Renderable;
 import voide.math.VectorD;
+import voide.render.RenderJob;
+
 import com.fasterxml.jackson.annotation.JsonSetter;
-import spaxel.graphics.buffer.RenderJob;
 
 /**
  * Represents a renderable colored box

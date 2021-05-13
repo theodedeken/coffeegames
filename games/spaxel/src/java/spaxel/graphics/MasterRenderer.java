@@ -15,13 +15,13 @@ import spaxel.graphics.shaders.LastPassShaderProgram;
 import spaxel.graphics.buffer.LayerFBO;
 import spaxel.graphics.buffer.RenderLayer;
 import spaxel.graphics.buffer.MasterBuffer;
-import spaxel.graphics.buffer.RenderJob;
 import spaxel.graphics.buffer.RenderBuffer;
 import voide.graphics.geometry.Quad;
 import voide.graphics.geometry.InstancedQuad;
 import voide.math.MatrixD;
 import spaxel.util.MatrixUtil;
 import voide.math.VectorD;
+import voide.render.RenderJob;
 import spaxel.Constants;
 
 /**

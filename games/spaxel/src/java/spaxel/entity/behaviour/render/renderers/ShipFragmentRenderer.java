@@ -3,8 +3,8 @@ package spaxel.entity.behaviour.render.renderers;
 import spaxel.entity.ComponentType;
 import spaxel.entity.storage.age.AgeStorage;
 import spaxel.entity.Entity;
-import spaxel.graphics.buffer.RenderJob;
 import voide.math.VectorD;
+import voide.render.RenderJob;
 
 /**
  * Created by theod on 25-9-2017.

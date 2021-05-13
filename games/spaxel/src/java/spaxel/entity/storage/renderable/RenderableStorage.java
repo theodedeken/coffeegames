@@ -2,7 +2,7 @@ package spaxel.entity.storage.renderable;
 
 import spaxel.entity.ComponentType;
 import spaxel.entity.Storage;
-import spaxel.graphics.texture.Renderable;
+import voide.graphics.renderable.Renderable;
 import spaxel.engine.Resources;
 
 public class RenderableStorage extends Storage {

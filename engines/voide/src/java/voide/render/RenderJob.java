@@ -1,5 +1,5 @@
 
-package spaxel.graphics.buffer;
+package voide.render;
 
 import voide.math.VectorD;
 

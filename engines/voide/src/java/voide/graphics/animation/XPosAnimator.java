@@ -1,25 +1,25 @@
-package spaxel.graphics.animation;
+package voide.graphics.animation;
 
-import spaxel.graphics.buffer.RenderJob;
+import voide.render.RenderJob;
 
 /**
- * The YPosAnimator animates the y position of the animation
+ * The XPosAnimator animates the x position of the animation
  */
-public class YPosAnimator extends Animator {
+public class XPosAnimator extends Animator {
     private double maxPos;
     private double minPos;
 
     /**
-     * Create a new YPosAnimator
+     * Create a new XPosAnimator
      */
-    public YPosAnimator() {
-        super(AnimatorType.Y_POS);
+    public XPosAnimator() {
+        super(AnimatorType.X_POS);
     }
 
     public void animate(double percentage, RenderJob data) {
         double pos = percentage * (maxPos - minPos);
 
-        data.applyYTranslation(minPos + pos);
+        data.applyXTranslation(minPos + pos);
     }
 
     /**

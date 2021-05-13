@@ -1,7 +1,8 @@
-package spaxel.graphics.animation;
+package voide.graphics.animation;
 
 import java.util.List;
-import spaxel.graphics.buffer.RenderJob;
+
+import voide.render.RenderJob;
 
 /**
  * Represents an animation
