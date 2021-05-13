@@ -16,4 +16,8 @@ public class ResourceProxy<T extends Resource> {
         }
         return resource;
     }
+
+    public ResourceProxy<T> copy() {
+        return new ResourceProxy<>(key, resourceType);
+    }
 }

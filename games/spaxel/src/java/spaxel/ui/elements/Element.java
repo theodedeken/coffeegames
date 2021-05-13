@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import spaxel.ui.elements.logic.HoverLogic;
 import spaxel.ui.elements.logic.ClickLogic;
 import voide.input.MouseWrapper;
-import voide.collision.HitShape;
 import spaxel.engine.Resources;
 
 /**
@@ -38,7 +37,6 @@ public class Element {
     private StyleRenderer renderer;
     private MouseWrapper mouse;
     private String controller;
-    private Map<String, HitShape> hitShapeAtlas;
     private List<Map<String, Map<String, String>>> stylesheets;
 
     /**
@@ -239,14 +237,6 @@ public class Element {
 
     public MouseWrapper getMouse() {
         return mouse;
-    }
-
-    public void setHitShapeAtlas(Map<String, HitShape> hitShapeAtlas) {
-        this.hitShapeAtlas = hitShapeAtlas;
-    }
-
-    public Map<String, HitShape> getHitShapeAtlas() {
-        return Resources.get().getHitShapeAtlas();
     }
 
     public void setHitStylesheets(List<Map<String, Map<String, String>>> stylesheets) {

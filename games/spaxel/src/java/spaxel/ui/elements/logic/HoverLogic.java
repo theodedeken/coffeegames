@@ -18,7 +18,8 @@ public class HoverLogic implements Logic {
     public void execute(Element element) {
         Style style = element.getStyle();
         if (style.contains("hit-shape", element.getState())) {
-            HitShape hitbox = element.getHitShapeAtlas().get(style.getProperty("hit-shape", element.getState()));
+            HitShape hitbox = voide.resources.Resources.get()
+                    .getResource(style.getProperty("hit-shape", element.getState()), HitShape.class);
             double x = Double.parseDouble(style.getProperty("x", element.getState()));
             double y = Double.parseDouble(style.getProperty("y", element.getState()));
             double rot = Double.parseDouble(style.getProperty("rot", element.getState()));

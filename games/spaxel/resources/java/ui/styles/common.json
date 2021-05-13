@@ -3,7 +3,7 @@
         "sprite": "large_button_normal",
         "scale": 4,
         "text-scale": 2,
-        "hit-shape": "hitshape_box",
+        "hit-shape": "hitshape.hitshape_box",
         "width": 320,
         "height": 64,
         "rot": 0

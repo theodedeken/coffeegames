@@ -4,7 +4,7 @@
         "scale": 4,
         "width": 128,
         "height": 128,
-        "hit-shape": "hitshape_box",
+        "hit-shape": "hitshape.hitshape_box",
         "rot": 0
     },
     ".class_select:hover": {

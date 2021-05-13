@@ -1,9 +1,9 @@
 package spaxel.entity.storage.hitshape;
 
 import voide.collision.HitShape;
+import voide.resources.ResourceProxy;
 import spaxel.entity.Storage;
 import spaxel.entity.ComponentType;
-import spaxel.engine.Resources;
 
 /**
  * Represent a collidable for an entity
@@ -11,7 +11,7 @@ import spaxel.engine.Resources;
  * Created by theo on 3/06/17.
  */
 public class HitshapeStorage extends Storage {
-    private HitShape hitShape;
+    private ResourceProxy<HitShape> hitShape;
 
     public HitshapeStorage() {
         super(ComponentType.HITSHAPE);
@@ -22,24 +22,20 @@ public class HitshapeStorage extends Storage {
      * 
      * @param hitShape the hitshape of the component
      */
-    public HitshapeStorage(HitShape hitShape) {
+    public HitshapeStorage(ResourceProxy<HitShape> hitShape) {
         super(ComponentType.HITSHAPE);
         this.hitShape = hitShape;
     }
 
     public HitShape getHitShape() {
-        return hitShape;
-    }
-
-    public void setHitShape(HitShape hitShape) {
-        this.hitShape = hitShape;
+        return hitShape.get();
     }
 
     public void setHitShape(String hitShape) {
-        this.hitShape = Resources.get().getHitShapeAtlas().get(hitShape);
+        this.hitShape = new ResourceProxy<>(hitShape, HitShape.class);
     }
 
     public HitshapeStorage copy() {
-        return new HitshapeStorage(hitShape);
+        return new HitshapeStorage(hitShape.copy());
     }
 }
