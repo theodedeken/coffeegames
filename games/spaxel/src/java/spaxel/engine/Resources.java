@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.List;
 import voide.collision.HitShape;
 import voide.graphics.animation.Animation;
+import voide.graphics.renderable.Rectangle;
 import voide.graphics.renderable.Renderable;
 import spaxel.factories.entities.EntityIndustry;
 import spaxel.ui.elements.UI;
@@ -17,7 +18,6 @@ import voide.sound.Music;
 import voide.sound.Sound;
 import spaxel.graphics.texture.Texture;
 import spaxel.graphics.texture.TexturePart;
-import spaxel.graphics.texture.ColorBox;
 import spaxel.graphics.texture.PackedTexture;
 
 import java.util.HashMap;
@@ -64,10 +64,12 @@ public final class Resources {
 		for (TexturePart tPart : textureParts.values()) {
 			tPart.initializeCoordinates(textures.get(tPart.getSheetName()));
 		}
-		Map<String, ColorBox> colorBoxes = loadColorBoxes(resourcePaths.get("color_box"));
+
+		Map<String, Rectangle> rectangles = voide.resources.Resources.get().getNamespaceResources("rectangle",
+				Rectangle.class);
 		renderables.putAll(textures);
 		renderables.putAll(textureParts);
-		renderables.putAll(colorBoxes);
+		renderables.putAll(rectangles);
 		renderables.put("packed", packedTexture);
 
 		Engine.get().setCurrentUI(uis.get(UIType.LOAD));

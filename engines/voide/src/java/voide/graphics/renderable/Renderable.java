@@ -2,11 +2,12 @@ package voide.graphics.renderable;
 
 import voide.math.VectorD;
 import voide.render.RenderJob;
+import voide.resources.Resource;
 
 /**
  * Represents a Renderable part of the game
  */
-public abstract class Renderable {
+public abstract class Renderable implements Resource {
     protected VectorD dim;
     protected String name;
 
@@ -15,6 +16,9 @@ public abstract class Renderable {
      */
     public Renderable() {
         super();
+    }
+
+    public void initialize() {
     }
 
     /**

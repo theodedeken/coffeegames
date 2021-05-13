@@ -2,3 +2,7 @@ animation:
   className: voide.graphics.animation.Animation
   files:
     - /properties/animation.json
+rectangle:
+  className: voide.graphics.renderable.Rectangle
+  files:
+    - /properties/textures/rectangle.json

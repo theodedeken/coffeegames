@@ -3,7 +3,7 @@
         "x": 640,
         "y": 360,
         "rot": 0,
-        "sprite": "load_overlay",
+        "sprite": "rectangle.load_overlay",
         "scale": 1
     },
     "#title": {

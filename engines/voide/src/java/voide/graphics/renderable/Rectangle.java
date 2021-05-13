@@ -1,6 +1,5 @@
-package spaxel.graphics.texture;
+package voide.graphics.renderable;
 
-import voide.graphics.renderable.Renderable;
 import voide.math.VectorD;
 import voide.render.RenderJob;
 
@@ -9,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 /**
  * Represents a renderable colored box
  */
-public class ColorBox extends Renderable {
+public class Rectangle extends Renderable {
     private static final int HEX_SIZE = 16;
 
     private int color;
@@ -17,7 +16,7 @@ public class ColorBox extends Renderable {
     /**
      * Create a new ColorBox
      */
-    public ColorBox() {
+    public Rectangle() {
         super();
     }
 
@@ -27,7 +26,7 @@ public class ColorBox extends Renderable {
      * @param dim   the dimensions of the colorbox
      * @param color the color of the colorbox
      */
-    public ColorBox(VectorD dim, int color) {
+    public Rectangle(VectorD dim, int color) {
         super(dim);
         this.color = color;
     }

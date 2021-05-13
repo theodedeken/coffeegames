@@ -9,7 +9,7 @@ cg_java_library(
         "//engines/voide/src/java/voide/graphics/animation",
         "//engines/voide/src/java/voide/graphics/renderable",
         "//engines/voide/src/java/voide/math",
-        "//engines/voide/src/java/voide/render:render_job",
+        "//engines/voide/src/java/voide/render",
         "//engines/voide/src/java/voide/resources",
         "//games/spaxel/src/java/spaxel/graphics/buffer:master_buffer",
         "//games/spaxel/src/java/spaxel/graphics/buffer:render_layer",

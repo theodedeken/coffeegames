@@ -39,7 +39,7 @@
         "x": 640,
         "y": 96,
         "onUpdate": "updateHpBar",
-        "animation": "hp_bar",
+        "animation": "animation.hp_bar",
         "completion": 1
     },
     "#xp_bar": {
@@ -47,7 +47,7 @@
         "y": 85,
         "rot": "3.1415",
         "onUpdate": "updateXpBar",
-        "animation": "xp_bar",
+        "animation": "animation.xp_bar",
         "completion": 0
     },
     "#pause_controls": {

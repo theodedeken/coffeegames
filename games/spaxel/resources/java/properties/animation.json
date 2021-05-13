@@ -4,7 +4,7 @@
             {
                 "type": "FRAME",
                 "numFrames": 1,
-                "spriteBase": "progress_bar"
+                "spriteBase": "rectangle.progress_bar"
             },
             {
                 "type": "X_SCALE",
@@ -17,7 +17,7 @@
             {
                 "type": "FRAME",
                 "numFrames": 1,
-                "spriteBase": "hp_bar"
+                "spriteBase": "rectangle.hp_bar"
             },
             {
                 "type": "X_SCALE",
@@ -34,7 +34,7 @@
             {
                 "type": "FRAME",
                 "numFrames": 1,
-                "spriteBase": "xp_bar"
+                "spriteBase": "rectangle.xp_bar"
             },
             {
                 "type": "X_SCALE",

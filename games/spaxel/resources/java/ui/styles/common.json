@@ -30,7 +30,7 @@
         "position": "flow"
     },
     ".item_cooldown": {
-        "animation": "cooldown"
+        "animation": "animation.cooldown"
     },
     ".item_stacks": {
         "position": "relative",

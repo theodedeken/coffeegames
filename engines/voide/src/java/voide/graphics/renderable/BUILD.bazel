@@ -4,9 +4,14 @@ package(default_visibility = ["//visibility:public"])
 
 cg_java_library(
     name = "renderable",
-    srcs = ["Renderable.java"],
+    srcs = [
+        "Rectangle.java",
+        "Renderable.java",
+    ],
     deps = [
         "//engines/voide/src/java/voide/math",
-        "//engines/voide/src/java/voide/render:render_job",
+        "//engines/voide/src/java/voide/render",
+        "//engines/voide/src/java/voide/resources",
+        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
     ],
 )

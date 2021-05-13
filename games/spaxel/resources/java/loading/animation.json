@@ -4,7 +4,7 @@
             {
                 "type": "FRAME",
                 "numFrames": 1,
-                "spriteBase": "progress_bar"
+                "spriteBase": "rectangle.progress_bar"
             },
             {
                 "type": "Y_SCALE",

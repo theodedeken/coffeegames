@@ -10,7 +10,7 @@ cg_java_library(
         ":texture_node",
         "//engines/voide/src/java/voide/graphics/renderable",
         "//engines/voide/src/java/voide/math",
-        "//engines/voide/src/java/voide/render:render_job",
+        "//engines/voide/src/java/voide/render",
         "//games/spaxel/src/java/spaxel:constants",
         "//games/spaxel/src/java/spaxel/util:texture_util",
     ],
@@ -22,19 +22,8 @@ cg_java_library(
     deps = [
         "//engines/voide/src/java/voide/graphics/renderable",
         "//engines/voide/src/java/voide/math",
-        "//engines/voide/src/java/voide/render:render_job",
+        "//engines/voide/src/java/voide/render",
         "//games/spaxel/src/java/spaxel:constants",
-    ],
-)
-
-cg_java_library(
-    name = "color_box",
-    srcs = ["ColorBox.java"],
-    deps = [
-        "//engines/voide/src/java/voide/graphics/renderable",
-        "//engines/voide/src/java/voide/math",
-        "//engines/voide/src/java/voide/render:render_job",
-        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
     ],
 )
 

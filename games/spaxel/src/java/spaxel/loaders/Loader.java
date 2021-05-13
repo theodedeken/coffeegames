@@ -14,6 +14,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import voide.collision.HitShape;
 import voide.graphics.animation.Animation;
+import voide.graphics.renderable.Rectangle;
 import spaxel.engine.ItemCatalogue;
 import spaxel.engine.ItemProperties;
 import spaxel.factories.entities.EntityIndustry;
@@ -23,7 +24,6 @@ import voide.sound.Music;
 import voide.sound.Sound;
 import spaxel.ui.elements.UI;
 import spaxel.ui.elements.UIType;
-import spaxel.graphics.texture.ColorBox;
 import spaxel.graphics.texture.Texture;
 import spaxel.graphics.texture.TexturePart;
 
@@ -347,17 +347,17 @@ public final class Loader {
      * 
      * @return a map from sprite name to TexturePart object
      */
-    public static Map<String, ColorBox> loadColorBoxes(Iterable<String> sprites) {
+    public static Map<String, Rectangle> loadColorBoxes(Iterable<String> sprites) {
         try {
-            Map<String, ColorBox> boxMap = new HashMap<>();
+            Map<String, Rectangle> boxMap = new HashMap<>();
             for (String s : sprites) {
                 InputStream file = loadFile(s);
                 ObjectMapper mapper = new ObjectMapper();
-                boxMap.putAll(mapper.readValue(file, new TypeReference<Map<String, ColorBox>>() {
+                boxMap.putAll(mapper.readValue(file, new TypeReference<Map<String, Rectangle>>() {
                 }));
             }
 
-            for (Map.Entry<String, ColorBox> entry : boxMap.entrySet()) {
+            for (Map.Entry<String, Rectangle> entry : boxMap.entrySet()) {
                 entry.getValue().setName(entry.getKey());
             }
             return boxMap;
