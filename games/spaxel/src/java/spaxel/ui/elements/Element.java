@@ -64,7 +64,7 @@ public class Element {
      */
     public void render(MasterBuffer buffer) {
         if (this.renderer == null) {
-            this.renderer = new StyleRenderer(Resources.get().getRenderables(), Resources.get().getAnimationAtlas());
+            this.renderer = new StyleRenderer(Resources.get().getRenderables());
         }
         renderer.renderStyle(style, state, index, buffer);
         synchronized (children) {

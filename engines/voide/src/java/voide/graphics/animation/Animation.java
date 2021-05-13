@@ -3,11 +3,12 @@ package voide.graphics.animation;
 import java.util.List;
 
 import voide.render.RenderJob;
+import voide.resources.Resource;
 
 /**
  * Represents an animation
  */
-public class Animation {
+public class Animation implements Resource {
     private List<Animator> animators;
 
     /**
@@ -15,6 +16,9 @@ public class Animation {
      */
     public Animation() {
         super();
+    }
+
+    public void initialize() {
     }
 
     /**

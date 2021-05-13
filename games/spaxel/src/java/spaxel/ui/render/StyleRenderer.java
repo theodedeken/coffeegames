@@ -17,12 +17,10 @@ import java.util.Map;
 public class StyleRenderer {
     private TextRenderer textRenderer;
     private Map<String, Renderable> renderables;
-    private Map<String, Animation> animationAtlas;
 
-    public StyleRenderer(Map<String, Renderable> renderables, Map<String, Animation> animationAtlas) {
+    public StyleRenderer(Map<String, Renderable> renderables) {
         textRenderer = new TextRenderer(renderables);
         this.renderables = renderables;
-        this.animationAtlas = animationAtlas;
     }
 
     /**
@@ -92,7 +90,8 @@ public class StyleRenderer {
     private void renderAnimation(VectorD position, double rot, double scale, Style style, State currentState,
             MasterBuffer buffer) {
         double completion = Double.parseDouble(style.getProperty("completion", currentState));
-        RenderJob data = animationAtlas.get(style.getProperty("animation", currentState)).getDataAt(completion);
+        RenderJob data = voide.resources.Resources.get()
+                .getResource(style.getProperty("animation", currentState), Animation.class).getDataAt(completion);
         data.applyTranslation(position);
         data.applyRot(rot);
         data.applyScale(scale);

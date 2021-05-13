@@ -34,6 +34,7 @@ public final class Constants {
     public static final String RESOURCE_PATH = "/resource_paths.yml";
     public static final String LOAD_RESOURCE_PATH = "/load_resource_paths.yml";
     public static final String RESOURCE_MAP = "/resource_map.yml";
+    public static final String LOAD_RESOURCE_MAP = "/load_resource_map.yml";
     // input constants
     public static final int SPEED_MULT = 2;
     // experience constants

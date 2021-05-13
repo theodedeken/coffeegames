@@ -1,0 +1,4 @@
+animation:
+  className: voide.graphics.animation.Animation
+  files:
+    - /properties/animation.json

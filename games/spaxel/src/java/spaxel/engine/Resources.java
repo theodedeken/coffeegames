@@ -48,7 +48,10 @@ public final class Resources {
 	 */
 	public void initLoadingResources() {
 		Map<String, List<String>> resourcePaths = loadResourcePaths(Constants.LOAD_RESOURCE_PATH);
-		animationAtlas = loadAnimations(resourcePaths.get("animation"));
+
+		voide.resources.Resources.get().load(Constants.LOAD_RESOURCE_MAP);
+
+		// animationAtlas = loadAnimations(resourcePaths.get("animation"));
 		stylesheets = loadStylesheets(resourcePaths.get("stylesheet"));
 		uis = loadUI(resourcePaths.get("ui"), stylesheets);
 		// Renderables loading
