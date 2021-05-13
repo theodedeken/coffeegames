@@ -36,4 +36,8 @@ public final class Resources {
         }
         return output;
     }
+
+    public void addResource(String key, Resource resource) {
+        resourceMap.put(key, resource);
+    }
 }

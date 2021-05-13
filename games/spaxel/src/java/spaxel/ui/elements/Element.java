@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import spaxel.ui.elements.logic.HoverLogic;
 import spaxel.ui.elements.logic.ClickLogic;
 import voide.input.MouseWrapper;
-import spaxel.engine.Resources;
 
 /**
  * Represent an element of a UI
@@ -64,7 +63,7 @@ public class Element {
      */
     public void render(MasterBuffer buffer) {
         if (this.renderer == null) {
-            this.renderer = new StyleRenderer(Resources.get().getRenderables());
+            this.renderer = new StyleRenderer();
         }
         renderer.renderStyle(style, state, index, buffer);
         synchronized (children) {

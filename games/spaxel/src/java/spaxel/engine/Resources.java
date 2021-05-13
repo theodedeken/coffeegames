@@ -1,26 +1,32 @@
 package spaxel.engine;
 
-import static spaxel.loaders.Loader.*;
-import java.util.Map;
+import static spaxel.loaders.Loader.loadEntityIndustries;
+import static spaxel.loaders.Loader.loadHitShapes;
+import static spaxel.loaders.Loader.loadItems;
+import static spaxel.loaders.Loader.loadKeyConfiguration;
+import static spaxel.loaders.Loader.loadResourcePaths;
+import static spaxel.loaders.Loader.loadStylesheets;
+import static spaxel.loaders.Loader.loadUI;
+
 import java.util.List;
-import voide.collision.HitShape;
-import voide.graphics.animation.Animation;
-import voide.graphics.renderable.Rectangle;
-import voide.graphics.renderable.Renderable;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import spaxel.Constants;
 import spaxel.factories.entities.EntityIndustry;
 import spaxel.ui.elements.UI;
 import spaxel.ui.elements.UIType;
-import spaxel.util.TextureUtil;
-import spaxel.Constants;
+import voide.collision.HitShape;
+import voide.graphics.animation.Animation;
+import voide.graphics.load.Image;
+import voide.graphics.load.ImagePart;
+import voide.graphics.renderable.Renderable;
+import voide.graphics.renderable.Texture;
+import voide.graphics.util.ImagePacker;
 import voide.input.Key;
 import voide.input.KeyState;
 import voide.sound.Music;
 import voide.sound.Sound;
-import spaxel.graphics.texture.Texture;
-import spaxel.graphics.texture.TexturePart;
-import spaxel.graphics.texture.PackedTexture;
-
-import java.util.HashMap;
 
 /**
  * Singleton class to hold all the game resources
@@ -54,23 +60,26 @@ public final class Resources {
 		// animationAtlas = loadAnimations(resourcePaths.get("animation"));
 		stylesheets = loadStylesheets(resourcePaths.get("stylesheet"));
 		uis = loadUI(resourcePaths.get("ui"), stylesheets);
-		// Renderables loading
-		renderables = new HashMap<>();
-		Map<String, Texture> textures = loadTextures(resourcePaths.get("texture"));
-		PackedTexture packedTexture = new PackedTexture(textures.values());
-		packedTexture.load();
-		packedTexture.initializeCoordinates();
-		Map<String, TexturePart> textureParts = loadTextureParts(resourcePaths.get("texture_part"));
-		for (TexturePart tPart : textureParts.values()) {
-			tPart.initializeCoordinates(textures.get(tPart.getSheetName()));
+		// Optimize loaded images and send to GPU
+		// TODO this optimization should happen elsewhere
+		Map<String, Image> images = voide.resources.Resources.get().getNamespaceResources("image", Image.class);
+		Map<String, ImagePart> image_parts = voide.resources.Resources.get().getNamespaceResources("image_part",
+				ImagePart.class);
+		ImagePacker packer = new ImagePacker();
+		ImagePacker.PackingResult result = packer.pack(images);
+		Texture root = result.rootImage.toTexture();
+		int rootId = root.getTextureId();
+		voide.resources.Resources.get().addResource("voide.packed_texture", root);
+		for (Entry<String, ImagePart> entry : result.parts.entrySet()) {
+			voide.resources.Resources.get().addResource(entry.getKey(), entry.getValue());
+			voide.resources.Resources.get().addResource(entry.getKey().replace("image.", "texture."),
+					entry.getValue().toTexture(rootId));
 		}
 
-		Map<String, Rectangle> rectangles = voide.resources.Resources.get().getNamespaceResources("rectangle",
-				Rectangle.class);
-		renderables.putAll(textures);
-		renderables.putAll(textureParts);
-		renderables.putAll(rectangles);
-		renderables.put("packed", packedTexture);
+		for (Entry<String, ImagePart> entry : image_parts.entrySet()) {
+			voide.resources.Resources.get().addResource(entry.getKey().replace("image_part.", "texture."),
+					entry.getValue().toTexture(rootId));
+		}
 
 		Engine.get().setCurrentUI(uis.get(UIType.LOAD));
 	}

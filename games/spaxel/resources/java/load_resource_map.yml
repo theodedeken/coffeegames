@@ -6,3 +6,16 @@ rectangle:
   className: voide.graphics.renderable.Rectangle
   files:
     - /properties/textures/rectangle.json
+image:
+  className: voide.graphics.load.Image
+  files:
+    - /properties/textures/textures.json
+    - /properties/textures/animations/cooldown.json
+    - /properties/textures/items.json
+    - /properties/textures/font.json
+    - /properties/textures/effects.json
+image_part:
+  className: voide.graphics.load.ImagePart
+  files:
+    - /properties/textures/textureParts.json
+    - /properties/textures/ui.json

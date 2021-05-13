@@ -17,6 +17,10 @@ public class ResourceProxy<T extends Resource> {
         return resource;
     }
 
+    public T hardGet() {
+        return Resources.get().getResource(key, resourceType);
+    }
+
     public ResourceProxy<T> copy() {
         return new ResourceProxy<>(key, resourceType);
     }

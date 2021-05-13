@@ -1,6 +1,6 @@
 {
     ".large_button": {
-        "sprite": "large_button_normal",
+        "sprite": "texture.large_button_normal",
         "scale": 4,
         "text-scale": 2,
         "hit-shape": "hitshape.hitshape_box",
@@ -9,19 +9,19 @@
         "rot": 0
     },
     ".large_button:hover": {
-        "sprite": "large_button_hover"
+        "sprite": "texture.large_button_hover"
     },
     ".large_button:click": {
-        "sprite": "large_button_click"
+        "sprite": "texture.large_button_click"
     },
     ".locked": {
-        "sprite": "large_button_locked"
+        "sprite": "texture.large_button_locked"
     },
     ".locked:hover": {
-        "sprite": "large_button_locked"
+        "sprite": "texture.large_button_locked"
     },
     ".locked:click": {
-        "sprite": "large_button_locked"
+        "sprite": "texture.large_button_locked"
     },
     ".inventory_item": {
         "scale": 2,

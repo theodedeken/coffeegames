@@ -1,84 +1,84 @@
 {
     "active_shield": {
         "path": "/textures/items/active_shield.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "basic_shield": {
         "path": "/textures/items/basic_shield.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "force_shield": {
         "path": "/textures/items/force_shield.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "anti_shield": {
         "path": "/textures/items/anti_shield.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "basic_laser": {
         "path": "/textures/items/basic_laser.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "slowing_laser": {
         "path": "/textures/items/slowing_laser.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "piercing_laser": {
         "path": "/textures/items/piercing_laser.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "disrupt_laser": {
         "path": "/textures/items/disrupt_laser.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "basic_missile": {
         "path": "/textures/items/basic_missile.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "cluster_missile": {
         "path": "/textures/items/cluster_missile.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "homing_missile": {
         "path": "/textures/items/homing_missile.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }
     },
     "hacking_missile": {
         "path": "/textures/items/hacking_missile.png",
-        "dim": {
+        "shape": {
             "x": 32,
             "y": 32
         }

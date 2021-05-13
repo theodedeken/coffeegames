@@ -16,11 +16,9 @@ import java.util.Map;
  */
 public class StyleRenderer {
     private TextRenderer textRenderer;
-    private Map<String, Renderable> renderables;
 
-    public StyleRenderer(Map<String, Renderable> renderables) {
-        textRenderer = new TextRenderer(renderables);
-        this.renderables = renderables;
+    public StyleRenderer() {
+        textRenderer = new TextRenderer();
     }
 
     /**
@@ -102,8 +100,9 @@ public class StyleRenderer {
     private void renderSprite(VectorD position, double rot, double scale, Style style, State currentState,
             MasterBuffer buffer) {
         RenderJob data = new RenderJob();
-        Renderable sprite = renderables.get(style.getProperty("sprite", currentState));
-
+        Renderable sprite = voide.resources.Resources.get().getResource(style.getProperty("sprite", currentState),
+                Renderable.class);
+        System.out.println(style.getProperty("sprite", currentState));
         sprite.apply(data);
         data.applyTranslation(position);
         data.applyScale(scale);

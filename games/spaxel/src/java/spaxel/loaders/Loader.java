@@ -15,6 +15,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import voide.collision.HitShape;
 import voide.graphics.animation.Animation;
 import voide.graphics.renderable.Rectangle;
+import voide.graphics.renderable.Texture;
 import spaxel.engine.ItemCatalogue;
 import spaxel.engine.ItemProperties;
 import spaxel.factories.entities.EntityIndustry;
@@ -24,8 +25,6 @@ import voide.sound.Music;
 import voide.sound.Sound;
 import spaxel.ui.elements.UI;
 import spaxel.ui.elements.UIType;
-import spaxel.graphics.texture.Texture;
-import spaxel.graphics.texture.TexturePart;
 
 /**
  * Created by theo on 28/05/17.
@@ -305,34 +304,6 @@ public final class Loader {
                 entry.getValue().setName(entry.getKey());
             }
             return textureMap;
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, e.toString(), e);
-        }
-        return null;
-    }
-
-    /**
-     * Load the TextureParts specified in the given files
-     * 
-     * @param sprites list of paths to files with the properties of each texture
-     *                part
-     * 
-     * @return a map from sprite name to TexturePart object
-     */
-    public static Map<String, TexturePart> loadTextureParts(Iterable<String> sprites) {
-        try {
-            Map<String, TexturePart> spriteMap = new HashMap<>();
-            for (String s : sprites) {
-                InputStream file = loadFile(s);
-                ObjectMapper mapper = new ObjectMapper();
-                spriteMap.putAll(mapper.readValue(file, new TypeReference<Map<String, TexturePart>>() {
-                }));
-            }
-
-            for (Map.Entry<String, TexturePart> entry : spriteMap.entrySet()) {
-                entry.getValue().setName(entry.getKey());
-            }
-            return spriteMap;
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, e.toString(), e);
         }

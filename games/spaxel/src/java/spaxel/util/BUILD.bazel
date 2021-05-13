@@ -24,17 +24,6 @@ cg_java_library(
 )
 
 cg_java_library(
-    name = "texture_util",
-    srcs = [
-        "TextureUtil.java",
-    ],
-    deps = [
-        "//engines/voide/src/java/voide/buffer:buffer_utils",
-        "@maven//:org_lwjgl_lwjgl_opengl",
-    ],
-)
-
-cg_java_library(
     name = "gl_util",
     srcs = [
         "GLUtil.java",
@@ -89,8 +78,7 @@ cg_java_library(
     ],
     deps = [
         ":spaxel_random",
+        "//engines/voide/src/java/voide/graphics/renderable",
         "//engines/voide/src/java/voide/math",
-        "//games/spaxel/src/java/spaxel/graphics/texture",
-        "//games/spaxel/src/java/spaxel/graphics/texture:texture_part",
     ],
 )

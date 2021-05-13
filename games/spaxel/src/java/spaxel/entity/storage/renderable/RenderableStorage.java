@@ -3,7 +3,6 @@ package spaxel.entity.storage.renderable;
 import spaxel.entity.ComponentType;
 import spaxel.entity.Storage;
 import voide.graphics.renderable.Renderable;
-import spaxel.engine.Resources;
 
 public class RenderableStorage extends Storage {
     private Renderable renderable;
@@ -32,7 +31,7 @@ public class RenderableStorage extends Storage {
     }
 
     public void setRenderable(String renderable) {
-        this.renderable = Resources.get().getRenderables().get(renderable);
+        this.renderable = voide.resources.Resources.get().getResource(renderable, Renderable.class);
     }
 
     public RenderableStorage copy() {

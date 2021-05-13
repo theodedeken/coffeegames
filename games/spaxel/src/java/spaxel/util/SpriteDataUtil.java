@@ -1,7 +1,6 @@
 package spaxel.util;
 
-import spaxel.graphics.texture.TexturePart;
-import spaxel.graphics.texture.Texture;
+import voide.graphics.renderable.Texture;
 import voide.math.VectorD;
 
 /**
@@ -25,16 +24,16 @@ public final class SpriteDataUtil {
      * @return A new {@link code.graphics.texture.TexturePart} object containing
      *         with the properties of the generated part.
      */
-    public static TexturePart getRandomPart(Texture spriteData, int width, int height) {
-        int x = random.nextInt((int) spriteData.getDim().getValue(0) - width);
-        int y = random.nextInt((int) spriteData.getDim().getValue(1) - height);
+    public static Texture getRandomPart(Texture spriteData, int width, int height) {
+        int x = random.nextInt((int) spriteData.getShape().getValue(0) - width);
+        int y = random.nextInt((int) spriteData.getShape().getValue(1) - height);
 
-        VectorD pos = spriteData.getPos().sum(new VectorD(x, y));
+        VectorD textureOffset = spriteData.getTextureOffset()
+                .sum(new VectorD(x, y).elementDiv(spriteData.getTextureShape()));
+        VectorD textureShape = new VectorD(width, height).elementDiv(spriteData.getTextureShape());
 
-        TexturePart part = new TexturePart();
-        part.setDim(new VectorD(width, height));
-        part.setPos(pos);
-        part.initializeCoordinates(spriteData.getSpritesheet());
+        Texture part = new Texture(new VectorD(width, height), spriteData.getTextureId(), textureOffset, textureShape);
+        // TODO double check if this is still working
         return part;
     }
 }

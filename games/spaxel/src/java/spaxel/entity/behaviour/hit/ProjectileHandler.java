@@ -11,8 +11,8 @@ import spaxel.engine.Resources;
 import spaxel.entity.Entity;
 import spaxel.factories.entities.EffectIndustry;
 import spaxel.factories.entities.SpawnerIndustry;
-import spaxel.graphics.texture.Texture;
 import spaxel.util.SpriteDataUtil;
+import voide.graphics.renderable.Texture;
 
 public abstract class ProjectileHandler extends HitHandler {
     public ProjectileHandler(HitType type) {

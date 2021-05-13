@@ -1,13 +1,5 @@
-package spaxel.util;
+package voide.graphics.util;
 
-/* TODO cleanup
-
-
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
-*/
 import static org.lwjgl.opengl.GL11.*;
 import voide.buffer.BufferUtils;
 
@@ -17,14 +9,6 @@ import voide.buffer.BufferUtils;
 public final class TextureUtil {
     private TextureUtil() {
 
-    }
-
-    private static void blitData(int x, int y, int width, int sourceWidth, int sourceHeight, int[] source, int[] dest) {
-        for (int i = 0; i < sourceHeight; i++) {
-            for (int j = 0; j < sourceWidth; j++) {
-                dest[x + j + ((y + i) * width)] = source[j + i * sourceWidth];
-            }
-        }
     }
 
     /**

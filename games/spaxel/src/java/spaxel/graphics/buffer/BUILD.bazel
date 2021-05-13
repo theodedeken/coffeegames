@@ -7,8 +7,8 @@ cg_java_library(
     srcs = ["MasterBuffer.java"],
     deps = [
         ":render_layer",
+        "//engines/voide/src/java/voide/graphics/renderable",
         "//engines/voide/src/java/voide/render",
-        "//games/spaxel/src/java/spaxel/graphics/texture:packed_texture",
     ],
 )
 

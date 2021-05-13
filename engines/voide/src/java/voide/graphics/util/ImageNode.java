@@ -1,30 +1,37 @@
-package spaxel.graphics.texture;
+package voide.graphics.util;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import voide.graphics.load.Image;
+import voide.graphics.load.ImagePart;
 import voide.math.VectorD;
 
 /**
  * Represents a node in the tree representing the sprites in the packed texture
  */
-public class TextureNode {
+public class ImageNode {
     private static final int DIM_BASE = 2;
-    private Texture texture;
+    private Image image;
+    private String key;
     private int dim;
     private NodePlacement placement;
-    private TextureNode parent;
+    private ImageNode parent;
 
-    private TextureNode topLeft;
-    private TextureNode topRight;
-    private TextureNode botLeft;
-    private TextureNode botRight;
+    private ImageNode topLeft;
+    private ImageNode topRight;
+    private ImageNode botLeft;
+    private ImageNode botRight;
 
     /**
-     * Create a new leaf TextureNode
+     * Create a new leaf ImageNode
      * 
      * @param texture the leaf content
      */
-    public TextureNode(Texture texture) {
-        this.texture = texture;
-        int maxDim = (int) Math.max(texture.getDim().getValue(0), texture.getDim().getValue(1));
+    public ImageNode(String key, Image image) {
+        this.key = key;
+        this.image = image;
+        int maxDim = (int) Math.max(image.getShape().getValue(0), image.getShape().getValue(1));
         this.dim = DIM_BASE;
         while (dim < maxDim) {
             dim *= DIM_BASE;
@@ -32,17 +39,13 @@ public class TextureNode {
     }
 
     /**
-     * Create a new TextureNode with the specified dimension
+     * Create a new ImageNode with the specified dimension
      * 
-     * @param dim the dimension of the texturenode
+     * @param dim the dimension of the ImageNode
      */
-    public TextureNode(int dim) {
+    public ImageNode(int dim) {
         this.dim = dim;
         this.placement = NodePlacement.TOP_LEFT;
-    }
-
-    public Texture getTexture() {
-        return texture;
     }
 
     public VectorD getPos() {
@@ -82,30 +85,30 @@ public class TextureNode {
         this.placement = placement;
     }
 
-    public void setParent(TextureNode parent) {
+    public void setParent(ImageNode parent) {
         this.parent = parent;
     }
 
-    public TextureNode getTopLeft() {
+    public ImageNode getTopLeft() {
         return topLeft;
     }
 
-    public TextureNode getTopRight() {
+    public ImageNode getTopRight() {
         return topRight;
     }
 
-    public TextureNode getBotLeft() {
+    public ImageNode getBotLeft() {
         return botLeft;
     }
 
-    public TextureNode getBotRight() {
+    public ImageNode getBotRight() {
         return botRight;
     }
 
     /**
      * @param topLeft the topLeft to set
      */
-    public void setTopLeft(TextureNode topLeft) {
+    public void setTopLeft(ImageNode topLeft) {
         this.topLeft = topLeft;
         topLeft.setPlacement(NodePlacement.TOP_LEFT);
         topLeft.setParent(this);
@@ -114,7 +117,7 @@ public class TextureNode {
     /**
      * @param topRight the topRight to set
      */
-    public void setTopRight(TextureNode topRight) {
+    public void setTopRight(ImageNode topRight) {
         this.topRight = topRight;
         topRight.setPlacement(NodePlacement.TOP_RIGHT);
         topRight.setParent(this);
@@ -123,7 +126,7 @@ public class TextureNode {
     /**
      * @param botLeft the botLeft to set
      */
-    public void setBotLeft(TextureNode botLeft) {
+    public void setBotLeft(ImageNode botLeft) {
         this.botLeft = botLeft;
         botLeft.setPlacement(NodePlacement.BOT_LEFT);
         botLeft.setParent(this);
@@ -132,7 +135,7 @@ public class TextureNode {
     /**
      * @param botRight the botRight to set
      */
-    public void setBotRight(TextureNode botRight) {
+    public void setBotRight(ImageNode botRight) {
         this.botRight = botRight;
         botRight.setPlacement(NodePlacement.BOT_RIGHT);
         botRight.setParent(this);
@@ -143,23 +146,25 @@ public class TextureNode {
      * 
      * @param packedTexture the packedTexture of this tree
      */
-    public void initializeCoordinates(VectorD packedTextureDim, int spritesheetId) {
-        if (texture != null) {
-            texture.initializeCoordinates(this.getPos(), packedTextureDim, spritesheetId);
+    public Map<String, ImagePart> toImageParts(String packed) {
+        Map<String, ImagePart> output = new HashMap<>();
+        if (image != null) {
+            output.put(key, new ImagePart(packed, this.getPos(), image.getShape()));
         } else {
             if (topLeft != null) {
-                topLeft.initializeCoordinates(packedTextureDim, spritesheetId);
+                output.putAll(topLeft.toImageParts(packed));
             }
             if (topRight != null) {
-                topRight.initializeCoordinates(packedTextureDim, spritesheetId);
+                output.putAll(topRight.toImageParts(packed));
             }
             if (botLeft != null) {
-                botLeft.initializeCoordinates(packedTextureDim, spritesheetId);
+                output.putAll(botLeft.toImageParts(packed));
             }
             if (botRight != null) {
-                botRight.initializeCoordinates(packedTextureDim, spritesheetId);
+                output.putAll(botRight.toImageParts(packed));
             }
         }
+        return output;
     }
 
     /**
@@ -168,30 +173,29 @@ public class TextureNode {
      * 
      * @return the texture data of the tree
      */
-    public int[] loadTextureTree() {
+    public int[] loadImageTree() {
         int[] dest = new int[this.getDim() * this.getDim()];
-        if (this.getTexture() == null) {
+        if (image == null) {
             if (this.getTopLeft() != null) {
                 blitData(0, 0, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
-                        this.getTopLeft().loadTextureTree(), dest);
+                        this.getTopLeft().loadImageTree(), dest);
             }
             if (this.getTopRight() != null) {
                 blitData(this.getDim() / DIM_BASE, 0, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
-                        this.getTopRight().loadTextureTree(), dest);
+                        this.getTopRight().loadImageTree(), dest);
             }
             if (this.getBotLeft() != null) {
                 blitData(0, this.getDim() / DIM_BASE, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
-                        this.getBotLeft().loadTextureTree(), dest);
+                        this.getBotLeft().loadImageTree(), dest);
             }
             if (this.getBotRight() != null) {
                 blitData(this.getDim() / DIM_BASE, this.getDim() / DIM_BASE, this.getDim(), this.getDim() / DIM_BASE,
-                        this.getDim() / DIM_BASE, this.getBotRight().loadTextureTree(), dest);
+                        this.getDim() / DIM_BASE, this.getBotRight().loadImageTree(), dest);
             }
             return dest;
         } else {
-            Texture texture = this.getTexture();
-            blitData(0, 0, this.getDim(), (int) texture.getDim().getValue(0), (int) texture.getDim().getValue(1),
-                    texture.load(), dest);
+            blitData(0, 0, this.getDim(), (int) image.getShape().getValue(0), (int) image.getShape().getValue(1),
+                    image.getData(), dest);
             return dest;
         }
     }

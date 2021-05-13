@@ -8,7 +8,7 @@ import voide.resources.Resource;
  * Represents a Renderable part of the game
  */
 public abstract class Renderable implements Resource {
-    protected VectorD dim;
+    protected VectorD shape;
     protected String name;
 
     /**
@@ -24,21 +24,21 @@ public abstract class Renderable implements Resource {
     /**
      * Create new Renderable with the specified dimension
      * 
-     * @param dim the dimension
+     * @param shape the dimension
      */
-    public Renderable(VectorD dim) {
-        this.dim = dim;
+    public Renderable(VectorD shape) {
+        this.shape = shape;
     }
 
     /**
-     * @param dim the dim to set
+     * @param shape the dim to set
      */
-    public void setDim(VectorD dim) {
-        this.dim = dim;
+    public void setShape(VectorD shape) {
+        this.shape = shape;
     }
 
-    public VectorD getDim() {
-        return dim;
+    public VectorD getShape() {
+        return shape;
     }
 
     public String getName() {

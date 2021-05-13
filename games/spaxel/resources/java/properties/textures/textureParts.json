@@ -1,231 +1,231 @@
 {
     "white": {
-        "sheetName": "ships",
-        "dim": {
+        "parent": "image.ships",
+        "shape": {
             "x": 12,
             "y": 16
         },
-        "pos": {
+        "offset": {
             "x": 2,
             "y": 0
         }
     },
     "red": {
-        "sheetName": "ships",
-        "dim": {
+        "parent": "image.ships",
+        "shape": {
             "x": 16,
             "y": 16
         },
-        "pos": {
+        "offset": {
             "x": 16,
             "y": 0
         }
     },
     "blue": {
-        "sheetName": "ships",
-        "dim": {
+        "parent": "image.ships",
+        "shape": {
             "x": 12,
             "y": 16
         },
-        "pos": {
+        "offset": {
             "x": 2,
             "y": 16
         }
     },
     "green": {
-        "sheetName": "ships",
-        "dim": {
+        "parent": "image.ships",
+        "shape": {
             "x": 16,
             "y": 16
         },
-        "pos": {
+        "offset": {
             "x": 16,
             "y": 16
         }
     },
     "ui_play_overlay": {
-        "sheetName": "ui_play",
-        "dim": {
+        "parent": "image.ui_play",
+        "shape": {
             "x": 640,
             "y": 360
         },
-        "pos": {
+        "offset": {
             "x": 0,
             "y": 0
         }
     },
     "basic_laser_projectile": {
-        "sheetName": "laser_projectiles",
-        "dim": {
+        "parent": "image.laser_projectiles",
+        "shape": {
             "x": 4,
             "y": 8
         },
-        "pos": {
+        "offset": {
             "x": 0,
             "y": 0
         }
     },
     "piercing_laser_projectile": {
-        "sheetName": "laser_projectiles",
-        "dim": {
+        "parent": "image.laser_projectiles",
+        "shape": {
             "x": 4,
             "y": 8
         },
-        "pos": {
+        "offset": {
             "x": 8,
             "y": 0
         }
     },
     "disrupt_laser_projectile": {
-        "sheetName": "laser_projectiles",
-        "dim": {
+        "parent": "image.laser_projectiles",
+        "shape": {
             "x": 4,
             "y": 8
         },
-        "pos": {
+        "offset": {
             "x": 12,
             "y": 0
         }
     },
     "slowing_laser_projectile": {
-        "sheetName": "laser_projectiles",
-        "dim": {
+        "parent": "image.laser_projectiles",
+        "shape": {
             "x": 4,
             "y": 8
         },
-        "pos": {
+        "offset": {
             "x": 4,
             "y": 0
         }
     },
     "basic_missile_projectile": {
-        "sheetName": "missile_projectiles",
-        "dim": {
+        "parent": "image.missile_projectiles",
+        "shape": {
             "x": 6,
             "y": 12
         },
-        "pos": {
+        "offset": {
             "x": 0,
             "y": 0
         }
     },
     "homing_missile_projectile": {
-        "sheetName": "missile_projectiles",
-        "dim": {
+        "parent": "image.missile_projectiles",
+        "shape": {
             "x": 6,
             "y": 12
         },
-        "pos": {
+        "offset": {
             "x": 12,
             "y": 0
         }
     },
     "hacking_missile_projectile": {
-        "sheetName": "missile_projectiles",
-        "dim": {
+        "parent": "image.missile_projectiles",
+        "shape": {
             "x": 6,
             "y": 12
         },
-        "pos": {
+        "offset": {
             "x": 18,
             "y": 0
         }
     },
     "cluster_missile_projectile": {
-        "sheetName": "missile_projectiles",
-        "dim": {
+        "parent": "image.missile_projectiles",
+        "shape": {
             "x": 6,
             "y": 12
         },
-        "pos": {
+        "offset": {
             "x": 6,
             "y": 0
         }
     },
     "white_laser_trail": {
-        "sheetName": "laser_trails",
-        "dim": {
+        "parent": "image.laser_trails",
+        "shape": {
             "x": 2,
             "y": 2
         },
-        "pos": {
+        "offset": {
             "x": 0,
             "y": 0
         }
     },
     "red_laser_trail": {
-        "sheetName": "laser_trails",
-        "dim": {
+        "parent": "image.laser_trails",
+        "shape": {
             "x": 2,
             "y": 2
         },
-        "pos": {
+        "offset": {
             "x": 2,
             "y": 0
         }
     },
     "green_laser_trail": {
-        "sheetName": "laser_trails",
-        "dim": {
+        "parent": "image.laser_trails",
+        "shape": {
             "x": 2,
             "y": 2
         },
-        "pos": {
+        "offset": {
             "x": 0,
             "y": 2
         }
     },
     "blue_laser_trail": {
-        "sheetName": "laser_trails",
-        "dim": {
+        "parent": "image.laser_trails",
+        "shape": {
             "x": 2,
             "y": 2
         },
-        "pos": {
+        "offset": {
             "x": 2,
             "y": 2
         }
     },
     "white_missile_trail": {
-        "sheetName": "missile_trails",
-        "dim": {
+        "parent": "image.missile_trails",
+        "shape": {
             "x": 4,
             "y": 4
         },
-        "pos": {
+        "offset": {
             "x": 0,
             "y": 0
         }
     },
     "red_missile_trail": {
-        "sheetName": "missile_trails",
-        "dim": {
+        "parent": "image.missile_trails",
+        "shape": {
             "x": 4,
             "y": 4
         },
-        "pos": {
+        "offset": {
             "x": 4,
             "y": 0
         }
     },
     "green_missile_trail": {
-        "sheetName": "missile_trails",
-        "dim": {
+        "parent": "image.missile_trails",
+        "shape": {
             "x": 4,
             "y": 4
         },
-        "pos": {
+        "offset": {
             "x": 0,
             "y": 4
         }
     },
     "blue_missile_trail": {
-        "sheetName": "missile_trails",
-        "dim": {
+        "parent": "image.missile_trails",
+        "shape": {
             "x": 4,
             "y": 4
         },
-        "pos": {
+        "offset": {
             "x": 4,
             "y": 4
         }

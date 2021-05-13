@@ -42,8 +42,9 @@ public class RenderJob {
         return texOffset;
     }
 
-    public void setTexOffset(float[] texOffset) {
-        this.texOffset = texOffset;
+    public void setTexOffset(VectorD textureOffset, VectorD textureShape) {
+        this.texOffset = new float[] { (float) textureOffset.getValue(0), (float) textureOffset.getValue(1),
+                (float) textureShape.getValue(0), (float) textureShape.getValue(1) };
     }
 
     public int getSpriteSheetID() {

@@ -5,6 +5,26 @@ workspace(
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
+'''TODO start using source version 16 once bazel 4.1.0 is releasedW
+load("@bazel_tools//tools/jdk:remote_java_repository.bzl", "remote_java_repository")
+load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+
+maybe(
+    remote_java_repository,
+    name = "remotejdk16_linux",
+    exec_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    sha256 = "236b5ea97aff3cb312e743848d7efa77faf305170e41371a732ca93c1b797665",
+    strip_prefix = "zulu16.28.11-ca-jdk16.0.0-linux_x64",
+    urls = [
+        "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-linux_x64.tar.gz",
+        "https://cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-linux_x64.tar.gz",
+    ],
+    version = "16",
+)'''
+
 RULES_JVM_EXTERNAL_TAG = "4.0"
 
 RULES_JVM_EXTERNAL_SHA = "31701ad93dbfe544d597dbe62c9a1fdd76d81d8a9150c2bf1ecf928ecdf97169"

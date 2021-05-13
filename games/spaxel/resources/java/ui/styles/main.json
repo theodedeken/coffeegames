@@ -8,7 +8,7 @@
     "#title_label": {
         "y": 600,
         "text-scale": 8,
-        "text": "SP{white}XEL"
+        "text": "SP{texture.white}XEL"
     },
     "#play_button": {
         "y": 480,

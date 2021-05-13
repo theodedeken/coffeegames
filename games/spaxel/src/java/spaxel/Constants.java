@@ -41,15 +41,6 @@ public final class Constants {
     public static final int XP_FUNC_A = 25;
     public static final int XP_FUNC_B = 25;
     public static final int XP_FUNC_C = 50;
-    // bytes
-    public static final int ONE_BYTE = 8;
-    public static final int TWO_BYTES = ONE_BYTE * 2;
-    public static final int THREE_BYTES = ONE_BYTE * 3;
-    // texture packing
-    public static final int DIM_BASE = 2;
-    public static final int SIZE_4 = 4;
-    public static final int SIZE_3 = 3;
-    public static final int SIZE_2 = 2;
 
     private Constants() {
 

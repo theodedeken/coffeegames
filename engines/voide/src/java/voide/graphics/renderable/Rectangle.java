@@ -23,11 +23,11 @@ public class Rectangle extends Renderable {
     /**
      * Create a new ColorBox with the specified dimensions and color
      * 
-     * @param dim   the dimensions of the colorbox
+     * @param shape the dimensions of the colorbox
      * @param color the color of the colorbox
      */
-    public Rectangle(VectorD dim, int color) {
-        super(dim);
+    public Rectangle(VectorD shape, int color) {
+        super(shape);
         this.color = color;
     }
 
@@ -41,7 +41,7 @@ public class Rectangle extends Renderable {
     }
 
     public void apply(RenderJob job) {
-        job.applyScale(dim);
+        job.applyScale(shape);
         job.setColor(color);
     }
 }

@@ -8,10 +8,10 @@
         "rot": 0
     },
     ".class_select:hover": {
-        "sprite": "class_select_hover"
+        "sprite": "texture.class_select_hover"
     },
     ".class_select:click": {
-        "sprite": "class_select_click"
+        "sprite": "texture.class_select_click"
     },
     ".class_description": {
         "text-scale": 1,
@@ -37,16 +37,16 @@
         "onClick": "selectBlue"
     },
     "#white_image": {
-        "sprite": "white"
+        "sprite": "texture.white"
     },
     "#red_image": {
-        "sprite": "red"
+        "sprite": "texture.red"
     },
     "#green_image": {
-        "sprite": "green"
+        "sprite": "texture.green"
     },
     "#blue_image": {
-        "sprite": "blue"
+        "sprite": "texture.blue"
     },
     "#white_description": {
         "x": 190,

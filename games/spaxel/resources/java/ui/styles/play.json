@@ -2,7 +2,7 @@
     "#root": {
         "x": 640,
         "y": 360,
-        "sprite": "ui_play_overlay",
+        "sprite": "texture.ui_play_overlay",
         "scale": 2,
         "rot": 0
     },
