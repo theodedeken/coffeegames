@@ -34,11 +34,16 @@ public class ImagePart extends Image {
     public VectorD getTextureOffset() {
         VectorD parentOffset = parent.hardGet().getTextureOffset();
         VectorD parentShape = parent.hardGet().getTextureShape();
-        return parentOffset.sum(offset.elementDiv(parentShape));
+
+        VectorD relOffset = offset.elementDiv(parent.hardGet().getShape()).elementMult(parentShape);
+
+        return parentOffset.sum(relOffset);
     }
 
     public VectorD getTextureShape() {
-        return shape.elementDiv(parent.hardGet().getTextureShape());
+        VectorD parentShape = parent.hardGet().getTextureShape();
+        VectorD relShape = shape.elementDiv(parent.hardGet().getShape()).elementMult(parentShape);
+        return relShape;
     }
 
     public void setParent(String parent) {

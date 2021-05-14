@@ -1,1 +1,1 @@
-build --java_language_version=8
+build --java_language_version=16

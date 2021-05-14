@@ -49,12 +49,24 @@ platform = "natives-%s" % OPERATING_SYSTEM
 # TODO set java source 11 in toolchain
 maven_install(
     artifacts = [
+        # Jackson serialization
         "com.fasterxml.jackson.core:jackson-core:2.7.3",
         "com.fasterxml.jackson.core:jackson-annotations:2.7.3",
         "com.fasterxml.jackson.core:jackson-databind:2.7.3",
         "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.7.3",
         "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.3.0",
-        "junit:junit:4.12",
+        # Junit
+        "org.junit.jupiter:junit-jupiter-api:5.5.0",
+        "org.junit.jupiter:junit-jupiter-engine:5.5.0",
+        "org.junit.jupiter:junit-jupiter-params:5.5.0",
+        "org.apiguardian:apiguardian-api:1.0.0",
+        "org.opentest4j:opentest4j:1.1.1",
+        "org.junit.platform:junit-platform-commons:1.5.0",
+        "org.junit.platform:junit-platform-console:1.5.0",
+        "org.junit.platform:junit-platform-engine:1.5.0",
+        "org.junit.platform:junit-platform-launcher:1.5.0",
+        "org.junit.platform:junit-platform-suite-api:1.5.0",
+        # LWJGL
         "org.lwjgl:lwjgl:%s" % LWJGL_VERSION,
         "org.lwjgl:lwjgl-assimp:%s" % LWJGL_VERSION,
         "org.lwjgl:lwjgl-bgfx:%s" % LWJGL_VERSION,

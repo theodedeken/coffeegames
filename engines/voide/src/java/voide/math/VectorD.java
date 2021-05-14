@@ -2,6 +2,7 @@ package voide.math;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -39,7 +40,8 @@ public class VectorD {
      * @param y the y value
      */
     public VectorD(@JsonProperty("x") double x, @JsonProperty("y") double y) {
-        this.vector = new double[] { x, y, 1 };
+        this.vector = new double[] { x, y };
+        m = 2;
     }
 
     /**
@@ -61,6 +63,10 @@ public class VectorD {
      */
     public void setValue(int i, double value) {
         vector[i] = value;
+    }
+
+    public int getM() {
+        return m;
     }
 
     /**
@@ -218,6 +224,32 @@ public class VectorD {
             sol.setValue(i, vector[i] * vec.getValue(i));
         }
         return sol;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + Arrays.hashCode(vector);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        VectorD other = (VectorD) obj;
+        if (!Arrays.equals(vector, other.vector)) {
+            return false;
+        }
+        return true;
     }
 
 }
