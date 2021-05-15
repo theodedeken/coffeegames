@@ -4,9 +4,8 @@ import spaxel.entity.ComponentType;
 import spaxel.entity.storage.cooldown.CooldownStorage;
 import spaxel.entity.storage.renderable.RenderableStorage;
 import spaxel.entity.storage.stack.StackStorage;
+import voide.ui.elements.Element;
 import spaxel.entity.Entity;
-import spaxel.ui.elements.Element;
-
 
 /**
  * Creates new UI elements

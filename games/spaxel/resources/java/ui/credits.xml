@@ -1,6 +1,6 @@
-<ui type="CREDITS" controller="code.ui.controllers.CreditsController">
-    <style>/ui/styles/common.json</style>
-    <style>/ui/styles/credits.json</style>
+<ui controller="code.ui.controllers.CreditsController">
+    <style>stylesheet.common</style>
+    <style>stylesheet.credits</style>
     <body id="root">
         <element class="label" id="prog_graph_label"></element>
         <element class="credit" id="prog_graph_credit"></element>

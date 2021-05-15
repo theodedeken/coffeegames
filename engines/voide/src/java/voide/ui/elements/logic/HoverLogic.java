@@ -1,13 +1,13 @@
-package spaxel.ui.elements.logic;
+package voide.ui.elements.logic;
 
 import voide.collision.HitShape;
 import voide.collision.HitPoint;
 import voide.input.MouseWrapper;
 import voide.math.VectorD;
+import voide.ui.elements.Element;
+import voide.ui.elements.Style;
 import voide.math.MatrixD;
 import voide.math.MatrixMaker;
-import spaxel.ui.elements.Element;
-import spaxel.ui.styles.Style;
 
 import java.util.Map;
 

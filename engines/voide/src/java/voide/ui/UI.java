@@ -1,21 +1,24 @@
-package spaxel.ui.elements;
+package voide.ui;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import voide.input.MouseWrapper;
 import voide.render.buffer.MasterBuffer;
+import voide.resources.Resource;
+import voide.resources.ResourceProxy;
+import voide.ui.elements.Element;
+import voide.ui.elements.StyleSheet;
 
 /**
  * Root class of an ui structure
  */
-public class UI {
-    private UIType type;
+public class UI implements Resource {
     private String controller;
-    private List<String> styles;
-    private List<Map<String, Map<String, String>>> stylesheets;
+    private List<ResourceProxy<StyleSheet>> styles;
+    private List<StyleSheet> stylesheets;
     private Element body;
 
     /**
@@ -26,15 +29,11 @@ public class UI {
         this.styles = new ArrayList<>();
     }
 
-    /**
-     * Initialize the ui by setting giving its reference to its children and
-     * initializing their styles
-     */
-    public void initialize(Map<String, Map<String, Map<String, String>>> stylesheets) {
+    public void initialize() {
+        this.stylesheets = new ArrayList<>();
 
-        this.stylesheets = new ArrayList();
-        for (String style_name : styles) {
-            this.stylesheets.add(stylesheets.get(style_name));
+        for (ResourceProxy<StyleSheet> style : styles) {
+            this.stylesheets.add(style.get());
         }
         body.initStyle(this.stylesheets);
     }
@@ -74,20 +73,6 @@ public class UI {
     }
 
     /**
-     * @return the type
-     */
-    public UIType getType() {
-        return type;
-    }
-
-    /**
-     * @param type the type to set
-     */
-    public void setType(UIType type) {
-        this.type = type;
-    }
-
-    /**
      * @return the controller
      */
     public String getController() {
@@ -122,7 +107,7 @@ public class UI {
      */
     @JsonSetter("style")
     public void addStylesheetPath(String style) {
-        this.styles.add(style);
+        this.styles.add(new ResourceProxy<>(style, StyleSheet.class));
     }
 
 }

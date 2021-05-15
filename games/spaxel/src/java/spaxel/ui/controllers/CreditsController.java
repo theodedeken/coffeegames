@@ -1,11 +1,11 @@
 package spaxel.ui.controllers;
 
 import spaxel.engine.Engine;
-import voide.input.Keyboard;
-import spaxel.ui.elements.UIType;
-import spaxel.engine.Resources;
+import spaxel.ui.UIType;
 import voide.input.Key;
-import spaxel.ui.elements.Element;
+import voide.input.Keyboard;
+import voide.ui.UI;
+import voide.ui.elements.Element;
 
 /**
  * Callbacks for elements of the credits UI
@@ -36,6 +36,6 @@ public final class CreditsController {
      * Go to the previous screen
      */
     public static void back() {
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.MAIN));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
     }
 }

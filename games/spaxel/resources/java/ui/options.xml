@@ -1,6 +1,6 @@
-<ui type="OPTIONS" controller="code.ui.controllers.OptionsController">
-    <style>/ui/styles/common.json</style>
-    <style>/ui/styles/options.json</style>
+<ui controller="code.ui.controllers.OptionsController">
+    <style>stylesheet.common</style>
+    <style>stylesheet.options</style>
     <body id="root">
         <element id="game_button" class="large_button"></element>
         <element id="controls_button" class="large_button"></element>

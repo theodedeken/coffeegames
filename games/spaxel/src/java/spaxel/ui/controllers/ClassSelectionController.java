@@ -1,12 +1,13 @@
 package spaxel.ui.controllers;
 
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
 import spaxel.engine.Resources;
+import spaxel.entity.Entity;
+import spaxel.ui.UIType;
 import voide.input.Key;
 import voide.input.Keyboard;
-import spaxel.ui.elements.UIType;
-import spaxel.ui.elements.Element;
+import voide.ui.UI;
+import voide.ui.elements.Element;
 
 /**
  * Callbacks for element of the class selection UI
@@ -24,7 +25,7 @@ public final class ClassSelectionController {
         Entity player = Resources.get().getIndustryMap().get("player_white_industry").produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.PLAY));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -35,7 +36,7 @@ public final class ClassSelectionController {
         Entity player = Resources.get().getIndustryMap().get("player_red_industry").produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.PLAY));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -46,7 +47,7 @@ public final class ClassSelectionController {
         Entity player = Resources.get().getIndustryMap().get("player_green_industry").produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.PLAY));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -57,7 +58,7 @@ public final class ClassSelectionController {
         Entity player = Resources.get().getIndustryMap().get("player_blue_industry").produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.PLAY));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -65,7 +66,7 @@ public final class ClassSelectionController {
      * Go to the previous screen
      */
     public static void back() {
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.MAIN));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
     }
 
     /**

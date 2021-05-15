@@ -1,6 +1,6 @@
-package spaxel.ui.elements.logic;
+package voide.ui.elements.logic;
 
-import spaxel.ui.elements.Element;
+import voide.ui.elements.Element;
 
 /**
  * Logic to execute a method every update of an ui element

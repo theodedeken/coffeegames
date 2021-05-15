@@ -1,11 +1,11 @@
 package spaxel.ui.controllers;
 
 import spaxel.engine.Engine;
-import voide.input.Keyboard;
-import spaxel.ui.elements.UIType;
-import spaxel.ui.elements.Element;
-import spaxel.engine.Resources;
+import spaxel.ui.UIType;
 import voide.input.Key;
+import voide.input.Keyboard;
+import voide.ui.UI;
+import voide.ui.elements.Element;
 
 /**
  * Callbacks for elements in the options UI
@@ -63,6 +63,6 @@ public final class OptionsController {
      * Go to the previous screen
      */
     public static void back() {
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.MAIN));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
     }
 }

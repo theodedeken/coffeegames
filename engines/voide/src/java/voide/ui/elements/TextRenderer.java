@@ -1,16 +1,13 @@
-package spaxel.ui.render;
+package voide.ui.elements;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
 
 import voide.graphics.renderable.Renderable;
 import voide.math.VectorD;
 import voide.render.buffer.MasterBuffer;
 import voide.render.buffer.RenderJob;
 import voide.render.buffer.RenderLayer;
-import spaxel.ui.styles.Style;
-import spaxel.ui.state.State;
 
 /**
  * Provides methods for rendering text

@@ -1,8 +1,8 @@
 package spaxel.ui.controllers;
 
 import spaxel.engine.Engine;
-import spaxel.ui.elements.UIType;
-import spaxel.engine.Resources;
+import spaxel.ui.UIType;
+import voide.ui.UI;
 
 /**
  * Callbacks for elements of the game over UI
@@ -17,13 +17,13 @@ public final class GameOverController {
      * Play again
      */
     public static void play() {
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.CLASS_SELECTION));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.CLASS_SELECTION.key(), UI.class));
     }
 
     /**
      * Go to the main menu
      */
     public static void main() {
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.MAIN));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
     }
 }

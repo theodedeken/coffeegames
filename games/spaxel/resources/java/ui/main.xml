@@ -1,6 +1,6 @@
-<ui type="MAIN" controller="code.ui.controllers.MainController">
-    <style>/ui/styles/common.json</style>
-    <style>/ui/styles/main.json</style>
+<ui controller="code.ui.controllers.MainController">
+    <style>stylesheet.common</style>
+    <style>stylesheet.main</style>
     <body id="root">
         <element id="title_label"></element>
         <element id="play_button" class="large_button"></element>

@@ -1,10 +1,12 @@
-package spaxel.ui.elements.logic;
+package voide.ui.elements.logic;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.logging.Logger;
+
+import voide.ui.elements.Element;
+
 import java.util.logging.Level;
-import spaxel.ui.elements.Element;
 
 /**
  * Provides functions for invoking methods in the ui Elements

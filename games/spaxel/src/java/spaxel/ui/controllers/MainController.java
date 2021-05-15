@@ -2,8 +2,9 @@ package spaxel.ui.controllers;
 
 import spaxel.Game;
 import spaxel.engine.Engine;
-import spaxel.ui.elements.UIType;
 import spaxel.engine.Resources;
+import spaxel.ui.UIType;
+import voide.ui.UI;
 
 /**
  * Callbacks for the elements of the play UI
@@ -17,7 +18,7 @@ public final class MainController {
 	 * Start a new game
 	 */
 	public static void startGame() {
-		Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.CLASS_SELECTION));
+		Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.CLASS_SELECTION.key(), UI.class));
 	}
 
 	/**
@@ -31,14 +32,14 @@ public final class MainController {
 	 * Open options
 	 */
 	public static void options() {
-		Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.OPTIONS));
+		Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.OPTIONS.key(), UI.class));
 	}
 
 	/**
 	 * Open credits
 	 */
 	public static void credits() {
-		Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.CREDITS));
+		Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.CREDITS.key(), UI.class));
 	}
 
 	/**

@@ -1,18 +1,16 @@
-package spaxel.ui.styles;
+package voide.ui.elements;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Arrays;
-import spaxel.ui.state.State;
-
 
 /**
  * Represents the styling applied to an ui Element
  */
 public class Style {
-    private static final List<String> STYLE_SPECIFIC = Arrays.asList("onClick", "onUpdate",
-            "onInit", "sprite", "text", "hitshape", "animation");
+    private static final List<String> STYLE_SPECIFIC = Arrays.asList("onClick", "onUpdate", "onInit", "sprite", "text",
+            "hitshape", "animation");
 
     private Style parent;
     private Map<String, String> properties;
@@ -44,8 +42,8 @@ public class Style {
     }
 
     /**
-     * Get the property value for this key. If no value is found in this style, continue searching
-     * in the parent style
+     * Get the property value for this key. If no value is found in this style,
+     * continue searching in the parent style
      * 
      * @param key the key of the property
      * 
@@ -91,7 +89,8 @@ public class Style {
     }
 
     /**
-     * Merge this map of properties with the properties of this style using the given modifier
+     * Merge this map of properties with the properties of this style using the
+     * given modifier
      * 
      * @param props the properties to merge
      * @param mod   the modifier to merge on
@@ -141,5 +140,3 @@ public class Style {
     }
 
 }
-
-

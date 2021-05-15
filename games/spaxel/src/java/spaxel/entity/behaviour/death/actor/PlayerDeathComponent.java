@@ -1,11 +1,11 @@
 package spaxel.entity.behaviour.death.actor;
 
-import spaxel.entity.behaviour.death.DeathHandler;
-import spaxel.entity.behaviour.death.DeathType;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
-import spaxel.ui.elements.UIType;
-import spaxel.engine.Resources;
+import spaxel.entity.behaviour.death.DeathHandler;
+import spaxel.entity.behaviour.death.DeathType;
+import spaxel.ui.UIType;
+import voide.ui.UI;
 
 /**
  * Created by theo on 24/06/17.
@@ -20,7 +20,7 @@ public class PlayerDeathComponent extends DeathHandler {
         // show game over
         // TODO revisit maybe
         Engine.get().stopGame();
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.GAME_OVER));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.GAME_OVER.key(), UI.class));
         Engine.get().setEngineState(Engine.EngineState.MENU);
     }
 

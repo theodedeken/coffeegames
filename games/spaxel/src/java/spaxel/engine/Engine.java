@@ -4,11 +4,11 @@ import spaxel.Game;
 import voide.input.Keyboard;
 import voide.input.MouseWrapper;
 import spaxel.logger.Logger;
-import spaxel.ui.elements.UIType;
-import spaxel.ui.elements.UI;
 import spaxel.sound.MusicList;
+import spaxel.ui.UIType;
 import spaxel.entity.EntityStream;
 import voide.sound.Music;
+import voide.ui.UI;
 
 public final class Engine {
 	private static final Engine engine = new Engine();
@@ -49,7 +49,8 @@ public final class Engine {
 		nentities.cleanup();
 		logger = new Logger(1000, 100);
 
-		currentUI = Resources.get().getUIS().get(UIType.MAIN);
+		currentUI = voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class);
+		System.out.println(currentUI);
 		engineState = EngineState.MENU;
 
 		Game.startUpdating();

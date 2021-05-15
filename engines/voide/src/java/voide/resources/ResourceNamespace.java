@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ResourceNamespace {
     private String className;
-    private List<String> files;
+    private List<ResourceFile> files;
 
     public ResourceNamespace() {
 
@@ -18,11 +18,11 @@ public class ResourceNamespace {
         this.className = className;
     }
 
-    public List<String> getFiles() {
+    public List<ResourceFile> getFiles() {
         return files;
     }
 
-    public void setFiles(List<String> files) {
+    public void setFiles(List<ResourceFile> files) {
         this.files = files;
     }
 

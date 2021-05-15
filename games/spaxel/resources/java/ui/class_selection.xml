@@ -1,6 +1,6 @@
-<ui type="CLASS_SELECTION" controller="code.ui.controllers.ClassSelectionController">
-    <style>/ui/styles/common.json</style>
-    <style>/ui/styles/class_select.json</style>
+<ui controller="code.ui.controllers.ClassSelectionController">
+    <style>stylesheet.common</style>
+    <style>stylesheet.class_select</style>
     <body id="root">
         <element class="class_select" id="select_white">
             <element class="class_image" id="white_image"></element>

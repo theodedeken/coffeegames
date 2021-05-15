@@ -19,12 +19,12 @@ import voide.graphics.renderable.Texture;
 import spaxel.engine.ItemCatalogue;
 import spaxel.engine.ItemProperties;
 import spaxel.factories.entities.EntityIndustry;
+import spaxel.ui.UIType;
 import voide.input.Key;
 import voide.input.KeyState;
 import voide.sound.Music;
 import voide.sound.Sound;
-import spaxel.ui.elements.UI;
-import spaxel.ui.elements.UIType;
+import voide.ui.UI;
 
 /**
  * Created by theo on 28/05/17.
@@ -108,7 +108,6 @@ public final class Loader {
         try {
             Map<String, EntityIndustry> industryMap = new HashMap<>();
             for (String s : industries) {
-                System.out.println(s);
                 InputStream file = loadFile(s);
                 ObjectMapper mapper = new ObjectMapper();
                 industryMap.putAll(mapper.readValue(file, new TypeReference<Map<String, EntityIndustry>>() {
@@ -215,31 +214,6 @@ public final class Loader {
             return stylesheets;
         } catch (IOException e) {
 
-            LOGGER.log(Level.SEVERE, e.toString(), e);
-        }
-        return null;
-    }
-
-    /**
-     * Load the uis in the given files
-     * 
-     * @param uis a list with paths to the uis
-     * 
-     * @return a map that connect ui type to the correct ui object
-     */
-    public static Map<UIType, UI> loadUI(Iterable<String> uis,
-            Map<String, Map<String, Map<String, String>>> stylesheets) {
-        try {
-            EnumMap<UIType, UI> uiMap = new EnumMap<>(UIType.class);
-            for (String ui : uis) {
-                InputStream file = loadFile(ui);
-                XmlMapper mapper = new XmlMapper();
-                UI root = mapper.readValue(file, UI.class);
-                root.initialize(stylesheets);
-                uiMap.put(root.getType(), root);
-            }
-            return uiMap;
-        } catch (IOException e) {
             LOGGER.log(Level.SEVERE, e.toString(), e);
         }
         return null;

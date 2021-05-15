@@ -1,13 +1,11 @@
-package spaxel.ui.render;
+package voide.ui.elements;
 
-import spaxel.ui.styles.Style;
 import voide.graphics.animation.Animation;
 import voide.graphics.renderable.Renderable;
 import voide.math.VectorD;
 import voide.render.buffer.MasterBuffer;
 import voide.render.buffer.RenderJob;
 import voide.render.buffer.RenderLayer;
-import spaxel.ui.state.State;
 
 import java.util.Map;
 
@@ -102,7 +100,6 @@ public class StyleRenderer {
         RenderJob data = new RenderJob();
         Renderable sprite = voide.resources.Resources.get().getResource(style.getProperty("sprite", currentState),
                 Renderable.class);
-        System.out.println(style.getProperty("sprite", currentState));
         sprite.apply(data);
         data.applyTranslation(position);
         data.applyScale(scale);

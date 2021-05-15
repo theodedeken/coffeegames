@@ -1,23 +1,21 @@
-package spaxel.ui.elements;
+package voide.ui.elements;
 
-import spaxel.ui.styles.Style;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
-import spaxel.ui.elements.logic.Logic;
-import spaxel.ui.elements.logic.OnClickLogic;
-import spaxel.ui.elements.logic.OnUpdateLogic;
-import spaxel.ui.elements.logic.OnInitLogic;
-import spaxel.ui.elements.logic.ReleaseLogic;
-import spaxel.ui.render.StyleRenderer;
-import spaxel.ui.state.State;
 
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
-import spaxel.ui.elements.logic.HoverLogic;
-import spaxel.ui.elements.logic.ClickLogic;
+
 import voide.input.MouseWrapper;
 import voide.render.buffer.MasterBuffer;
+import voide.ui.elements.logic.ClickLogic;
+import voide.ui.elements.logic.HoverLogic;
+import voide.ui.elements.logic.Logic;
+import voide.ui.elements.logic.OnClickLogic;
+import voide.ui.elements.logic.OnInitLogic;
+import voide.ui.elements.logic.OnUpdateLogic;
+import voide.ui.elements.logic.ReleaseLogic;
 
 /**
  * Represent an element of a UI
@@ -37,7 +35,7 @@ public class Element {
     private StyleRenderer renderer;
     private MouseWrapper mouse;
     private String controller;
-    private List<Map<String, Map<String, String>>> stylesheets;
+    private List<StyleSheet> stylesheets;
 
     /**
      * Create a new Element
@@ -91,7 +89,7 @@ public class Element {
     /**
      * Initialize the style of this element
      */
-    public void initStyle(List<Map<String, Map<String, String>>> stylesheets) {
+    public void initStyle(List<StyleSheet> stylesheets) {
         this.stylesheets = stylesheets;
         for (String stl : classes) {
             style.merge(getStyle("." + stl, stylesheets));
@@ -114,8 +112,8 @@ public class Element {
      * 
      * @return the style configuration
      */
-    private Map<String, String> getStyle(String name, List<Map<String, Map<String, String>>> stylesheets) {
-        for (Map<String, Map<String, String>> stylesheet : stylesheets) {
+    private Map<String, String> getStyle(String name, List<StyleSheet> stylesheets) {
+        for (StyleSheet stylesheet : stylesheets) {
             if (stylesheet.containsKey(name)) {
                 return stylesheet.get(name);
             }
@@ -239,11 +237,11 @@ public class Element {
         return mouse;
     }
 
-    public void setHitStylesheets(List<Map<String, Map<String, String>>> stylesheets) {
+    public void setHitStylesheets(List<StyleSheet> stylesheets) {
         this.stylesheets = stylesheets;
     }
 
-    public List<Map<String, Map<String, String>>> getStylesheets() {
+    public List<StyleSheet> getStylesheets() {
         return stylesheets;
     }
 }

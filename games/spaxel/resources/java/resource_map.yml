@@ -6,16 +6,39 @@ hitshape:
   className: voide.collision.HitShape
   files:
     - /resources/hitshape.json
+stylesheet:
+  className: voide.ui.elements.StyleSheet
+  files:
+    - key: main
+      path: /ui/styles/main.json
+    - key: play
+      path: /ui/styles/play.json
+    - key: credits
+      path: /ui/styles/credits.json
+    - key: options
+      path: /ui/styles/options.json
+    - key: class_select
+      path: /ui/styles/class_select.json
+    - key: game_over
+      path: /ui/styles/game_over.json
+ui:
+  className: voide.ui.UI
+  files:
+    - key: "MAIN"
+      path: /ui/main.xml
+    - key: "PLAY"
+      path: /ui/play.xml
+    - key: "CREDITS"
+      path: /ui/credits.xml
+    - key: "OPTIONS"
+      path: /ui/options.xml
+    - key: "CLASS_SELECTION"
+      path: /ui/class_selection.xml
+    - key: "GAME_OVER"
+      path: /ui/game_over.xml
 #item:
 #  - /resources/itemProperties.json
-#stylesheet:
-#  - /ui/styles/common.json
-#  - /ui/styles/main.json
-#  - /ui/styles/play.json
-#  - /ui/styles/credits.json
-#  - /ui/styles/options.json
-#  - /ui/styles/class_select.json
-#  - /ui/styles/game_over.json
+
 #industry:
 #  - /properties/entities/particle.json
 #  - /properties/entities/spawner.json

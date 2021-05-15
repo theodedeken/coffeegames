@@ -1,11 +1,11 @@
-package spaxel.ui.elements.logic;
+package voide.ui.elements.logic;
 
-import spaxel.ui.elements.Element;
+import voide.ui.elements.Element;
 
 /**
  * Implement an onClick behavior on an ui Element.
  * 
- * @see spaxel.ui.elements.Element
+ * @see voide.ui.elements.Element
  */
 public class OnClickLogic implements Logic {
     /**

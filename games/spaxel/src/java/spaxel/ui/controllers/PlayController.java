@@ -1,23 +1,24 @@
 package spaxel.ui.controllers;
 
+import java.util.Set;
+
+import spaxel.Constants;
+import spaxel.engine.Engine;
 import spaxel.entity.ComponentType;
+import spaxel.entity.Entity;
 import spaxel.entity.storage.experience.ExperienceStorage;
 import spaxel.entity.storage.health.HealthStorage;
 import spaxel.entity.storage.item.ItemContainer;
 import spaxel.entity.storage.item.ItemStorage;
-import spaxel.engine.Engine;
-import spaxel.entity.Entity;
-import spaxel.engine.Resources;
-import spaxel.system.SystemType;
 import spaxel.factories.elements.ElementCreator;
-import voide.input.Keyboard;
-import spaxel.util.DebugRenderer;
-import spaxel.ui.elements.Element;
-import spaxel.ui.elements.UIType;
-import java.util.Set;
-import spaxel.Constants;
 import spaxel.logger.Logger;
+import spaxel.system.SystemType;
+import spaxel.ui.UIType;
+import spaxel.util.DebugRenderer;
 import voide.input.Key;
+import voide.input.Keyboard;
+import voide.ui.UI;
+import voide.ui.elements.Element;
 
 /**
  * Callbacks for the elements in the play UI.
@@ -160,7 +161,7 @@ public final class PlayController {
      * Quit playing the game
      */
     public static void quit() {
-        Engine.get().setCurrentUI(Resources.get().getUIS().get(UIType.MAIN));
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
         Engine.get().setEngineState(Engine.EngineState.MENU);
         Engine.get().stopGame();
     }

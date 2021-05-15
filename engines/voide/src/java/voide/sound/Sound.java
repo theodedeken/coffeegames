@@ -27,7 +27,6 @@ public class Sound implements Resource {
 
 	public void initialize() {
 		try {
-			System.out.println(path);
 			URL url = getClass().getResource(path);
 			clip = AudioSystem.getClip();
 			AudioInputStream audio = AudioSystem.getAudioInputStream(url);

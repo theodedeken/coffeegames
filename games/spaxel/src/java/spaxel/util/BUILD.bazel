@@ -44,24 +44,6 @@ cg_java_library(
 )
 
 cg_java_library(
-    name = "shader_utils",
-    srcs = [
-        "ShaderUtils.java",
-    ],
-    deps = [
-        ":file_to_string_loader",
-        "@maven//:org_lwjgl_lwjgl_opengl",
-    ],
-)
-
-cg_java_library(
-    name = "file_to_string_loader",
-    srcs = [
-        "FileToStringLoader.java",
-    ],
-)
-
-cg_java_library(
     name = "sprite_data_util",
     srcs = [
         "SpriteDataUtil.java",

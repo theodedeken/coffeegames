@@ -1,6 +1,6 @@
-<ui type="GAME_OVER" controller="code.ui.controllers.GameOverController">
-    <style>/ui/styles/common.json</style>
-    <style>/ui/styles/game_over.json</style>
+<ui controller="code.ui.controllers.GameOverController">
+    <style>stylesheet.common</style>
+    <style>stylesheet.game_over</style>
     <body id="root">
         <element id="play_again_button" class="large_button"></element>
         <element id="quit_button" class="large_button"></element>

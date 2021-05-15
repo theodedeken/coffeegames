@@ -24,4 +24,8 @@ public class ResourceProxy<T extends Resource> {
     public ResourceProxy<T> copy() {
         return new ResourceProxy<>(key, resourceType);
     }
+
+    public String getKey() {
+        return key;
+    }
 }

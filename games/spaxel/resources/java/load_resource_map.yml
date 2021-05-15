@@ -19,3 +19,15 @@ image_part:
   files:
     - /properties/textures/textureParts.json
     - /properties/textures/ui.json
+stylesheet:
+  className: voide.ui.elements.StyleSheet
+  files:
+    - key: common
+      path: /ui/styles/common.json
+    - key: load
+      path: /ui/styles/load.json
+ui:
+  className: voide.ui.UI
+  files:
+    - key: "LOAD"
+      path: /ui/load.xml

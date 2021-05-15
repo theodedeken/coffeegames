@@ -1,0 +1,33 @@
+package(default_visibility = ["//games/spaxel:__subpackages__"])
+
+filegroup(
+    name = "controllers",
+    srcs = glob(["*.java"]),
+)
+
+"""deps TODO
+cg_java_library(
+    name = "controllers",
+    srcs = glob(["*.java"]),
+    deps = [
+    ],
+)
+import spaxel.engine.Engine;
+import spaxel.entity.Entity;
+import spaxel.engine.Resources;
+import voide.input.Key;
+import voide.input.Keyboard;
+import spaxel.ui.UIType;
+import spaxel.ui.elements.Element;
+import spaxel.Game;
+import spaxel.entity.ComponentType;
+import spaxel.entity.storage.experience.ExperienceStorage;
+import spaxel.entity.storage.health.HealthStorage;
+import spaxel.entity.storage.item.ItemContainer;
+import spaxel.entity.storage.item.ItemStorage;
+import spaxel.system.SystemType;
+import spaxel.factories.elements.ElementCreator;
+import spaxel.util.DebugRenderer;
+import spaxel.Constants;
+import spaxel.logger.Logger;
+"""

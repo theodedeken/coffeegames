@@ -1,12 +1,9 @@
 package spaxel.engine;
 
 import static spaxel.loaders.Loader.loadEntityIndustries;
-import static spaxel.loaders.Loader.loadHitShapes;
 import static spaxel.loaders.Loader.loadItems;
 import static spaxel.loaders.Loader.loadKeyConfiguration;
 import static spaxel.loaders.Loader.loadResourcePaths;
-import static spaxel.loaders.Loader.loadStylesheets;
-import static spaxel.loaders.Loader.loadUI;
 
 import java.util.List;
 import java.util.Map;
@@ -14,8 +11,7 @@ import java.util.Map.Entry;
 
 import spaxel.Constants;
 import spaxel.factories.entities.EntityIndustry;
-import spaxel.ui.elements.UI;
-import spaxel.ui.elements.UIType;
+import spaxel.ui.UIType;
 import voide.collision.HitShape;
 import voide.graphics.animation.Animation;
 import voide.graphics.load.Image;
@@ -27,6 +23,7 @@ import voide.input.Key;
 import voide.input.KeyState;
 import voide.sound.Music;
 import voide.sound.Sound;
+import voide.ui.UI;
 
 /**
  * Singleton class to hold all the game resources
@@ -36,7 +33,6 @@ public final class Resources {
 
 	private Map<String, EntityIndustry> industryMap;
 	private Map<String, HitShape> hitShapeAtlas;
-	private Map<UIType, UI> uis;
 	private Map<String, Map<String, Map<String, String>>> stylesheets;
 	private Map<String, Animation> animationAtlas;
 	private ItemCatalogue items;
@@ -53,13 +49,8 @@ public final class Resources {
 	 * Initializes the resources needed to show the loadingscreen
 	 */
 	public void initLoadingResources() {
-		Map<String, List<String>> resourcePaths = loadResourcePaths(Constants.LOAD_RESOURCE_PATH);
-
 		voide.resources.Resources.get().load(Constants.LOAD_RESOURCE_MAP);
 
-		// animationAtlas = loadAnimations(resourcePaths.get("animation"));
-		stylesheets = loadStylesheets(resourcePaths.get("stylesheet"));
-		uis = loadUI(resourcePaths.get("ui"), stylesheets);
 		// Optimize loaded images and send to GPU
 		// TODO this optimization should happen elsewhere
 		Map<String, Image> images = voide.resources.Resources.get().getNamespaceResources("image", Image.class);
@@ -81,7 +72,7 @@ public final class Resources {
 					entry.getValue().toTexture(rootId));
 		}
 
-		Engine.get().setCurrentUI(uis.get(UIType.LOAD));
+		Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.LOAD.key(), UI.class));
 	}
 
 	/**
@@ -105,13 +96,7 @@ public final class Resources {
 
 		// sounds = loadSounds(resourcePaths.get("sounds"));
 
-		hitShapeAtlas = loadHitShapes(resourcePaths.get("hitshape"));
-
 		items = loadItems(resourcePaths.get("item"));
-
-		stylesheets = loadStylesheets(resourcePaths.get("stylesheet"));
-
-		uis = loadUI(resourcePaths.get("ui"), stylesheets);
 
 		industryMap = loadEntityIndustries(resourcePaths.get("industry"));
 
@@ -142,10 +127,6 @@ public final class Resources {
 
 	public Map<String, HitShape> getHitShapeAtlas() {
 		return hitShapeAtlas;
-	}
-
-	public Map<UIType, UI> getUIS() {
-		return uis;
 	}
 
 	public Map<String, Music> getMusic() {
