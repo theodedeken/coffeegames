@@ -3,7 +3,7 @@ package voide.graphics.animation;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * Abstract superclass for all Animators. An animator is an object that animates

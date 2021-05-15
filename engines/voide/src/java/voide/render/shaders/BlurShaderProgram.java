@@ -1,4 +1,4 @@
-package spaxel.graphics.shaders;
+package voide.render.shaders;
 
 import voide.math.VectorD;
 import static org.lwjgl.opengl.GL20.*;

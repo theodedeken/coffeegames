@@ -4,6 +4,13 @@ package(default_visibility = ["//visibility:public"])
 
 cg_java_library(
     name = "render",
-    srcs = ["RenderJob.java"],
-    deps = ["//engines/voide/src/java/voide/math"],
+    srcs = ["MasterRenderer.java"],
+    deps = [
+        "//engines/voide/src/java/voide/graphics/geometry",
+        "//engines/voide/src/java/voide/math",
+        "//engines/voide/src/java/voide/render/buffer",
+        "//engines/voide/src/java/voide/render/postprocess",
+        "//engines/voide/src/java/voide/render/shaders",
+        "@maven//:org_lwjgl_lwjgl_opengl",
+    ],
 )

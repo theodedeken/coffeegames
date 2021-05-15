@@ -14,21 +14,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
+import voide.io.FileReader;
+
 public final class Loader {
     private static final Logger LOGGER = Logger.getLogger(Loader.class.getName());
 
     private Loader() {
-    }
-
-    /**
-     * Load a file as an inputstream
-     * 
-     * @param path path to the file
-     * 
-     * @return the file as inputstream
-     */
-    public static InputStream loadFile(String path) {
-        return Loader.class.getResourceAsStream(path);
     }
 
     /**
@@ -40,7 +31,7 @@ public final class Loader {
      */
     public static Map<String, ResourceNamespace> loadResourceMap(String path) {
         try {
-            InputStream file = loadFile(path);
+            InputStream file = new FileReader(path).toStream();
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             return mapper.readValue(file, new TypeReference<Map<String, ResourceNamespace>>() {
             });
@@ -55,7 +46,7 @@ public final class Loader {
             Class<Resource> outputClass = (Class<Resource>) Class.forName(info.getClassName());
             Map<String, Resource> resources = new HashMap<>();
             for (String path : info.getFiles()) {
-                InputStream file = loadFile(path);
+                InputStream file = new FileReader(path).toStream();
                 ObjectMapper mapper = new ObjectMapper();
                 JsonNode tree = mapper.readTree(file);
 

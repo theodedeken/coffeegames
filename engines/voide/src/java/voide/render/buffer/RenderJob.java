@@ -1,5 +1,5 @@
 
-package voide.render;
+package voide.render.buffer;
 
 import voide.math.VectorD;
 

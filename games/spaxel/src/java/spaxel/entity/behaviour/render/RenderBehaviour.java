@@ -5,8 +5,8 @@ import spaxel.entity.ComponentType;
 import spaxel.entity.behaviour.render.renderers.Renderer;
 import spaxel.entity.storage.render.RenderStorage;
 import spaxel.entity.Entity;
-import spaxel.graphics.buffer.MasterBuffer;
-import voide.render.RenderJob;
+import voide.render.buffer.MasterBuffer;
+import voide.render.buffer.RenderJob;
 
 import java.util.List;
 import java.util.ArrayList;

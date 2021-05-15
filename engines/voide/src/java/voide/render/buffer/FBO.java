@@ -1,6 +1,5 @@
-package spaxel.graphics.postprocess;
+package voide.render.buffer;
 
-import spaxel.Constants;
 import org.lwjgl.opengl.GL30;
 import java.nio.ByteBuffer;
 import static org.lwjgl.opengl.GL11.*;
@@ -16,18 +15,22 @@ public class FBO {
     private int fboID;
     private int texture;
     private int depthBuffer;
+    private int bufferWidth;
+    private int bufferHeight;
 
     /**
      * Create a new FBO
      */
-    public FBO() {
+    public FBO(int bufferWidth, int bufferHeight) {
+        this.bufferWidth = bufferWidth;
+        this.bufferHeight = bufferHeight;
         fboID = glGenFramebuffers();
         glBindFramebuffer(GL_FRAMEBUFFER, fboID);
         glDrawBuffer(GL_COLOR_ATTACHMENT0);
         texture = glGenTextures();
         glBindTexture(GL_TEXTURE_2D, texture);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, Constants.GAME_WIDTH, Constants.GAME_HEIGHT, 0,
-                GL_RGB, GL_UNSIGNED_BYTE, (ByteBuffer) null);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, bufferWidth, bufferHeight, 0, GL_RGB, GL_UNSIGNED_BYTE,
+                (ByteBuffer) null);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glFramebufferTexture(GL30.GL_FRAMEBUFFER, GL30.GL_COLOR_ATTACHMENT0, texture, 0);
@@ -35,10 +38,9 @@ public class FBO {
 
         depthBuffer = glGenRenderbuffers();
         glBindRenderbuffer(GL30.GL_RENDERBUFFER, depthBuffer);
-        glRenderbufferStorage(GL30.GL_RENDERBUFFER, GL_DEPTH_COMPONENT, Constants.GAME_WIDTH,
-                Constants.GAME_HEIGHT);
-        GL30.glFramebufferRenderbuffer(GL30.GL_FRAMEBUFFER, GL30.GL_DEPTH_ATTACHMENT,
-                GL30.GL_RENDERBUFFER, depthBuffer);
+        glRenderbufferStorage(GL30.GL_RENDERBUFFER, GL_DEPTH_COMPONENT, bufferWidth, bufferHeight);
+        GL30.glFramebufferRenderbuffer(GL30.GL_FRAMEBUFFER, GL30.GL_DEPTH_ATTACHMENT, GL30.GL_RENDERBUFFER,
+                depthBuffer);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
     }
@@ -49,7 +51,7 @@ public class FBO {
     public void bindBuffer() {
         glBindTexture(GL_TEXTURE_2D, 0);
         GL30.glBindFramebuffer(GL30.GL_FRAMEBUFFER, fboID);
-        glViewport(0, 0, Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
+        glViewport(0, 0, this.bufferWidth, this.bufferHeight);
     }
 
     /**
@@ -57,7 +59,7 @@ public class FBO {
      */
     public void unbindBuffer() {
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        glViewport(0, 0, Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
+        glViewport(0, 0, this.bufferWidth, this.bufferHeight);
     }
 
     /**

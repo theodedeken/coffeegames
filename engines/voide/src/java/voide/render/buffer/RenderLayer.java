@@ -1,4 +1,4 @@
-package spaxel.graphics.buffer;
+package voide.render.buffer;
 
 /**
  * The different layers that can be rendered on

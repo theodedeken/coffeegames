@@ -1,4 +1,4 @@
-package spaxel.graphics.shaders;
+package voide.render.shaders;
 
 import voide.math.MatrixD;
 import static org.lwjgl.opengl.GL20.glGetUniformLocation;

@@ -1,6 +1,6 @@
 package voide.graphics.animation;
 
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * The XPosAnimator animates the x position of the animation

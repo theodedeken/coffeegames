@@ -1,9 +1,10 @@
-package spaxel.graphics.postprocess;
+package voide.render.postprocess;
 
-import spaxel.Constants;
-import spaxel.graphics.shaders.BlurShaderProgram;
-import spaxel.graphics.shaders.ShaderProgram;
+import voide.render.shaders.BlurShaderProgram;
+import voide.render.shaders.ShaderProgram;
 import voide.math.VectorD;
+import voide.render.buffer.FBO;
+
 import static org.lwjgl.opengl.GL11.*;
 
 /**
@@ -18,9 +19,9 @@ public class BlurPostProcessor extends PostProcessor {
      * 
      * @param program the blurring program
      */
-    public BlurPostProcessor(ShaderProgram program) {
-        super(program);
-        middle = new FBO();
+    public BlurPostProcessor(ShaderProgram program, int screenWidth, int screenHeight) {
+        super(program, screenWidth, screenHeight);
+        middle = new FBO(screenWidth, screenHeight);
     }
 
     @Override
@@ -31,14 +32,14 @@ public class BlurPostProcessor extends PostProcessor {
         middle.bindBuffer();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         in.bindTexture();
-        ((BlurShaderProgram) program).setDir(new VectorD(0, BLUR_STRENGTH / Constants.GAME_HEIGHT));
+        ((BlurShaderProgram) program).setDir(new VectorD(0, BLUR_STRENGTH / screenHeight));
         glDrawElements(GL_TRIANGLES, fboQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0);
         middle.unbindBuffer();
 
         out.bindBuffer();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         middle.bindTexture();
-        ((BlurShaderProgram) program).setDir(new VectorD(BLUR_STRENGTH / Constants.GAME_WIDTH, 0));
+        ((BlurShaderProgram) program).setDir(new VectorD(BLUR_STRENGTH / screenWidth, 0));
         glDrawElements(GL_TRIANGLES, fboQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0);
         out.unbindBuffer();
     }

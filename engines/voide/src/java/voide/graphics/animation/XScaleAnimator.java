@@ -1,6 +1,6 @@
 package voide.graphics.animation;
 
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * The XScaleAnimator animates the x scale of the animation

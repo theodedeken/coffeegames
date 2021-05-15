@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.render.renderers;
 
 import spaxel.entity.storage.age.AgeStorage;
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 import spaxel.entity.ComponentType;
 import spaxel.entity.Entity;
 

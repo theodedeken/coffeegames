@@ -2,7 +2,7 @@ package voide.graphics.animation;
 
 import java.util.List;
 
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 import voide.resources.Resource;
 
 /**

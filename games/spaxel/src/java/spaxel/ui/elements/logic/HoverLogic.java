@@ -5,9 +5,10 @@ import voide.collision.HitPoint;
 import voide.input.MouseWrapper;
 import voide.math.VectorD;
 import voide.math.MatrixD;
+import voide.math.MatrixMaker;
 import spaxel.ui.elements.Element;
 import spaxel.ui.styles.Style;
-import spaxel.util.MatrixUtil;
+
 import java.util.Map;
 
 /**
@@ -26,7 +27,7 @@ public class HoverLogic implements Logic {
             double width = Double.parseDouble(style.getProperty("width", element.getState()));
             double height = Double.parseDouble(style.getProperty("height", element.getState()));
 
-            MatrixD transform = MatrixUtil.getTransformationMatrix(new VectorD(x, y), rot, new VectorD(width, height));
+            MatrixD transform = MatrixMaker.getTransformationMatrix(new VectorD(x, y), rot, new VectorD(width, height));
 
             MouseWrapper mouse = element.getMouse();
             int mouseX = mouse.getX();

@@ -1,7 +1,7 @@
 package voide.graphics.renderable;
 
 import voide.math.VectorD;
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 import com.fasterxml.jackson.annotation.JsonSetter;
 

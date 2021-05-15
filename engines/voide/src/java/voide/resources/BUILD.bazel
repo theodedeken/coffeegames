@@ -9,6 +9,7 @@ cg_java_library(
         exclude = ["Main.java"],
     ),
     deps = [
+        "//engines/voide/src/java/voide/io",
         "@maven//:com_fasterxml_jackson_core_jackson_core",
         "@maven//:com_fasterxml_jackson_core_jackson_databind",
         "@maven//:com_fasterxml_jackson_dataformat_jackson_dataformat_xml",

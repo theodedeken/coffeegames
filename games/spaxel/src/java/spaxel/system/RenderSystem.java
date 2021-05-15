@@ -7,11 +7,11 @@ import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.behaviour.render.RenderBehaviour;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
-import spaxel.graphics.buffer.MasterBuffer;
 import voide.graphics.renderable.Texture;
-import spaxel.graphics.MasterRenderer;
 import voide.input.MouseWrapper;
 import voide.math.VectorD;
+import voide.render.MasterRenderer;
+import voide.render.buffer.MasterBuffer;
 
 /**
  * The RenderSystem is responsible for rendering each frame
@@ -30,8 +30,8 @@ public class RenderSystem extends GameSystem {
 	public RenderSystem() {
 		super(SystemType.RENDER);
 		bufferBuffer = new MasterBuffer(
-				voide.resources.Resources.get().getResource("voide.packed_texture", Texture.class));
-		master = new MasterRenderer();
+				voide.resources.Resources.get().getResource("voide.packed_texture", Texture.class).getTextureId());
+		master = new MasterRenderer(Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
 	}
 
 	/**

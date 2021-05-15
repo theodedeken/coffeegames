@@ -1,6 +1,6 @@
 package voide.graphics.animation;
 
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * The YScaleAnimator animates the y scale of the animation

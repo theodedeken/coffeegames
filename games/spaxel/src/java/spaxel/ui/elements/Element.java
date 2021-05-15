@@ -11,12 +11,13 @@ import spaxel.ui.elements.logic.OnInitLogic;
 import spaxel.ui.elements.logic.ReleaseLogic;
 import spaxel.ui.render.StyleRenderer;
 import spaxel.ui.state.State;
-import spaxel.graphics.buffer.MasterBuffer;
+
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import spaxel.ui.elements.logic.HoverLogic;
 import spaxel.ui.elements.logic.ClickLogic;
 import voide.input.MouseWrapper;
+import voide.render.buffer.MasterBuffer;
 
 /**
  * Represent an element of a UI

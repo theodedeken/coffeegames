@@ -1,28 +1,39 @@
-package spaxel.graphics;
+package voide.render;
 
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL15.*;
+import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
+import static org.lwjgl.opengl.GL11.GL_TRIANGLES;
+import static org.lwjgl.opengl.GL11.GL_UNSIGNED_BYTE;
+import static org.lwjgl.opengl.GL11.glBindTexture;
+import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.glDrawElements;
+import static org.lwjgl.opengl.GL15.GL_ARRAY_BUFFER;
+import static org.lwjgl.opengl.GL15.GL_DYNAMIC_DRAW;
+import static org.lwjgl.opengl.GL15.glBindBuffer;
+import static org.lwjgl.opengl.GL15.glBufferData;
 import static org.lwjgl.opengl.GL31.glDrawElementsInstanced;
+
 import java.nio.FloatBuffer;
 import java.util.List;
 import java.util.Map;
-import spaxel.graphics.postprocess.BlurPostProcessor;
-import spaxel.graphics.postprocess.PostProcessor;
-import spaxel.graphics.postprocess.FBO;
-import spaxel.graphics.shaders.BlurShaderProgram;
-import spaxel.graphics.shaders.InstancedShaderProgram;
-import spaxel.graphics.shaders.LastPassShaderProgram;
-import spaxel.graphics.buffer.LayerFBO;
-import spaxel.graphics.buffer.RenderLayer;
-import spaxel.graphics.buffer.MasterBuffer;
-import spaxel.graphics.buffer.RenderBuffer;
-import voide.graphics.geometry.Quad;
+
 import voide.graphics.geometry.InstancedQuad;
+import voide.graphics.geometry.Quad;
 import voide.math.MatrixD;
-import spaxel.util.MatrixUtil;
+import voide.math.MatrixMaker;
 import voide.math.VectorD;
-import voide.render.RenderJob;
-import spaxel.Constants;
+import voide.render.buffer.FBO;
+import voide.render.buffer.LayerFBO;
+import voide.render.buffer.MasterBuffer;
+import voide.render.buffer.RenderBuffer;
+import voide.render.buffer.RenderJob;
+import voide.render.buffer.RenderLayer;
+import voide.render.postprocess.BlurPostProcessor;
+import voide.render.postprocess.PostProcessor;
+import voide.render.shaders.BlurShaderProgram;
+import voide.render.shaders.InstancedShaderProgram;
+import voide.render.shaders.LastPassShaderProgram;
 
 /**
  * holds all the spritesheets and data of shaders, vertices, can switch between
@@ -44,13 +55,18 @@ public class MasterRenderer {
     private FBO blurred;
     private LastPassShaderProgram lastPassProgram;
 
-    public MasterRenderer() {
+    private int screenWidth;
+    private int screenHeight;
+
+    public MasterRenderer(int screenWidth, int screenHeight) {
+        this.screenWidth = screenWidth;
+        this.screenHeight = screenHeight;
         initialize();
     }
 
     private void initialize() {
-        MatrixD projectionMatrix = MatrixUtil.orthographic(-Constants.GAME_WIDTH / TWO, Constants.GAME_WIDTH / TWO,
-                -Constants.GAME_HEIGHT / TWO, Constants.GAME_HEIGHT / TWO, -1.0, 1.0);
+        MatrixD projectionMatrix = MatrixMaker.orthographic(-screenWidth / TWO, screenWidth / TWO, -screenHeight / TWO,
+                screenHeight / TWO, -1.0, 1.0);
 
         BlurShaderProgram blurPassProgram = new BlurShaderProgram("/shaders/blur_pass.vert", "/shaders/blur_pass.frag");
         blurPassProgram.enable();
@@ -58,14 +74,14 @@ public class MasterRenderer {
         blurPassProgram.setRadius(1);
         blurPassProgram.setResolution(BLUR_RESOLUTION);
         blurPassProgram.setSize(BLUR_SIZE);
-        blurPostProcessor = new BlurPostProcessor(blurPassProgram);
+        blurPostProcessor = new BlurPostProcessor(blurPassProgram, screenWidth, screenHeight);
 
         lastPassProgram = new LastPassShaderProgram("/shaders/last_pass.vert", "/shaders/last_pass.frag");
         lastPassProgram.enable();
         lastPassProgram.setTexSampler(1);
         lastPassProgram.setProjectionMatrix(projectionMatrix);
-        lastPassProgram.setTranslationMatrix(MatrixUtil.getTransformationMatrix(new VectorD(0, 0), 0,
-                new VectorD(Constants.GAME_WIDTH, Constants.GAME_HEIGHT)));
+        lastPassProgram.setTranslationMatrix(
+                MatrixMaker.getTransformationMatrix(new VectorD(0, 0), 0, new VectorD(screenWidth, screenHeight)));
 
         instancedShader = new InstancedShaderProgram("/shaders/2Dsprite.vert", "/shaders/2Dsprite.frag");
         instancedShader.enable();
@@ -74,8 +90,8 @@ public class MasterRenderer {
 
         allQuad = new InstancedQuad();
         fboQuad = new Quad();
-        blurred = new FBO();
-        layerFBO = new LayerFBO();
+        blurred = new FBO(screenWidth, screenHeight);
+        layerFBO = new LayerFBO(screenWidth, screenHeight);
     }
 
     public void render(MasterBuffer masterBuffer) {

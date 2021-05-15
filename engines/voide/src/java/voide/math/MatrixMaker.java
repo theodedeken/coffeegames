@@ -1,17 +1,14 @@
-package spaxel.util;
-
-import voide.math.MatrixD;
-import voide.math.VectorD;
+package voide.math;
 
 /**
  * Provides utility functions for the creation of matrices
  */
-public final class MatrixUtil {
+public final class MatrixMaker {
 	private static final int MATRIX_DIM = 3;
 	private static final int PROJECTION_DIM = 4;
 	private static final int PROJECTION_NUMERATOR = 2;
 
-	private MatrixUtil() {
+	private MatrixMaker() {
 
 	}
 

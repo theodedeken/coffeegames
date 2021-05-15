@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.render.renderers;
 
 import spaxel.entity.Entity;
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * Created by theo on 5/01/18.

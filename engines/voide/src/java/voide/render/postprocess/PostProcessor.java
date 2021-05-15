@@ -1,7 +1,8 @@
-package spaxel.graphics.postprocess;
+package voide.render.postprocess;
 
 import voide.graphics.geometry.Quad;
-import spaxel.graphics.shaders.ShaderProgram;
+import voide.render.buffer.FBO;
+import voide.render.shaders.ShaderProgram;
 
 /**
  * Represents a postprocessing step
@@ -11,14 +12,18 @@ import spaxel.graphics.shaders.ShaderProgram;
 public abstract class PostProcessor {
     protected ShaderProgram program;
     protected Quad fboQuad;
+    protected int screenWidth;
+    protected int screenHeight;
 
     /**
      * Create a new PostProcessor executing the specified program
      * 
      * @param program the postprocessor program
      */
-    public PostProcessor(ShaderProgram program) {
+    public PostProcessor(ShaderProgram program, int screenWidth, int screenHeight) {
         this.program = program;
+        this.screenWidth = screenWidth;
+        this.screenHeight = screenHeight;
         this.fboQuad = new Quad();
     }
 

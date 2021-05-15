@@ -1,7 +1,7 @@
 package voide.graphics.animation;
 
 import voide.graphics.renderable.Renderable;
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 import java.util.Map;
 

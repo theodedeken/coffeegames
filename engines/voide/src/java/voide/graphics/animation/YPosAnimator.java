@@ -1,6 +1,6 @@
 package voide.graphics.animation;
 
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * The YPosAnimator animates the y position of the animation

@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import spaxel.graphics.buffer.MasterBuffer;
+
 import voide.input.MouseWrapper;
+import voide.render.buffer.MasterBuffer;
 
 /**
  * Root class of an ui structure

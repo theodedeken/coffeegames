@@ -6,7 +6,7 @@ import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
 import voide.math.VectorD;
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * Created by theo on 5/06/17.

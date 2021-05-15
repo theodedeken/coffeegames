@@ -1,7 +1,6 @@
-package spaxel.graphics.buffer;
+package voide.render.buffer;
 
 import voide.buffer.BufferUtils;
-import voide.render.RenderJob;
 
 import java.nio.FloatBuffer;
 import java.util.List;

@@ -3,7 +3,7 @@ package voide.graphics.renderable;
 import java.util.Vector;
 
 import voide.math.VectorD;
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * Represents a part of a gpu texture

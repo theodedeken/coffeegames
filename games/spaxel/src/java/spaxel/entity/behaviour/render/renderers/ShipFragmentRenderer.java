@@ -4,7 +4,7 @@ import spaxel.entity.ComponentType;
 import spaxel.entity.storage.age.AgeStorage;
 import spaxel.entity.Entity;
 import voide.math.VectorD;
-import voide.render.RenderJob;
+import voide.render.buffer.RenderJob;
 
 /**
  * Created by theod on 25-9-2017.

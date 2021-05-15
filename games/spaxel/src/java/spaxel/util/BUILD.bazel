@@ -44,16 +44,6 @@ cg_java_library(
 )
 
 cg_java_library(
-    name = "matrix_util",
-    srcs = [
-        "MatrixUtil.java",
-    ],
-    deps = [
-        "//engines/voide/src/java/voide/math",
-    ],
-)
-
-cg_java_library(
     name = "shader_utils",
     srcs = [
         "ShaderUtils.java",

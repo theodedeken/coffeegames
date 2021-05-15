@@ -1,12 +1,10 @@
-package spaxel.graphics.buffer;
+package voide.render.buffer;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import voide.graphics.renderable.Texture;
-import voide.render.RenderJob;
 
 /**
  * Buffers all render jobs
@@ -19,12 +17,12 @@ public class MasterBuffer {
     /**
      * Create a new MasterBuffer and initialize the layer map
      */
-    public MasterBuffer(Texture masterTexture) {
+    public MasterBuffer(int masterTextureId) {
         layers = new EnumMap<>(RenderLayer.class);
         for (RenderLayer l : RenderLayer.values()) {
             Map<Integer, List<RenderJob>> data = new HashMap<>();
             data.put(0, new ArrayList<>());
-            data.put(masterTexture.getTextureId(), new ArrayList<>());
+            data.put(masterTextureId, new ArrayList<>());
 
             layers.put(l, data);
         }

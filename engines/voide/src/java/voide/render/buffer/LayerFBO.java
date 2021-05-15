@@ -1,6 +1,5 @@
-package spaxel.graphics.buffer;
+package voide.render.buffer;
 
-import spaxel.graphics.postprocess.FBO;
 import java.util.EnumMap;
 
 /**
@@ -14,10 +13,10 @@ public class LayerFBO {
     /**
      * Create a new LayerFBO
      */
-    public LayerFBO() {
+    public LayerFBO(int bufferWidth, int bufferHeight) {
         fbos = new EnumMap<>(RenderLayer.class);
         for (RenderLayer layer : RenderLayer.values()) {
-            fbos.put(layer, new FBO());
+            fbos.put(layer, new FBO(bufferWidth, bufferHeight));
         }
     }
 

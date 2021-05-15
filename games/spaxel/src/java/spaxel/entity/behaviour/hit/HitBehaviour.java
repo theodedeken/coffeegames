@@ -9,7 +9,7 @@ import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.engine.Engine;
 import spaxel.entity.Entity;
 import voide.math.MatrixD;
-import spaxel.util.MatrixUtil;
+import voide.math.MatrixMaker;
 
 /**
  * Created by theo on 18/06/17.
@@ -31,13 +31,13 @@ public class HitBehaviour extends Behaviour {
         // Entity parent = entity.getParent();
         HitshapeStorage cc = (HitshapeStorage) entity.getComponent(ComponentType.HITSHAPE);
         TransformationStorage pc = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
-        MatrixD eTransform = MatrixUtil.getTransRotationMatrix(pc.getPosition(), pc.getRotation());
+        MatrixD eTransform = MatrixMaker.getTransRotationMatrix(pc.getPosition(), pc.getRotation());
         HitShape updated = cc.getHitShape().update(eTransform);
         for (Entity collider : colliders) {
             // if (collider != parent) {
             HitshapeStorage ccc = (HitshapeStorage) collider.getComponent(ComponentType.HITSHAPE);
             TransformationStorage cpc = (TransformationStorage) collider.getComponent(ComponentType.TRANSFORMATION);
-            MatrixD cTransform = MatrixUtil.getTransRotationMatrix(cpc.getPosition(), cpc.getRotation());
+            MatrixD cTransform = MatrixMaker.getTransRotationMatrix(cpc.getPosition(), cpc.getRotation());
             if (ccc.getHitShape().update(cTransform).collision(updated)) {
                 handler.hit(entity, collider);
             }
