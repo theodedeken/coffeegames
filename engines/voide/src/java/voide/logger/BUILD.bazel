@@ -5,5 +5,4 @@ package(default_visibility = ["//games/spaxel:__subpackages__"])
 cg_java_library(
     name = "logger",
     srcs = glob(["*.java"]),
-    deps = ["//games/spaxel/src/java/spaxel/system:system_type"],
 )

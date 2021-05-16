@@ -1,4 +1,4 @@
-package spaxel.logger;
+package voide.logger;
 
 /**
  * Represent a log entry of a time measurement

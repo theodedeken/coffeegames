@@ -3,7 +3,7 @@ package spaxel.engine;
 import spaxel.Game;
 import voide.input.Keyboard;
 import voide.input.MouseWrapper;
-import spaxel.logger.Logger;
+import voide.logger.Logger;
 import spaxel.sound.MusicList;
 import spaxel.ui.UIType;
 import spaxel.entity.EntityStream;
@@ -50,7 +50,6 @@ public final class Engine {
 		logger = new Logger(1000, 100);
 
 		currentUI = voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class);
-		System.out.println(currentUI);
 		engineState = EngineState.MENU;
 
 		Game.startUpdating();

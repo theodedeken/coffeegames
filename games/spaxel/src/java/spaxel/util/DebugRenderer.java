@@ -4,6 +4,7 @@ import spaxel.entity.ComponentType;
 import spaxel.engine.Engine;
 import spaxel.system.SystemType;
 import voide.graphics.renderable.Renderable;
+import voide.logger.Logger;
 import voide.math.VectorD;
 import voide.render.buffer.MasterBuffer;
 import voide.render.buffer.RenderJob;
@@ -11,7 +12,6 @@ import voide.render.buffer.RenderLayer;
 import voide.ui.elements.Element;
 import spaxel.Constants;
 import spaxel.engine.Resources;
-import spaxel.logger.Logger;
 
 /**
  * Provides methods for the creation of debug ui elements
@@ -55,8 +55,8 @@ public final class DebugRenderer {
 
         for (SystemType type : SystemType.values()) {
             if (type != SystemType.RENDER) {
-                long dif = logger.getHistory().get(type).getLast().getDifference() / Constants.NS_PER_US;
-                long sum = logger.getRollingSum().get(type);
+                long dif = logger.getHistory().get(type.name()).getLast().getDifference() / Constants.NS_PER_US;
+                long sum = logger.getRollingSum().get(type.name());
                 long avg = (sum / logger.getCurrentAvg()) / Constants.NS_PER_US;
                 Element label = new Element();
                 label.setId(type.getName());

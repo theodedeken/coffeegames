@@ -136,9 +136,9 @@ public class UpdateRunner implements Runnable {
      */
     public void update(SystemType type) {
         if (Engine.get().getGameState().isLogging()) {
-            Engine.get().getLogger().registerStart(type);
+            Engine.get().getLogger().registerStart(type.name());
             systems.get(type).update();
-            Engine.get().getLogger().registerEnd(type);
+            Engine.get().getLogger().registerEnd(type.name());
         } else {
             systems.get(type).update();
         }

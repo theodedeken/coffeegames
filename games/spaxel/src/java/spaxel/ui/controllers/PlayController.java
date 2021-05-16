@@ -11,12 +11,12 @@ import spaxel.entity.storage.health.HealthStorage;
 import spaxel.entity.storage.item.ItemContainer;
 import spaxel.entity.storage.item.ItemStorage;
 import spaxel.factories.elements.ElementCreator;
-import spaxel.logger.Logger;
 import spaxel.system.SystemType;
 import spaxel.ui.UIType;
 import spaxel.util.DebugRenderer;
 import voide.input.Key;
 import voide.input.Keyboard;
+import voide.logger.Logger;
 import voide.ui.UI;
 import voide.ui.elements.Element;
 
@@ -222,8 +222,8 @@ public final class PlayController {
         Logger logger = Engine.get().getLogger();
         SystemType type = SystemType.valueOf(element.getId().toUpperCase());
 
-        long dif = logger.getHistory().get(type).getLast().getDifference() / Constants.NS_PER_US;
-        long sum = logger.getRollingSum().get(type);
+        long dif = logger.getHistory().get(type.name()).getLast().getDifference() / Constants.NS_PER_US;
+        long sum = logger.getRollingSum().get(type.name());
         long avg = (sum / logger.getCurrentAvg()) / Constants.NS_PER_US;
 
         element.getStyle().setProperty("text", type.getName() + ": " + avg + "(" + dif + ")");
