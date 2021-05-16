@@ -10,8 +10,9 @@ import spaxel.entity.Entity;
 import spaxel.system.SystemType;
 import spaxel.factories.entities.EnemyIndustry;
 import voide.math.VectorD;
+import voide.random.VoideRandom;
 import spaxel.entity.EntityUtil;
-import spaxel.util.SpaxelRandom;
+
 import java.util.Set;
 import spaxel.engine.Resources;
 
@@ -35,14 +36,14 @@ public class DifficultySystem extends GameSystem {
         private int maxLevel = 1;
         private String[] enemyIndustries = { "enemy_green_industry", "enemy_white_industry", "enemy_red_industry",
                         "enemy_blue_industry" };
-        private SpaxelRandom rand;
+        private VoideRandom rand;
 
         /**
          * Create a new DifficultySystem
          */
         public DifficultySystem() {
                 super(SystemType.DIFFICULTY);
-                rand = new SpaxelRandom();
+                rand = new VoideRandom();
         }
 
         public void update() {

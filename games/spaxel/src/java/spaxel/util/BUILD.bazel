@@ -35,22 +35,3 @@ cg_java_library(
         "@maven//:org_lwjgl_lwjgl_opengl",
     ],
 )
-
-cg_java_library(
-    name = "spaxel_random",
-    srcs = [
-        "SpaxelRandom.java",
-    ],
-)
-
-cg_java_library(
-    name = "sprite_data_util",
-    srcs = [
-        "SpriteDataUtil.java",
-    ],
-    deps = [
-        ":spaxel_random",
-        "//engines/voide/src/java/voide/graphics/renderable",
-        "//engines/voide/src/java/voide/math",
-    ],
-)

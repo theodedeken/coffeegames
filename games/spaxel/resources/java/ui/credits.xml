@@ -1,4 +1,4 @@
-<ui controller="code.ui.controllers.CreditsController">
+<ui controller="spaxel.ui.controllers.CreditsController">
     <style>stylesheet.common</style>
     <style>stylesheet.credits</style>
     <body id="root">

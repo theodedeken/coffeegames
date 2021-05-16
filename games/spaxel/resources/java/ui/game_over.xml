@@ -1,4 +1,4 @@
-<ui controller="code.ui.controllers.GameOverController">
+<ui controller="spaxel.ui.controllers.GameOverController">
     <style>stylesheet.common</style>
     <style>stylesheet.game_over</style>
     <body id="root">

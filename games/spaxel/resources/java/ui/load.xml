@@ -1,4 +1,4 @@
-<ui controller="code.ui.controllers.LoadController">
+<ui controller="spaxel.ui.controllers.LoadController">
     <style>stylesheet.common</style>
     <style>stylesheet.load</style>
     <body id="root">

@@ -12,15 +12,15 @@ import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.Entity;
 import spaxel.factories.entities.RandomParticleIndustry;
 import voide.math.VectorD;
-import spaxel.util.SpaxelRandom;
+import voide.random.VoideRandom;
 import spaxel.engine.Resources;
 
 public class RandomSpawner extends Spawner {
-        private SpaxelRandom rand;
+        private VoideRandom rand;
 
         public RandomSpawner() {
                 super(SpawnerType.RANDOM);
-                this.rand = new SpaxelRandom();
+                this.rand = new VoideRandom();
         }
 
         public List<Entity> spawn(Entity entity) {

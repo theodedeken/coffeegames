@@ -1,4 +1,4 @@
-<ui controller="code.ui.controllers.OptionsController">
+<ui controller="spaxel.ui.controllers.OptionsController">
     <style>stylesheet.common</style>
     <style>stylesheet.options</style>
     <body id="root">

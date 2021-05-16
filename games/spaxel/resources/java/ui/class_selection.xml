@@ -1,4 +1,4 @@
-<ui controller="code.ui.controllers.ClassSelectionController">
+<ui controller="spaxel.ui.controllers.ClassSelectionController">
     <style>stylesheet.common</style>
     <style>stylesheet.class_select</style>
     <body id="root">

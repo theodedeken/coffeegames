@@ -46,6 +46,7 @@ public final class MainController {
 	 * Quit the game
 	 */
 	public static void quit() {
+		System.out.println("called quits");
 		Game.exit();
 	}
 }

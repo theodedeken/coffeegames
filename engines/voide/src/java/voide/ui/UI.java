@@ -36,6 +36,7 @@ public class UI implements Resource {
             this.stylesheets.add(style.get());
         }
         body.initStyle(this.stylesheets);
+        body.setController(controller);
     }
 
     /**

@@ -6,8 +6,8 @@ cg_java_library(
     name = "music_list",
     srcs = ["MusicList.java"],
     deps = [
+        "//engines/voide/src/java/voide/random",
         "//engines/voide/src/java/voide/sound",
         "//games/spaxel/src/java/spaxel/engine:gamestate",
-        "//games/spaxel/src/java/spaxel/util:spaxel_random",
     ],
 )

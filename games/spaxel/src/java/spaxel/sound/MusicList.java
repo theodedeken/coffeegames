@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import spaxel.util.SpaxelRandom;
+
 import spaxel.engine.GameState;
+import voide.random.VoideRandom;
 import voide.sound.Music;
 
 /**
@@ -14,7 +15,7 @@ import voide.sound.Music;
 public class MusicList {
     private List<Music> alreadyPlayed;
     private Map<String, Music> music;
-    private SpaxelRandom random;
+    private VoideRandom random;
     private static final int[] PROBABILITIES = { 0, 0, 0, 10, 5, 1, 3, 10, 3, 1, 5, 10 };
     private static final int TIME_THRESHOLD_1 = 600;
     private static final int TIME_THRESHOLD_2 = 1200;
@@ -24,7 +25,7 @@ public class MusicList {
     public MusicList(Map<String, Music> music) {
         this.music = music;
         this.alreadyPlayed = new ArrayList<>();
-        this.random = new SpaxelRandom();
+        this.random = new VoideRandom();
     }
 
     public Music getRandomSong(GameState state) {

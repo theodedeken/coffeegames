@@ -1,4 +1,4 @@
-<ui controller="code.ui.controllers.PlayController">
+<ui controller="spaxel.ui.controllers.PlayController">
     <style>stylesheet.common</style>
     <style>stylesheet.play</style>
     <body id="root">

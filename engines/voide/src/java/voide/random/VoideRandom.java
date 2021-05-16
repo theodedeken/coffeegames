@@ -1,18 +1,19 @@
-package spaxel.util;
+package voide.random;
 
 import java.util.Random;
 import java.util.List;
 
 /**
- * Extension of the {@link Random} class to provide some extra methods used in the Game.
+ * Extension of the {@link Random} class to provide some extra methods used in
+ * the Game.
  */
-public class SpaxelRandom extends Random {
+public class VoideRandom extends Random {
     private static final long serialVersionUID = 1;
 
     /**
      * Constructs a new SpaxelRandom object.
      */
-    public SpaxelRandom() {
+    public VoideRandom() {
         super();
     }
 

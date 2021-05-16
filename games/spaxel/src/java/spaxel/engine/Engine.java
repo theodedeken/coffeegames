@@ -27,6 +27,7 @@ public final class Engine {
 
 	private Logger logger;
 	private MusicList musicList;
+	private boolean shouldClose;
 
 	private Engine() {
 		gameState = new GameState();
@@ -40,6 +41,10 @@ public final class Engine {
 
 	public enum EngineState {
 		MENU, PLAY, PAUSE, LOAD, EXIT
+	}
+
+	public void start() {
+
 	}
 
 	public void finishLoading() {
@@ -118,6 +123,11 @@ public final class Engine {
 		gameState = null;
 		logger.exit();
 		musicList.exit();
+		shouldClose = true;
+	}
+
+	public boolean shouldClose() {
+		return shouldClose;
 	}
 
 	public MusicList getMusicList() {

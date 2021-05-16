@@ -1,11 +1,11 @@
 package spaxel.engine;
 
-import spaxel.util.SpaxelRandom;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 import spaxel.entity.Entity;
+import voide.random.VoideRandom;
 
 /**
  * Catalogue for all the items
@@ -15,7 +15,7 @@ import spaxel.entity.Entity;
 public class ItemCatalogue {
     Map<String, ItemProperties> items;
     List<String> industryList;
-    SpaxelRandom random;
+    VoideRandom random;
 
     /**
      * Create a new ItemCatalogue from the given item properties
@@ -27,7 +27,7 @@ public class ItemCatalogue {
         for (ItemProperties ip : itemProps) {
             items.put(ip.getName(), ip);
         }
-        random = new SpaxelRandom();
+        random = new VoideRandom();
         initialize();
     }
 
@@ -63,7 +63,8 @@ public class ItemCatalogue {
     }
 
     /**
-     * Produce a random item choosing from a list of items that pass the given filters
+     * Produce a random item choosing from a list of items that pass the given
+     * filters
      * 
      * @param filters the filters to pass
      * 

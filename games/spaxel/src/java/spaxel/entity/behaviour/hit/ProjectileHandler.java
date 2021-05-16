@@ -11,8 +11,8 @@ import spaxel.engine.Resources;
 import spaxel.entity.Entity;
 import spaxel.factories.entities.EffectIndustry;
 import spaxel.factories.entities.SpawnerIndustry;
-import spaxel.util.SpriteDataUtil;
 import voide.graphics.renderable.Texture;
+import voide.random.RandomTexture;
 
 public abstract class ProjectileHandler extends HitHandler {
     public ProjectileHandler(HitType type) {
@@ -39,7 +39,7 @@ public abstract class ProjectileHandler extends HitHandler {
         RenderableStorage rndrStore = (RenderableStorage) victim.getComponent(ComponentType.RENDERABLE);
         SpawnerIndustry hpsi = (SpawnerIndustry) Resources.get().getIndustryMap().get(particleSpawner);
         RenderableStorage particle = new RenderableStorage(
-                SpriteDataUtil.getRandomPart((Texture) rndrStore.getRenderable(), particleSize, particleSize));
+                RandomTexture.getRandomPart((Texture) rndrStore.getRenderable(), particleSize, particleSize));
         entity.getStream().addEntity(hpsi
                 .produce((TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION).copy(), particle));
     }

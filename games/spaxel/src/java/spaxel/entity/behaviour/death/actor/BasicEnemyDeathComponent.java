@@ -16,10 +16,10 @@ import spaxel.engine.Engine;
 import spaxel.engine.Resources;
 import spaxel.entity.Entity;
 import spaxel.factories.entities.SpawnerIndustry;
-import spaxel.util.SpriteDataUtil;
 import voide.graphics.renderable.Texture;
+import voide.random.RandomTexture;
+import voide.random.VoideRandom;
 import spaxel.entity.EntityUtil;
-import spaxel.util.SpaxelRandom;
 
 /**
  * Executed on the death of the entity
@@ -33,14 +33,14 @@ public class BasicEnemyDeathComponent extends DeathHandler {
         private static final int DEATH_PARTICLE_SIZE = 6;
         private static final int BASIC_ENEMY_XP_GAIN = 25;
 
-        private SpaxelRandom random;
+        private VoideRandom random;
 
         /**
          * Create a new BasicEnemyDeathComponent
          */
         public BasicEnemyDeathComponent() {
                 super(DeathType.BASIC_ENEMY);
-                random = new SpaxelRandom();
+                random = new VoideRandom();
         }
 
         public void die(Entity entity) {
@@ -50,7 +50,7 @@ public class BasicEnemyDeathComponent extends DeathHandler {
                 TransformationStorage trnsStore = (TransformationStorage) entity
                                 .getComponent(ComponentType.TRANSFORMATION);
 
-                RenderableStorage particle = new RenderableStorage(SpriteDataUtil.getRandomPart(
+                RenderableStorage particle = new RenderableStorage(RandomTexture.getRandomPart(
                                 (Texture) rndrStore.getRenderable(), DEATH_PARTICLE_SIZE, DEATH_PARTICLE_SIZE));
                 // add particle effect
                 entity.getStream().addEntity(hpsi.produce(trnsStore, particle));

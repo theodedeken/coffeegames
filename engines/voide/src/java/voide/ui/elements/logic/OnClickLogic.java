@@ -18,6 +18,7 @@ public class OnClickLogic implements Logic {
                 && element.getState().isRelease()) {
             String method = element.getStyle().getProperty("onClick", element.getState());
             String controller = element.getController();
+            System.out.println("doing " + controller);
             if (method != null && controller != null) {
                 UIUtil.invokeClickMethod(controller, method);
             }
