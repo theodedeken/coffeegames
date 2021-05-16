@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.hit;
 
 import spaxel.entity.storage.projectile.ProjectileStorage;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 
 /**
  * Created by theo on 18/06/17.
@@ -16,6 +16,5 @@ public class BasicLaserProjectile extends ProjectileHandler {
     public void payload(Entity entity, Entity victim, ProjectileStorage projStore) {
         entity.destroy();
     }
-
 
 }

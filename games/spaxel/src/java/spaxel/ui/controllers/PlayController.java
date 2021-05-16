@@ -4,17 +4,18 @@ import java.util.Set;
 
 import spaxel.Constants;
 import spaxel.engine.Engine;
-import spaxel.entity.ComponentType;
-import spaxel.entity.Entity;
+import spaxel.entity.EntityUtil;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.experience.ExperienceStorage;
 import spaxel.entity.storage.health.HealthStorage;
 import spaxel.entity.storage.item.ItemContainer;
 import spaxel.entity.storage.item.ItemStorage;
 import spaxel.factories.elements.ElementCreator;
+import spaxel.input.SpaxelKey;
 import spaxel.system.SystemType;
 import spaxel.ui.UIType;
 import spaxel.util.DebugRenderer;
-import voide.input.Key;
+import voide.entity.Entity;
 import voide.input.Keyboard;
 import voide.logger.Logger;
 import voide.ui.UI;
@@ -60,8 +61,8 @@ public final class PlayController {
      * @param element the hp bar element
      */
     public static void updateHpBar(Element element) {
-        HealthStorage hc = (HealthStorage) Engine.get().getNEntityStream().getPlayer()
-                .getComponent(ComponentType.HEALTH);
+        HealthStorage hc = (HealthStorage) EntityUtil.getPlayer(Engine.get().getNEntityStream())
+                .getComponent(SpaxelComponent.HEALTH);
 
         element.getStyle().setProperty("completion",
                 String.valueOf((double) hc.getCurrentHealth() / hc.getMaxHealth()));
@@ -74,8 +75,8 @@ public final class PlayController {
      * @param element the xp bar element
      */
     public static void updateXpBar(Element element) {
-        ExperienceStorage ec = (ExperienceStorage) Engine.get().getNEntityStream().getPlayer()
-                .getComponent(ComponentType.EXPERIENCE);
+        ExperienceStorage ec = (ExperienceStorage) EntityUtil.getPlayer(Engine.get().getNEntityStream())
+                .getComponent(SpaxelComponent.EXPERIENCE);
         element.getStyle().setProperty("completion", String.valueOf((double) ec.getCurrentXp() / ec.getMaxXp()));
 
         element.findById("xp_label").getStyle().setProperty("text", ec.getCurrentXp() + " / " + ec.getMaxXp());
@@ -95,8 +96,8 @@ public final class PlayController {
      * @param element the container
      */
     public static void updatePrimaryContainer(Element element) {
-        updateContainer(element, Engine.get().getNEntityStream().getPlayer().getLinks(
-                (e) -> ((ItemStorage) e.getComponent(ComponentType.ITEM)).getContainer() == ItemContainer.PRIMARY));
+        updateContainer(element, EntityUtil.getPlayer(Engine.get().getNEntityStream()).getLinks(
+                (e) -> ((ItemStorage) e.getComponent(SpaxelComponent.ITEM)).getContainer() == ItemContainer.PRIMARY));
     }
 
     /**
@@ -105,8 +106,8 @@ public final class PlayController {
      * @param element the container
      */
     public static void updateSecondaryContainer(Element element) {
-        updateContainer(element, Engine.get().getNEntityStream().getPlayer().getLinks(
-                (e) -> ((ItemStorage) e.getComponent(ComponentType.ITEM)).getContainer() == ItemContainer.SECONDARY));
+        updateContainer(element, EntityUtil.getPlayer(Engine.get().getNEntityStream()).getLinks(
+                (e) -> ((ItemStorage) e.getComponent(SpaxelComponent.ITEM)).getContainer() == ItemContainer.SECONDARY));
     }
 
     /**
@@ -115,8 +116,8 @@ public final class PlayController {
      * @param element the container
      */
     public static void updateShipContainer(Element element) {
-        updateContainer(element, Engine.get().getNEntityStream().getPlayer().getLinks(
-                (e) -> ((ItemStorage) e.getComponent(ComponentType.ITEM)).getContainer() == ItemContainer.SHIP));
+        updateContainer(element, EntityUtil.getPlayer(Engine.get().getNEntityStream()).getLinks(
+                (e) -> ((ItemStorage) e.getComponent(SpaxelComponent.ITEM)).getContainer() == ItemContainer.SHIP));
     }
 
     /**
@@ -128,7 +129,7 @@ public final class PlayController {
     public static void logCheck(Element element) {
         Keyboard k = Engine.get().getKeyboard();
 
-        if (k.get(Key.LOG).isRelease()) {
+        if (k.get(SpaxelKey.LOG).isRelease()) {
             Engine.get().getGameState().toggleLogging();
             element.getStyle().setProperty(VISIBLE, String.valueOf(Engine.get().getGameState().isLogging()));
         }
@@ -143,7 +144,7 @@ public final class PlayController {
     public static void debugCheck(Element element) {
         Keyboard k = Engine.get().getKeyboard();
 
-        if (k.get(Key.DEBUG).isRelease()) {
+        if (k.get(SpaxelKey.DEBUG).isRelease()) {
             Engine.get().getGameState().toggleDebug();
             element.getStyle().setProperty(VISIBLE, String.valueOf(Engine.get().getGameState().isDebug()));
         }
@@ -174,7 +175,7 @@ public final class PlayController {
      */
     public static void escCheck(Element element) {
         Keyboard k = Engine.get().getKeyboard();
-        if (k.get(Key.ESC).isRelease()) {
+        if (k.get(SpaxelKey.ESC).isRelease()) {
             if (Engine.get().getEngineState() == Engine.EngineState.PAUSE) {
                 resume();
             } else {
@@ -208,7 +209,7 @@ public final class PlayController {
      * @param element the debug label
      */
     public static void updateDebugLabel(Element element) {
-        ComponentType type = ComponentType.valueOf(element.getId().toUpperCase());
+        SpaxelComponent type = SpaxelComponent.valueOf(element.getId().toUpperCase());
         int size = Engine.get().getNEntityStream().getEntities(type).size();
         element.getStyle().setProperty("text", type.getName() + ": " + size);
     }

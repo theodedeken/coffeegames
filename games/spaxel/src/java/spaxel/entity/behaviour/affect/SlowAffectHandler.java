@@ -1,9 +1,9 @@
 package spaxel.entity.behaviour.affect;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.affect.AffectStorage;
 import spaxel.entity.storage.change.ChangeStorage;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 
 /**
  * Created by theod on 28-6-2017.
@@ -14,12 +14,10 @@ public class SlowAffectHandler extends AffectHandler {
     }
 
     public void affect(Entity entity) {
-        ChangeStorage chngStore =
-                (ChangeStorage) entity.getParent().getComponent(ComponentType.CHANGE);
-        AffectStorage afctStore = (AffectStorage) entity.getComponent(ComponentType.AFFECT_STORE);
+        ChangeStorage chngStore = (ChangeStorage) entity.getParent().getComponent(SpaxelComponent.CHANGE);
+        AffectStorage afctStore = (AffectStorage) entity.getComponent(SpaxelComponent.AFFECT_STORE);
 
-        chngStore.setPositionChange(
-                chngStore.getPositionChange().multiplicate(afctStore.getFactor()));
+        chngStore.setPositionChange(chngStore.getPositionChange().multiplicate(afctStore.getFactor()));
     }
 
 }

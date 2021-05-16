@@ -6,8 +6,9 @@ cg_java_library(
     name = "elements",
     srcs = glob(["*.java"]),
     deps = [
+        "//engines/voide/src/java/voide/entity",
+        "//engines/voide/src/java/voide/ui/elements",
         "//games/spaxel/src/java/spaxel/entity",
-        "//games/spaxel/src/java/spaxel/ui/elements:element",
     ],
 )
 

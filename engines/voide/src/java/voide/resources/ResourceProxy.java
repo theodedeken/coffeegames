@@ -28,4 +28,5 @@ public class ResourceProxy<T extends Resource> {
     public String getKey() {
         return key;
     }
+
 }

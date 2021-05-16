@@ -1,7 +1,7 @@
 package spaxel.entity.storage.cooldown;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 /**
  * Represents a cooldown for an entity
@@ -13,7 +13,7 @@ public class CooldownStorage extends Storage {
     private int maxCooldown;
 
     public CooldownStorage() {
-        super(ComponentType.COOLDOWN);
+        super(SpaxelComponent.COOLDOWN);
     }
 
     /**
@@ -23,7 +23,7 @@ public class CooldownStorage extends Storage {
      * @param maxCooldown     the maximum cooldown
      */
     public CooldownStorage(int currentCooldown, int maxCooldown) {
-        super(ComponentType.COOLDOWN);
+        super(SpaxelComponent.COOLDOWN);
         this.currentCooldown = currentCooldown;
         this.maxCooldown = maxCooldown;
     }
@@ -44,7 +44,7 @@ public class CooldownStorage extends Storage {
         this.maxCooldown = maxCooldown;
     }
 
-    public void startCooldown(){
+    public void startCooldown() {
         currentCooldown = maxCooldown;
     }
 

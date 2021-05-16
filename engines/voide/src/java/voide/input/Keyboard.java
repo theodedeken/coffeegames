@@ -1,12 +1,10 @@
 package voide.input;
 
-import java.util.Map;
-
 /**
  * Keeps the state of the keyboard
  */
 public class Keyboard {
-	private Map<Key, KeyState> keys;
+	private KeyConfiguration keys;
 
 	private long window;
 
@@ -16,7 +14,7 @@ public class Keyboard {
 	 * @param window the window in which the keyboard is keeping state
 	 * @param keys   the key configuration
 	 */
-	public Keyboard(long window, Map<Key, KeyState> keys) {
+	public Keyboard(long window, KeyConfiguration keys) {
 		this.window = window;
 		this.keys = keys;
 	}

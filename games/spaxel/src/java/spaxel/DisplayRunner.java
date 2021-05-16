@@ -1,17 +1,33 @@
 package spaxel;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
-import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.system.MemoryUtil.*;
-import spaxel.engine.Engine;
-import voide.input.MouseWrapper;
-import spaxel.system.RenderSystem;
-import org.lwjgl.glfw.GLFWErrorCallback;
+import static org.lwjgl.glfw.GLFW.glfwDestroyWindow;
+import static org.lwjgl.glfw.GLFW.glfwInit;
+import static org.lwjgl.glfw.GLFW.glfwPollEvents;
+import static org.lwjgl.glfw.GLFW.glfwSetCursorPosCallback;
+import static org.lwjgl.glfw.GLFW.glfwSetErrorCallback;
+import static org.lwjgl.glfw.GLFW.glfwSwapBuffers;
+import static org.lwjgl.glfw.GLFW.glfwTerminate;
+import static org.lwjgl.glfw.GLFW.glfwWindowShouldClose;
+import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_VERSION;
+import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.glGetString;
+import static org.lwjgl.system.MemoryUtil.NULL;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.lwjgl.glfw.GLFWErrorCallback;
+
+import spaxel.engine.Engine;
+import spaxel.resources.Resources;
+import spaxel.system.RenderSystem;
+import spaxel.ui.UIType;
 import spaxel.util.GLUtil;
-import spaxel.engine.Resources;
+import voide.input.MouseWrapper;
+import voide.ui.UI;
 
 /**
  * Runnable for the thread that renders all the display frames
@@ -46,7 +62,7 @@ public class DisplayRunner implements Runnable {
             window = GLUtil.initGLWindow();
         } catch (GLUtil.WindowCreateException e) {
             LOGGER.log(Level.SEVERE, e.toString(), e);
-            Game.exit();
+            Engine.get().exit();
         }
 
         // Initialize GL context
@@ -67,16 +83,21 @@ public class DisplayRunner implements Runnable {
         initialize();
         // load the resources needed to show the loading screen
         Resources.get().initLoadingResources();
+        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.LOAD.key(), UI.class));
         // create a new rendersystem
         renderSystem = new RenderSystem();
         // create a new thread to load the rest of the resources
-        Thread load = new Thread(() -> Resources.get().startLoading());
+        Thread load = new Thread(() -> {
+            Resources.get().startLoading();
+            Engine.get().finishLoading();
+            Game.startUpdating();
+        });
         load.start();
 
         long start;
         long deltatime;
         while (running) {
-            if (glfwWindowShouldClose(window) || Game.shouldClose()) {
+            if (glfwWindowShouldClose(window) || Engine.get().shouldClose()) {
                 exit();
             }
             start = System.nanoTime();

@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.mouse;
 
 import spaxel.Constants;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.behaviour.event.Event;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.entity.storage.event.EventStorage;
@@ -9,7 +9,7 @@ import spaxel.entity.storage.move.MoveStorage;
 import spaxel.entity.storage.status.StatusStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 import voide.input.MouseWrapper;
 import voide.math.VectorD;
 import spaxel.entity.EntityUtil;
@@ -20,11 +20,11 @@ public class PlayerMouseHandler extends MouseHandler {
     }
 
     public void handle(Entity entity, MouseWrapper mouse) {
-        StatusStorage statStore = (StatusStorage) entity.getComponent(ComponentType.STATUS);
+        StatusStorage statStore = (StatusStorage) entity.getComponent(SpaxelComponent.STATUS);
 
-        TransformationStorage trnsStore = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
-        ChangeStorage chngStore = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
-        MoveStorage mvStore = (MoveStorage) entity.getComponent(ComponentType.MOVE);
+        TransformationStorage trnsStore = (TransformationStorage) entity.getComponent(SpaxelComponent.TRANSFORMATION);
+        ChangeStorage chngStore = (ChangeStorage) entity.getComponent(SpaxelComponent.CHANGE);
+        MoveStorage mvStore = (MoveStorage) entity.getComponent(SpaxelComponent.MOVE);
 
         VectorD mousePos = mouse.getPos();
 
@@ -40,7 +40,7 @@ public class PlayerMouseHandler extends MouseHandler {
         chngStore.setRotationChange(EntityUtil.calculateDeltaRot(rotChange, mvStore.getTurnRate()));
 
         if (statStore.canShoot()) {
-            EventStorage evStore = (EventStorage) entity.getComponent(ComponentType.EVENT_STORE);
+            EventStorage evStore = (EventStorage) entity.getComponent(SpaxelComponent.EVENT_STORE);
             if (mouse.getMouse1().isDown()) {
                 evStore.addEvent(Event.PRIMARY_SHOOT);
             }

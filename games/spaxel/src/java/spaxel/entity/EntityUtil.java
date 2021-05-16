@@ -2,19 +2,18 @@ package spaxel.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import spaxel.entity.ComponentType;
+
+import spaxel.entity.item.ItemCatalogue;
 import spaxel.entity.storage.item.ItemContainer;
 import spaxel.entity.storage.item.ItemName;
 import spaxel.entity.storage.item.ItemStorage;
-import spaxel.engine.Resources;
-import spaxel.entity.Entity;
-import spaxel.entity.EntityType;
+import voide.entity.Entity;
+import voide.entity.EntityStream;
 
 /**
  * Provides utility functions for entities
  */
 public final class EntityUtil {
-
 
     private EntityUtil() {
 
@@ -30,8 +29,8 @@ public final class EntityUtil {
     public static List<ItemName> getAllItemNames(Entity entity) {
         List<ItemName> items = new ArrayList<>();
 
-        for (Entity link : entity.getLinks((e) -> e.getType() == EntityType.ITEM)) {
-            ItemStorage itemStore = (ItemStorage) link.getComponent(ComponentType.ITEM);
+        for (Entity link : entity.getLinks((e) -> e.getType() == SpaxelEntity.ITEM)) {
+            ItemStorage itemStore = (ItemStorage) link.getComponent(SpaxelComponent.ITEM);
 
             items.add(itemStore.getName());
         }
@@ -48,14 +47,15 @@ public final class EntityUtil {
     public static void addRandomItems(Entity entity, int number, ItemContainer type) {
         for (int i = 0; i < number; i++) {
             // produce a random item of the given type
-            Entity item = Resources.get().getItems().produceRandom(prop -> prop.getType() == type);
+            Entity item = voide.resources.Resources.get().getResource("spaxel.item_catalogue", ItemCatalogue.class)
+                    .produceRandom(prop -> prop.getType() == type);
             entity.addLink(item);
         }
     }
 
     /**
-     * Calculate the rotation for one update step based on the required rotation change and the
-     * turnrate
+     * Calculate the rotation for one update step based on the required rotation
+     * change and the turnrate
      * 
      * @param rotChange the required rotation change
      * @param turnrate  the maximum amount of rotation that can occur
@@ -86,5 +86,10 @@ public final class EntityUtil {
 
     public static int healthAtLevel(int level, int baseHealth) {
         return baseHealth * level;
+    }
+
+    // TODO refactor
+    public static Entity getPlayer(EntityStream stream) {
+        return stream.getEntities(SpaxelEntity.PLAYER).iterator().next();
     }
 }

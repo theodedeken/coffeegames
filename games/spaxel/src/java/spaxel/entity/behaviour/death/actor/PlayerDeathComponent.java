@@ -1,10 +1,10 @@
 package spaxel.entity.behaviour.death.actor;
 
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
 import spaxel.entity.behaviour.death.DeathHandler;
 import spaxel.entity.behaviour.death.DeathType;
 import spaxel.ui.UIType;
+import voide.entity.Entity;
 import voide.ui.UI;
 
 /**

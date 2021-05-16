@@ -1,12 +1,8 @@
 package spaxel.entity;
 
-/**
- * The different types of components
- * 
- * Created by theo on 31/05/17.
- */
-public enum ComponentType {
-    // Storage components
+import voide.entity.ComponentType;
+
+public enum SpaxelComponent implements ComponentType {
     AGE("age"),
 
     RENDERABLE("renderable"),
@@ -66,14 +62,18 @@ public enum ComponentType {
 
     EVENT("event");
 
-
     private final String name;
 
-    ComponentType(String name) {
+    SpaxelComponent(String name) {
         this.name = name;
+    }
+
+    public String id() {
+        return name();
     }
 
     public String getName() {
         return name;
     }
+
 }

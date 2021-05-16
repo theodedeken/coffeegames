@@ -1,7 +1,7 @@
 package spaxel.entity.storage.health;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 /**
  * Created by theo on 3/06/17.
@@ -12,11 +12,11 @@ public class HealthStorage extends Storage {
     private int maxHealth;
 
     public HealthStorage() {
-        super(ComponentType.HEALTH);
+        super(SpaxelComponent.HEALTH);
     }
 
     public HealthStorage(int health, int baseHealth, int maxHealth) {
-        super(ComponentType.HEALTH);
+        super(SpaxelComponent.HEALTH);
         this.currentHealth = health;
         this.maxHealth = maxHealth;
         this.baseHealth = baseHealth;

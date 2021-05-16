@@ -1,17 +1,16 @@
 package spaxel.entity.behaviour.ai;
 
 import spaxel.Constants;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import spaxel.entity.EntityUtil;
 import spaxel.entity.behaviour.event.Event;
-import spaxel.entity.storage.status.StatusStorage;
-import spaxel.entity.storage.transformation.TransformationStorage;
-import spaxel.entity.storage.move.MoveStorage;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.entity.storage.event.EventStorage;
-import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+import spaxel.entity.storage.move.MoveStorage;
+import spaxel.entity.storage.status.StatusStorage;
+import spaxel.entity.storage.transformation.TransformationStorage;
+import voide.entity.Entity;
 import voide.math.VectorD;
-import spaxel.entity.EntityUtil;
 
 /**
  * Created by theo on 7/06/17.
@@ -25,13 +24,13 @@ public class BasicEnemyHandler extends AIHandler {
     }
 
     public void execute(Entity entity) {
-        TransformationStorage playerPos = (TransformationStorage) entity.getStream().getPlayer()
-                .getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage playerPos = (TransformationStorage) EntityUtil.getPlayer(entity.getStream())
+                .getComponent(SpaxelComponent.TRANSFORMATION);
 
-        StatusStorage ac = (StatusStorage) entity.getComponent(ComponentType.STATUS);
-        TransformationStorage entityPos = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
-        MoveStorage entityMov = (MoveStorage) entity.getComponent(ComponentType.MOVE);
-        ChangeStorage entityVel = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
+        StatusStorage ac = (StatusStorage) entity.getComponent(SpaxelComponent.STATUS);
+        TransformationStorage entityPos = (TransformationStorage) entity.getComponent(SpaxelComponent.TRANSFORMATION);
+        MoveStorage entityMov = (MoveStorage) entity.getComponent(SpaxelComponent.MOVE);
+        ChangeStorage entityVel = (ChangeStorage) entity.getComponent(SpaxelComponent.CHANGE);
         VectorD diff = playerPos.getPosition().sum(entityPos.getPosition().multiplicate(-1));
         if (ac.canMove()) {
             double rotToGet = Math.atan2(diff.getValue(0), diff.getValue(1));
@@ -61,7 +60,7 @@ public class BasicEnemyHandler extends AIHandler {
             }
         }
         if (ac.canShoot()) {
-            EventStorage evStore = (EventStorage) entity.getComponent(ComponentType.EVENT_STORE);
+            EventStorage evStore = (EventStorage) entity.getComponent(SpaxelComponent.EVENT_STORE);
             evStore.addEvent(Event.PRIMARY_SHOOT);
             evStore.addEvent(Event.SECONDARY_SHOOT);
         }

@@ -1,20 +1,24 @@
-package spaxel.engine;
+package spaxel.entity.item;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import spaxel.entity.Entity;
+import java.util.Map.Entry;
+
+import voide.entity.Entity;
+import voide.entity.EntityIndustry;
 import voide.random.VoideRandom;
+import voide.resources.Resource;
 
 /**
  * Catalogue for all the items
  * 
  * Created by theod on 12-7-2017.
  */
-public class ItemCatalogue {
+public class ItemCatalogue implements Resource {
     Map<String, ItemProperties> items;
-    List<String> industryList;
+    List<EntityIndustry> industryList;
     VoideRandom random;
 
     /**
@@ -22,16 +26,16 @@ public class ItemCatalogue {
      * 
      * @param itemProps the properties of the items
      */
-    public ItemCatalogue(List<ItemProperties> itemProps) {
+    public ItemCatalogue(Map<String, ItemProperties> itemProps) {
         items = new HashMap<>();
-        for (ItemProperties ip : itemProps) {
-            items.put(ip.getName(), ip);
+        for (Entry<String, ItemProperties> ip : itemProps.entrySet()) {
+            items.put(ip.getKey(), ip.getValue());
         }
         random = new VoideRandom();
         initialize();
     }
 
-    private void initialize() {
+    public void initialize() {
         this.industryList = new ArrayList<>();
         for (ItemProperties prop : items.values()) {
             for (int i = 0; i < prop.getSpawnRate(); i++) {
@@ -59,7 +63,7 @@ public class ItemCatalogue {
      */
     private Entity produceRandom(List<ItemProperties> options) {
         ItemProperties chosen = random.choose(options);
-        return Resources.get().getIndustryMap().get(chosen.getIndustry()).produce();
+        return chosen.getIndustry().produce();
     }
 
     /**

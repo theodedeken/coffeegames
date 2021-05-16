@@ -37,7 +37,6 @@ svelte_component(
 
 svelte_component(
     name = "FileOverview",
-    srcs = ["file.json"],
     component = "FileOverview.svelte",
     deps = [
         "FileHeader",

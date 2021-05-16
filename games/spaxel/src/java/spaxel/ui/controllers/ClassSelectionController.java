@@ -1,10 +1,10 @@
 package spaxel.ui.controllers;
 
 import spaxel.engine.Engine;
-import spaxel.engine.Resources;
-import spaxel.entity.Entity;
+import spaxel.input.SpaxelKey;
 import spaxel.ui.UIType;
-import voide.input.Key;
+import voide.entity.Entity;
+import voide.entity.EntityIndustry;
 import voide.input.Keyboard;
 import voide.ui.UI;
 import voide.ui.elements.Element;
@@ -22,7 +22,8 @@ public final class ClassSelectionController {
      * Select the white ship.
      */
     public static void selectWhite() {
-        Entity player = Resources.get().getIndustryMap().get("player_white_industry").produce();
+        Entity player = voide.resources.Resources.get().getResource("player_white_industry", EntityIndustry.class)
+                .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
         Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
@@ -33,7 +34,8 @@ public final class ClassSelectionController {
      * Select the red ship.
      */
     public static void selectRed() {
-        Entity player = Resources.get().getIndustryMap().get("player_red_industry").produce();
+        Entity player = voide.resources.Resources.get().getResource("player_red_industry", EntityIndustry.class)
+                .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
         Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
@@ -44,7 +46,8 @@ public final class ClassSelectionController {
      * Select the green ship.
      */
     public static void selectGreen() {
-        Entity player = Resources.get().getIndustryMap().get("player_green_industry").produce();
+        Entity player = voide.resources.Resources.get().getResource("player_green_industry", EntityIndustry.class)
+                .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
         Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
@@ -55,7 +58,8 @@ public final class ClassSelectionController {
      * Select the blue ship.
      */
     public static void selectBlue() {
-        Entity player = Resources.get().getIndustryMap().get("player_blue_industry").produce();
+        Entity player = voide.resources.Resources.get().getResource("player_blue_industry", EntityIndustry.class)
+                .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
         Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
@@ -78,7 +82,7 @@ public final class ClassSelectionController {
     public static void escCheck(Element element) {
         element.dump("nothing", "nothing");
         Keyboard k = Engine.get().getKeyboard();
-        if (k.get(Key.ESC).isRelease()) {
+        if (k.get(SpaxelKey.ESC).isRelease()) {
             back();
         }
     }

@@ -1,12 +1,9 @@
-package spaxel.entity;
+package voide.entity;
 
-import spaxel.entity.Behaviour;
-import spaxel.entity.Component;
-import spaxel.entity.ComponentType;
-import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.HashSet;
 
 /**
  * Represent an entity in the game
@@ -15,7 +12,7 @@ import java.util.HashSet;
  */
 public class Entity {
     private EntityType type;
-    private Map<ComponentType, Component> components;
+    private Map<String, Component> components;
     private Entity parent;
     private Set<Entity> links;
     private EntityStream stream;
@@ -27,7 +24,7 @@ public class Entity {
      */
     public Entity(EntityType type) {
         this.type = type;
-        this.components = new EnumMap<>(ComponentType.class);
+        this.components = new HashMap<>();
         this.links = new HashSet<>();
     }
 
@@ -35,15 +32,15 @@ public class Entity {
         return type;
     }
 
-    public Map<ComponentType, Component> getComponents() {
+    public Map<String, Component> getComponents() {
         return components;
     }
 
     public boolean hasComponent(ComponentType type) {
-        return components.containsKey(type);
+        return components.containsKey(type.id());
     }
 
-    public void setComponents(Map<ComponentType, Component> components) {
+    public void setComponents(Map<String, Component> components) {
         this.components = components;
     }
 
@@ -55,7 +52,7 @@ public class Entity {
      * @return the component
      */
     public Component getComponent(ComponentType type) {
-        Component result = components.get(type);
+        Component result = components.get(type.id());
         if (parent == null || result != null) {
             return result;
         } else {
@@ -71,7 +68,7 @@ public class Entity {
      * @param component the component to add
      */
     public void addComponent(Component component) {
-        components.put(component.getType(), component);
+        components.put(component.getType().id(), component);
         stream.addComponent(component.getType(), this);
     }
 
@@ -81,7 +78,7 @@ public class Entity {
      * @param type the type of component to remove
      */
     public void removeComponent(ComponentType type) {
-        components.remove(type);
+        components.remove(type.id());
         stream.removeComponent(type, this);
     }
 
@@ -128,9 +125,10 @@ public class Entity {
     }
 
     private void destroy(boolean root) {
-        if (components.containsKey(ComponentType.DEATH)) {
-            ((Behaviour) components.get(ComponentType.DEATH)).execute(this);
-        }
+        /**
+         * TODO find another way if (components.containsKey(ComponentType.DEATH)) {
+         * ((Behaviour) components.get(ComponentType.DEATH)).execute(this); }
+         */
         stream.removeEntity(this);
         for (Entity link : links) {
             link.destroy(false);
@@ -140,11 +138,11 @@ public class Entity {
         }
     }
 
-    public void setStream(EntityStream stream){
+    public void setStream(EntityStream stream) {
         this.stream = stream;
     }
 
-    public EntityStream getStream(){
+    public EntityStream getStream() {
         return stream;
     }
 }

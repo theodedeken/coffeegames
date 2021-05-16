@@ -1,13 +1,13 @@
 package spaxel.entity.behaviour.spawn;
 
 import java.util.Collections;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import spaxel.entity.industry.StaticParticleIndustry;
 import spaxel.entity.storage.renderable.RenderableStorage;
 import spaxel.entity.storage.spawn.SpawnStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
-import spaxel.engine.Resources;
-import spaxel.entity.Entity;
-import spaxel.factories.entities.StaticParticleIndustry;
+import voide.entity.Entity;
+
 import java.util.List;
 
 public class StaticSpawner extends Spawner {
@@ -15,18 +15,13 @@ public class StaticSpawner extends Spawner {
                 super(SpawnerType.STATIC);
         }
 
-
         public List<Entity> spawn(Entity entity) {
-                SpawnStorage spwnStorage =
-                                (SpawnStorage) entity.getComponent(ComponentType.SPAWN_STORE);
+                SpawnStorage spwnStorage = (SpawnStorage) entity.getComponent(SpaxelComponent.SPAWN_STORE);
                 TransformationStorage trnsfrmStorage = (TransformationStorage) entity
-                                .getComponent(ComponentType.TRANSFORMATION);
-                RenderableStorage rndrStorage =
-                                (RenderableStorage) entity.getComponent(ComponentType.RENDERABLE);
-                StaticParticleIndustry industry = (StaticParticleIndustry) Resources.get()
-                                .getIndustryMap().get(spwnStorage.getIndustry());
+                                .getComponent(SpaxelComponent.TRANSFORMATION);
+                RenderableStorage rndrStorage = (RenderableStorage) entity.getComponent(SpaxelComponent.RENDERABLE);
+                StaticParticleIndustry industry = (StaticParticleIndustry) spwnStorage.getIndustry();
 
-                return Collections.singletonList(
-                                industry.produce(trnsfrmStorage.copy(), rndrStorage.copy()));
+                return Collections.singletonList(industry.produce(trnsfrmStorage.copy(), rndrStorage.copy()));
         }
 }

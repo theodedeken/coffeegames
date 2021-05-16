@@ -1,14 +1,16 @@
 package spaxel.system;
 
 import spaxel.entity.Behaviour;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
 import spaxel.system.SystemType;
+import voide.entity.Entity;
+
 import java.util.Set;
 
 /**
- * The HitSystem is responsible for updating all the entities with a HitComponent
+ * The HitSystem is responsible for updating all the entities with a
+ * HitComponent
  * 
  * Created by theo on 20/06/17.
  */
@@ -21,11 +23,10 @@ public class HitSystem extends GameSystem {
     }
 
     public void update() {
-        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(ComponentType.HIT);
+        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(SpaxelComponent.HIT);
         for (Entity entity : entities) {
-            ((Behaviour) entity.getComponent(ComponentType.HIT)).execute(entity);
+            ((Behaviour) entity.getComponent(SpaxelComponent.HIT)).execute(entity);
         }
     }
-
 
 }

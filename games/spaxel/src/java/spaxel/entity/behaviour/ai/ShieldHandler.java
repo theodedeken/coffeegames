@@ -1,9 +1,10 @@
 package spaxel.entity.behaviour.ai;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.transformation.TransformationStorage;
+import voide.entity.Entity;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+
 import java.util.Set;
 
 /**
@@ -18,15 +19,14 @@ public abstract class ShieldHandler extends AIHandler {
 
     public void execute(Entity entity) {
         Entity parent = entity.getParent();
-        TransformationStorage trnsStore =
-                (TransformationStorage) parent.getComponent(ComponentType.TRANSFORMATION);
-        Set<Entity> projectiles = entity.getStream().getEntities(ComponentType.HIT);
+        TransformationStorage trnsStore = (TransformationStorage) parent.getComponent(SpaxelComponent.TRANSFORMATION);
+        Set<Entity> projectiles = entity.getStream().getEntities(SpaxelComponent.HIT);
         for (Entity projectile : projectiles) {
-            TransformationStorage prTrnsStore =
-                    (TransformationStorage) projectile.getComponent(ComponentType.TRANSFORMATION);
+            TransformationStorage prTrnsStore = (TransformationStorage) projectile
+                    .getComponent(SpaxelComponent.TRANSFORMATION);
             Entity pParent = projectile.getParent();
-            if (pParent != parent && trnsStore.getPosition()
-                    .sum(prTrnsStore.getPosition().multiplicate(-1)).length() < SHIELD_RADIUS) {
+            if (pParent != parent && trnsStore.getPosition().sum(prTrnsStore.getPosition().multiplicate(-1))
+                    .length() < SHIELD_RADIUS) {
                 handleProjectile(entity, projectile);
             }
         }

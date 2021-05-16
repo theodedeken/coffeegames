@@ -1,4 +1,4 @@
-package spaxel.engine;
+package spaxel.state;
 
 import spaxel.Constants;
 import voide.math.VectorD;

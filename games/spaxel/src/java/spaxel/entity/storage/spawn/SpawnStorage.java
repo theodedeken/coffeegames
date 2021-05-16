@@ -1,22 +1,24 @@
 package spaxel.entity.storage.spawn;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.EntityIndustry;
+import voide.entity.Storage;
+import voide.resources.ResourceProxy;
 
 public class SpawnStorage extends Storage {
     private double maxDeltaRot;
     private double maxSpeed;
     private int maxLife;
     private int rate;
-    private String industry;
+    private ResourceProxy<EntityIndustry> industry;
 
     public SpawnStorage() {
-        super(ComponentType.SPAWN_STORE);
+        super(SpaxelComponent.SPAWN_STORE);
     }
 
     public SpawnStorage(double maxDeltaRot, double maxSpeed, int maxLife, int rate,
-            String industry) {
-        super(ComponentType.SPAWN_STORE);
+            ResourceProxy<EntityIndustry> industry) {
+        super(SpaxelComponent.SPAWN_STORE);
         this.maxDeltaRot = maxDeltaRot;
         this.maxSpeed = maxSpeed;
         this.maxLife = maxLife;
@@ -83,18 +85,18 @@ public class SpawnStorage extends Storage {
     /**
      * @return the industry
      */
-    public String getIndustry() {
-        return industry;
+    public EntityIndustry getIndustry() {
+        return industry.get();
     }
 
     /**
      * @param industry the industry to set
      */
     public void setIndustry(String industry) {
-        this.industry = industry;
+        this.industry = new ResourceProxy<>(industry, EntityIndustry.class);
     }
 
     public SpawnStorage copy() {
-        return new SpawnStorage(maxDeltaRot, maxSpeed, maxLife, rate, industry);
+        return new SpawnStorage(maxDeltaRot, maxSpeed, maxLife, rate, industry.copy());
     }
 }

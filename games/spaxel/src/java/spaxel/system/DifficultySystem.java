@@ -1,20 +1,21 @@
 package spaxel.system;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import spaxel.entity.SpaxelEntity;
+import spaxel.entity.industry.EnemyIndustry;
 import spaxel.entity.storage.health.HealthStorage;
 import spaxel.entity.storage.item.ItemContainer;
 import spaxel.entity.storage.transformation.TransformationStorage;
+import spaxel.resources.Resources;
 import spaxel.engine.Engine;
-import spaxel.entity.EntityType;
-import spaxel.entity.Entity;
 import spaxel.system.SystemType;
-import spaxel.factories.entities.EnemyIndustry;
+import voide.entity.Entity;
+import voide.entity.EntityType;
 import voide.math.VectorD;
 import voide.random.VoideRandom;
 import spaxel.entity.EntityUtil;
 
 import java.util.Set;
-import spaxel.engine.Resources;
 
 /**
  * The DifficultySystem is responsible for spawning new enemies based on the
@@ -50,14 +51,14 @@ public class DifficultySystem extends GameSystem {
                 if (nextSpawn > 0) {
                         nextSpawn--;
                 }
-                Set<Entity> enemies = Engine.get().getNEntityStream().getEntities(EntityType.ENEMY);
-                Entity player = Engine.get().getNEntityStream().getPlayer();
+                Set<Entity> enemies = Engine.get().getNEntityStream().getEntities(SpaxelEntity.ENEMY);
+                Entity player = EntityUtil.getPlayer(Engine.get().getNEntityStream());
                 TransformationStorage playerPos = (TransformationStorage) player
-                                .getComponent(ComponentType.TRANSFORMATION);
+                                .getComponent(SpaxelComponent.TRANSFORMATION);
 
                 if (nextSpawn == 0 && enemies.size() < spawnCap) {
-                        EnemyIndustry ei = (EnemyIndustry) Resources.get().getIndustryMap()
-                                        .get(rand.choose(enemyIndustries));
+                        EnemyIndustry ei = voide.resources.Resources.get().getResource(rand.choose(enemyIndustries),
+                                        EnemyIndustry.class);
                         // entity settings
                         int xOffset = rand.choose(1, -1) * rand.between(MIN_SPAWN_DISTANCE, MAX_SPAWN_DISTANCE);
                         int yOffset = rand.choose(1, -1) * rand.between(MIN_SPAWN_DISTANCE, MAX_SPAWN_DISTANCE);
@@ -67,7 +68,7 @@ public class DifficultySystem extends GameSystem {
                         Entity entity = ei
                                         .produce(new TransformationStorage(playerPos.getPosition().sum(offset), 0, 0));
 
-                        HealthStorage hlthStore = (HealthStorage) entity.getComponent(ComponentType.HEALTH);
+                        HealthStorage hlthStore = (HealthStorage) entity.getComponent(SpaxelComponent.HEALTH);
 
                         int health = EntityUtil.healthAtLevel(rand.between(1, maxLevel + 1), hlthStore.getBaseHealth());
                         hlthStore.setMaxHealth(health);

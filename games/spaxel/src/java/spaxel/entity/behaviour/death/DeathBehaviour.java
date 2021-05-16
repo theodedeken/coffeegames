@@ -1,18 +1,18 @@
 package spaxel.entity.behaviour.death;
 
 import spaxel.entity.Behaviour;
-import spaxel.entity.ComponentType;
-import spaxel.entity.Entity;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Entity;
 
 public class DeathBehaviour extends Behaviour {
     private DeathHandler handler;
 
     public DeathBehaviour() {
-        super(ComponentType.DEATH);
+        super(SpaxelComponent.DEATH);
     }
 
     public DeathBehaviour(DeathHandler handler) {
-        super(ComponentType.DEATH);
+        super(SpaxelComponent.DEATH);
         this.handler = handler;
     }
 

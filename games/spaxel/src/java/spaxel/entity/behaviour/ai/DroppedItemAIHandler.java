@@ -1,8 +1,8 @@
 package spaxel.entity.behaviour.ai;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.change.ChangeStorage;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 
 /**
  * Created by theod on 11-7-2017.
@@ -15,7 +15,7 @@ public class DroppedItemAIHandler extends AIHandler {
     }
 
     public void execute(Entity entity) {
-        ChangeStorage vc = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
+        ChangeStorage vc = (ChangeStorage) entity.getComponent(SpaxelComponent.CHANGE);
         vc.setPositionChange(vc.getPositionChange().multiplicate(HALF));
     }
 }

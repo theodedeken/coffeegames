@@ -1,7 +1,7 @@
 package spaxel.entity.storage.change;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 import voide.math.VectorD;
 
 /**
@@ -13,11 +13,11 @@ public class ChangeStorage extends Storage {
     private double scaleChange;
 
     public ChangeStorage() {
-        super(ComponentType.CHANGE);
+        super(SpaxelComponent.CHANGE);
     }
 
     public ChangeStorage(VectorD positionChange, double rotationChange, double scaleChange) {
-        super(ComponentType.CHANGE);
+        super(SpaxelComponent.CHANGE);
         this.positionChange = positionChange;
         this.rotationChange = rotationChange;
         this.scaleChange = scaleChange;

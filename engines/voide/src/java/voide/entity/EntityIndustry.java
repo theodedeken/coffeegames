@@ -1,33 +1,18 @@
-package spaxel.factories.entities;
+package voide.entity;
 
-import spaxel.entity.ComponentType;
-import spaxel.engine.Resources;
-import spaxel.entity.Component;
-import spaxel.entity.EntityType;
-import spaxel.entity.Entity;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import voide.resources.Resource;
+import voide.resources.Resources;
 
 /**
  * Groups ComponentFactories together in an industry to build entities
  * 
  * Created by theo on 3/06/17.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type",
-        visible = true)
-@JsonSubTypes({@JsonSubTypes.Type(value = RandomParticleIndustry.class, name = "RANDOM_PARTICLE"),
-        @JsonSubTypes.Type(value = StaticParticleIndustry.class, name = "STATIC_PARTICLE"),
-        @JsonSubTypes.Type(value = SpawnerIndustry.class, name = "SPAWNER"),
-        @JsonSubTypes.Type(value = EnemyIndustry.class, name = "ENEMY"),
-        @JsonSubTypes.Type(value = ProjectileIndustry.class, name = "PROJECTILE"),
-        @JsonSubTypes.Type(value = ItemIndustry.class, name = "ITEM"),
-        @JsonSubTypes.Type(value = PlayerIndustry.class, name = "PLAYER"),
-        @JsonSubTypes.Type(value = EffectIndustry.class, name = "EFFECT"),
-        @JsonSubTypes.Type(value = EffectIndustry.class, name = "VISUAL_EFFECT"),})
-public class EntityIndustry {
+public class EntityIndustry implements Resource {
     private EntityType type;
     private List<Component> blueprints;
     private List<String> links;
@@ -39,6 +24,10 @@ public class EntityIndustry {
         super();
     }
 
+    public void initialize() {
+
+    }
+
     /**
      * Create a new entity with the components produced by the componentfactories
      * 
@@ -48,7 +37,7 @@ public class EntityIndustry {
         Entity entity = new Entity(type);
         entity.setComponents(buildComponents());
         for (String link : links) {
-            entity.addLink(Resources.get().getIndustryMap().get(link).produce());
+            entity.addLink(Resources.get().getResource(link, EntityIndustry.class).produce());
         }
         return entity;
     }
@@ -58,11 +47,11 @@ public class EntityIndustry {
      * 
      * @return the created componentmap
      */
-    public Map<ComponentType, Component> buildComponents() {
-        EnumMap<ComponentType, Component> components = new EnumMap<>(ComponentType.class);
+    public Map<String, Component> buildComponents() {
+        Map<String, Component> components = new HashMap<>();
         for (Component blueprint : blueprints) {
             Component c = blueprint.copy();
-            components.put(c.getType(), c);
+            components.put(c.getType().id(), c);
         }
         return components;
     }

@@ -1,19 +1,19 @@
 package spaxel.entity.behaviour.keyboard;
 
 import spaxel.entity.Behaviour;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Entity;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
 
 public class KeyboardBehaviour extends Behaviour {
     private KeyboardHandler handler;
 
     public KeyboardBehaviour() {
-        super(ComponentType.KEYBOARD);
+        super(SpaxelComponent.KEYBOARD);
     }
 
     public KeyboardBehaviour(KeyboardHandler handler) {
-        super(ComponentType.KEYBOARD);
+        super(SpaxelComponent.KEYBOARD);
         this.handler = handler;
     }
 
@@ -34,7 +34,6 @@ public class KeyboardBehaviour extends Behaviour {
     public void setHandler(KeyboardHandler handler) {
         this.handler = handler;
     }
-
 
     public KeyboardBehaviour copy() {
         return new KeyboardBehaviour(handler);

@@ -1,8 +1,8 @@
 package spaxel.entity.behaviour.affect;
 
 import spaxel.entity.Behaviour;
-import spaxel.entity.ComponentType;
-import spaxel.entity.Entity;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Entity;
 
 /**
  * Created by theod on 28-6-2017.
@@ -11,11 +11,11 @@ public class AffectBehaviour extends Behaviour {
     private AffectHandler handler;
 
     public AffectBehaviour() {
-        super(ComponentType.AFFECT);
+        super(SpaxelComponent.AFFECT);
     }
 
     public AffectBehaviour(AffectHandler handler) {
-        super(ComponentType.AFFECT);
+        super(SpaxelComponent.AFFECT);
         this.handler = handler;
     }
 

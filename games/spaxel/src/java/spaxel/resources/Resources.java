@@ -1,29 +1,17 @@
-package spaxel.engine;
+package spaxel.resources;
 
-import static spaxel.loaders.Loader.loadEntityIndustries;
-import static spaxel.loaders.Loader.loadItems;
-import static spaxel.loaders.Loader.loadKeyConfiguration;
-import static spaxel.loaders.Loader.loadResourcePaths;
-
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import spaxel.Constants;
-import spaxel.factories.entities.EntityIndustry;
-import spaxel.ui.UIType;
-import voide.collision.HitShape;
-import voide.graphics.animation.Animation;
+import spaxel.entity.item.ItemCatalogue;
+import spaxel.entity.item.ItemProperties;
 import voide.graphics.load.Image;
 import voide.graphics.load.ImagePart;
-import voide.graphics.renderable.Renderable;
 import voide.graphics.renderable.Texture;
 import voide.graphics.util.ImagePacker;
 import voide.input.Key;
 import voide.input.KeyState;
-import voide.sound.Music;
-import voide.sound.Sound;
-import voide.ui.UI;
 
 /**
  * Singleton class to hold all the game resources
@@ -31,15 +19,7 @@ import voide.ui.UI;
 public final class Resources {
 	private static final Resources resources = new Resources();
 
-	private Map<String, EntityIndustry> industryMap;
-	private Map<String, HitShape> hitShapeAtlas;
-	private Map<String, Map<String, Map<String, String>>> stylesheets;
-	private Map<String, Animation> animationAtlas;
-	private ItemCatalogue items;
 	private Map<Key, KeyState> keyConfiguration;
-	private Map<String, Renderable> renderables;
-	private Map<String, Sound> sounds;
-	private Map<String, Music> music;
 
 	private Resources() {
 
@@ -71,8 +51,6 @@ public final class Resources {
 			voide.resources.Resources.get().addResource(entry.getKey().replace("image_part.", "texture."),
 					entry.getValue().toTexture(rootId));
 		}
-
-		Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.LOAD.key(), UI.class));
 	}
 
 	/**
@@ -88,7 +66,6 @@ public final class Resources {
 	 * Starts the loading of all the game resources
 	 */
 	public void startLoading() {
-		Map<String, List<String>> resourcePaths = loadResourcePaths(Constants.RESOURCE_PATH);
 
 		voide.resources.Resources.get().load(Constants.RESOURCE_MAP);
 
@@ -96,13 +73,10 @@ public final class Resources {
 
 		// sounds = loadSounds(resourcePaths.get("sounds"));
 
-		items = loadItems(resourcePaths.get("item"));
-
-		industryMap = loadEntityIndustries(resourcePaths.get("industry"));
-
-		keyConfiguration = loadKeyConfiguration(resourcePaths.get("keys"));
-
-		Engine.get().finishLoading();
+		Map<String, ItemProperties> loadedItems = voide.resources.Resources.get().getNamespaceResources("item",
+				ItemProperties.class);
+		ItemCatalogue items = new ItemCatalogue(loadedItems);
+		voide.resources.Resources.get().addResource("spaxel.item_catalogue", items);
 	}
 
 	public void exit() {
@@ -113,36 +87,8 @@ public final class Resources {
 		// TODO sounds
 	}
 
-	public Map<String, Map<String, Map<String, String>>> getStylesheets() {
-		return stylesheets;
-	}
-
-	public Map<String, Animation> getAnimationAtlas() {
-		return animationAtlas;
-	}
-
-	public Map<String, EntityIndustry> getIndustryMap() {
-		return industryMap;
-	}
-
-	public Map<String, HitShape> getHitShapeAtlas() {
-		return hitShapeAtlas;
-	}
-
-	public Map<String, Music> getMusic() {
-		return music;
-	}
-
-	public ItemCatalogue getItems() {
-		return items;
-	}
-
 	public Map<Key, KeyState> getKeyConfiguration() {
 		return keyConfiguration;
-	}
-
-	public Map<String, Renderable> getRenderables() {
-		return renderables;
 	}
 
 }

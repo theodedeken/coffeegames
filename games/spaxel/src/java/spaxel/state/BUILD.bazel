@@ -3,14 +3,10 @@ load("//bazel:macros.bzl", "cg_java_library")
 package(default_visibility = ["//games/spaxel:__subpackages__"])
 
 cg_java_library(
-    name = "entities",
+    name = "state",
     srcs = glob(["*.java"]),
     deps = [
-        "//games/spaxel/src/java/spaxel/entity",
+        "//engines/voide/src/java/voide/math",
+        "//games/spaxel/src/java/spaxel:constants",
     ],
-)
-
-filegroup(
-    name = "files",
-    srcs = glob(["*.java"]),
 )

@@ -1,12 +1,12 @@
 package spaxel.entity.behaviour.ai;
 
 import spaxel.Constants;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.move.MoveStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 import voide.math.VectorD;
 import spaxel.entity.EntityUtil;
 import java.util.Set;
@@ -22,17 +22,17 @@ public class HomingMissileAIHandler extends AIHandler {
     }
 
     public void execute(Entity entity) {
-        TransformationStorage pc = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
-        MoveStorage mc = (MoveStorage) entity.getComponent(ComponentType.MOVE);
-        ChangeStorage vc = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
+        TransformationStorage pc = (TransformationStorage) entity.getComponent(SpaxelComponent.TRANSFORMATION);
+        MoveStorage mc = (MoveStorage) entity.getComponent(SpaxelComponent.MOVE);
+        ChangeStorage vc = (ChangeStorage) entity.getComponent(SpaxelComponent.CHANGE);
 
-        Set<Entity> enemies = entity.getStream().getEntities(ComponentType.DAMAGE);
+        Set<Entity> enemies = entity.getStream().getEntities(SpaxelComponent.DAMAGE);
 
         double minDist = -1;
         Entity closest = null;
         for (Entity e : enemies) {
             if (e != entity.getParent()) {
-                TransformationStorage epc = (TransformationStorage) e.getComponent(ComponentType.TRANSFORMATION);
+                TransformationStorage epc = (TransformationStorage) e.getComponent(SpaxelComponent.TRANSFORMATION);
                 double dist = epc.getPosition().sum(pc.getPosition().multiplicate(-1)).length();
                 if (minDist < 0 || dist < minDist) {
                     minDist = dist;
@@ -41,7 +41,7 @@ public class HomingMissileAIHandler extends AIHandler {
             }
         }
         if (closest != null && minDist < DISTANCE_THRESHOLD) {
-            TransformationStorage cpc = (TransformationStorage) closest.getComponent(ComponentType.TRANSFORMATION);
+            TransformationStorage cpc = (TransformationStorage) closest.getComponent(SpaxelComponent.TRANSFORMATION);
 
             VectorD diff = cpc.getPosition().sum(pc.getPosition().multiplicate(-1));
             double rotToGet = Math.atan2(diff.getValue(0), diff.getValue(1));

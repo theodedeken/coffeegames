@@ -1,18 +1,18 @@
 package spaxel.entity.storage.item;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 public class ItemStorage extends Storage {
     private ItemContainer container;
     private ItemName name;
 
     public ItemStorage() {
-        super(ComponentType.ITEM);
+        super(SpaxelComponent.ITEM);
     }
 
     public ItemStorage(ItemContainer container, ItemName name) {
-        super(ComponentType.ITEM);
+        super(SpaxelComponent.ITEM);
         this.container = container;
         this.name = name;
     }

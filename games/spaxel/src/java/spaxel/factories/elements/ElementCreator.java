@@ -1,11 +1,11 @@
 package spaxel.factories.elements;
 
-import spaxel.entity.ComponentType;
 import spaxel.entity.storage.cooldown.CooldownStorage;
 import spaxel.entity.storage.renderable.RenderableStorage;
 import spaxel.entity.storage.stack.StackStorage;
+import voide.entity.Entity;
 import voide.ui.elements.Element;
-import spaxel.entity.Entity;
+import spaxel.entity.SpaxelComponent;
 
 /**
  * Creates new UI elements
@@ -25,9 +25,9 @@ public final class ElementCreator {
      * @return the created Element
      */
     public static Element createItemView(Entity item) {
-        RenderableStorage sc = (RenderableStorage) item.getComponent(ComponentType.RENDERABLE);
-        CooldownStorage cc = (CooldownStorage) item.getComponent(ComponentType.COOLDOWN);
-        StackStorage stc = (StackStorage) item.getComponent(ComponentType.STACK);
+        RenderableStorage sc = (RenderableStorage) item.getComponent(SpaxelComponent.RENDERABLE);
+        CooldownStorage cc = (CooldownStorage) item.getComponent(SpaxelComponent.COOLDOWN);
+        StackStorage stc = (StackStorage) item.getComponent(SpaxelComponent.STACK);
 
         Element base = new Element();
         base.setClasses("inventory_item");

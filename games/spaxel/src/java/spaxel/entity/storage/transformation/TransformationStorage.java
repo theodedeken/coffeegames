@@ -1,7 +1,7 @@
 package spaxel.entity.storage.transformation;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 import voide.math.VectorD;
 
 public class TransformationStorage extends Storage {
@@ -10,11 +10,11 @@ public class TransformationStorage extends Storage {
     private double scale;
 
     public TransformationStorage() {
-        super(ComponentType.TRANSFORMATION);
+        super(SpaxelComponent.TRANSFORMATION);
     }
 
     public TransformationStorage(VectorD position, double rotation, double scale) {
-        super(ComponentType.TRANSFORMATION);
+        super(SpaxelComponent.TRANSFORMATION);
         this.position = position;
         this.rotation = rotation;
         this.scale = scale;

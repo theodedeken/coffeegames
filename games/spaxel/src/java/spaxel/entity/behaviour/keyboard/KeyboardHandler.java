@@ -1,6 +1,6 @@
 package spaxel.entity.behaviour.keyboard;
 
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 import voide.input.Keyboard;
 
 public abstract class KeyboardHandler {

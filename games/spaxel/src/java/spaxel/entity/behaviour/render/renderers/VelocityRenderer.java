@@ -1,10 +1,10 @@
 package spaxel.entity.behaviour.render.renderers;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 import voide.math.VectorD;
 import voide.render.buffer.RenderJob;
 
@@ -13,8 +13,8 @@ import voide.render.buffer.RenderJob;
  */
 public class VelocityRenderer extends Renderer {
         public void apply(RenderJob data, Entity entity) {
-                TransformationStorage pc = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
-                ChangeStorage vc = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
+                TransformationStorage pc = (TransformationStorage) entity.getComponent(SpaxelComponent.TRANSFORMATION);
+                ChangeStorage vc = (ChangeStorage) entity.getComponent(SpaxelComponent.CHANGE);
                 VectorD pos = pc.getPosition().sum(Engine.get().getGameState().getScreenOffset())
                                 .sum(vc.getPositionChange().multiplicate(Engine.get().getGameState().getUpdateTime()));
                 double rot = pc.getRotation()

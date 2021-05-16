@@ -9,17 +9,15 @@ cg_java_library(
     ],
     deps = [
         "//engines/voide/src/java/voide/graphics/renderable",
+        "//engines/voide/src/java/voide/logger",
         "//engines/voide/src/java/voide/math",
-        "//engines/voide/src/java/voide/render",
+        "//engines/voide/src/java/voide/render/buffer",
+        "//engines/voide/src/java/voide/resources",
+        "//engines/voide/src/java/voide/ui/elements",
         "//games/spaxel/src/java/spaxel:constants",
         "//games/spaxel/src/java/spaxel/engine",
-        "//games/spaxel/src/java/spaxel/engine:resources",
         "//games/spaxel/src/java/spaxel/entity",
-        "//games/spaxel/src/java/spaxel/graphics/buffer:master_buffer",
-        "//games/spaxel/src/java/spaxel/graphics/buffer:render_layer",
-        "//games/spaxel/src/java/spaxel/logger",
         "//games/spaxel/src/java/spaxel/system",
-        "//games/spaxel/src/java/spaxel/ui/elements:element",
     ],
 )
 

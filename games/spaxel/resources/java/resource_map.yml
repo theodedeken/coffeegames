@@ -36,9 +36,15 @@ ui:
       path: /ui/class_selection.xml
     - key: "GAME_OVER"
       path: /ui/game_over.xml
-#item:
-#  - /resources/itemProperties.json
-
+item:
+  className: spaxel.item.ItemProperties
+  files:
+    - /resources/itemProperties.json
+keys:
+  className: voide.input.KeyConfiguration
+  files:
+    - key: default
+      path: /keys/default.yml
 #industry:
 #  - /properties/entities/particle.json
 #  - /properties/entities/spawner.json

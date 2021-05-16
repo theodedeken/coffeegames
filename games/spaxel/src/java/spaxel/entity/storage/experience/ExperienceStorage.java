@@ -1,8 +1,8 @@
 package spaxel.entity.storage.experience;
 
 import spaxel.Constants;
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 /**
  * Created by theo on 26/06/17.
@@ -13,7 +13,7 @@ public class ExperienceStorage extends Storage {
     private int level;
 
     public ExperienceStorage(int currentXp, int level) {
-        super(ComponentType.EXPERIENCE);
+        super(SpaxelComponent.EXPERIENCE);
         this.currentXp = currentXp;
         this.level = level;
         this.maxXp = getXpToLevel();
@@ -30,19 +30,16 @@ public class ExperienceStorage extends Storage {
     }
 
     private int getXpToLevel() {
-        return level * level * Constants.XP_FUNC_A + level * Constants.XP_FUNC_B
-                + Constants.XP_FUNC_C;
+        return level * level * Constants.XP_FUNC_A + level * Constants.XP_FUNC_B + Constants.XP_FUNC_C;
     }
 
     public int getCurrentXp() {
         return currentXp;
     }
 
-
     public void addXp(int xpGain) {
         currentXp += xpGain;
     }
-
 
     public void setCurrentXp(int xp) {
         this.currentXp = xp;

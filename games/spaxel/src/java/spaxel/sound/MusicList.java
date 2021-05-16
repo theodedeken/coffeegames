@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import spaxel.engine.GameState;
+import spaxel.state.GameState;
 import voide.random.VoideRandom;
 import voide.sound.Music;
 

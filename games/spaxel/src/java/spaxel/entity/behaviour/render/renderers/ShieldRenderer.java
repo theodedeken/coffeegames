@@ -1,9 +1,9 @@
 package spaxel.entity.behaviour.render.renderers;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.shield.ShieldStorage;
+import voide.entity.Entity;
 import voide.render.buffer.RenderJob;
-import spaxel.entity.Entity;
 
 /**
  * Created by theod on 10-7-2017.
@@ -14,7 +14,7 @@ public class ShieldRenderer extends Renderer {
 
     public void apply(RenderJob data, Entity entity) {
         Entity link = entity.getParent();
-        ShieldStorage shc = (ShieldStorage) link.getComponent(ComponentType.SHIELD);
+        ShieldStorage shc = (ShieldStorage) link.getComponent(SpaxelComponent.SHIELD);
 
         data.applyAlpha(((double) shc.getCurrentCapacity() / shc.getMaxCapacity()) / ALPHA_REDUCER + ALPHA_OFFSET);
     }

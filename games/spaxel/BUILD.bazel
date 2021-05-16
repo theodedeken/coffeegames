@@ -1,4 +1,4 @@
 alias(
     name = "spaxel",
-    actual = "//games/spaxel/src/java/spaxel:spaxel_temp",
+    actual = "//games/spaxel/src/java/spaxel",
 )

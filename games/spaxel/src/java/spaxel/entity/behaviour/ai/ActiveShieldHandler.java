@@ -1,11 +1,13 @@
 package spaxel.entity.behaviour.ai;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import spaxel.entity.SpaxelEntity;
 import spaxel.entity.storage.cooldown.CooldownStorage;
 import spaxel.entity.storage.projectile.ProjectileStorage;
 import spaxel.entity.storage.shield.ShieldStorage;
-import spaxel.entity.Entity;
-import spaxel.entity.EntityType;
+import voide.entity.Entity;
+import voide.entity.EntityType;
+
 import java.util.Set;
 
 /**
@@ -19,38 +21,37 @@ public class ActiveShieldHandler extends ShieldHandler {
     }
 
     public void handleProjectile(Entity entity, Entity projectile) {
-        // TODO ((RenderComponent) effect.getComponent(ComponentType.RENDER)).setVisible(true);
+        // TODO ((RenderComponent)
+        // effect.getComponent(SpaxelComponent.RENDER)).setVisible(true);
         Entity parent = entity.getParent();
-        ShieldStorage shldStore = (ShieldStorage) entity.getComponent(ComponentType.SHIELD);
+        ShieldStorage shldStore = (ShieldStorage) entity.getComponent(SpaxelComponent.SHIELD);
 
-
-        ProjectileStorage phc =
-                (ProjectileStorage) projectile.getComponent(ComponentType.PROJECTILE);
+        ProjectileStorage phc = (ProjectileStorage) projectile.getComponent(SpaxelComponent.PROJECTILE);
         if (phc.getDamage() < shldStore.getCurrentCapacity()) {
             shldStore.subCapacity(phc.getDamage());
             int cdReduction = phc.getDamage() / COOLDOWN_DIVISION;
             reduceCooldown(parent, cdReduction);
             projectile.destroy();
         } else {
-            CooldownStorage cc = (CooldownStorage) entity.getComponent(ComponentType.COOLDOWN);
-            int cdReduction =
-                    (phc.getDamage() - shldStore.getCurrentCapacity()) / COOLDOWN_DIVISION;
+            CooldownStorage cc = (CooldownStorage) entity.getComponent(SpaxelComponent.COOLDOWN);
+            int cdReduction = (phc.getDamage() - shldStore.getCurrentCapacity()) / COOLDOWN_DIVISION;
             reduceCooldown(parent, cdReduction);
             phc.subDamage(shldStore.getCurrentCapacity());
 
             shldStore.resetCapacity();
             cc.startCooldown();
-            // TODO ((RenderBehaviour) effect.getComponent(ComponentType.RENDER)).setVisible(false);
+            // TODO ((RenderBehaviour)
+            // effect.getComponent(SpaxelComponent.RENDER)).setVisible(false);
         }
     }
 
     private static void reduceCooldown(Entity parent, int cdReduction) {
-        Set<Entity> items = parent.getLinks((e) -> e.getType() == EntityType.ITEM);
+        Set<Entity> items = parent.getLinks((e) -> e.getType() == SpaxelEntity.ITEM);
         for (Entity item : items) {
-            CooldownStorage cc = (CooldownStorage) item.getComponent(ComponentType.COOLDOWN);
+            CooldownStorage cc = (CooldownStorage) item.getComponent(SpaxelComponent.COOLDOWN);
             if (cc != null && cc.getCurrentCooldown() != 0) {
-                cc.setCurrentCooldown(cc.getCurrentCooldown() - cdReduction < 0 ? 0
-                        : cc.getCurrentCooldown() - cdReduction);
+                cc.setCurrentCooldown(
+                        cc.getCurrentCooldown() - cdReduction < 0 ? 0 : cc.getCurrentCooldown() - cdReduction);
             }
         }
     }

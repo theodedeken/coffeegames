@@ -4,59 +4,17 @@ package(default_visibility = ["//games/spaxel:__subpackages__"])
 
 cg_java_library(
     name = "engine",
-    srcs = ["Engine.java"],
+    srcs = glob(["*.java"]),
     deps = [
-        ":gamestate",
-        ":resources",
-        "//games/spaxel/src/java/spaxel/input",
-        "//games/spaxel/src/java/spaxel/logger",
-        "//games/spaxel/src/java/spaxel/sound:music_list",
-        "//games/spaxel/src/java/spaxel/ui/elements:ui",
-        "//games/spaxel/src/java/spaxel/ui/elements:ui_type",
-    ],
-)
-
-cg_java_library(
-    name = "gamestate",
-    srcs = ["GameState.java"],
-    deps = [
-        "//engines/voide/src/java/voide/math",
-        "//games/spaxel/src/java/spaxel:constants",
-    ],
-)
-
-cg_java_library(
-    name = "item_catalogue",
-    srcs = [
-        "ItemCatalogue.java",
-        "ItemProperties.java",
-        "Rarety.java",
-    ],
-    deps = [
-        "//games/spaxel/src/java/spaxel/entity",
-        "//games/spaxel/src/java/spaxel/util:spaxel_random",
-    ],
-)
-
-cg_java_library(
-    name = "resources",
-    srcs = ["Resources.java"],
-    deps = [
-        "//engines/voide/src/java/voide/collision",
-        "//engines/voide/src/java/voide/graphics/animation",
-        "//engines/voide/src/java/voide/graphics/renderable",
+        "//engines/voide/src/java/voide/entity",
+        "//engines/voide/src/java/voide/input",
+        "//engines/voide/src/java/voide/logger",
+        "//engines/voide/src/java/voide/resources",
         "//engines/voide/src/java/voide/sound",
-        "//games/spaxel/src/java/spaxel:constants",
-        "//games/spaxel/src/java/spaxel/factories/entities",
-        "//games/spaxel/src/java/spaxel/graphics/texture",
-        "//games/spaxel/src/java/spaxel/graphics/texture:packed_texture",
-        "//games/spaxel/src/java/spaxel/graphics/texture:rectangle",
-        "//games/spaxel/src/java/spaxel/graphics/texture:texture_part",
-        "//games/spaxel/src/java/spaxel/input",
-        "//games/spaxel/src/java/spaxel/loaders",
-        "//games/spaxel/src/java/spaxel/ui/elements:ui",
-        "//games/spaxel/src/java/spaxel/ui/elements:ui_type",
-        "//games/spaxel/src/java/spaxel/util:texture_util",
+        "//engines/voide/src/java/voide/ui",
+        "//games/spaxel/src/java/spaxel/sound",
+        "//games/spaxel/src/java/spaxel/state",
+        "//games/spaxel/src/java/spaxel/ui:ui_type",
     ],
 )
 

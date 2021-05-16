@@ -1,7 +1,7 @@
 package spaxel.entity.behaviour.hit;
 
 import spaxel.entity.storage.projectile.ProjectileStorage;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 
 /**
  * Created by theod on 28-6-2017.

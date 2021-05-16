@@ -1,6 +1,6 @@
 package spaxel.entity.behaviour.affect;
 
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 
 public abstract class AffectHandler {
     private AffectType type;

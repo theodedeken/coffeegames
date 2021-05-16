@@ -1,7 +1,7 @@
 package spaxel.entity.storage.age;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 /**
  * Represent the age of a component, components with age 0 will die
@@ -13,7 +13,7 @@ public class AgeStorage extends Storage {
     private int maxLife;
 
     public AgeStorage() {
-        super(ComponentType.AGE);
+        super(SpaxelComponent.AGE);
     }
 
     /**
@@ -23,7 +23,7 @@ public class AgeStorage extends Storage {
      * @param maxLife     the maximum life of the component
      */
     public AgeStorage(int currentLife, int maxLife) {
-        super(ComponentType.AGE);
+        super(SpaxelComponent.AGE);
         this.currentLife = currentLife;
         this.maxLife = maxLife;
     }

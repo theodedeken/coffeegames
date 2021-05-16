@@ -1,7 +1,7 @@
 package spaxel.entity.storage.stack;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 /**
  * Created by theo on 16/06/17.
@@ -10,11 +10,11 @@ public class StackStorage extends Storage {
     private int stacks;
 
     public StackStorage() {
-        super(ComponentType.STACK);
+        super(SpaxelComponent.STACK);
     }
 
     public StackStorage(int stacks) {
-        super(ComponentType.STACK);
+        super(SpaxelComponent.STACK);
         this.stacks = stacks;
     }
 

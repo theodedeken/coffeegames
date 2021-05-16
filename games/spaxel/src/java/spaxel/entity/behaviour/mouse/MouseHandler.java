@@ -1,6 +1,6 @@
 package spaxel.entity.behaviour.mouse;
 
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 import voide.input.MouseWrapper;
 
 public abstract class MouseHandler {

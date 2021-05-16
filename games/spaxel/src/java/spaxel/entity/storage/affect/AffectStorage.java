@@ -1,17 +1,17 @@
 package spaxel.entity.storage.affect;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 public class AffectStorage extends Storage {
     private double factor;
 
     public AffectStorage() {
-        super(ComponentType.AFFECT_STORE);
+        super(SpaxelComponent.AFFECT_STORE);
     }
 
     public AffectStorage(double factor) {
-        super(ComponentType.AFFECT_STORE);
+        super(SpaxelComponent.AFFECT_STORE);
         this.factor = factor;
     }
 

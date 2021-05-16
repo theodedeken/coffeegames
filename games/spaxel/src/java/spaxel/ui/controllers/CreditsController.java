@@ -1,8 +1,8 @@
 package spaxel.ui.controllers;
 
 import spaxel.engine.Engine;
+import spaxel.input.SpaxelKey;
 import spaxel.ui.UIType;
-import voide.input.Key;
 import voide.input.Keyboard;
 import voide.ui.UI;
 import voide.ui.elements.Element;
@@ -27,7 +27,7 @@ public final class CreditsController {
         // TODO: is this dump doing something?
         element.dump("nothing", "nothing");
         Keyboard k = Engine.get().getKeyboard();
-        if (k.get(Key.ESC).isRelease()) {
+        if (k.get(SpaxelKey.ESC).isRelease()) {
             back();
         }
     }

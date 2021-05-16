@@ -1,9 +1,9 @@
 package spaxel.entity.behaviour.render.renderers;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 import voide.math.VectorD;
 import voide.render.buffer.RenderJob;
 
@@ -12,7 +12,7 @@ import voide.render.buffer.RenderJob;
  */
 public class StationaryRenderer extends Renderer {
     public void apply(RenderJob data, Entity entity) {
-        TransformationStorage pc = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+        TransformationStorage pc = (TransformationStorage) entity.getComponent(SpaxelComponent.TRANSFORMATION);
         VectorD pos = pc.getPosition().sum(Engine.get().getGameState().getScreenOffset());
 
         data.applyTranslation(pos);

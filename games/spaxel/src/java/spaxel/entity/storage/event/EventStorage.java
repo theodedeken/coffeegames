@@ -2,19 +2,19 @@ package spaxel.entity.storage.event;
 
 import java.util.HashSet;
 import java.util.Set;
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.behaviour.event.Event;
+import voide.entity.Storage;
 
 public class EventStorage extends Storage {
     private Set<Event> events;
 
     public EventStorage() {
-        super(ComponentType.EVENT_STORE);
+        super(SpaxelComponent.EVENT_STORE);
     }
 
     public EventStorage(Set<Event> events) {
-        super(ComponentType.EVENT_STORE);
+        super(SpaxelComponent.EVENT_STORE);
         this.events = events;
     }
 
@@ -36,7 +36,5 @@ public class EventStorage extends Storage {
     public EventStorage copy() {
         return new EventStorage(new HashSet<>(events));
     }
-
-
 
 }

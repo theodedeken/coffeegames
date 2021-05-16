@@ -1,35 +1,37 @@
 package spaxel.entity.storage.shoot;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import spaxel.entity.industry.ProjectileIndustry;
+import voide.entity.Storage;
+import voide.resources.ResourceProxy;
 
 public class ShootStorage extends Storage {
-    private String projectileFactory;
+    private ResourceProxy<ProjectileIndustry> projectileFactory;
 
-    public ShootStorage(){
-        super(ComponentType.SHOOT);
+    public ShootStorage() {
+        super(SpaxelComponent.SHOOT);
     }
 
-    public ShootStorage(String projectileFactory){
-        super(ComponentType.SHOOT);
+    public ShootStorage(ResourceProxy<ProjectileIndustry> projectileFactory) {
+        super(SpaxelComponent.SHOOT);
         this.projectileFactory = projectileFactory;
     }
 
     /**
      * @return the projectileFactory
      */
-    public String getProjectileFactory() {
-        return projectileFactory;
+    public ProjectileIndustry getProjectileFactory() {
+        return projectileFactory.get();
     }
 
     /**
      * @param projectileFactory the projectileFactory to set
      */
     public void setProjectileFactory(String projectileFactory) {
-        this.projectileFactory = projectileFactory;
+        this.projectileFactory = new ResourceProxy<>(projectileFactory, ProjectileIndustry.class);
     }
 
-    public ShootStorage copy(){
-        return new ShootStorage(projectileFactory);
+    public ShootStorage copy() {
+        return new ShootStorage(projectileFactory.copy());
     }
 }

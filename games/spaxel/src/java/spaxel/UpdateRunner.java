@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import spaxel.engine.Engine;
-import spaxel.engine.Resources;
+import spaxel.resources.Resources;
 import spaxel.system.SystemType;
 import spaxel.system.AISystem;
 import spaxel.system.AgeSystem;
@@ -60,7 +60,7 @@ public class UpdateRunner implements Runnable {
         long lastUpdateEnd;
         long accTime = Constants.NS_PER_TICK;
         while (running) {
-            if (glfwWindowShouldClose(Engine.get().getWindow()) || Game.shouldClose()) {
+            if (glfwWindowShouldClose(Engine.get().getWindow()) || Engine.get().shouldClose()) {
                 exit();
             }
             lastUpdateStart = System.nanoTime();
@@ -74,7 +74,7 @@ public class UpdateRunner implements Runnable {
                     Thread.sleep(sleepTime);
                 } catch (InterruptedException e) {
                     LOGGER.log(Level.SEVERE, e.toString(), e);
-                    Game.exit();
+                    Engine.get().exit();
                     Thread.currentThread().interrupt();
                 }
             }

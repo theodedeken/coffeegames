@@ -1,8 +1,10 @@
 package spaxel.util;
 
-import spaxel.entity.ComponentType;
+import spaxel.Constants;
 import spaxel.engine.Engine;
+import spaxel.entity.SpaxelComponent;
 import spaxel.system.SystemType;
+import voide.graphics.renderable.Rectangle;
 import voide.graphics.renderable.Renderable;
 import voide.logger.Logger;
 import voide.math.VectorD;
@@ -10,8 +12,6 @@ import voide.render.buffer.MasterBuffer;
 import voide.render.buffer.RenderJob;
 import voide.render.buffer.RenderLayer;
 import voide.ui.elements.Element;
-import spaxel.Constants;
-import spaxel.engine.Resources;
 
 /**
  * Provides methods for the creation of debug ui elements
@@ -32,7 +32,7 @@ public final class DebugRenderer {
     public static Element createDebugElement() {
         Element debug = new Element();
 
-        for (ComponentType type : ComponentType.values()) {
+        for (SpaxelComponent type : SpaxelComponent.values()) {
             Element label = new Element();
             label.setId(type.getName());
             label.setClasses("debug_label");
@@ -74,7 +74,7 @@ public final class DebugRenderer {
      * @param buffer the master buffer of the game
      */
     public void renderDots(MasterBuffer buffer) {
-        Renderable dot = Resources.get().getRenderables().get("dot");
+        Renderable dot = voide.resources.Resources.get().getResource("dot", Rectangle.class);
         VectorD origin = new VectorD(Engine.get().getGameState().getScreenOffset().getValue(0) % DOT_SEPARATION,
                 Engine.get().getGameState().getScreenOffset().getValue(1) % DOT_SEPARATION);
         for (int i = 0; i < Constants.GAME_WIDTH; i += DOT_SEPARATION) {

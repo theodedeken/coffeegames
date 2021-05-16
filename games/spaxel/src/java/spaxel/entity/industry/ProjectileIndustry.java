@@ -1,10 +1,11 @@
-package spaxel.factories.entities;
+package spaxel.entity.industry;
 
-import spaxel.entity.Component;
-import spaxel.entity.ComponentType;
 import spaxel.entity.storage.transformation.TransformationStorage;
-import spaxel.entity.EntityType;
-import spaxel.entity.Entity;
+import voide.entity.Component;
+import voide.entity.Entity;
+import voide.entity.EntityIndustry;
+import spaxel.entity.SpaxelEntity;
+
 import java.util.Map;
 
 /**
@@ -12,9 +13,9 @@ import java.util.Map;
  */
 public class ProjectileIndustry extends EntityIndustry {
     public Entity produce(TransformationStorage pc, Entity shooter) {
-        Entity entity = new Entity(EntityType.PROJECTILE);
-        Map<ComponentType, Component> components = buildComponents();
-        components.put(pc.getType(), pc);
+        Entity entity = new Entity(SpaxelEntity.PROJECTILE);
+        Map<String, Component> components = buildComponents();
+        components.put(pc.getType().id(), pc);
         // components.put(lc.getType(), lc);
         entity.setComponents(components);
         shooter.addLink(entity);

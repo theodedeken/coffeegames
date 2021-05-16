@@ -1,7 +1,7 @@
 package spaxel.entity.storage.render;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 import voide.render.buffer.RenderLayer;
 
 public class RenderStorage extends Storage {
@@ -9,11 +9,11 @@ public class RenderStorage extends Storage {
     private RenderLayer layer;
 
     public RenderStorage() {
-        super(ComponentType.RENDER_STORE);
+        super(SpaxelComponent.RENDER_STORE);
     }
 
     public RenderStorage(boolean visible, RenderLayer layer) {
-        super(ComponentType.RENDER_STORE);
+        super(SpaxelComponent.RENDER_STORE);
         this.visible = visible;
         this.layer = layer;
     }

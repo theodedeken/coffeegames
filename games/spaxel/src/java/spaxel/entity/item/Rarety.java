@@ -1,4 +1,4 @@
-package spaxel.engine;
+package spaxel.entity.item;
 
 /**
  * The rarety of an item

@@ -1,10 +1,10 @@
 package spaxel.system;
 
 import spaxel.entity.Behaviour;
-import spaxel.entity.ComponentType;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
-import spaxel.system.SystemType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Entity;
+
 import java.util.Set;
 
 /**
@@ -22,9 +22,9 @@ public class MouseSystem extends GameSystem {
     }
 
     public void update() {
-        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(ComponentType.MOUSE);
+        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(SpaxelComponent.MOUSE);
         for (Entity entity : entities) {
-            ((Behaviour) entity.getComponent(ComponentType.MOUSE)).execute(entity);
+            ((Behaviour) entity.getComponent(SpaxelComponent.MOUSE)).execute(entity);
         }
     }
 }

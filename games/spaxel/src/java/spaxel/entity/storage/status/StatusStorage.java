@@ -1,7 +1,7 @@
 package spaxel.entity.storage.status;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 /**
  * Created by theod on 28-6-2017.
@@ -12,11 +12,11 @@ public class StatusStorage extends Storage {
     // TODO implement slow and other status effects and modifiers via map
 
     public StatusStorage() {
-        super(ComponentType.STATUS);
+        super(SpaxelComponent.STATUS);
     }
 
     public StatusStorage(boolean canShoot, boolean canMove) {
-        super(ComponentType.STATUS);
+        super(SpaxelComponent.STATUS);
         this.canShoot = canShoot;
         this.canMove = canMove;
     }

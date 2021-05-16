@@ -1,18 +1,18 @@
 package spaxel.entity.storage.shield;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 public class ShieldStorage extends Storage {
     private int currentCapacity;
     private int maxCapacity;
 
     public ShieldStorage() {
-        super(ComponentType.SHIELD);
+        super(SpaxelComponent.SHIELD);
     }
 
     public ShieldStorage(int currentCapacity, int maxCapacity) {
-        super(ComponentType.SHIELD);
+        super(SpaxelComponent.SHIELD);
         this.currentCapacity = currentCapacity;
         this.maxCapacity = maxCapacity;
     }

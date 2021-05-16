@@ -1,18 +1,18 @@
 package spaxel.entity.storage.renderable;
 
-import spaxel.entity.ComponentType;
-import spaxel.entity.Storage;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 import voide.graphics.renderable.Renderable;
 
 public class RenderableStorage extends Storage {
     private Renderable renderable;
 
     public RenderableStorage() {
-        super(ComponentType.RENDERABLE);
+        super(SpaxelComponent.RENDERABLE);
     }
 
     public RenderableStorage(Renderable renderable) {
-        super(ComponentType.RENDERABLE);
+        super(SpaxelComponent.RENDERABLE);
         this.renderable = renderable;
     }
 

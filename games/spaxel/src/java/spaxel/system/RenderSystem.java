@@ -2,11 +2,12 @@ package spaxel.system;
 
 import java.util.Set;
 import spaxel.Constants;
-import spaxel.entity.ComponentType;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.behaviour.render.RenderBehaviour;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+import spaxel.entity.EntityUtil;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Entity;
 import voide.graphics.renderable.Texture;
 import voide.input.MouseWrapper;
 import voide.math.VectorD;
@@ -49,8 +50,9 @@ public class RenderSystem extends GameSystem {
 			}
 			Engine.get().getGameState().setCursorFollow(Engine.get().getGameState().getCursorFollow().sum(difference));
 
-			Entity player = Engine.get().getNEntityStream().getPlayer();
-			TransformationStorage playerPos = (TransformationStorage) player.getComponent(ComponentType.TRANSFORMATION);
+			Entity player = EntityUtil.getPlayer(Engine.get().getNEntityStream());
+			TransformationStorage playerPos = (TransformationStorage) player
+					.getComponent(SpaxelComponent.TRANSFORMATION);
 
 			Engine.get().getGameState().setScreenOffset(calculateScreenOffset(playerPos));
 		}
@@ -75,9 +77,9 @@ public class RenderSystem extends GameSystem {
 	 * Render all entities with a Rendercomponent
 	 */
 	public void renderEntities() {
-		Set<Entity> toRender = Engine.get().getNEntityStream().getEntitiesCopy(ComponentType.RENDER);
+		Set<Entity> toRender = Engine.get().getNEntityStream().getEntitiesCopy(SpaxelComponent.RENDER);
 		for (Entity ne : toRender) {
-			((RenderBehaviour) ne.getComponent(ComponentType.RENDER)).render(ne, bufferBuffer);
+			((RenderBehaviour) ne.getComponent(SpaxelComponent.RENDER)).render(ne, bufferBuffer);
 		}
 	}
 }

@@ -3,17 +3,16 @@ package spaxel.entity.behaviour.spawn;
 import java.util.ArrayList;
 import java.util.List;
 import spaxel.Constants;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import spaxel.entity.industry.RandomParticleIndustry;
 import spaxel.entity.storage.age.AgeStorage;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.entity.storage.renderable.RenderableStorage;
 import spaxel.entity.storage.spawn.SpawnStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
-import spaxel.entity.Entity;
-import spaxel.factories.entities.RandomParticleIndustry;
+import voide.entity.Entity;
 import voide.math.VectorD;
 import voide.random.VoideRandom;
-import spaxel.engine.Resources;
 
 public class RandomSpawner extends Spawner {
         private VoideRandom rand;
@@ -24,12 +23,11 @@ public class RandomSpawner extends Spawner {
         }
 
         public List<Entity> spawn(Entity entity) {
-                SpawnStorage spwnStorage = (SpawnStorage) entity.getComponent(ComponentType.SPAWN_STORE);
+                SpawnStorage spwnStorage = (SpawnStorage) entity.getComponent(SpaxelComponent.SPAWN_STORE);
                 TransformationStorage trnsfrmStorage = (TransformationStorage) entity
-                                .getComponent(ComponentType.TRANSFORMATION);
-                RenderableStorage rndrStorage = (RenderableStorage) entity.getComponent(ComponentType.RENDERABLE);
-                RandomParticleIndustry industry = (RandomParticleIndustry) Resources.get().getIndustryMap()
-                                .get(spwnStorage.getIndustry());
+                                .getComponent(SpaxelComponent.TRANSFORMATION);
+                RenderableStorage rndrStorage = (RenderableStorage) entity.getComponent(SpaxelComponent.RENDERABLE);
+                RandomParticleIndustry industry = (RandomParticleIndustry) spwnStorage.getIndustry();
 
                 List<Entity> spawned = new ArrayList<>();
                 for (int i = 0; i < spwnStorage.getRate(); i++) {

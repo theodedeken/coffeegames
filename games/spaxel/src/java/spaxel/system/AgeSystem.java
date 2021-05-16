@@ -2,10 +2,11 @@ package spaxel.system;
 
 import spaxel.entity.storage.age.AgeStorage;
 import spaxel.entity.Behaviour;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
 import spaxel.system.SystemType;
+import voide.entity.Entity;
+
 import java.util.Set;
 
 /**
@@ -22,13 +23,13 @@ public class AgeSystem extends GameSystem {
     }
 
     public void update() {
-        Set<Entity> nEntities = Engine.get().getNEntityStream().getEntities(ComponentType.AGE);
+        Set<Entity> nEntities = Engine.get().getNEntityStream().getEntities(SpaxelComponent.AGE);
         for (Entity ne : nEntities) {
-            AgeStorage ac = (AgeStorage) ne.getComponent(ComponentType.AGE);
+            AgeStorage ac = (AgeStorage) ne.getComponent(SpaxelComponent.AGE);
             if (ac.getLife() != 0) {
                 ac.setLife(ac.getLife() - 1);
             } else {
-                Behaviour dc = (Behaviour) ne.getComponent(ComponentType.DEATH);
+                Behaviour dc = (Behaviour) ne.getComponent(SpaxelComponent.DEATH);
                 if (dc != null) {
                     dc.execute(ne);
                 }

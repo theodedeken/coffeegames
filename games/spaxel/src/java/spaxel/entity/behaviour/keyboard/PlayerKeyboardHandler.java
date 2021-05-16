@@ -1,13 +1,13 @@
 package spaxel.entity.behaviour.keyboard;
 
 import spaxel.Constants;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.entity.storage.move.MoveStorage;
 import spaxel.entity.storage.status.StatusStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
-import spaxel.entity.Entity;
-import voide.input.Key;
+import voide.entity.Entity;
+import spaxel.input.SpaxelKey;
 import voide.input.Keyboard;
 import voide.math.VectorD;
 
@@ -17,30 +17,31 @@ public class PlayerKeyboardHandler extends KeyboardHandler {
     }
 
     public void handle(Entity entity, Keyboard keyboard) {
-        StatusStorage statStore = (StatusStorage) entity.getComponent(ComponentType.STATUS);
+        StatusStorage statStore = (StatusStorage) entity.getComponent(SpaxelComponent.STATUS);
 
         if (statStore.canMove()) {
-            ChangeStorage chngStore = (ChangeStorage) entity.getComponent(ComponentType.CHANGE);
-            MoveStorage mvStore = (MoveStorage) entity.getComponent(ComponentType.MOVE);
-            TransformationStorage trnsStore = (TransformationStorage) entity.getComponent(ComponentType.TRANSFORMATION);
+            ChangeStorage chngStore = (ChangeStorage) entity.getComponent(SpaxelComponent.CHANGE);
+            MoveStorage mvStore = (MoveStorage) entity.getComponent(SpaxelComponent.MOVE);
+            TransformationStorage trnsStore = (TransformationStorage) entity
+                    .getComponent(SpaxelComponent.TRANSFORMATION);
 
             VectorD velChange = chngStore.getPositionChange()
                     .multiplicate(-1 / (mvStore.getSpeed() * Constants.SPEED_MULT));
-            if (keyboard.get(Key.DOWN).isDown()) {
+            if (keyboard.get(SpaxelKey.DOWN).isDown()) {
                 velChange = new VectorD(-Math.sin(trnsStore.getRotation()), -Math.cos(trnsStore.getRotation()))
                         .multiplicate(mvStore.getAcceleration());
             }
-            if (keyboard.get(Key.UP).isDown()) {
+            if (keyboard.get(SpaxelKey.UP).isDown()) {
                 velChange = new VectorD(Math.sin(trnsStore.getRotation()), Math.cos(trnsStore.getRotation()))
                         .multiplicate(mvStore.getAcceleration());
             }
-            if (keyboard.get(Key.LEFT).isDown()) {
+            if (keyboard.get(SpaxelKey.LEFT).isDown()) {
                 velChange = new VectorD(Math.sin(trnsStore.getRotation() - Constants.HALF_CIRLCE),
                         Math.cos(trnsStore.getRotation() - Constants.HALF_CIRLCE))
                                 .multiplicate(mvStore.getAcceleration());
             }
 
-            if (keyboard.get(Key.RIGHT).isDown()) {
+            if (keyboard.get(SpaxelKey.RIGHT).isDown()) {
                 velChange = new VectorD(Math.sin(trnsStore.getRotation() + Constants.HALF_CIRLCE),
                         Math.cos(trnsStore.getRotation() + Constants.HALF_CIRLCE))
                                 .multiplicate(mvStore.getAcceleration());

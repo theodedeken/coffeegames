@@ -1,7 +1,8 @@
 package spaxel.entity.storage.damage;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class DamageStorage extends Storage {
      * Create a new DamageComponent
      */
     public DamageStorage() {
-        super(ComponentType.DAMAGE);
+        super(SpaxelComponent.DAMAGE);
         damages = new ArrayList<>();
     }
 

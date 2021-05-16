@@ -1,11 +1,12 @@
 package spaxel.entity.behaviour.ai;
 
 import spaxel.Constants;
-import spaxel.entity.ComponentType;
+import spaxel.engine.Engine;
+import spaxel.entity.EntityUtil;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.render.RenderStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
-import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+import voide.entity.Entity;
 import voide.math.LineSegment;
 import voide.math.VectorD;
 
@@ -21,12 +22,12 @@ public class MarkerHandler extends AIHandler {
         }
 
         public void execute(Entity entity) {
-                Entity player = entity.getStream().getPlayer();
+                Entity player = EntityUtil.getPlayer(entity.getStream());
                 TransformationStorage playerPos = (TransformationStorage) player
-                                .getComponent(ComponentType.TRANSFORMATION);
+                                .getComponent(SpaxelComponent.TRANSFORMATION);
                 TransformationStorage parentPos = (TransformationStorage) entity.getParent()
-                                .getComponent(ComponentType.TRANSFORMATION);
-                RenderStorage mrc = (RenderStorage) entity.getComponent(ComponentType.RENDER_STORE);
+                                .getComponent(SpaxelComponent.TRANSFORMATION);
+                RenderStorage mrc = (RenderStorage) entity.getComponent(SpaxelComponent.RENDER_STORE);
                 VectorD renderPos = parentPos.getPosition().sum(Engine.get().getGameState().getScreenOffset());
                 if (renderPos.getValue(0) < -MARKER_THRESHOLD
                                 || renderPos.getValue(0) > Constants.GAME_WIDTH + MARKER_THRESHOLD
@@ -43,7 +44,7 @@ public class MarkerHandler extends AIHandler {
                                 VectorD diff = parentPos.getPosition().diff(playerPos.getPosition());
                                 double rot = Math.atan2(diff.getValue(0), diff.getValue(1));
                                 TransformationStorage mpc = (TransformationStorage) entity
-                                                .getComponent(ComponentType.TRANSFORMATION);
+                                                .getComponent(SpaxelComponent.TRANSFORMATION);
                                 mpc.setPosition(intersect);
                                 mpc.setRotation(rot);
                         }

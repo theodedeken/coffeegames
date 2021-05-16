@@ -7,6 +7,7 @@ cg_java_library(
     srcs = glob(["*.java"]),
     deps = [
         "//engines/voide/src/java/voide/math",
+        "//engines/voide/src/java/voide/resources",
         "@maven//:org_lwjgl_lwjgl_glfw",
     ],
 )

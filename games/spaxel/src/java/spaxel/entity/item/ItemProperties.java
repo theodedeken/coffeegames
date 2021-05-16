@@ -1,15 +1,18 @@
-package spaxel.engine;
+package spaxel.entity.item;
 
 import spaxel.entity.storage.item.ItemContainer;
+import voide.entity.EntityIndustry;
+import voide.resources.Resource;
+import voide.resources.ResourceProxy;
 
 /**
  * Represents the properties of an item
  * 
  * Created by theod on 12-7-2017.
  */
-public class ItemProperties {
+public class ItemProperties implements Resource {
     private String name;
-    private String industry;
+    private ResourceProxy<EntityIndustry> industry;
     private int spawnRate;
     private Rarety rarety;
     private ItemContainer type;
@@ -21,12 +24,15 @@ public class ItemProperties {
         super();
     }
 
-    public String getIndustry() {
-        return industry;
+    public void initialize() {
+    }
+
+    public EntityIndustry getIndustry() {
+        return industry.get();
     }
 
     public void setIndustry(String industry) {
-        this.industry = industry;
+        this.industry = new ResourceProxy<>(industry, EntityIndustry.class);
     }
 
     public int getSpawnRate() {

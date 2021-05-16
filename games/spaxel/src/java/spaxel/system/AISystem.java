@@ -1,11 +1,11 @@
 package spaxel.system;
 
 import java.util.Set;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.behaviour.ai.AIBehaviour;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
 import spaxel.system.SystemType;
+import voide.entity.Entity;
 
 /**
  * The AISystem is responsible for updating all entities with an AI component
@@ -19,10 +19,10 @@ public class AISystem extends GameSystem {
 	}
 
 	public void update() {
-		Set<Entity> enemies = Engine.get().getNEntityStream().getEntities(ComponentType.AI);
+		Set<Entity> enemies = Engine.get().getNEntityStream().getEntities(SpaxelComponent.AI);
 
 		for (Entity e : enemies) {
-			AIBehaviour aic = (AIBehaviour) e.getComponent(ComponentType.AI);
+			AIBehaviour aic = (AIBehaviour) e.getComponent(SpaxelComponent.AI);
 
 			aic.execute(e);
 		}

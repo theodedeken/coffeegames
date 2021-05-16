@@ -1,20 +1,21 @@
 package spaxel.entity.behaviour.spawn;
 
 import spaxel.entity.Behaviour;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Entity;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SpawnBehaviour extends Behaviour {
     private Spawner spawner;
 
     public SpawnBehaviour() {
-        super(ComponentType.SPAWN);
+        super(SpaxelComponent.SPAWN);
     }
 
     public SpawnBehaviour(Spawner spawner) {
-        super(ComponentType.SPAWN);
+        super(SpaxelComponent.SPAWN);
         this.spawner = spawner;
     }
 

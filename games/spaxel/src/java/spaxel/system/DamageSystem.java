@@ -1,11 +1,12 @@
 package spaxel.system;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.damage.Damage;
 import spaxel.entity.storage.damage.DamageStorage;
 import spaxel.entity.storage.health.HealthStorage;
+import voide.entity.Entity;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+
 import java.util.Set;
 
 /**
@@ -23,10 +24,10 @@ public class DamageSystem extends GameSystem {
     }
 
     public void update() {
-        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(ComponentType.DAMAGE);
+        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(SpaxelComponent.DAMAGE);
         for (Entity e : entities) {
-            DamageStorage dc = (DamageStorage) e.getComponent(ComponentType.DAMAGE);
-            HealthStorage hc = (HealthStorage) e.getComponent(ComponentType.HEALTH);
+            DamageStorage dc = (DamageStorage) e.getComponent(SpaxelComponent.DAMAGE);
+            HealthStorage hc = (HealthStorage) e.getComponent(SpaxelComponent.HEALTH);
             for (Damage d : dc.getDamages()) {
                 hc.setCurrentHealth(hc.getCurrentHealth() - d.getDamage());
             }

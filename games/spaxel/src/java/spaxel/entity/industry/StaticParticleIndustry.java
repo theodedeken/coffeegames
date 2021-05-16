@@ -1,11 +1,12 @@
-package spaxel.factories.entities;
+package spaxel.entity.industry;
 
-import spaxel.entity.Component;
-import spaxel.entity.ComponentType;
 import spaxel.entity.storage.transformation.TransformationStorage;
+import voide.entity.Component;
+import voide.entity.Entity;
+import voide.entity.EntityIndustry;
 import spaxel.entity.storage.renderable.RenderableStorage;
-import spaxel.entity.EntityType;
-import spaxel.entity.Entity;
+import spaxel.entity.SpaxelEntity;
+
 import java.util.Map;
 
 /**
@@ -13,10 +14,10 @@ import java.util.Map;
  */
 public class StaticParticleIndustry extends EntityIndustry {
     public Entity produce(TransformationStorage pc, RenderableStorage rc) {
-        Entity entity = new Entity(EntityType.RANDOM_PARTICLE);
-        Map<ComponentType, Component> components = buildComponents();
-        components.put(pc.getType(), pc);
-        components.put(rc.getType(), rc);
+        Entity entity = new Entity(SpaxelEntity.RANDOM_PARTICLE);
+        Map<String, Component> components = buildComponents();
+        components.put(pc.getType().id(), pc);
+        components.put(rc.getType().id(), rc);
         entity.setComponents(components);
         return entity;
     }

@@ -4,84 +4,35 @@ package(default_visibility = ["//games/spaxel:__subpackages__"])
 
 cg_java_binary(
     name = "spaxel",
-    srcs = ["Game.java"],
-    deps = [
-        ":display_runner",
-        ":update_runner",
-    ],
-)
-
-cg_java_binary(
-    name = "spaxel_temp",
-    srcs = glob(["**/*.java"]) + [
-        "//games/spaxel/src/java/spaxel/engine:files",
-        "//games/spaxel/src/java/spaxel/system:files",
-        "//games/spaxel/src/java/spaxel/entity:files",
-        "//games/spaxel/src/java/spaxel/factories/entities:files",
-        "//games/spaxel/src/java/spaxel/factories/elements:files",
-        "//games/spaxel/src/java/spaxel/loaders:Loader.java",
-        "//games/spaxel/src/java/spaxel/util:DebugRenderer.java",
-        "//games/spaxel/src/java/spaxel/ui/controllers",
+    srcs = [
+        "DisplayRunner.java",
+        "Game.java",
+        "UpdateRunner.java",
     ],
     main_class = "spaxel.Game",
-    resource_jars = [
-        "//games/spaxel/resources/java:resources",
-    ],
-    deps = [
-        "//engines/voide/src/java/voide/collision",
-        "//engines/voide/src/java/voide/graphics/animation",
-        "//engines/voide/src/java/voide/graphics/geometry",
-        "//engines/voide/src/java/voide/graphics/load",
-        "//engines/voide/src/java/voide/graphics/renderable",
-        "//engines/voide/src/java/voide/graphics/util:image_pack",
-        "//engines/voide/src/java/voide/input",
-        "//engines/voide/src/java/voide/logger",
-        "//engines/voide/src/java/voide/math",
-        "//engines/voide/src/java/voide/random",
-        "//engines/voide/src/java/voide/render",
-        "//engines/voide/src/java/voide/render/buffer",
-        "//engines/voide/src/java/voide/render/postprocess",
-        "//engines/voide/src/java/voide/render/shaders",
-        "//engines/voide/src/java/voide/resources",
-        "//engines/voide/src/java/voide/sound",
-        "//engines/voide/src/java/voide/ui",
-        "//engines/voide/src/java/voide/ui/elements",
-        "//games/spaxel/src/java/spaxel/sound:music_list",
-        "//games/spaxel/src/java/spaxel/ui:ui_type",
-        "//games/spaxel/src/java/spaxel/util:gl_util",
-        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
-        "@maven//:com_fasterxml_jackson_core_jackson_core",
-        "@maven//:com_fasterxml_jackson_core_jackson_databind",
-        "@maven//:com_fasterxml_jackson_dataformat_jackson_dataformat_xml",
-        "@maven//:com_fasterxml_jackson_dataformat_jackson_dataformat_yaml",
-        "@maven//:org_lwjgl_lwjgl",
-        "@maven//:org_lwjgl_lwjgl_glfw",
+    runtime_deps = [
         "@maven//:org_lwjgl_lwjgl_glfw_natives_linux",
         "@maven//:org_lwjgl_lwjgl_natives_linux",
-        "@maven//:org_lwjgl_lwjgl_opengl",
         "@maven//:org_lwjgl_lwjgl_opengl_natives_linux",
+    ],
+    deps = [
+        ":constants",
+        "//engines/voide/src/java/voide/input",
+        "//engines/voide/src/java/voide/resources",
+        "//engines/voide/src/java/voide/ui",
+        "//games/spaxel/src/java/spaxel/engine",
+        "//games/spaxel/src/java/spaxel/resources",
+        "//games/spaxel/src/java/spaxel/system",
+        "//games/spaxel/src/java/spaxel/ui:ui_type",
+        "//games/spaxel/src/java/spaxel/ui/controllers",
+        "//games/spaxel/src/java/spaxel/util:gl_util",
+        "@maven//:org_lwjgl_lwjgl",
+        "@maven//:org_lwjgl_lwjgl_glfw",
+        "@maven//:org_lwjgl_lwjgl_opengl",
     ],
 )
 
 cg_java_library(
     name = "constants",
     srcs = ["Constants.java"],
-)
-
-cg_java_library(
-    name = "display_runner",
-    srcs = ["DisplayRunner.java"],
-    deps = [":constants"],
-)
-
-cg_java_library(
-    name = "update_runner",
-    srcs = [
-        "UpdateRunner.java",
-    ],
-    deps = [
-        ":constants",
-        "//games/spaxel/src/java/spaxel/engine",
-        "@maven//:org_lwjgl_lwjgl_glfw",
-    ],
 )

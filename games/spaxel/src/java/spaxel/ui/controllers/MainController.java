@@ -1,8 +1,6 @@
 package spaxel.ui.controllers;
 
-import spaxel.Game;
 import spaxel.engine.Engine;
-import spaxel.engine.Resources;
 import spaxel.ui.UIType;
 import voide.ui.UI;
 
@@ -47,6 +45,6 @@ public final class MainController {
 	 */
 	public static void quit() {
 		System.out.println("called quits");
-		Game.exit();
+		Engine.get().exit();
 	}
 }

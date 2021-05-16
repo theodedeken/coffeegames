@@ -1,7 +1,7 @@
 package spaxel.entity.storage.move;
 
-import spaxel.entity.Storage;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
+import voide.entity.Storage;
 
 /**
  * Created by theo on 3/06/17.
@@ -12,11 +12,11 @@ public class MoveStorage extends Storage {
     private double turnRate;
 
     public MoveStorage() {
-        super(ComponentType.MOVE);
+        super(SpaxelComponent.MOVE);
     }
 
     public MoveStorage(double speed, double acceleration, double turnRate) {
-        super(ComponentType.MOVE);
+        super(SpaxelComponent.MOVE);
         this.speed = speed;
         this.acceleration = acceleration;
         this.turnRate = turnRate;

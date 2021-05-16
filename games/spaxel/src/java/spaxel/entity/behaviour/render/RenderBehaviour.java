@@ -1,10 +1,10 @@
 package spaxel.entity.behaviour.render;
 
-import spaxel.entity.Component;
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.behaviour.render.renderers.Renderer;
 import spaxel.entity.storage.render.RenderStorage;
-import spaxel.entity.Entity;
+import voide.entity.Component;
+import voide.entity.Entity;
 import voide.render.buffer.MasterBuffer;
 import voide.render.buffer.RenderJob;
 
@@ -19,16 +19,16 @@ public class RenderBehaviour extends Component {
     private List<Renderer> renderers;
 
     public RenderBehaviour() {
-        super(ComponentType.RENDER);
+        super(SpaxelComponent.RENDER);
     }
 
     public RenderBehaviour(List<Renderer> renderers) {
-        super(ComponentType.RENDER);
+        super(SpaxelComponent.RENDER);
         this.renderers = renderers;
     }
 
     public void render(Entity entity, MasterBuffer buffer) {
-        RenderStorage rndrStore = (RenderStorage) entity.getComponent(ComponentType.RENDER_STORE);
+        RenderStorage rndrStore = (RenderStorage) entity.getComponent(SpaxelComponent.RENDER_STORE);
 
         if (rndrStore.isVisible()) {
             RenderJob renderJob = new RenderJob();

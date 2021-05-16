@@ -1,12 +1,13 @@
 package spaxel.engine;
 
-import spaxel.Game;
+import voide.entity.EntityStream;
+import voide.input.KeyConfiguration;
 import voide.input.Keyboard;
 import voide.input.MouseWrapper;
 import voide.logger.Logger;
 import spaxel.sound.MusicList;
+import spaxel.state.GameState;
 import spaxel.ui.UIType;
-import spaxel.entity.EntityStream;
 import voide.sound.Music;
 import voide.ui.UI;
 
@@ -49,7 +50,8 @@ public final class Engine {
 
 	public void finishLoading() {
 		musicList = new MusicList(voide.resources.Resources.get().getNamespaceResources("music", Music.class));
-		this.keys = new Keyboard(window, Resources.get().getKeyConfiguration());
+		this.keys = new Keyboard(window,
+				voide.resources.Resources.get().getResource("keys.default", KeyConfiguration.class));
 
 		nentities.cleanup();
 		logger = new Logger(1000, 100);
@@ -57,7 +59,6 @@ public final class Engine {
 		currentUI = voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class);
 		engineState = EngineState.MENU;
 
-		Game.startUpdating();
 	}
 
 	public void stopGame() {

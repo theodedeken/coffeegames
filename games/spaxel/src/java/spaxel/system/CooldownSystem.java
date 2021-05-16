@@ -1,9 +1,10 @@
 package spaxel.system;
 
-import spaxel.entity.ComponentType;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.cooldown.CooldownStorage;
+import voide.entity.Entity;
 import spaxel.engine.Engine;
-import spaxel.entity.Entity;
+
 import java.util.Set;
 
 /**
@@ -21,9 +22,9 @@ public class CooldownSystem extends GameSystem {
     }
 
     public void update() {
-        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(ComponentType.COOLDOWN);
+        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(SpaxelComponent.COOLDOWN);
         for (Entity entity : entities) {
-            CooldownStorage cc = (CooldownStorage) entity.getComponent(ComponentType.COOLDOWN);
+            CooldownStorage cc = (CooldownStorage) entity.getComponent(SpaxelComponent.COOLDOWN);
             cc.setCurrentCooldown(cc.getCurrentCooldown() == 0 ? 0 : cc.getCurrentCooldown() - 1);
         }
     }
