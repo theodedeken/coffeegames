@@ -23,6 +23,17 @@ cat << EOF > ./.project
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	        <filteredResources>
+                <filter>
+                        <id>1621190689736</id>
+                        <name></name>
+                        <type>30</type>
+                        <matcher>
+                                <id>org.eclipse.core.resources.regexFilterMatcher</id>
+                                <arguments>bazel-bin|bazel-coffeegames|bazel-out|bazel-testlogs|node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+                        </matcher>
+                </filter>
+        </filteredResources>
 </projectDescription>
 EOF
 

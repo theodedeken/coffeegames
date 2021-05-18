@@ -1,5 +1,6 @@
 package voide.collision;
 
+import voide.debug.Representable;
 import voide.math.MatrixD;
 import voide.math.VectorD;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -7,8 +8,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Represents a hitpoint of a hitshape
+ * 
  */
-public class HitPoint {
+// TODO figure out why this is separate and not even extends VectorD
+public class HitPoint implements Representable {
 	private static final int HITPOINT_DIM = 3;
 	private VectorD vector;
 
@@ -69,5 +72,13 @@ public class HitPoint {
 
 	public String toString() {
 		return vector.toString();
+	}
+
+	public String repr() {
+		return vector.repr();
+	}
+
+	public String fullRepr() {
+		return vector.fullRepr();
 	}
 }

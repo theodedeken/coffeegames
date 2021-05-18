@@ -7,7 +7,6 @@ import spaxel.entity.Behaviour;
 import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.hitshape.HitshapeStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
-import spaxel.engine.Engine;
 import voide.math.MatrixD;
 import voide.math.MatrixMaker;
 

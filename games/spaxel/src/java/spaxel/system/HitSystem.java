@@ -3,7 +3,6 @@ package spaxel.system;
 import spaxel.entity.Behaviour;
 import spaxel.entity.SpaxelComponent;
 import spaxel.engine.Engine;
-import spaxel.system.SystemType;
 import voide.entity.Entity;
 
 import java.util.Set;

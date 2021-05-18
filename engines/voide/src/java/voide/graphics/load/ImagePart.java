@@ -1,10 +1,15 @@
 package voide.graphics.load;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import voide.debug.RepresentationBuilder;
 import voide.graphics.renderable.Texture;
 import voide.math.VectorD;
 import voide.resources.ResourceProxy;
 
 public class ImagePart extends Image {
+    private static final Logger LOGGER = Logger.getLogger(ImagePart.class.getName());
     private VectorD offset;
     private ResourceProxy<Image> parent;
 
@@ -19,6 +24,17 @@ public class ImagePart extends Image {
     }
 
     public void initialize() {
+        LOGGER.log(Level.INFO, "Initialized " + repr());
+    }
+
+    public String repr() {
+        return String.format("ImagePart { %dx%d, at %s }", (int) shape.getValue(0), (int) shape.getValue(1),
+                offset.repr());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("shape", shape.repr())
+                .field("offset", shape.repr()).field("parent", parent.repr()).build();
     }
 
     /*

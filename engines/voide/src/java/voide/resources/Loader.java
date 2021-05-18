@@ -9,11 +9,7 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.management.RuntimeErrorException;
-
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -49,55 +45,86 @@ public final class Loader {
     public static Map<String, Resource> loadResources(String namespace, ResourceNamespace info) {
         try {
             Class<Resource> outputClass = (Class<Resource>) Class.forName(info.getClassName());
+            Class<Resource> mixinClass = null;
+            if (info.getMixin() != null) {
+                mixinClass = (Class<Resource>) Class.forName(info.getMixin());
+            }
             Map<String, Resource> resources = new HashMap<>();
             for (ResourceFile resFile : info.getFiles()) {
-                // TODO cleanup
-                if (resFile.isXML()) {
-                    if (resFile.isSingle()) {
-                        Resource resource = loadXML(resFile.getPath(), outputClass);
-                        resources.put(namespace + "." + resFile.getKey(), resource);
-                    } else {
-                        throw new RuntimeException("Not implemented");
-                    }
+                if (resFile.isSingle()) {
+                    Resource resource = loadSingleResource(resFile, outputClass, mixinClass);
+                    resources.put(namespace + "." + resFile.getKey(), resource);
                 } else {
-                    if (resFile.isSingle()) {
-                        InputStream file = new FileReader(resFile.getPath()).toStream();
-                        ObjectMapper mapper = new ObjectMapper();
-                        Resource resource = mapper.readValue(file, outputClass);
-                        resource.initialize();
-                        resources.put(namespace + "." + resFile.getKey(), resource);
-                    } else {
-                        InputStream file = new FileReader(resFile.getPath()).toStream();
-                        ObjectMapper mapper = new ObjectMapper();
-                        JsonNode tree = mapper.readTree(file);
-
-                        Iterator<Entry<String, JsonNode>> nodes = tree.fields();
-                        while (nodes.hasNext()) {
-                            Entry<String, JsonNode> node = nodes.next();
-                            Resource resource = mapper.readValue(node.getValue().toString(), outputClass);
-                            resource.initialize();
-                            resources.put(namespace + "." + node.getKey(), resource);
-                        }
+                    Map<String, Resource> loaded = loadMultiResource(resFile, outputClass, mixinClass);
+                    for (Entry<String, Resource> entry : loaded.entrySet()) {
+                        resources.put(namespace + "." + entry.getKey(), entry.getValue());
                     }
-
                 }
-
             }
 
             return resources;
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
+            LOGGER.log(Level.SEVERE, "Resource class not found: " + info);
             LOGGER.log(Level.SEVERE, e.toString(), e);
         }
         return null;
 
     }
 
-    public static Resource loadXML(String path, Class<Resource> outputClass)
-            throws JsonParseException, JsonMappingException, IOException {
-        InputStream file = new FileReader(path).toStream();
-        XmlMapper mapper = new XmlMapper();
-        Resource resource = mapper.readValue(file, outputClass);
-        resource.initialize();
-        return resource;
+    public static Resource loadSingleResource(ResourceFile file, Class<Resource> outputClass,
+            Class<Resource> mixinClass) {
+        try {
+            ObjectMapper mapper = getMapper(file.getType());
+            if (mixinClass != null) {
+                mapper.addMixIn(outputClass, mixinClass);
+            }
+            InputStream stream = new FileReader(file.getPath()).toStream();
+            Resource resource = mapper.readValue(stream, outputClass);
+            resource.initialize();
+            return resource;
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Could not load resource file: " + file);
+            LOGGER.log(Level.SEVERE, e.toString(), e);
+        }
+        return null;
+    }
+
+    public static Map<String, Resource> loadMultiResource(ResourceFile file, Class<Resource> outputClass,
+            Class<Resource> mixinClass) {
+        try {
+            ObjectMapper mapper = getMapper(file.getType());
+            if (mixinClass != null) {
+                mapper.addMixIn(outputClass, mixinClass);
+            }
+            InputStream stream = new FileReader(file.getPath()).toStream();
+            JsonNode tree = mapper.readTree(stream);
+            Map<String, Resource> output = new HashMap<>();
+            Iterator<Entry<String, JsonNode>> nodes = tree.fields();
+            while (nodes.hasNext()) {
+                Entry<String, JsonNode> node = nodes.next();
+                Resource resource = mapper.readValue(node.getValue().toString(), outputClass);
+                resource.initialize();
+                output.put(node.getKey(), resource);
+            }
+
+            return output;
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Could not load resource file: " + file);
+            LOGGER.log(Level.SEVERE, e.toString(), e);
+        }
+        return null;
+    }
+
+    public static ObjectMapper getMapper(ResourceFile.FileType type) {
+        switch (type) {
+            case XML:
+                return new XmlMapper();
+            case YAML:
+                return new ObjectMapper(new YAMLFactory());
+            case JSON:
+                return new ObjectMapper();
+            default:
+                throw new RuntimeException("File type not supported");
+        }
     }
 }

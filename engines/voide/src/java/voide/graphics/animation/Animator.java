@@ -3,6 +3,8 @@ package voide.graphics.animation;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import voide.debug.Representable;
+import voide.debug.RepresentationBuilder;
 import voide.render.buffer.RenderJob;
 
 /**
@@ -15,7 +17,7 @@ import voide.render.buffer.RenderJob;
         @JsonSubTypes.Type(value = YScaleAnimator.class, name = "Y_SCALE"),
         @JsonSubTypes.Type(value = XPosAnimator.class, name = "X_POS"),
         @JsonSubTypes.Type(value = YPosAnimator.class, name = "Y_POS") })
-public abstract class Animator {
+public abstract class Animator implements Representable {
     private AnimatorType type;
 
     /**
@@ -25,6 +27,14 @@ public abstract class Animator {
      */
     public Animator(AnimatorType type) {
         this.type = type;
+    }
+
+    public String repr() {
+        return String.format("Animator { %s }", type.name());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("type", type).build();
     }
 
     /**

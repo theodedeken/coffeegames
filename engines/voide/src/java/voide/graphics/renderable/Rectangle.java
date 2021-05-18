@@ -1,5 +1,6 @@
 package voide.graphics.renderable;
 
+import voide.debug.RepresentationBuilder;
 import voide.math.VectorD;
 import voide.render.buffer.RenderJob;
 
@@ -43,5 +44,14 @@ public class Rectangle extends Renderable {
     public void apply(RenderJob job) {
         job.applyScale(shape);
         job.setColor(color);
+    }
+
+    public String repr() {
+        return String.format("Rectangle { %s, %s }", name, shape.repr());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("color", color).field("shape", shape)
+                .field("name", name).build();
     }
 }

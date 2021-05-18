@@ -4,7 +4,6 @@ import java.util.Set;
 import spaxel.entity.SpaxelComponent;
 import spaxel.entity.behaviour.ai.AIBehaviour;
 import spaxel.engine.Engine;
-import spaxel.system.SystemType;
 import voide.entity.Entity;
 
 /**

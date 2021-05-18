@@ -1,7 +1,6 @@
 package spaxel.system;
 
 import spaxel.engine.Engine;
-import spaxel.system.SystemType;
 import voide.sound.Music;
 
 public class SoundSystem extends GameSystem {

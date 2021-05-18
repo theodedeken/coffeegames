@@ -29,5 +29,5 @@ stylesheet:
 ui:
   className: voide.ui.UI
   files:
-    - key: "LOAD"
+    - key: LOAD
       path: /ui/load.xml

@@ -1,5 +1,7 @@
 package voide.resources;
 
-public interface Resource {
+import voide.debug.Representable;
+
+public interface Resource extends Representable {
     public void initialize();
 }

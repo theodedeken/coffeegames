@@ -2,9 +2,12 @@ package voide.ui;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.fasterxml.jackson.annotation.JsonSetter;
 
+import voide.debug.RepresentationBuilder;
 import voide.input.MouseWrapper;
 import voide.render.buffer.MasterBuffer;
 import voide.resources.Resource;
@@ -16,9 +19,9 @@ import voide.ui.elements.StyleSheet;
  * Root class of an ui structure
  */
 public class UI implements Resource {
+    private static final Logger LOGGER = Logger.getLogger(UI.class.getName());
     private String controller;
     private List<ResourceProxy<StyleSheet>> styles;
-    private List<StyleSheet> stylesheets;
     private Element body;
 
     /**
@@ -30,13 +33,19 @@ public class UI implements Resource {
     }
 
     public void initialize() {
-        this.stylesheets = new ArrayList<>();
-
-        for (ResourceProxy<StyleSheet> style : styles) {
-            this.stylesheets.add(style.get());
-        }
-        body.initStyle(this.stylesheets);
+        body.initStyle(this.styles);
         body.setController(controller);
+
+        LOGGER.log(Level.INFO, "Initialized " + repr());
+    }
+
+    public String repr() {
+        return String.format("UI { %s }", controller);
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("controller", controller).field("styles", styles)
+                .build();
     }
 
     /**

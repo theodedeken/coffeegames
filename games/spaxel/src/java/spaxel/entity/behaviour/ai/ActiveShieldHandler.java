@@ -6,7 +6,6 @@ import spaxel.entity.storage.cooldown.CooldownStorage;
 import spaxel.entity.storage.projectile.ProjectileStorage;
 import spaxel.entity.storage.shield.ShieldStorage;
 import voide.entity.Entity;
-import voide.entity.EntityType;
 
 import java.util.Set;
 

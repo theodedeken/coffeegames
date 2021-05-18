@@ -4,29 +4,14 @@ package(default_visibility = ["//visibility:public"])
 
 cg_java_library(
     name = "resources",
-    srcs = glob(
-        ["*.java"],
-        exclude = ["Main.java"],
-    ),
+    srcs = glob(["*.java"]),
     deps = [
+        "//engines/voide/src/java/voide/debug",
         "//engines/voide/src/java/voide/io",
         "@maven//:com_fasterxml_jackson_core_jackson_annotations",
         "@maven//:com_fasterxml_jackson_core_jackson_core",
         "@maven//:com_fasterxml_jackson_core_jackson_databind",
         "@maven//:com_fasterxml_jackson_dataformat_jackson_dataformat_xml",
         "@maven//:com_fasterxml_jackson_dataformat_jackson_dataformat_yaml",
-    ],
-)
-
-#TODO remove once fully integrated
-java_binary(
-    name = "test_resources",
-    srcs = ["Main.java"],
-    main_class = "voide.resources.Main",
-    deps = [
-        "resources",
-        "//engines/voide/src/java/voide/collision",
-        "//engines/voide/src/java/voide/sound",
-        "//games/spaxel/resources/java:resources",
     ],
 )

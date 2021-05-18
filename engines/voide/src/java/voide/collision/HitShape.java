@@ -2,6 +2,10 @@ package voide.collision;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import voide.debug.RepresentationBuilder;
 import voide.math.Axis;
 import voide.math.MatrixD;
 import voide.math.Projection;
@@ -12,6 +16,7 @@ import voide.resources.Resource;
  * Represents a collection of hitpoints forming a hitshape
  */
 public class HitShape implements Resource {
+    private static final Logger LOGGER = Logger.getLogger(HitShape.class.getName());
     private List<HitPoint> hitPoints;
 
     /**
@@ -22,6 +27,15 @@ public class HitShape implements Resource {
     }
 
     public void initialize() {
+        LOGGER.log(Level.INFO, "Initialized " + repr());
+    }
+
+    public String repr() {
+        return String.format("HitShape { %s points }", hitPoints.size());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("hitPoints", hitPoints).build();
     }
 
     /**

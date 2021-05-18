@@ -36,6 +36,6 @@ public class Keyboard {
 	 * @return the keystate
 	 */
 	public KeyState get(Key key) {
-		return keys.get(key);
+		return keys.get(key.id());
 	}
 }

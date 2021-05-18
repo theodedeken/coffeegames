@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 public class ResourceFile {
     private String path;
     private String key;
-    private boolean xml = true;
+    private FileType type;
     private boolean single = false;
 
     public ResourceFile() {
@@ -15,7 +15,19 @@ public class ResourceFile {
     @JsonCreator
     public ResourceFile(String path) {
         this.path = path;
-        this.xml = false;
+        typecheck();
+    }
+
+    private void typecheck() {
+        if (path.contains(".xml")) {
+            type = FileType.XML;
+        } else if (path.contains(".json")) {
+            type = FileType.JSON;
+        } else if (path.contains(".yml") || path.contains(".yaml")) {
+            type = FileType.YAML;
+        } else {
+            throw new RuntimeException("File extension not supported");
+        }
     }
 
     public String getPath() {
@@ -24,7 +36,7 @@ public class ResourceFile {
 
     public void setPath(String path) {
         this.path = path;
-        this.xml = path.contains(".xml");
+        typecheck();
     }
 
     public String getKey() {
@@ -36,11 +48,15 @@ public class ResourceFile {
         this.single = true;
     }
 
-    public boolean isXML() {
-        return this.xml;
+    public FileType getType() {
+        return type;
     }
 
     public boolean isSingle() {
         return this.single;
+    }
+
+    public enum FileType {
+        XML, JSON, YAML
     }
 }

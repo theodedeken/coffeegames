@@ -1,0 +1,10 @@
+load("//bazel:macros.bzl", "cg_java_test")
+
+cg_java_test(
+    name = "test_representation_builder",
+    srcs = ["TestRepresentationBuilder.java"],
+    test_class = "voide.debug.TestRepresentationBuilder",
+    deps = [
+        "//engines/voide/src/java/voide/debug",
+    ],
+)

@@ -1,7 +1,10 @@
 package voide.graphics.animation;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import voide.debug.RepresentationBuilder;
 import voide.render.buffer.RenderJob;
 import voide.resources.Resource;
 
@@ -9,6 +12,7 @@ import voide.resources.Resource;
  * Represents an animation
  */
 public class Animation implements Resource {
+    private static final Logger LOGGER = Logger.getLogger(Animation.class.getName());
     private List<Animator> animators;
 
     /**
@@ -19,6 +23,15 @@ public class Animation implements Resource {
     }
 
     public void initialize() {
+        LOGGER.log(Level.INFO, "Initialized " + repr());
+    }
+
+    public String repr() {
+        return String.format("Animation { %s animators }", animators.size());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("animators", animators).build();
     }
 
     /**

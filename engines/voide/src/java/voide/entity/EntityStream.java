@@ -41,7 +41,7 @@ public class EntityStream {
      * @return the set of entities
      */
     public Set<Entity> getEntities(EntityType type) {
-        return entityTypeMap.get(type.id());
+        return entityTypeMap.getOrDefault(type.id(), new HashSet<>());
     }
 
     /**
@@ -53,7 +53,7 @@ public class EntityStream {
      */
     public Set<Entity> getEntitiesCopy(ComponentType type) {
         synchronized (componentTypeMap) {
-            return new HashSet<>(componentTypeMap.get(type.id()));
+            return new HashSet<>(componentTypeMap.getOrDefault(type.id(), new HashSet<>()));
         }
     }
 
@@ -65,7 +65,7 @@ public class EntityStream {
      * @return the set of entities
      */
     public Set<Entity> getEntities(ComponentType type) {
-        return componentTypeMap.get(type.id());
+        return componentTypeMap.getOrDefault(type.id(), new HashSet<>());
     }
 
     /**

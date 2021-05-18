@@ -5,5 +5,8 @@ package(default_visibility = ["//visibility:public"])
 cg_java_library(
     name = "entity",
     srcs = glob(["*.java"]),
-    deps = ["//engines/voide/src/java/voide/resources"],
+    deps = [
+        "//engines/voide/src/java/voide/debug",
+        "//engines/voide/src/java/voide/resources",
+    ],
 )

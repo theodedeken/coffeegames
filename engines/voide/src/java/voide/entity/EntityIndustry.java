@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import voide.debug.RepresentationBuilder;
 import voide.resources.Resource;
 import voide.resources.Resources;
 
@@ -26,6 +27,16 @@ public class EntityIndustry implements Resource {
 
     public void initialize() {
 
+    }
+
+    public String repr() {
+        return String.format("EntityIndustry { %s, %d blueprints, %d links }", type.id(), blueprints.size(),
+                links.size());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("type", type).field("blueprints", blueprints)
+                .field("links", links).build();
     }
 
     /**

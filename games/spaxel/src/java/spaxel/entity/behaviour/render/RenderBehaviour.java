@@ -49,7 +49,7 @@ public class RenderBehaviour extends Component {
 
     @JsonProperty("renderers")
     public void setRenderersRaw(List<String> renderers) {
-        this.renderers = new ArrayList();
+        this.renderers = new ArrayList<>();
         for (String renderString : renderers) {
             this.renderers.add(Renderer.createRenderer(renderString));
         }

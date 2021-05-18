@@ -1,5 +1,8 @@
 package voide.graphics.renderable;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import voide.math.VectorD;
 import voide.render.buffer.RenderJob;
 import voide.resources.Resource;
@@ -8,6 +11,7 @@ import voide.resources.Resource;
  * Represents a Renderable part of the game
  */
 public abstract class Renderable implements Resource {
+    private static final Logger LOGGER = Logger.getLogger(Renderable.class.getName());
     protected VectorD shape;
     protected String name;
 
@@ -19,6 +23,7 @@ public abstract class Renderable implements Resource {
     }
 
     public void initialize() {
+        LOGGER.log(Level.INFO, "Initialized " + repr());
     }
 
     /**

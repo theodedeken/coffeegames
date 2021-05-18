@@ -1,7 +1,5 @@
 package spaxel.entity.behaviour.hit;
 
-import spaxel.entity.behaviour.ai.HomingMissileAIHandler;
-import spaxel.entity.behaviour.death.projectile.ClusterMissileDeathComponent;
 import voide.entity.Entity;
 
 public abstract class HitHandler {

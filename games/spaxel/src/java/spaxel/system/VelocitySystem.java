@@ -4,7 +4,6 @@ import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.storage.change.ChangeStorage;
 import spaxel.engine.Engine;
-import spaxel.system.SystemType;
 import voide.entity.Entity;
 
 import java.util.Set;

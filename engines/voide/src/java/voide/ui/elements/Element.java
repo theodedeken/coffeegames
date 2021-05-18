@@ -1,14 +1,15 @@
 package voide.ui.elements;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import voide.input.MouseWrapper;
 import voide.render.buffer.MasterBuffer;
+import voide.resources.ResourceProxy;
 import voide.ui.elements.logic.ClickLogic;
 import voide.ui.elements.logic.HoverLogic;
 import voide.ui.elements.logic.Logic;
@@ -35,7 +36,7 @@ public class Element {
     private StyleRenderer renderer;
     private MouseWrapper mouse;
     private String controller;
-    private List<StyleSheet> stylesheets;
+    private List<ResourceProxy<StyleSheet>> stylesheets;
 
     /**
      * Create a new Element
@@ -89,7 +90,7 @@ public class Element {
     /**
      * Initialize the style of this element
      */
-    public void initStyle(List<StyleSheet> stylesheets) {
+    public void initStyle(List<ResourceProxy<StyleSheet>> stylesheets) {
         this.stylesheets = stylesheets;
         for (String stl : classes) {
             style.merge(getStyle("." + stl, stylesheets));
@@ -112,10 +113,10 @@ public class Element {
      * 
      * @return the style configuration
      */
-    private Map<String, String> getStyle(String name, List<StyleSheet> stylesheets) {
-        for (StyleSheet stylesheet : stylesheets) {
-            if (stylesheet.containsKey(name)) {
-                return stylesheet.get(name);
+    private Map<String, String> getStyle(String name, List<ResourceProxy<StyleSheet>> stylesheets) {
+        for (ResourceProxy<StyleSheet> stylesheet : stylesheets) {
+            if (stylesheet.get().containsKey(name)) {
+                return stylesheet.get().get(name);
             }
         }
         return null;
@@ -237,11 +238,11 @@ public class Element {
         return mouse;
     }
 
-    public void setHitStylesheets(List<StyleSheet> stylesheets) {
+    public void setStylesheets(List<ResourceProxy<StyleSheet>> stylesheets) {
         this.stylesheets = stylesheets;
     }
 
-    public List<StyleSheet> getStylesheets() {
+    public List<ResourceProxy<StyleSheet>> getStylesheets() {
         return stylesheets;
     }
 }

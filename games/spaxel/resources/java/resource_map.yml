@@ -37,7 +37,7 @@ ui:
     - key: "GAME_OVER"
       path: /ui/game_over.xml
 item:
-  className: spaxel.item.ItemProperties
+  className: spaxel.entity.item.ItemProperties
   files:
     - /resources/itemProperties.json
 keys:

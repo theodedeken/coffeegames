@@ -3,7 +3,6 @@ package spaxel.entity.behaviour.spawn;
 import spaxel.entity.Behaviour;
 import spaxel.entity.SpaxelComponent;
 import voide.entity.Entity;
-import spaxel.engine.Engine;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

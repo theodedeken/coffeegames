@@ -6,6 +6,7 @@ cg_java_library(
     name = "ui",
     srcs = ["UI.java"],
     deps = [
+        "//engines/voide/src/java/voide/debug",
         "//engines/voide/src/java/voide/input",
         "//engines/voide/src/java/voide/render/buffer",
         "//engines/voide/src/java/voide/resources",

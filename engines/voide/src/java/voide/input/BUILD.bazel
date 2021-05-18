@@ -6,6 +6,7 @@ cg_java_library(
     name = "input",
     srcs = glob(["*.java"]),
     deps = [
+        "//engines/voide/src/java/voide/debug",
         "//engines/voide/src/java/voide/math",
         "//engines/voide/src/java/voide/resources",
         "@maven//:org_lwjgl_lwjgl_glfw",

@@ -1,6 +1,7 @@
 package spaxel.entity.item;
 
 import spaxel.entity.storage.item.ItemContainer;
+import voide.debug.RepresentationBuilder;
 import voide.entity.EntityIndustry;
 import voide.resources.Resource;
 import voide.resources.ResourceProxy;
@@ -65,5 +66,14 @@ public class ItemProperties implements Resource {
 
     public void setType(ItemContainer type) {
         this.type = type;
+    }
+
+    public String repr() {
+        return String.format("ItemProperties { %s, %s, %s }", name, rarety.name(), type.name());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("name", name).field("industry", industry)
+                .field("spawnRate", spawnRate).field("rarety", rarety).field("type", type).build();
     }
 }

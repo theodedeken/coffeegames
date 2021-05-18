@@ -5,7 +5,6 @@ import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.move.MoveStorage;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import spaxel.entity.storage.change.ChangeStorage;
-import spaxel.engine.Engine;
 import voide.entity.Entity;
 import voide.math.VectorD;
 import spaxel.entity.EntityUtil;

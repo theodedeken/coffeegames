@@ -3,7 +3,6 @@ package spaxel.entity.behaviour.ai;
 import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.transformation.TransformationStorage;
 import voide.entity.Entity;
-import spaxel.engine.Engine;
 
 import java.util.Set;
 

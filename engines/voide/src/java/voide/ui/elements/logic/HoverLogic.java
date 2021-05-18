@@ -9,7 +9,6 @@ import voide.ui.elements.Style;
 import voide.math.MatrixD;
 import voide.math.MatrixMaker;
 
-import java.util.Map;
 
 /**
  * Logic to set the hover property of an element

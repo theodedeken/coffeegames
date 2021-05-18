@@ -7,7 +7,6 @@ import voide.render.buffer.MasterBuffer;
 import voide.render.buffer.RenderJob;
 import voide.render.buffer.RenderLayer;
 
-import java.util.Map;
 
 /**
  * Provides methods for rendering style configurations of UI Elements

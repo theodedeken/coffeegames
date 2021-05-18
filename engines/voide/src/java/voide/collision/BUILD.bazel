@@ -6,6 +6,7 @@ cg_java_library(
     name = "collision",
     srcs = glob(["*.java"]),
     deps = [
+        "//engines/voide/src/java/voide/debug",
         "//engines/voide/src/java/voide/math",
         "//engines/voide/src/java/voide/resources",
         "@maven//:com_fasterxml_jackson_core_jackson_annotations",

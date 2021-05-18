@@ -1,6 +1,10 @@
 package voide.math;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import voide.debug.Representable;
+import voide.debug.RepresentationBuilder;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +12,7 @@ import java.util.List;
 /**
  * Represents a vector of arbitrary size of type double.
  */
-public class VectorD {
+public class VectorD implements Representable {
     private static final int DEFAULT_DIM = 3;
     private int m = DEFAULT_DIM;
     private double[] vector;
@@ -42,6 +46,14 @@ public class VectorD {
     public VectorD(@JsonProperty("x") double x, @JsonProperty("y") double y) {
         this.vector = new double[] { x, y };
         m = 2;
+    }
+
+    public String repr() {
+        return String.format("VectorD %s", Arrays.toString(vector));
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("m", m).field("vector", vector).build();
     }
 
     /**

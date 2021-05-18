@@ -7,6 +7,7 @@ cg_java_library(
     srcs = glob(["**/*.java"]),
     deps = [
         "//engines/voide/src/java/voide/collision",
+        "//engines/voide/src/java/voide/debug",
         "//engines/voide/src/java/voide/entity",
         "//engines/voide/src/java/voide/graphics/renderable",
         "//engines/voide/src/java/voide/input",

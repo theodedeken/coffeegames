@@ -5,7 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import voide.debug.RepresentationBuilder;
 import voide.entity.Entity;
 import voide.entity.EntityIndustry;
 import voide.random.VoideRandom;
@@ -17,6 +20,7 @@ import voide.resources.Resource;
  * Created by theod on 12-7-2017.
  */
 public class ItemCatalogue implements Resource {
+    private static final Logger LOGGER = Logger.getLogger(ItemCatalogue.class.getName());
     Map<String, ItemProperties> items;
     List<EntityIndustry> industryList;
     VoideRandom random;
@@ -42,6 +46,7 @@ public class ItemCatalogue implements Resource {
                 industryList.add(prop.getIndustry());
             }
         }
+        LOGGER.log(Level.INFO, "Initialized " + repr());
     }
 
     /**
@@ -114,5 +119,14 @@ public class ItemCatalogue implements Resource {
          * @return true if passed
          */
         boolean pass(ItemProperties prop);
+    }
+
+    public String repr() {
+        return String.format("ItemCatalogue { %s items }", items.size());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("items", new ArrayList<>(items.keySet()))
+                .field("industries", industryList).build();
     }
 }

@@ -1,7 +1,5 @@
 package spaxel.entity.behaviour.death;
 
-import spaxel.entity.behaviour.affect.SlowAffectHandler;
-import spaxel.entity.behaviour.ai.BasicEnemyHandler;
 import spaxel.entity.behaviour.death.actor.BasicEnemyDeathComponent;
 import spaxel.entity.behaviour.death.actor.PlayerDeathComponent;
 import spaxel.entity.behaviour.death.effect.DisableMoveAffectDeathComponent;

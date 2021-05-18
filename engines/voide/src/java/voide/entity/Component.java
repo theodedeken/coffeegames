@@ -1,6 +1,11 @@
 package voide.entity;
 
-public abstract class Component {
+import java.lang.reflect.Field;
+
+import voide.debug.Representable;
+import voide.debug.RepresentationBuilder;
+
+public abstract class Component implements Representable {
     private ComponentType type;
 
     /**
@@ -21,5 +26,22 @@ public abstract class Component {
 
     public ComponentType getType() {
         return type;
+    }
+
+    public String repr() {
+        return String.format("%s { %s }", getClass().getName(), type.id());
+    }
+
+    public String fullRepr() {
+        RepresentationBuilder builder = new RepresentationBuilder(getClass().getName());
+        Field[] fields = getClass().getDeclaredFields();
+        for (Field f : fields) {
+            try {
+                builder.field(f.getName(), f.get(this));
+            } catch (IllegalAccessException e) {
+                continue;
+            }
+        }
+        return builder.build();
     }
 }

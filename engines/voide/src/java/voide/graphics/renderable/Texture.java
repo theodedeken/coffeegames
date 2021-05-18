@@ -1,7 +1,6 @@
 package voide.graphics.renderable;
 
-import java.util.Vector;
-
+import voide.debug.RepresentationBuilder;
 import voide.math.VectorD;
 import voide.render.buffer.RenderJob;
 
@@ -48,6 +47,16 @@ public class Texture extends Renderable {
 
     public VectorD getTextureShape() {
         return textureShape;
+    }
+
+    public String repr() {
+        return String.format("Texture { %s, %s }", name, shape.repr());
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("shape", shape).field("name", name)
+                .field("textureId", textureId).field("textureOffset", textureOffset).field("textureShape", textureShape)
+                .build();
     }
 
 }

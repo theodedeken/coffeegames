@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
+import voide.debug.RepresentationBuilder;
 import voide.graphics.renderable.Texture;
 import voide.graphics.util.TextureUtil;
 import voide.math.VectorD;
@@ -41,6 +42,7 @@ public class Image implements Resource {
             try {
                 BufferedImage image = ImageIO.read(Image.class.getResource(path));
                 image.getRGB(0, 0, width, height, pixels, 0, width);
+                LOGGER.log(Level.INFO, "Initialized " + repr());
             } catch (IOException e) {
                 LOGGER.log(Level.SEVERE, e.toString(), e);
             }
@@ -55,6 +57,14 @@ public class Image implements Resource {
                 data[i] = a << THREE_BYTES | b << TWO_BYTES | g << ONE_BYTE | r;
             }
         }
+    }
+
+    public String repr() {
+        return String.format("Image { %dx%d, %s }", (int) shape.getValue(0), (int) shape.getValue(1), path);
+    }
+
+    public String fullRepr() {
+        return new RepresentationBuilder(getClass().getName()).field("path", path).field("shape", shape.repr()).build();
     }
 
     public Texture toTexture() {
@@ -94,7 +104,4 @@ public class Image implements Resource {
         return new VectorD(1, 1);
     }
 
-    public String toString() {
-        return String.format("Image %dx%d, %d", (int) shape.getValue(0), (int) shape.getValue(1), data.length);
-    }
 }
