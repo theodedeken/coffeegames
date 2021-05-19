@@ -21,7 +21,7 @@ public final class Constants {
     public static final int GAME_MAJOR_V = 0;
     public static final int GAME_MINOR_V = 5;
     public static final int GAME_PATCH_V = 0;
-    public static final String DISPLAY_NAME = GAME_NAME + " - " + GAME_MAJOR_V + "." + GAME_MINOR_V + ".               "
+    public static final String DISPLAY_NAME = GAME_NAME + " - " + GAME_MAJOR_V + "." + GAME_MINOR_V + "."
             + GAME_PATCH_V;
     public static final int GAME_HEIGHT = 720;
     public static final int GAME_WIDTH = 1280;
