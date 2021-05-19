@@ -1,11 +1,12 @@
 package spaxel.entity.behaviour.mouse;
 
+import spaxel.engine.Engine;
 import spaxel.entity.Behaviour;
 import spaxel.entity.SpaxelComponent;
 import voide.entity.Entity;
-import spaxel.engine.Engine;
 
 public class MouseBehaviour extends Behaviour {
+
     private MouseHandler handler;
 
     public MouseBehaviour() {

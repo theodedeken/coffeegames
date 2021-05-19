@@ -1,112 +1,112 @@
 {
-    "button_normal": {
-        "parent": "image.button",
-        "shape": {
-            "x": 64,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 0
-        }
+  "button_normal": {
+    "parent": "image.button",
+    "shape": {
+      "x": 64,
+      "y": 16
     },
-    "button_hover": {
-        "parent": "image.button",
-        "shape": {
-            "x": 64,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 16
-        }
-    },
-    "button_click": {
-        "parent": "image.button",
-        "shape": {
-            "x": 64,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 32
-        }
-    },
-    "button_locked": {
-        "parent": "image.button",
-        "shape": {
-            "x": 64,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 48
-        }
-    },
-    "large_button_normal": {
-        "parent": "image.large_button",
-        "shape": {
-            "x": 80,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 0
-        }
-    },
-    "large_button_hover": {
-        "parent": "image.large_button",
-        "shape": {
-            "x": 80,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 16
-        }
-    },
-    "large_button_click": {
-        "parent": "image.large_button",
-        "shape": {
-            "x": 80,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 32
-        }
-    },
-    "large_button_locked": {
-        "parent": "image.large_button",
-        "shape": {
-            "x": 80,
-            "y": 16
-        },
-        "offset": {
-            "x": 0,
-            "y": 48
-        }
-    },
-    "class_select_hover": {
-        "parent": "image.class_select",
-        "shape": {
-            "x": 24,
-            "y": 24
-        },
-        "offset": {
-            "x": 0,
-            "y": 0
-        }
-    },
-    "class_select_click": {
-        "parent": "image.class_select",
-        "shape": {
-            "x": 24,
-            "y": 24
-        },
-        "offset": {
-            "x": 24,
-            "y": 0
-        }
+    "offset": {
+      "x": 0,
+      "y": 0
     }
+  },
+  "button_hover": {
+    "parent": "image.button",
+    "shape": {
+      "x": 64,
+      "y": 16
+    },
+    "offset": {
+      "x": 0,
+      "y": 16
+    }
+  },
+  "button_click": {
+    "parent": "image.button",
+    "shape": {
+      "x": 64,
+      "y": 16
+    },
+    "offset": {
+      "x": 0,
+      "y": 32
+    }
+  },
+  "button_locked": {
+    "parent": "image.button",
+    "shape": {
+      "x": 64,
+      "y": 16
+    },
+    "offset": {
+      "x": 0,
+      "y": 48
+    }
+  },
+  "large_button_normal": {
+    "parent": "image.large_button",
+    "shape": {
+      "x": 80,
+      "y": 16
+    },
+    "offset": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "large_button_hover": {
+    "parent": "image.large_button",
+    "shape": {
+      "x": 80,
+      "y": 16
+    },
+    "offset": {
+      "x": 0,
+      "y": 16
+    }
+  },
+  "large_button_click": {
+    "parent": "image.large_button",
+    "shape": {
+      "x": 80,
+      "y": 16
+    },
+    "offset": {
+      "x": 0,
+      "y": 32
+    }
+  },
+  "large_button_locked": {
+    "parent": "image.large_button",
+    "shape": {
+      "x": 80,
+      "y": 16
+    },
+    "offset": {
+      "x": 0,
+      "y": 48
+    }
+  },
+  "class_select_hover": {
+    "parent": "image.class_select",
+    "shape": {
+      "x": 24,
+      "y": 24
+    },
+    "offset": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "class_select_click": {
+    "parent": "image.class_select",
+    "shape": {
+      "x": 24,
+      "y": 24
+    },
+    "offset": {
+      "x": 24,
+      "y": 0
+    }
+  }
 }

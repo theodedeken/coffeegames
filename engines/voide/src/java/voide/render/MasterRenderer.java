@@ -17,7 +17,6 @@ import static org.lwjgl.opengl.GL31.glDrawElementsInstanced;
 import java.nio.FloatBuffer;
 import java.util.List;
 import java.util.Map;
-
 import voide.graphics.geometry.InstancedQuad;
 import voide.graphics.geometry.Quad;
 import voide.math.MatrixD;
@@ -42,6 +41,7 @@ import voide.render.shaders.LastPassShaderProgram;
  *
  */
 public class MasterRenderer {
+
     private static final double TWO = 2.0;
     private static final int BLUR_RESOLUTION = 2;
     private static final int BLUR_SIZE = 9;
@@ -65,25 +65,48 @@ public class MasterRenderer {
     }
 
     private void initialize() {
-        MatrixD projectionMatrix = MatrixMaker.orthographic(-screenWidth / TWO, screenWidth / TWO, -screenHeight / TWO,
-                screenHeight / TWO, -1.0, 1.0);
+        MatrixD projectionMatrix = MatrixMaker.orthographic(
+            -screenWidth / TWO,
+            screenWidth / TWO,
+            -screenHeight / TWO,
+            screenHeight / TWO,
+            -1.0,
+            1.0
+        );
 
-        BlurShaderProgram blurPassProgram = new BlurShaderProgram("/shaders/blur_pass.vert", "/shaders/blur_pass.frag");
+        BlurShaderProgram blurPassProgram = new BlurShaderProgram(
+            "/shaders/blur_pass.vert",
+            "/shaders/blur_pass.frag"
+        );
         blurPassProgram.enable();
         blurPassProgram.setTexSampler(1);
         blurPassProgram.setRadius(1);
         blurPassProgram.setResolution(BLUR_RESOLUTION);
         blurPassProgram.setSize(BLUR_SIZE);
-        blurPostProcessor = new BlurPostProcessor(blurPassProgram, screenWidth, screenHeight);
+        blurPostProcessor =
+            new BlurPostProcessor(blurPassProgram, screenWidth, screenHeight);
 
-        lastPassProgram = new LastPassShaderProgram("/shaders/last_pass.vert", "/shaders/last_pass.frag");
+        lastPassProgram =
+            new LastPassShaderProgram(
+                "/shaders/last_pass.vert",
+                "/shaders/last_pass.frag"
+            );
         lastPassProgram.enable();
         lastPassProgram.setTexSampler(1);
         lastPassProgram.setProjectionMatrix(projectionMatrix);
         lastPassProgram.setTranslationMatrix(
-                MatrixMaker.getTransformationMatrix(new VectorD(0, 0), 0, new VectorD(screenWidth, screenHeight)));
+            MatrixMaker.getTransformationMatrix(
+                new VectorD(0, 0),
+                0,
+                new VectorD(screenWidth, screenHeight)
+            )
+        );
 
-        instancedShader = new InstancedShaderProgram("/shaders/2Dsprite.vert", "/shaders/2Dsprite.frag");
+        instancedShader =
+            new InstancedShaderProgram(
+                "/shaders/2Dsprite.vert",
+                "/shaders/2Dsprite.frag"
+            );
         instancedShader.enable();
         instancedShader.setTexSampler(1);
         instancedShader.setProjectionMatrix(projectionMatrix);
@@ -108,7 +131,10 @@ public class MasterRenderer {
             layerFBO.getFbo(layer).unbindBuffer();
         }
 
-        blurPostProcessor.postProcess(layerFBO.getFbo(RenderLayer.GAME), blurred);
+        blurPostProcessor.postProcess(
+            layerFBO.getFbo(RenderLayer.GAME),
+            blurred
+        );
 
         combine();
     }
@@ -119,31 +145,60 @@ public class MasterRenderer {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         blurred.bindTexture();
 
-        glDrawElements(GL_TRIANGLES, fboQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0);
+        glDrawElements(
+            GL_TRIANGLES,
+            fboQuad.getVertexCount(),
+            GL_UNSIGNED_BYTE,
+            0
+        );
 
         layerFBO.getFbo(RenderLayer.GAME).bindTexture();
 
-        glDrawElements(GL_TRIANGLES, fboQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0);
+        glDrawElements(
+            GL_TRIANGLES,
+            fboQuad.getVertexCount(),
+            GL_UNSIGNED_BYTE,
+            0
+        );
 
         layerFBO.getFbo(RenderLayer.UI).bindTexture();
 
-        glDrawElements(GL_TRIANGLES, fboQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0);
+        glDrawElements(
+            GL_TRIANGLES,
+            fboQuad.getVertexCount(),
+            GL_UNSIGNED_BYTE,
+            0
+        );
 
         layerFBO.getFbo(RenderLayer.DEBUG).bindTexture();
 
-        glDrawElements(GL_TRIANGLES, fboQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0);
+        glDrawElements(
+            GL_TRIANGLES,
+            fboQuad.getVertexCount(),
+            GL_UNSIGNED_BYTE,
+            0
+        );
     }
 
     public void render(RenderBuffer buffer, int spritesheet) {
         if (buffer.size() > 0) {
             loadBuffer(allQuad.getTransScale(), buffer.getTrscBuffer());
             loadBuffer(allQuad.getSinCosAlphaColor(), buffer.getSinCosBuffer());
-            loadBuffer(allQuad.getTexOffsetScale(), buffer.getTexOffsetBuffer());
+            loadBuffer(
+                allQuad.getTexOffsetScale(),
+                buffer.getTexOffsetBuffer()
+            );
             glBindBuffer(GL_ARRAY_BUFFER, 0);
 
             glBindTexture(GL_TEXTURE_2D, spritesheet);
 
-            glDrawElementsInstanced(GL_TRIANGLES, allQuad.getVertexCount(), GL_UNSIGNED_BYTE, 0, buffer.size());
+            glDrawElementsInstanced(
+                GL_TRIANGLES,
+                allQuad.getVertexCount(),
+                GL_UNSIGNED_BYTE,
+                0,
+                buffer.size()
+            );
         }
     }
 
@@ -151,5 +206,4 @@ public class MasterRenderer {
         glBindBuffer(GL_ARRAY_BUFFER, bufferID);
         glBufferData(GL_ARRAY_BUFFER, buffer, GL_DYNAMIC_DRAW);
     }
-
 }

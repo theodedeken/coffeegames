@@ -1,12 +1,12 @@
 package spaxel.entity.behaviour.spawn;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import spaxel.entity.Behaviour;
 import spaxel.entity.SpaxelComponent;
 import voide.entity.Entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class SpawnBehaviour extends Behaviour {
+
     private Spawner spawner;
 
     public SpawnBehaviour() {
@@ -20,7 +20,6 @@ public class SpawnBehaviour extends Behaviour {
 
     public void execute(Entity entity) {
         entity.getStream().addEntities(spawner.spawn(entity));
-
     }
 
     public SpawnBehaviour copy() {
@@ -45,5 +44,4 @@ public class SpawnBehaviour extends Behaviour {
     public void setSpawner(SpawnerType type) {
         this.spawner = Spawner.createSpawner(type);
     }
-
 }

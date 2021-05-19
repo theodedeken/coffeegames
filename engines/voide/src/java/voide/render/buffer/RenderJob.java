@@ -1,14 +1,14 @@
-
 package voide.render.buffer;
 
 import voide.math.VectorD;
 
 /**
  * Represents all data attributes for one render job
- * 
+ *
  * Created by theod on 22/10/2016.
  */
 public class RenderJob {
+
     private static final int ATTRIB_DIM = 4;
     private static final int SCALE_OFFSET = 2;
     private static final int ALPHA_INDEX = 2;
@@ -43,8 +43,13 @@ public class RenderJob {
     }
 
     public void setTexOffset(VectorD textureOffset, VectorD textureShape) {
-        this.texOffset = new float[] { (float) textureOffset.getValue(0), (float) textureOffset.getValue(1),
-                (float) textureShape.getValue(0), (float) textureShape.getValue(1) };
+        this.texOffset =
+            new float[] {
+                (float) textureOffset.getValue(0),
+                (float) textureOffset.getValue(1),
+                (float) textureShape.getValue(0),
+                (float) textureShape.getValue(1)
+            };
     }
 
     public int getSpriteSheetID() {
@@ -57,7 +62,7 @@ public class RenderJob {
 
     /**
      * Applies a translation
-     * 
+     *
      * @param translation the translation to apply
      */
     public void applyTranslation(VectorD translation) {
@@ -67,7 +72,7 @@ public class RenderJob {
 
     /**
      * Applies a translation on the x axis
-     * 
+     *
      * @param xTrans the translation to apply
      */
     public void applyXTranslation(double xTrans) {
@@ -76,7 +81,7 @@ public class RenderJob {
 
     /**
      * Applies a translation to the y axis
-     * 
+     *
      * @param yTrans the translation to apply
      */
     public void applyYTranslation(double yTrans) {
@@ -85,7 +90,7 @@ public class RenderJob {
 
     /**
      * Applies a scaling to the x axis
-     * 
+     *
      * @param xScale the scaling to apply
      */
     public void applyXScale(double xScale) {
@@ -94,7 +99,7 @@ public class RenderJob {
 
     /**
      * Applies a scaling to the y axis
-     * 
+     *
      * @param yScale the scaling to apply
      */
     public void applyYScale(double yScale) {
@@ -103,7 +108,7 @@ public class RenderJob {
 
     /**
      * Applies a scaling vector
-     * 
+     *
      * @param scale the scaling vector to apply
      */
     public void applyScale(VectorD scale) {
@@ -113,7 +118,7 @@ public class RenderJob {
 
     /**
      * Applies a scaling to both axis
-     * 
+     *
      * @param scale the scaling to apply
      */
     public void applyScale(double scale) {
@@ -123,7 +128,7 @@ public class RenderJob {
 
     /**
      * Apply a rotation
-     * 
+     *
      * @param rotChange the rotation change
      */
     public void applyRot(double rotChange) {
@@ -134,7 +139,7 @@ public class RenderJob {
 
     /**
      * Applies an alpha operation
-     * 
+     *
      * @param alpha the alpha to apply
      */
     public void applyAlpha(double alpha) {

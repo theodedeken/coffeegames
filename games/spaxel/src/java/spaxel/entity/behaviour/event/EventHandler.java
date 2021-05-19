@@ -3,6 +3,7 @@ package spaxel.entity.behaviour.event;
 import voide.entity.Entity;
 
 public abstract class EventHandler {
+
     private EventHandlerType type;
 
     public EventHandler(EventHandlerType type) {
@@ -24,5 +25,4 @@ public abstract class EventHandler {
     public void setType(EventHandlerType type) {
         this.type = type;
     }
-
 }

@@ -8,6 +8,7 @@ import voide.entity.Entity;
  * Created by theo on 24/06/17.
  */
 public class EquipHandler extends HitHandler {
+
     public EquipHandler() {
         super(HitType.EQUIP);
     }

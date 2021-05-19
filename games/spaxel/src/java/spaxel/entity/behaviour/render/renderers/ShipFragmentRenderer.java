@@ -10,6 +10,7 @@ import voide.render.buffer.RenderJob;
  * Created by theod on 25-9-2017.
  */
 public class ShipFragmentRenderer extends Renderer {
+
     private static final double FACTOR_MULT = 2.0;
 
     public void apply(RenderJob data, Entity entity) {
@@ -19,5 +20,4 @@ public class ShipFragmentRenderer extends Renderer {
 
         data.applyScale(new VectorD(factor, factor));
     }
-
 }

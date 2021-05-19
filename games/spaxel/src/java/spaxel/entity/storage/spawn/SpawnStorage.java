@@ -6,6 +6,7 @@ import voide.entity.Storage;
 import voide.resources.ResourceProxy;
 
 public class SpawnStorage extends Storage {
+
     private double maxDeltaRot;
     private double maxSpeed;
     private int maxLife;
@@ -16,8 +17,13 @@ public class SpawnStorage extends Storage {
         super(SpaxelComponent.SPAWN_STORE);
     }
 
-    public SpawnStorage(double maxDeltaRot, double maxSpeed, int maxLife, int rate,
-            ResourceProxy<EntityIndustry> industry) {
+    public SpawnStorage(
+        double maxDeltaRot,
+        double maxSpeed,
+        int maxLife,
+        int rate,
+        ResourceProxy<EntityIndustry> industry
+    ) {
         super(SpaxelComponent.SPAWN_STORE);
         this.maxDeltaRot = maxDeltaRot;
         this.maxSpeed = maxSpeed;
@@ -97,6 +103,12 @@ public class SpawnStorage extends Storage {
     }
 
     public SpawnStorage copy() {
-        return new SpawnStorage(maxDeltaRot, maxSpeed, maxLife, rate, industry.copy());
+        return new SpawnStorage(
+            maxDeltaRot,
+            maxSpeed,
+            maxLife,
+            rate,
+            industry.copy()
+        );
     }
 }

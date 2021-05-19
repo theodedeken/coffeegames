@@ -1,27 +1,27 @@
 {
-    "progress_bar": {
-        "shape": {
-            "x": 1,
-            "y": 8
-        },
-        "color": "ffffffff"
+  "progress_bar": {
+    "shape": {
+      "x": 1,
+      "y": 8
     },
-    "load_overlay": {
-        "shape": {
-            "x": 1280,
-            "y": 720
-        },
-        "color": "ff000000"
+    "color": "ffffffff"
+  },
+  "load_overlay": {
+    "shape": {
+      "x": 1280,
+      "y": 720
     },
-    "white": {
-        "sheetName": "ships",
-        "shape": {
-            "x": 16,
-            "y": 16
-        },
-        "pos": {
-            "x": 0,
-            "y": 0
-        }
+    "color": "ff000000"
+  },
+  "white": {
+    "sheetName": "ships",
+    "shape": {
+      "x": 16,
+      "y": 16
+    },
+    "pos": {
+      "x": 0,
+      "y": 0
     }
+  }
 }

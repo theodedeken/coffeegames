@@ -39,5 +39,4 @@ public class RepresentationBuilder {
     public String build() {
         return repr + "}";
     }
-
 }

@@ -4,6 +4,7 @@ package voide.math;
  * Represents an axis through the origin with a direction vector
  */
 public class Axis {
+
     private static final int AXIS_DIM = 2;
 
     private VectorD dirVec;
@@ -18,7 +19,7 @@ public class Axis {
     /**
      * Initialize the direction vector of this axis as the difference of the two
      * given vectors
-     * 
+     *
      * @param vec1 the first vector of the axis
      * @param vec2 the second vector of the axis
      */
@@ -29,7 +30,7 @@ public class Axis {
     /**
      * Initialize the direction vector of this axis as the normal of the difference
      * of the two given vectors
-     * 
+     *
      * @param vec1 the first vector of the axis
      * @param vec2 the second vector of the axis
      */
@@ -39,9 +40,9 @@ public class Axis {
 
     /**
      * Project the given vector onto this axis
-     * 
+     *
      * @param vec the vector to project
-     * 
+     *
      * @return the projected vector
      */
     public VectorD project(VectorD vec) {
@@ -52,5 +53,4 @@ public class Axis {
     public String toString() {
         return dirVec.toString();
     }
-
 }

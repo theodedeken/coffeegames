@@ -8,6 +8,7 @@ import voide.math.VectorD;
  * Created by theo on 3/06/17.
  */
 public class ChangeStorage extends Storage {
+
     private VectorD positionChange;
     private double rotationChange;
     private double scaleChange;
@@ -16,7 +17,11 @@ public class ChangeStorage extends Storage {
         super(SpaxelComponent.CHANGE);
     }
 
-    public ChangeStorage(VectorD positionChange, double rotationChange, double scaleChange) {
+    public ChangeStorage(
+        VectorD positionChange,
+        double rotationChange,
+        double scaleChange
+    ) {
         super(SpaxelComponent.CHANGE);
         this.positionChange = positionChange;
         this.rotationChange = rotationChange;
@@ -66,6 +71,10 @@ public class ChangeStorage extends Storage {
     }
 
     public ChangeStorage copy() {
-        return new ChangeStorage(positionChange.copy(), rotationChange, scaleChange);
+        return new ChangeStorage(
+            positionChange.copy(),
+            rotationChange,
+            scaleChange
+        );
     }
 }

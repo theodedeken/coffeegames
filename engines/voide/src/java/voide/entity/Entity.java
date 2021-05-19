@@ -7,10 +7,11 @@ import java.util.Set;
 
 /**
  * Represent an entity in the game
- * 
+ *
  * Created by theo on 31/05/17.
  */
 public class Entity {
+
     private EntityType type;
     private Map<String, Component> components;
     private Entity parent;
@@ -19,7 +20,7 @@ public class Entity {
 
     /**
      * Create a new entity of the given type
-     * 
+     *
      * @param type the type of the entity
      */
     public Entity(EntityType type) {
@@ -46,9 +47,9 @@ public class Entity {
 
     /**
      * Get the component of the given type from this entity
-     * 
+     *
      * @param type the type of the component to get
-     * 
+     *
      * @return the component
      */
     public Component getComponent(ComponentType type) {
@@ -64,7 +65,7 @@ public class Entity {
 
     /**
      * Add a component to this entity
-     * 
+     *
      * @param component the component to add
      */
     public void addComponent(Component component) {
@@ -74,7 +75,7 @@ public class Entity {
 
     /**
      * Remove a component of the given type from this entity
-     * 
+     *
      * @param type the type of component to remove
      */
     public void removeComponent(ComponentType type) {

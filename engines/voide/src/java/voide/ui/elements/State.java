@@ -1,12 +1,13 @@
 package voide.ui.elements;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents the internal state of an ui Element.
  */
 public class State {
+
     private boolean hover;
     private boolean click;
     private boolean release;
@@ -96,5 +97,4 @@ public class State {
 
         return modifiers;
     }
-
 }

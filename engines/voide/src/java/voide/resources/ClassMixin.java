@@ -4,12 +4,11 @@
 package voide.resources;
 
 public class ClassMixin {
+
     private String parent;
     private String mixin;
 
-    public ClassMixin() {
-
-    }
+    public ClassMixin() {}
 
     /**
      * @return the parent
@@ -18,7 +17,9 @@ public class ClassMixin {
         try {
             return (Class<Resource>) Class.forName(parent);
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(String.format("Resource class (%s) does not exist!", parent));
+            throw new RuntimeException(
+                String.format("Resource class (%s) does not exist!", parent)
+            );
         }
     }
 
@@ -36,7 +37,9 @@ public class ClassMixin {
         try {
             return (Class<Resource>) Class.forName(mixin);
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(String.format("Resource class (%s) does not exist!", mixin));
+            throw new RuntimeException(
+                String.format("Resource class (%s) does not exist!", mixin)
+            );
         }
     }
 
@@ -46,5 +49,4 @@ public class ClassMixin {
     public void setMixin(String mixin) {
         this.mixin = mixin;
     }
-
 }

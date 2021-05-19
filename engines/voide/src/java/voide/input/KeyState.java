@@ -4,10 +4,11 @@ import static org.lwjgl.glfw.GLFW.*;
 
 /**
  * Represents the state of a single key
- * 
+ *
  * Created by theod on 6-11-2016.
  */
 public class KeyState {
+
     private boolean down;
     private boolean beenDown;
     private int code;
@@ -21,7 +22,7 @@ public class KeyState {
 
     /**
      * Updates the state of the key
-     * 
+     *
      * @param window the window in which the key lives
      */
     public void update(long window) {
@@ -39,7 +40,7 @@ public class KeyState {
 
     /**
      * Get the value of beenDown
-     * 
+     *
      * @return the value of beenDown
      */
     public boolean hasBeenDown() {

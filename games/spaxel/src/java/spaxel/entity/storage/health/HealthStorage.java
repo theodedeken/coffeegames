@@ -7,6 +7,7 @@ import voide.entity.Storage;
  * Created by theo on 3/06/17.
  */
 public class HealthStorage extends Storage {
+
     private int currentHealth;
     private int baseHealth;
     private int maxHealth;

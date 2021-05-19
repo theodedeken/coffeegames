@@ -6,6 +6,7 @@ import voide.entity.Storage;
 import voide.resources.ResourceProxy;
 
 public class ProjectileStorage extends Storage {
+
     private int damage;
     private ResourceProxy<EntityIndustry> onHitSpawner;
     private ResourceProxy<EntityIndustry> onHitEffect;
@@ -15,8 +16,12 @@ public class ProjectileStorage extends Storage {
         super(SpaxelComponent.PROJECTILE);
     }
 
-    public ProjectileStorage(int damage, ResourceProxy<EntityIndustry> onHitSpawner,
-            ResourceProxy<EntityIndustry> onHitEffect, int particleSize) {
+    public ProjectileStorage(
+        int damage,
+        ResourceProxy<EntityIndustry> onHitSpawner,
+        ResourceProxy<EntityIndustry> onHitEffect,
+        int particleSize
+    ) {
         super(SpaxelComponent.PROJECTILE);
         this.damage = damage;
         this.onHitSpawner = onHitSpawner;
@@ -47,7 +52,8 @@ public class ProjectileStorage extends Storage {
      * @param onHitSpawner the onHitSpawner to set
      */
     public void setOnHitSpawner(String onHitSpawner) {
-        this.onHitSpawner = new ResourceProxy<>(onHitSpawner, EntityIndustry.class);
+        this.onHitSpawner =
+            new ResourceProxy<>(onHitSpawner, EntityIndustry.class);
     }
 
     /**
@@ -61,7 +67,8 @@ public class ProjectileStorage extends Storage {
      * @param onHitEffect the onHitEffect to set
      */
     public void setOnHitEffect(String onHitEffect) {
-        this.onHitEffect = new ResourceProxy<>(onHitEffect, EntityIndustry.class);
+        this.onHitEffect =
+            new ResourceProxy<>(onHitEffect, EntityIndustry.class);
     }
 
     /**
@@ -79,6 +86,11 @@ public class ProjectileStorage extends Storage {
     }
 
     public ProjectileStorage copy() {
-        return new ProjectileStorage(damage, onHitSpawner.copy(), onHitEffect.copy(), particleSize);
+        return new ProjectileStorage(
+            damage,
+            onHitSpawner.copy(),
+            onHitEffect.copy(),
+            particleSize
+        );
     }
 }

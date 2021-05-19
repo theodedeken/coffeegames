@@ -1,12 +1,13 @@
 package spaxel;
 
+import static org.lwjgl.glfw.GLFW.glfwWindowShouldClose;
+
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import spaxel.engine.Engine;
 import spaxel.resources.Resources;
-import spaxel.system.SystemType;
 import spaxel.system.AISystem;
 import spaxel.system.AgeSystem;
 import spaxel.system.CooldownSystem;
@@ -16,19 +17,22 @@ import spaxel.system.ExperienceSystem;
 import spaxel.system.GameSystem;
 import spaxel.system.HealthSystem;
 import spaxel.system.HitSystem;
+import spaxel.system.KeyboardSystem;
 import spaxel.system.MouseSystem;
 import spaxel.system.SoundSystem;
 import spaxel.system.SpawnerSystem;
+import spaxel.system.SystemType;
 import spaxel.system.UISystem;
 import spaxel.system.VelocitySystem;
-import spaxel.system.KeyboardSystem;
-import static org.lwjgl.glfw.GLFW.glfwWindowShouldClose;
 
 /**
  * Runnable for the thread that executes all the game updates
  */
 public class UpdateRunner implements Runnable {
-    private static final Logger LOGGER = Logger.getLogger(UpdateRunner.class.getName());
+
+    private static final Logger LOGGER = Logger.getLogger(
+        UpdateRunner.class.getName()
+    );
     private volatile boolean running = true;
     private Map<SystemType, GameSystem> systems;
 
@@ -60,7 +64,10 @@ public class UpdateRunner implements Runnable {
         long lastUpdateEnd;
         long accTime = Constants.NS_PER_TICK;
         while (running) {
-            if (glfwWindowShouldClose(Engine.get().getWindow()) || Engine.get().shouldClose()) {
+            if (
+                glfwWindowShouldClose(Engine.get().getWindow()) ||
+                Engine.get().shouldClose()
+            ) {
                 exit();
             }
             lastUpdateStart = System.nanoTime();
@@ -69,7 +76,8 @@ public class UpdateRunner implements Runnable {
             lastUpdateEnd = System.nanoTime();
             accTime += lastUpdateEnd - lastUpdateStart;
             if (accTime < Constants.NS_PER_TICK) {
-                long sleepTime = (Constants.NS_PER_TICK - accTime) / Constants.NS_PER_MS;
+                long sleepTime =
+                    (Constants.NS_PER_TICK - accTime) / Constants.NS_PER_MS;
                 try {
                     Thread.sleep(sleepTime);
                 } catch (InterruptedException e) {
@@ -131,7 +139,7 @@ public class UpdateRunner implements Runnable {
 
     /**
      * Update a single system and register to the logger if necessary
-     * 
+     *
      * @param type the type of the system to update
      */
     public void update(SystemType type) {

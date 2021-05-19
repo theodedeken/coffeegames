@@ -5,6 +5,7 @@ import voide.entity.Storage;
 import voide.render.buffer.RenderLayer;
 
 public class RenderStorage extends Storage {
+
     private boolean visible;
     private RenderLayer layer;
 

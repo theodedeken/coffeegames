@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import spaxel.state.GameState;
 import voide.random.VoideRandom;
 import voide.sound.Music;
@@ -13,10 +12,24 @@ import voide.sound.Music;
  * Created by theo on 12/01/18.
  */
 public class MusicList {
+
     private List<Music> alreadyPlayed;
     private Map<String, Music> music;
     private VoideRandom random;
-    private static final int[] PROBABILITIES = { 0, 0, 0, 10, 5, 1, 3, 10, 3, 1, 5, 10 };
+    private static final int[] PROBABILITIES = {
+        0,
+        0,
+        0,
+        10,
+        5,
+        1,
+        3,
+        10,
+        3,
+        1,
+        5,
+        10
+    };
     private static final int TIME_THRESHOLD_1 = 600;
     private static final int TIME_THRESHOLD_2 = 1200;
     private static final int OFFSET_1 = 3;
@@ -71,5 +84,4 @@ public class MusicList {
         alreadyPlayed.clear();
         music.clear();
     }
-
 }

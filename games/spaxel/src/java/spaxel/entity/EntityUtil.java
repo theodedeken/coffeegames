@@ -2,7 +2,6 @@ package spaxel.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import spaxel.entity.item.ItemCatalogue;
 import spaxel.entity.storage.item.ItemContainer;
 import spaxel.entity.storage.item.ItemName;
@@ -15,22 +14,24 @@ import voide.entity.EntityStream;
  */
 public final class EntityUtil {
 
-    private EntityUtil() {
-
-    }
+    private EntityUtil() {}
 
     /**
      * Return a list with all the item names an entity has in its inventories
-     * 
+     *
      * @param entity the entity to get the item names from
-     * 
+     *
      * @return a list with item names
      */
     public static List<ItemName> getAllItemNames(Entity entity) {
         List<ItemName> items = new ArrayList<>();
 
-        for (Entity link : entity.getLinks((e) -> e.getType() == SpaxelEntity.ITEM)) {
-            ItemStorage itemStore = (ItemStorage) link.getComponent(SpaxelComponent.ITEM);
+        for (Entity link : entity.getLinks(
+            e -> e.getType() == SpaxelEntity.ITEM
+        )) {
+            ItemStorage itemStore = (ItemStorage) link.getComponent(
+                SpaxelComponent.ITEM
+            );
 
             items.add(itemStore.getName());
         }
@@ -39,16 +40,22 @@ public final class EntityUtil {
 
     /**
      * Add a number of random items to an entity
-     * 
+     *
      * @param entity the entity to add the items to
      * @param number the amount of items to add
      * @param type   the type of items to add
      */
-    public static void addRandomItems(Entity entity, int number, ItemContainer type) {
+    public static void addRandomItems(
+        Entity entity,
+        int number,
+        ItemContainer type
+    ) {
         for (int i = 0; i < number; i++) {
             // produce a random item of the given type
-            Entity item = voide.resources.Resources.get().getResource("spaxel.item_catalogue", ItemCatalogue.class)
-                    .produceRandom(prop -> prop.getType() == type);
+            Entity item = voide.resources.Resources
+                .get()
+                .getResource("spaxel.item_catalogue", ItemCatalogue.class)
+                .produceRandom(prop -> prop.getType() == type);
             entity.addLink(item);
         }
     }
@@ -56,10 +63,10 @@ public final class EntityUtil {
     /**
      * Calculate the rotation for one update step based on the required rotation
      * change and the turnrate
-     * 
+     *
      * @param rotChange the required rotation change
      * @param turnrate  the maximum amount of rotation that can occur
-     * 
+     *
      * @return the rotation for on update step
      */
     public static double calculateDeltaRot(double rotChange, double turnrate) {

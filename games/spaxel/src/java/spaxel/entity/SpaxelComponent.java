@@ -1,10 +1,15 @@
 package spaxel.entity;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import voide.entity.ComponentType;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "root", defaultImpl = SpaxelComponent.class, visible = false)
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.PROPERTY,
+    property = "root",
+    defaultImpl = SpaxelComponent.class,
+    visible = false
+)
 public enum SpaxelComponent implements ComponentType {
     AGE("age"),
 
@@ -78,5 +83,4 @@ public enum SpaxelComponent implements ComponentType {
     public String getName() {
         return name;
     }
-
 }

@@ -6,6 +6,7 @@ import voide.entity.Storage;
 import voide.resources.ResourceProxy;
 
 public class ShootStorage extends Storage {
+
     private ResourceProxy<ProjectileIndustry> projectileFactory;
 
     public ShootStorage() {
@@ -28,7 +29,8 @@ public class ShootStorage extends Storage {
      * @param projectileFactory the projectileFactory to set
      */
     public void setProjectileFactory(String projectileFactory) {
-        this.projectileFactory = new ResourceProxy<>(projectileFactory, ProjectileIndustry.class);
+        this.projectileFactory =
+            new ResourceProxy<>(projectileFactory, ProjectileIndustry.class);
     }
 
     public ShootStorage copy() {

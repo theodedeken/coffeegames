@@ -1,66 +1,54 @@
 {
-    "hit_particle_industry": {
-        "type": "RANDOM_PARTICLE",
-        "blueprints": [
-            {
-                "type": "RENDER_STORE",
-                "visible": true,
-                "layer": "GAME"
-            },
-            {
-                "type": "RENDER",
-                "renderers": [
-                    "TEXTURE_PART",
-                    "VELOCITY"
-                ]
-            }
-        ]
-    },
-    "trail_segment_industry": {
-        "type": "STATIC_PARTICLE",
-        "blueprints": [
-            {
-                "type": "AGE",
-                "life": 50,
-                "maxLife": 100
-            },
-            {
-                "type": "RENDER_STORE",
-                "visible": true,
-                "layer": "GAME"
-            },
-            {
-                "type": "RENDER",
-                "renderers": [
-                    "TEXTURE_PART",
-                    "STATIONARY",
-                    "FADE"
-                ]
-            }
-        ]
-    },
-    "ship_fragment_industry": {
-        "type": "STATIC_PARTICLE",
-        "blueprints": [
-            {
-                "type": "AGE",
-                "life": 20,
-                "maxLife": 40
-            },
-            {
-                "type": "RENDER_STORE",
-                "visible": true,
-                "layer": "GAME"
-            },
-            {
-                "type": "RENDER",
-                "renderers": [
-                    "TEXTURE_PART",
-                    "STATIONARY",
-                    "FADE",
-                    "SHIP_FRAGMENT"
-                ]
-            }
-        ]
-    }
+  "hit_particle_industry": {
+    "type": "RANDOM_PARTICLE",
+    "blueprints": [
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
+      },
+      {
+        "type": "RENDER",
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
+      }
+    ]
+  },
+  "trail_segment_industry": {
+    "type": "STATIC_PARTICLE",
+    "blueprints": [
+      {
+        "type": "AGE",
+        "life": 50,
+        "maxLife": 100
+      },
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
+      },
+      {
+        "type": "RENDER",
+        "renderers": ["TEXTURE_PART", "STATIONARY", "FADE"]
+      }
+    ]
+  },
+  "ship_fragment_industry": {
+    "type": "STATIC_PARTICLE",
+    "blueprints": [
+      {
+        "type": "AGE",
+        "life": 20,
+        "maxLife": 40
+      },
+      {
+        "type": "RENDER_STORE",
+        "visible": true,
+        "layer": "GAME"
+      },
+      {
+        "type": "RENDER",
+        "renderers": ["TEXTURE_PART", "STATIONARY", "FADE", "SHIP_FRAGMENT"]
+      }
+    ]
+  }
 }

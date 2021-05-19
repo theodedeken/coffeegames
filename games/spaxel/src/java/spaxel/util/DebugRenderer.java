@@ -15,18 +15,18 @@ import voide.ui.elements.Element;
 
 /**
  * Provides methods for the creation of debug ui elements
- * 
+ *
  * Created by theo on 26/06/17.
  */
 public final class DebugRenderer {
+
     private static final int DOT_SEPARATION = 64;
 
-    private DebugRenderer() {
-    }
+    private DebugRenderer() {}
 
     /**
      * Creates the debug ui element
-     * 
+     *
      * @return the debug ui element
      */
     public static Element createDebugElement() {
@@ -45,7 +45,7 @@ public final class DebugRenderer {
 
     /**
      * Creates the logging ui element
-     * 
+     *
      * @return the logging ui element
      */
     public static Element createLoggerElement() {
@@ -55,13 +55,24 @@ public final class DebugRenderer {
 
         for (SystemType type : SystemType.values()) {
             if (type != SystemType.RENDER) {
-                long dif = logger.getHistory().get(type.name()).getLast().getDifference() / Constants.NS_PER_US;
+                long dif =
+                    logger
+                        .getHistory()
+                        .get(type.name())
+                        .getLast()
+                        .getDifference() /
+                    Constants.NS_PER_US;
                 long sum = logger.getRollingSum().get(type.name());
                 long avg = (sum / logger.getCurrentAvg()) / Constants.NS_PER_US;
                 Element label = new Element();
                 label.setId(type.getName());
                 label.setClasses("logging_label");
-                label.getStyle().setProperty("text", type.getName() + ": " + avg + "(" + dif + ")");
+                label
+                    .getStyle()
+                    .setProperty(
+                        "text",
+                        type.getName() + ": " + avg + "(" + dif + ")"
+                    );
                 log.addElement(label);
             }
         }
@@ -70,13 +81,19 @@ public final class DebugRenderer {
 
     /**
      * Render dots on the screen
-     * 
+     *
      * @param buffer the master buffer of the game
      */
     public void renderDots(MasterBuffer buffer) {
-        Renderable dot = voide.resources.Resources.get().getResource("dot", Rectangle.class);
-        VectorD origin = new VectorD(Engine.get().getGameState().getScreenOffset().getValue(0) % DOT_SEPARATION,
-                Engine.get().getGameState().getScreenOffset().getValue(1) % DOT_SEPARATION);
+        Renderable dot = voide.resources.Resources
+            .get()
+            .getResource("dot", Rectangle.class);
+        VectorD origin = new VectorD(
+            Engine.get().getGameState().getScreenOffset().getValue(0) %
+            DOT_SEPARATION,
+            Engine.get().getGameState().getScreenOffset().getValue(1) %
+            DOT_SEPARATION
+        );
         for (int i = 0; i < Constants.GAME_WIDTH; i += DOT_SEPARATION) {
             for (int j = 0; j < Constants.GAME_HEIGHT; j += DOT_SEPARATION) {
                 RenderJob data = new RenderJob();

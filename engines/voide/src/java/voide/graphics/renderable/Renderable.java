@@ -2,7 +2,6 @@ package voide.graphics.renderable;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import voide.math.VectorD;
 import voide.render.buffer.RenderJob;
 import voide.resources.Resource;
@@ -11,7 +10,10 @@ import voide.resources.Resource;
  * Represents a Renderable part of the game
  */
 public abstract class Renderable implements Resource {
-    private static final Logger LOGGER = Logger.getLogger(Renderable.class.getName());
+
+    private static final Logger LOGGER = Logger.getLogger(
+        Renderable.class.getName()
+    );
     protected VectorD shape;
     protected String name;
 
@@ -28,7 +30,7 @@ public abstract class Renderable implements Resource {
 
     /**
      * Create new Renderable with the specified dimension
-     * 
+     *
      * @param shape the dimension
      */
     public Renderable(VectorD shape) {
@@ -56,7 +58,7 @@ public abstract class Renderable implements Resource {
 
     /**
      * Apply this renderable's data to the renderjob
-     * 
+     *
      * @param job the renderjob
      */
     public abstract void apply(RenderJob job);

@@ -8,6 +8,7 @@ import voide.entity.Entity;
  * Created by theod on 11-7-2017.
  */
 public class DroppedItemAIHandler extends AIHandler {
+
     private static final double HALF = 0.5D;
 
     public DroppedItemAIHandler() {
@@ -15,7 +16,9 @@ public class DroppedItemAIHandler extends AIHandler {
     }
 
     public void execute(Entity entity) {
-        ChangeStorage vc = (ChangeStorage) entity.getComponent(SpaxelComponent.CHANGE);
+        ChangeStorage vc = (ChangeStorage) entity.getComponent(
+            SpaxelComponent.CHANGE
+        );
         vc.setPositionChange(vc.getPositionChange().multiplicate(HALF));
     }
 }

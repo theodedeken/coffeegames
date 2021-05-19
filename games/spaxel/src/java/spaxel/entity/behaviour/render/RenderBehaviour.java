@@ -1,5 +1,8 @@
 package spaxel.entity.behaviour.render;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
+import java.util.List;
 import spaxel.entity.SpaxelComponent;
 import spaxel.entity.behaviour.render.renderers.Renderer;
 import spaxel.entity.storage.render.RenderStorage;
@@ -8,14 +11,11 @@ import voide.entity.Entity;
 import voide.render.buffer.MasterBuffer;
 import voide.render.buffer.RenderJob;
 
-import java.util.List;
-import java.util.ArrayList;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * Created by theo on 4/06/17.
  */
 public class RenderBehaviour extends Component {
+
     private List<Renderer> renderers;
 
     public RenderBehaviour() {
@@ -28,7 +28,9 @@ public class RenderBehaviour extends Component {
     }
 
     public void render(Entity entity, MasterBuffer buffer) {
-        RenderStorage rndrStore = (RenderStorage) entity.getComponent(SpaxelComponent.RENDER_STORE);
+        RenderStorage rndrStore = (RenderStorage) entity.getComponent(
+            SpaxelComponent.RENDER_STORE
+        );
 
         if (rndrStore.isVisible()) {
             RenderJob renderJob = new RenderJob();

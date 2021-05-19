@@ -8,6 +8,11 @@ import voide.ui.elements.Element;
 public class ClickLogic implements Logic {
 
     public void execute(Element element) {
-        element.getState().setClick(element.getState().isHover() && element.getMouse().getMouse1().isDown());
+        element
+            .getState()
+            .setClick(
+                element.getState().isHover() &&
+                element.getMouse().getMouse1().isDown()
+            );
     }
 }

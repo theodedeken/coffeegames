@@ -11,22 +11,30 @@ import voide.ui.elements.Element;
 
 /**
  * Callbacks for element of the class selection UI
- * 
+ *
  * Created by theo on 21-6-2016.
  */
 public final class ClassSelectionController {
-    private ClassSelectionController() {
-    }
+
+    private ClassSelectionController() {}
 
     /**
      * Select the white ship.
      */
     public static void selectWhite() {
-        Entity player = voide.resources.Resources.get().getResource("player_white_industry", EntityIndustry.class)
-                .produce();
+        Entity player = voide.resources.Resources
+            .get()
+            .getResource("player_white_industry", EntityIndustry.class)
+            .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.PLAY.key(), UI.class)
+            );
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -34,11 +42,19 @@ public final class ClassSelectionController {
      * Select the red ship.
      */
     public static void selectRed() {
-        Entity player = voide.resources.Resources.get().getResource("player_red_industry", EntityIndustry.class)
-                .produce();
+        Entity player = voide.resources.Resources
+            .get()
+            .getResource("player_red_industry", EntityIndustry.class)
+            .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.PLAY.key(), UI.class)
+            );
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -46,11 +62,19 @@ public final class ClassSelectionController {
      * Select the green ship.
      */
     public static void selectGreen() {
-        Entity player = voide.resources.Resources.get().getResource("player_green_industry", EntityIndustry.class)
-                .produce();
+        Entity player = voide.resources.Resources
+            .get()
+            .getResource("player_green_industry", EntityIndustry.class)
+            .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.PLAY.key(), UI.class)
+            );
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -58,11 +82,19 @@ public final class ClassSelectionController {
      * Select the blue ship.
      */
     public static void selectBlue() {
-        Entity player = voide.resources.Resources.get().getResource("player_blue_industry", EntityIndustry.class)
-                .produce();
+        Entity player = voide.resources.Resources
+            .get()
+            .getResource("player_blue_industry", EntityIndustry.class)
+            .produce();
         Engine.get().getNEntityStream().addEntity(player);
         Engine.get().getNEntityStream().cleanup();
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.PLAY.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.PLAY.key(), UI.class)
+            );
         Engine.get().setEngineState(Engine.EngineState.PLAY);
     }
 
@@ -70,13 +102,19 @@ public final class ClassSelectionController {
      * Go to the previous screen
      */
     public static void back() {
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.MAIN.key(), UI.class)
+            );
     }
 
     /**
      * Checks whether the esc key is pressed and goes to the previous screen if that
      * is the case.
-     * 
+     *
      * @param element the calling element
      */
     public static void escCheck(Element element) {
@@ -86,5 +124,4 @@ public final class ClassSelectionController {
             back();
         }
     }
-
 }

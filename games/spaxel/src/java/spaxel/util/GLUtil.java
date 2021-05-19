@@ -4,6 +4,7 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL13.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
+
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import spaxel.Constants;
@@ -12,33 +13,32 @@ import spaxel.Constants;
  * Provides utility methods for GL operations
  */
 public final class GLUtil {
+
     // to divide by two
     private static final int TWO = 2;
 
-    private GLUtil() {
-
-    }
+    private GLUtil() {}
 
     /**
      * Exception when creating a GL window
      */
     public static class WindowCreateException extends Exception {
+
         private static final long serialVersionUID = 1;
 
         /**
          * Create a new WindowCreateException with the specified message
-         * 
+         *
          * @param message The exception message
          */
         public WindowCreateException(String message) {
             super(message);
         }
-
     }
 
     /**
      * Initialize a new OpenGL window
-     * 
+     *
      * @return the identifier for the created window
      * @throws WindowCreateException when the window cannot be created
      */
@@ -50,8 +50,13 @@ public final class GLUtil {
         // restrict the user from resizing the window
         glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-        long window = glfwCreateWindow(Constants.GAME_WIDTH, Constants.GAME_HEIGHT,
-                Constants.DISPLAY_NAME, NULL, NULL);
+        long window = glfwCreateWindow(
+            Constants.GAME_WIDTH,
+            Constants.GAME_HEIGHT,
+            Constants.DISPLAY_NAME,
+            NULL,
+            NULL
+        );
         if (window == NULL) {
             // throw an exception if the creation of the window fails
             throw new WindowCreateException("Could not create window");
@@ -60,8 +65,11 @@ public final class GLUtil {
         GLFWVidMode vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
         // position the window in the middle of the desktop
-        glfwSetWindowPos(window, (vidmode.width() - Constants.GAME_WIDTH) / TWO,
-                (vidmode.height() - Constants.GAME_HEIGHT) / TWO);
+        glfwSetWindowPos(
+            window,
+            (vidmode.width() - Constants.GAME_WIDTH) / TWO,
+            (vidmode.height() - Constants.GAME_HEIGHT) / TWO
+        );
 
         // initialize the gl context for this window
         glfwMakeContextCurrent(window);

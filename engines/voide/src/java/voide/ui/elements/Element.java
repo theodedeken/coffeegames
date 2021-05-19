@@ -1,12 +1,10 @@
 package voide.ui.elements;
 
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-
 import voide.input.MouseWrapper;
 import voide.render.buffer.MasterBuffer;
 import voide.resources.ResourceProxy;
@@ -22,6 +20,7 @@ import voide.ui.elements.logic.ReleaseLogic;
  * Represent an element of a UI
  */
 public class Element {
+
     private int index;
     private String id;
     private List<String> classes;
@@ -58,7 +57,7 @@ public class Element {
 
     /**
      * Render this element with the given buffer
-     * 
+     *
      * @param buffer the master buffer of the game
      */
     public void render(MasterBuffer buffer) {
@@ -108,12 +107,15 @@ public class Element {
 
     /**
      * Get the style configuration corresponding to the given name
-     * 
+     *
      * @param name the name of the style
-     * 
+     *
      * @return the style configuration
      */
-    private Map<String, String> getStyle(String name, List<ResourceProxy<StyleSheet>> stylesheets) {
+    private Map<String, String> getStyle(
+        String name,
+        List<ResourceProxy<StyleSheet>> stylesheets
+    ) {
         for (ResourceProxy<StyleSheet> stylesheet : stylesheets) {
             if (stylesheet.get().containsKey(name)) {
                 return stylesheet.get().get(name);
@@ -134,9 +136,9 @@ public class Element {
 
     /**
      * Find an element by id in the subtree where this element is the root
-     * 
+     *
      * @param id the id to find
-     * 
+     *
      * @return the found Element
      */
     public Element findById(String id) {
@@ -182,7 +184,7 @@ public class Element {
 
     /**
      * Add a new element to the children of this element
-     * 
+     *
      * @param element the element to add
      */
     @JsonSetter("element")
@@ -204,11 +206,11 @@ public class Element {
 
     /**
      * Dump all unknown properties in here when this Element gets deserialized
-     * 
+     *
      * @param key   the key
      * @param value the value
      */
-    @JsonAnySetter()
+    @JsonAnySetter
     public void dump(String key, String value) {
         // NOTE dump all unknown xml properties in this hole
     }

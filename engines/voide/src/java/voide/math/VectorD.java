@@ -1,18 +1,17 @@
 package voide.math;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import voide.debug.Representable;
-import voide.debug.RepresentationBuilder;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import voide.debug.Representable;
+import voide.debug.RepresentationBuilder;
 
 /**
  * Represents a vector of arbitrary size of type double.
  */
 public class VectorD implements Representable {
+
     private static final int DEFAULT_DIM = 3;
     private int m = DEFAULT_DIM;
     private double[] vector;
@@ -53,14 +52,17 @@ public class VectorD implements Representable {
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("m", m).field("vector", vector).build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("m", m)
+            .field("vector", vector)
+            .build();
     }
 
     /**
      * Get a value of the vector.
      *
      * @param i the index of the value to get
-     * 
+     *
      * @return the value at that index
      */
     public double getValue(int i) {
@@ -85,7 +87,7 @@ public class VectorD implements Representable {
      * Calculate the dot product of this vector and the given vector.
      *
      * @param vec the other vector
-     * 
+     *
      * @return the dot product
      */
     public double dotProduct(VectorD vec) {
@@ -101,7 +103,7 @@ public class VectorD implements Representable {
      * only uses the first two values of each vector.
      *
      * @param vec the other vector
-     * 
+     *
      * @return the cross product
      */
     public double crossProduct(VectorD vec) {
@@ -112,7 +114,7 @@ public class VectorD implements Representable {
      * Multiply this vector with a value and return a new vector with the result.
      *
      * @param a the value to multiply with
-     * 
+     *
      * @return the vector with the result
      */
     public VectorD multiplicate(double a) {
@@ -127,7 +129,7 @@ public class VectorD implements Representable {
      * Add this vector to the given vector and return a new vector with the result.
      *
      * @param vec the vector to add to
-     * 
+     *
      * @return the vector with the result
      */
     public VectorD sum(VectorD vec) {
@@ -143,7 +145,7 @@ public class VectorD implements Representable {
      * result.
      *
      * @param vec the vector to subtract
-     * 
+     *
      * @return the vector with the result
      */
     public VectorD diff(VectorD vec) {
@@ -211,7 +213,7 @@ public class VectorD implements Representable {
      * new vector with the result.
      *
      * @param vec the other vector
-     * 
+     *
      * @return the result
      */
     public VectorD elementDiv(VectorD vec) {
@@ -227,7 +229,7 @@ public class VectorD implements Representable {
      * return a new vector with the result.
      *
      * @param vec the other vector
-     * 
+     *
      * @return the result
      */
     public VectorD elementMult(VectorD vec) {
@@ -263,5 +265,4 @@ public class VectorD implements Representable {
         }
         return true;
     }
-
 }

@@ -7,6 +7,7 @@ import spaxel.entity.behaviour.event.Event;
 import voide.entity.Storage;
 
 public class EventStorage extends Storage {
+
     private Set<Event> events;
 
     public EventStorage() {
@@ -36,5 +37,4 @@ public class EventStorage extends Storage {
     public EventStorage copy() {
         return new EventStorage(new HashSet<>(events));
     }
-
 }

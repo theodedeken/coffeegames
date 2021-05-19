@@ -1,15 +1,15 @@
 package voide.graphics.renderable;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
 import voide.debug.RepresentationBuilder;
 import voide.math.VectorD;
 import voide.render.buffer.RenderJob;
-
-import com.fasterxml.jackson.annotation.JsonSetter;
 
 /**
  * Represents a renderable colored box
  */
 public class Rectangle extends Renderable {
+
     private static final int HEX_SIZE = 16;
 
     private int color;
@@ -23,7 +23,7 @@ public class Rectangle extends Renderable {
 
     /**
      * Create a new ColorBox with the specified dimensions and color
-     * 
+     *
      * @param shape the dimensions of the colorbox
      * @param color the color of the colorbox
      */
@@ -51,7 +51,10 @@ public class Rectangle extends Renderable {
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("color", color).field("shape", shape)
-                .field("name", name).build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("color", color)
+            .field("shape", shape)
+            .field("name", name)
+            .build();
     }
 }

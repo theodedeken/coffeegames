@@ -5,6 +5,7 @@ import spaxel.entity.SpaxelComponent;
 import voide.entity.Entity;
 
 public class DeathBehaviour extends Behaviour {
+
     private DeathHandler handler;
 
     public DeathBehaviour() {

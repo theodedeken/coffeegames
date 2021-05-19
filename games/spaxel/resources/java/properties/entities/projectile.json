@@ -38,10 +38,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -93,10 +90,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -126,7 +120,7 @@
       },
       {
         "type": "PROJECTILE",
-        "damage": 5 
+        "damage": 5
       },
       {
         "type": "HITSHAPE",
@@ -148,10 +142,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -203,10 +194,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -258,10 +246,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -313,10 +298,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -372,10 +354,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -427,10 +406,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",
@@ -483,10 +459,7 @@
       },
       {
         "type": "RENDER",
-        "renderers": [
-          "TEXTURE_PART",
-          "VELOCITY"
-        ]
+        "renderers": ["TEXTURE_PART", "VELOCITY"]
       },
       {
         "type": "AGE",

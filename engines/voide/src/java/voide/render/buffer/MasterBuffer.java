@@ -8,10 +8,11 @@ import java.util.Map;
 
 /**
  * Buffers all render jobs
- * 
+ *
  * Created by theod on 15/10/2016.
  */
 public class MasterBuffer {
+
     private EnumMap<RenderLayer, Map<Integer, List<RenderJob>>> layers;
 
     /**
@@ -30,7 +31,7 @@ public class MasterBuffer {
 
     /**
      * Add a new Render job to the MasterBuffer
-     * 
+     *
      * @param layer the layer to render the job on
      * @param job   the renderjob to render
      */
@@ -47,18 +48,16 @@ public class MasterBuffer {
                 datalist.clear();
             }
         }
-
     }
 
     /**
      * Get all jobs for a layer from the masterbuffer
-     * 
+     *
      * @param layer the layer to get
-     * 
+     *
      * @return all jobs
      */
     public Map<Integer, List<RenderJob>> getJobs(RenderLayer layer) {
         return layers.get(layer);
     }
-
 }

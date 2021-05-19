@@ -1,10 +1,10 @@
 package spaxel.entity.behaviour.spawn;
 
 import java.util.List;
-
 import voide.entity.Entity;
 
 public abstract class Spawner {
+
     private SpawnerType type;
 
     public Spawner(SpawnerType type) {
@@ -18,7 +18,9 @@ public abstract class Spawner {
             case RANDOM:
                 return new RandomSpawner();
             default:
-                throw new RuntimeException("No spawner with type " + type + " exists");
+                throw new RuntimeException(
+                    "No spawner with type " + type + " exists"
+                );
         }
     }
 
@@ -37,5 +39,4 @@ public abstract class Spawner {
     public void setType(SpawnerType type) {
         this.type = type;
     }
-
 }

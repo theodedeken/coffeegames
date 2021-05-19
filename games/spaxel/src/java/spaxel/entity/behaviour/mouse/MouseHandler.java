@@ -4,6 +4,7 @@ import voide.entity.Entity;
 import voide.input.MouseWrapper;
 
 public abstract class MouseHandler {
+
     private MouseHandlerType type;
 
     public MouseHandler(MouseHandlerType type) {
@@ -25,5 +26,4 @@ public abstract class MouseHandler {
     public void setType(MouseHandlerType type) {
         this.type = type;
     }
-
 }

@@ -4,6 +4,7 @@ import spaxel.entity.SpaxelComponent;
 import voide.entity.Storage;
 
 public class AffectStorage extends Storage {
+
     private double factor;
 
     public AffectStorage() {

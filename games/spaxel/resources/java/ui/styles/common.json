@@ -1,54 +1,54 @@
 {
-    ".large_button": {
-        "sprite": "texture.large_button_normal",
-        "scale": 4,
-        "text-scale": 2,
-        "hit-shape": "hitshape.hitshape_box",
-        "width": 320,
-        "height": 64,
-        "rot": 0
-    },
-    ".large_button:hover": {
-        "sprite": "texture.large_button_hover"
-    },
-    ".large_button:click": {
-        "sprite": "texture.large_button_click"
-    },
-    ".locked": {
-        "sprite": "texture.large_button_locked"
-    },
-    ".locked:hover": {
-        "sprite": "texture.large_button_locked"
-    },
-    ".locked:click": {
-        "sprite": "texture.large_button_locked"
-    },
-    ".inventory_item": {
-        "scale": 2,
-        "text-scale": 1,
-        "rot": 0,
-        "position": "flow"
-    },
-    ".item_cooldown": {
-        "animation": "animation.cooldown"
-    },
-    ".item_stacks": {
-        "position": "relative",
-        "x": 24,
-        "y": -26
-    },
-    ".debug_label": {
-        "width": 100,
-        "height": 25,
-        "align": "left",
-        "text-scale": 1,
-        "onUpdate": "updateDebugLabel"
-    },
-    ".logging_label": {
-        "width": 100,
-        "height": 25,
-        "align": "left",
-        "text-scale": 1,
-        "onUpdate": "updateLoggingLabel"
-    }
+  ".large_button": {
+    "sprite": "texture.large_button_normal",
+    "scale": 4,
+    "text-scale": 2,
+    "hit-shape": "hitshape.hitshape_box",
+    "width": 320,
+    "height": 64,
+    "rot": 0
+  },
+  ".large_button:hover": {
+    "sprite": "texture.large_button_hover"
+  },
+  ".large_button:click": {
+    "sprite": "texture.large_button_click"
+  },
+  ".locked": {
+    "sprite": "texture.large_button_locked"
+  },
+  ".locked:hover": {
+    "sprite": "texture.large_button_locked"
+  },
+  ".locked:click": {
+    "sprite": "texture.large_button_locked"
+  },
+  ".inventory_item": {
+    "scale": 2,
+    "text-scale": 1,
+    "rot": 0,
+    "position": "flow"
+  },
+  ".item_cooldown": {
+    "animation": "animation.cooldown"
+  },
+  ".item_stacks": {
+    "position": "relative",
+    "x": 24,
+    "y": -26
+  },
+  ".debug_label": {
+    "width": 100,
+    "height": 25,
+    "align": "left",
+    "text-scale": 1,
+    "onUpdate": "updateDebugLabel"
+  },
+  ".logging_label": {
+    "width": 100,
+    "height": 25,
+    "align": "left",
+    "text-scale": 1,
+    "onUpdate": "updateLoggingLabel"
+  }
 }

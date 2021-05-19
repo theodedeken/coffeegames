@@ -1,15 +1,15 @@
 {
-    "progress_bar": {
-        "animators": [
-            {
-                "type": "FRAME",
-                "numFrames": 1,
-                "spriteBase": "rectangle.progress_bar"
-            },
-            {
-                "type": "Y_SCALE",
-                "maxScale": 640
-            }
-        ]
-    }
+  "progress_bar": {
+    "animators": [
+      {
+        "type": "FRAME",
+        "numFrames": 1,
+        "spriteBase": "rectangle.progress_bar"
+      },
+      {
+        "type": "Y_SCALE",
+        "maxScale": 640
+      }
+    ]
+  }
 }

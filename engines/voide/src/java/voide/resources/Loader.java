@@ -1,5 +1,10 @@
 package voide.resources;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -10,51 +15,62 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-
 import voide.io.FileReader;
 
 public final class Loader {
-    private static final Logger LOGGER = Logger.getLogger(Loader.class.getName());
 
-    private Loader() {
-    }
+    private static final Logger LOGGER = Logger.getLogger(
+        Loader.class.getName()
+    );
+
+    private Loader() {}
 
     /**
      * Load the configuration file for all the paths to the resources
-     * 
+     *
      * @param path the path to the file
-     * 
+     *
      * @return a map of resource identifier to path list
      */
     public static Map<String, ResourceNamespace> loadResourceMap(String path) {
         try {
             InputStream file = new FileReader(path).toStream();
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            return mapper.readValue(file, new TypeReference<Map<String, ResourceNamespace>>() {
-            });
+            return mapper.readValue(
+                file,
+                new TypeReference<Map<String, ResourceNamespace>>() {}
+            );
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, e.toString(), e);
         }
         return null;
     }
 
-    public static Map<String, Resource> loadResources(String namespace, ResourceNamespace info) {
+    public static Map<String, Resource> loadResources(
+        String namespace,
+        ResourceNamespace info
+    ) {
         Class<Resource> outputClass = info.getClassType();
         Map<String, Resource> resources = new HashMap<>();
         for (ResourceFile resFile : info.getFiles()) {
             if (resFile.isSingle()) {
-                Resource resource = loadSingleResource(resFile, outputClass, info.getMixins());
+                Resource resource = loadSingleResource(
+                    resFile,
+                    outputClass,
+                    info.getMixins()
+                );
                 resources.put(namespace + "." + resFile.getKey(), resource);
             } else {
-                Map<String, Resource> loaded = loadMultiResource(resFile, outputClass, info.getMixins());
+                Map<String, Resource> loaded = loadMultiResource(
+                    resFile,
+                    outputClass,
+                    info.getMixins()
+                );
                 for (Entry<String, Resource> entry : loaded.entrySet()) {
-                    resources.put(namespace + "." + entry.getKey(), entry.getValue());
+                    resources.put(
+                        namespace + "." + entry.getKey(),
+                        entry.getValue()
+                    );
                 }
             }
         }
@@ -62,8 +78,11 @@ public final class Loader {
         return resources;
     }
 
-    public static Resource loadSingleResource(ResourceFile file, Class<Resource> outputClass,
-            List<ClassMixin> mixinClasses) {
+    public static Resource loadSingleResource(
+        ResourceFile file,
+        Class<Resource> outputClass,
+        List<ClassMixin> mixinClasses
+    ) {
         try {
             ObjectMapper mapper = getMapper(file.getType());
             for (ClassMixin mixinClass : mixinClasses) {
@@ -80,8 +99,11 @@ public final class Loader {
         return null;
     }
 
-    public static Map<String, Resource> loadMultiResource(ResourceFile file, Class<Resource> outputClass,
-            List<ClassMixin> mixinClasses) {
+    public static Map<String, Resource> loadMultiResource(
+        ResourceFile file,
+        Class<Resource> outputClass,
+        List<ClassMixin> mixinClasses
+    ) {
         Map<String, Resource> output = new HashMap<>();
         try {
             ObjectMapper mapper = getMapper(file.getType());
@@ -94,7 +116,10 @@ public final class Loader {
             Iterator<Entry<String, JsonNode>> nodes = tree.fields();
             while (nodes.hasNext()) {
                 Entry<String, JsonNode> node = nodes.next();
-                Resource resource = mapper.readValue(node.getValue().toString(), outputClass);
+                Resource resource = mapper.readValue(
+                    node.getValue().toString(),
+                    outputClass
+                );
                 resource.initialize();
                 output.put(node.getKey(), resource);
             }

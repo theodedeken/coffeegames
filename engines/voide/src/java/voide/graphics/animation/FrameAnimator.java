@@ -1,14 +1,14 @@
 package voide.graphics.animation;
 
+import java.util.Map;
 import voide.graphics.renderable.Renderable;
 import voide.render.buffer.RenderJob;
-
-import java.util.Map;
 
 /**
  * The FrameAnimator animates the current sprite of the animation
  */
 public class FrameAnimator extends Animator {
+
     private String spriteBase;
     private int numFrames;
     // TODO init somehow

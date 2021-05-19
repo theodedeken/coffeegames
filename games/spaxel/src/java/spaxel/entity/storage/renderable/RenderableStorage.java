@@ -5,6 +5,7 @@ import voide.entity.Storage;
 import voide.graphics.renderable.Renderable;
 
 public class RenderableStorage extends Storage {
+
     private Renderable renderable;
 
     public RenderableStorage() {
@@ -31,7 +32,10 @@ public class RenderableStorage extends Storage {
     }
 
     public void setRenderable(String renderable) {
-        this.renderable = voide.resources.Resources.get().getResource(renderable, Renderable.class);
+        this.renderable =
+            voide.resources.Resources
+                .get()
+                .getResource(renderable, Renderable.class);
     }
 
     public RenderableStorage copy() {

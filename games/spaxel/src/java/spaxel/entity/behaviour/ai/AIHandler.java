@@ -3,6 +3,7 @@ package spaxel.entity.behaviour.ai;
 import voide.entity.Entity;
 
 public abstract class AIHandler {
+
     private AIType type;
 
     public AIHandler(AIType type) {
@@ -28,7 +29,9 @@ public abstract class AIHandler {
             case MARKER:
                 return new MarkerHandler();
             default:
-                throw new RuntimeException("AI Handler with type " + type + " does not exist");
+                throw new RuntimeException(
+                    "AI Handler with type " + type + " does not exist"
+                );
         }
     }
 
@@ -47,5 +50,4 @@ public abstract class AIHandler {
     public void setType(AIType type) {
         this.type = type;
     }
-
 }

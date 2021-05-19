@@ -5,6 +5,7 @@ import voide.entity.Storage;
 import voide.math.VectorD;
 
 public class TransformationStorage extends Storage {
+
     private VectorD position;
     private double rotation;
     private double scale;
@@ -13,7 +14,11 @@ public class TransformationStorage extends Storage {
         super(SpaxelComponent.TRANSFORMATION);
     }
 
-    public TransformationStorage(VectorD position, double rotation, double scale) {
+    public TransformationStorage(
+        VectorD position,
+        double rotation,
+        double scale
+    ) {
         super(SpaxelComponent.TRANSFORMATION);
         this.position = position;
         this.rotation = rotation;

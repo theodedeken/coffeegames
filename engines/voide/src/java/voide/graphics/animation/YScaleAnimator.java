@@ -6,6 +6,7 @@ import voide.render.buffer.RenderJob;
  * The YScaleAnimator animates the y scale of the animation
  */
 public class YScaleAnimator extends Animator {
+
     private double maxScale;
     private double minScale;
 
@@ -49,5 +50,4 @@ public class YScaleAnimator extends Animator {
     public void setMinScale(double minScale) {
         this.minScale = minScale;
     }
-
 }

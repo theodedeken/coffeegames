@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import voide.debug.RepresentationBuilder;
 import voide.math.Axis;
 import voide.math.MatrixD;
@@ -16,7 +15,10 @@ import voide.resources.Resource;
  * Represents a collection of hitpoints forming a hitshape
  */
 public class HitShape implements Resource {
-    private static final Logger LOGGER = Logger.getLogger(HitShape.class.getName());
+
+    private static final Logger LOGGER = Logger.getLogger(
+        HitShape.class.getName()
+    );
     private List<HitPoint> hitPoints;
 
     /**
@@ -35,12 +37,14 @@ public class HitShape implements Resource {
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("hitPoints", hitPoints).build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("hitPoints", hitPoints)
+            .build();
     }
 
     /**
      * Create a new hitshape with one hitpoint
-     * 
+     *
      * @param hitPoint the hitpoint of the hitshape
      */
     public HitShape(HitPoint hitPoint) {
@@ -50,7 +54,7 @@ public class HitShape implements Resource {
 
     /**
      * Add a hitpoint to this hitshape
-     * 
+     *
      * @param hitPoint the hitpoint to add
      */
     public void addHitPoint(HitPoint hitPoint) {
@@ -68,9 +72,9 @@ public class HitShape implements Resource {
     /**
      * Transform the hitshape with the given matrix and return a new hitshape with
      * the result
-     * 
+     *
      * @param updateMatrix the transformation matrix
-     * 
+     *
      * @return the transformed hitshape
      */
     public HitShape update(MatrixD updateMatrix) {
@@ -83,9 +87,9 @@ public class HitShape implements Resource {
 
     /**
      * Project this hitshape onto an axis.
-     * 
+     *
      * @param ax the axis to project onto
-     * 
+     *
      * @return the resulting projection
      */
     public Projection project(Axis ax) {
@@ -107,9 +111,9 @@ public class HitShape implements Resource {
     /**
      * Checks whether this hitshape collides with the given hitshape. This uses the
      * SAT algorithm.
-     * 
+     *
      * @param hitshape the hitshape to check collision
-     * 
+     *
      * @return true if the hitshapes collide
      */
     public boolean collision(HitShape hitshape) {
@@ -156,5 +160,4 @@ public class HitShape implements Resource {
         }
         return true;
     }
-
 }

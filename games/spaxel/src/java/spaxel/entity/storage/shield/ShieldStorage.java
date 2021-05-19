@@ -4,6 +4,7 @@ import spaxel.entity.SpaxelComponent;
 import voide.entity.Storage;
 
 public class ShieldStorage extends Storage {
+
     private int currentCapacity;
     private int maxCapacity;
 

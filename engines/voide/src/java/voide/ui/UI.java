@@ -1,12 +1,10 @@
 package voide.ui;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import com.fasterxml.jackson.annotation.JsonSetter;
-
 import voide.debug.RepresentationBuilder;
 import voide.input.MouseWrapper;
 import voide.render.buffer.MasterBuffer;
@@ -19,6 +17,7 @@ import voide.ui.elements.StyleSheet;
  * Root class of an ui structure
  */
 public class UI implements Resource {
+
     private static final Logger LOGGER = Logger.getLogger(UI.class.getName());
     private String controller;
     private List<ResourceProxy<StyleSheet>> styles;
@@ -44,8 +43,10 @@ public class UI implements Resource {
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("controller", controller).field("styles", styles)
-                .build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("controller", controller)
+            .field("styles", styles)
+            .build();
     }
 
     /**
@@ -57,7 +58,7 @@ public class UI implements Resource {
 
     /**
      * Render this UI.
-     * 
+     *
      * @param buffer the masterbuffer of the rendersystem
      */
     public void render(MasterBuffer buffer) {
@@ -73,9 +74,9 @@ public class UI implements Resource {
 
     /**
      * Find an element in this UI by its id
-     * 
+     *
      * @param id the id of the element
-     * 
+     *
      * @return the element if found
      */
     public Element findById(String id) {
@@ -112,12 +113,11 @@ public class UI implements Resource {
 
     /**
      * Add a new stylesheet path to this UI
-     * 
+     *
      * @param style the path of the stylesheet
      */
     @JsonSetter("style")
     public void addStylesheetPath(String style) {
         this.styles.add(new ResourceProxy<>(style, StyleSheet.class));
     }
-
 }

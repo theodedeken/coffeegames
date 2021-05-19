@@ -6,10 +6,11 @@ import java.util.Map;
 
 /**
  * Logger for the time measurements
- * 
+ *
  * Created by theo on 24/06/17.
  */
 public class Logger {
+
     private Map<String, LinkedList<LogResult>> history;
     private Map<String, Long> rollingSum;
     private int cutoff;
@@ -19,7 +20,7 @@ public class Logger {
     /**
      * Create a new Logger that keeps a certain amount of measurements and
      * calculates rolling averages.
-     * 
+     *
      * @param cutoff    the amount of measurements to keep
      * @param avgAmount the amount of measurements to calculate the rolling average
      *                  with
@@ -42,7 +43,7 @@ public class Logger {
 
     /**
      * Register a start of a measurement
-     * 
+     *
      * @param type the type of system the measurement is from
      */
     public void registerStart(String key) {
@@ -55,18 +56,29 @@ public class Logger {
 
     /**
      * Register an end of a measurement
-     * 
+     *
      * @param type the type of system the measurement is from
      */
     public void registerEnd(String key) {
         if (!history.containsKey(key)) {
-            throw new RuntimeException(String.format("Measurement of %s did not have a start", key));
+            throw new RuntimeException(
+                String.format("Measurement of %s did not have a start", key)
+            );
         }
         history.get(key).getLast().setEnd(System.nanoTime());
-        rollingSum.put(key, rollingSum.get(key) + history.get(key).getLast().getDifference());
+        rollingSum.put(
+            key,
+            rollingSum.get(key) + history.get(key).getLast().getDifference()
+        );
         if (currentAvg == avgAmount) {
-            rollingSum.put(key, rollingSum.get(key)
-                    - history.get(key).get(history.get(key).size() - avgAmount - 1).getDifference());
+            rollingSum.put(
+                key,
+                rollingSum.get(key) -
+                history
+                    .get(key)
+                    .get(history.get(key).size() - avgAmount - 1)
+                    .getDifference()
+            );
         }
     }
 

@@ -15,39 +15,42 @@ import static org.lwjgl.opengl.GL20.glLinkProgram;
 import static org.lwjgl.opengl.GL20.glShaderSource;
 import static org.lwjgl.opengl.GL20.glUseProgram;
 import static org.lwjgl.opengl.GL20.glValidateProgram;
-import java.util.logging.Logger;
-
-import voide.io.FileReader;
 
 import java.util.logging.Level;
+import java.util.logging.Logger;
+import voide.io.FileReader;
 
 /**
  * Represents a shader program on the GPU
- * 
+ *
  * Created by theod on 16-7-2017.
  */
 public class ShaderProgram {
+
     protected int program;
-    private final Logger LOGGER = Logger.getLogger(ShaderProgram.class.getName());
+    private final Logger LOGGER = Logger.getLogger(
+        ShaderProgram.class.getName()
+    );
 
     /**
      * Create a new Shaderprogram using the code of the given shaders
-     * 
+     *
      * @param vertexShader   the path to the vertexShader
      * @param fragmentShader the path to the fragmentShader
      */
     public ShaderProgram(String vertexShader, String fragmentShader) {
         String vertexShaderContents = new FileReader(vertexShader).toString();
-        String fragmentShaderContents = new FileReader(fragmentShader).toString();
+        String fragmentShaderContents = new FileReader(fragmentShader)
+            .toString();
         program = createProgram(vertexShaderContents, fragmentShaderContents);
     }
 
     /**
      * Create a new Shader program
-     * 
+     *
      * @param vert The vertex shader as string
      * @param frag The fragment shader as string
-     * 
+     *
      * @return the identifier of the new shader program
      */
     private int createProgram(String vert, String frag) {

@@ -1,625 +1,625 @@
 {
-    "cd_anim_20": {
-        "path": "/textures/animations/cooldown/cd_anim_20.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_64": {
-        "path": "/textures/animations/cooldown/cd_anim_64.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_84": {
-        "path": "/textures/animations/cooldown/cd_anim_84.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_44": {
-        "path": "/textures/animations/cooldown/cd_anim_44.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_17": {
-        "path": "/textures/animations/cooldown/cd_anim_17.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_46": {
-        "path": "/textures/animations/cooldown/cd_anim_46.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_85": {
-        "path": "/textures/animations/cooldown/cd_anim_85.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_5": {
-        "path": "/textures/animations/cooldown/cd_anim_5.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_7": {
-        "path": "/textures/animations/cooldown/cd_anim_7.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_87": {
-        "path": "/textures/animations/cooldown/cd_anim_87.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_18": {
-        "path": "/textures/animations/cooldown/cd_anim_18.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_2": {
-        "path": "/textures/animations/cooldown/cd_anim_2.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_76": {
-        "path": "/textures/animations/cooldown/cd_anim_76.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_50": {
-        "path": "/textures/animations/cooldown/cd_anim_50.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_74": {
-        "path": "/textures/animations/cooldown/cd_anim_74.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_37": {
-        "path": "/textures/animations/cooldown/cd_anim_37.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_45": {
-        "path": "/textures/animations/cooldown/cd_anim_45.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_43": {
-        "path": "/textures/animations/cooldown/cd_anim_43.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_30": {
-        "path": "/textures/animations/cooldown/cd_anim_30.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_81": {
-        "path": "/textures/animations/cooldown/cd_anim_81.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_56": {
-        "path": "/textures/animations/cooldown/cd_anim_56.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_29": {
-        "path": "/textures/animations/cooldown/cd_anim_29.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_15": {
-        "path": "/textures/animations/cooldown/cd_anim_15.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_68": {
-        "path": "/textures/animations/cooldown/cd_anim_68.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_49": {
-        "path": "/textures/animations/cooldown/cd_anim_49.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_40": {
-        "path": "/textures/animations/cooldown/cd_anim_40.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_54": {
-        "path": "/textures/animations/cooldown/cd_anim_54.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_4": {
-        "path": "/textures/animations/cooldown/cd_anim_4.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_22": {
-        "path": "/textures/animations/cooldown/cd_anim_22.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_65": {
-        "path": "/textures/animations/cooldown/cd_anim_65.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_13": {
-        "path": "/textures/animations/cooldown/cd_anim_13.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_86": {
-        "path": "/textures/animations/cooldown/cd_anim_86.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_32": {
-        "path": "/textures/animations/cooldown/cd_anim_32.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_59": {
-        "path": "/textures/animations/cooldown/cd_anim_59.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_51": {
-        "path": "/textures/animations/cooldown/cd_anim_51.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_78": {
-        "path": "/textures/animations/cooldown/cd_anim_78.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_71": {
-        "path": "/textures/animations/cooldown/cd_anim_71.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_77": {
-        "path": "/textures/animations/cooldown/cd_anim_77.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_88": {
-        "path": "/textures/animations/cooldown/cd_anim_88.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_82": {
-        "path": "/textures/animations/cooldown/cd_anim_82.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_28": {
-        "path": "/textures/animations/cooldown/cd_anim_28.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_73": {
-        "path": "/textures/animations/cooldown/cd_anim_73.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_3": {
-        "path": "/textures/animations/cooldown/cd_anim_3.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_38": {
-        "path": "/textures/animations/cooldown/cd_anim_38.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_57": {
-        "path": "/textures/animations/cooldown/cd_anim_57.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_25": {
-        "path": "/textures/animations/cooldown/cd_anim_25.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_6": {
-        "path": "/textures/animations/cooldown/cd_anim_6.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_66": {
-        "path": "/textures/animations/cooldown/cd_anim_66.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_36": {
-        "path": "/textures/animations/cooldown/cd_anim_36.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_70": {
-        "path": "/textures/animations/cooldown/cd_anim_70.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_48": {
-        "path": "/textures/animations/cooldown/cd_anim_48.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_34": {
-        "path": "/textures/animations/cooldown/cd_anim_34.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_26": {
-        "path": "/textures/animations/cooldown/cd_anim_26.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_33": {
-        "path": "/textures/animations/cooldown/cd_anim_33.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_0": {
-        "path": "/textures/animations/cooldown/cd_anim_0.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_27": {
-        "path": "/textures/animations/cooldown/cd_anim_27.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_42": {
-        "path": "/textures/animations/cooldown/cd_anim_42.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_62": {
-        "path": "/textures/animations/cooldown/cd_anim_62.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_69": {
-        "path": "/textures/animations/cooldown/cd_anim_69.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_58": {
-        "path": "/textures/animations/cooldown/cd_anim_58.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_8": {
-        "path": "/textures/animations/cooldown/cd_anim_8.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_12": {
-        "path": "/textures/animations/cooldown/cd_anim_12.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_47": {
-        "path": "/textures/animations/cooldown/cd_anim_47.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_21": {
-        "path": "/textures/animations/cooldown/cd_anim_21.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_10": {
-        "path": "/textures/animations/cooldown/cd_anim_10.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_55": {
-        "path": "/textures/animations/cooldown/cd_anim_55.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_19": {
-        "path": "/textures/animations/cooldown/cd_anim_19.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_1": {
-        "path": "/textures/animations/cooldown/cd_anim_1.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_63": {
-        "path": "/textures/animations/cooldown/cd_anim_63.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_11": {
-        "path": "/textures/animations/cooldown/cd_anim_11.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_9": {
-        "path": "/textures/animations/cooldown/cd_anim_9.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_24": {
-        "path": "/textures/animations/cooldown/cd_anim_24.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_61": {
-        "path": "/textures/animations/cooldown/cd_anim_61.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_80": {
-        "path": "/textures/animations/cooldown/cd_anim_80.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_53": {
-        "path": "/textures/animations/cooldown/cd_anim_53.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_83": {
-        "path": "/textures/animations/cooldown/cd_anim_83.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_67": {
-        "path": "/textures/animations/cooldown/cd_anim_67.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_41": {
-        "path": "/textures/animations/cooldown/cd_anim_41.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_35": {
-        "path": "/textures/animations/cooldown/cd_anim_35.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_79": {
-        "path": "/textures/animations/cooldown/cd_anim_79.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_52": {
-        "path": "/textures/animations/cooldown/cd_anim_52.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_75": {
-        "path": "/textures/animations/cooldown/cd_anim_75.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_39": {
-        "path": "/textures/animations/cooldown/cd_anim_39.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_23": {
-        "path": "/textures/animations/cooldown/cd_anim_23.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_72": {
-        "path": "/textures/animations/cooldown/cd_anim_72.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_14": {
-        "path": "/textures/animations/cooldown/cd_anim_14.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_60": {
-        "path": "/textures/animations/cooldown/cd_anim_60.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_16": {
-        "path": "/textures/animations/cooldown/cd_anim_16.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
-    },
-    "cd_anim_31": {
-        "path": "/textures/animations/cooldown/cd_anim_31.png",
-        "shape": {
-            "x": 32,
-            "y": 32
-        }
+  "cd_anim_20": {
+    "path": "/textures/animations/cooldown/cd_anim_20.png",
+    "shape": {
+      "x": 32,
+      "y": 32
     }
+  },
+  "cd_anim_64": {
+    "path": "/textures/animations/cooldown/cd_anim_64.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_84": {
+    "path": "/textures/animations/cooldown/cd_anim_84.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_44": {
+    "path": "/textures/animations/cooldown/cd_anim_44.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_17": {
+    "path": "/textures/animations/cooldown/cd_anim_17.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_46": {
+    "path": "/textures/animations/cooldown/cd_anim_46.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_85": {
+    "path": "/textures/animations/cooldown/cd_anim_85.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_5": {
+    "path": "/textures/animations/cooldown/cd_anim_5.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_7": {
+    "path": "/textures/animations/cooldown/cd_anim_7.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_87": {
+    "path": "/textures/animations/cooldown/cd_anim_87.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_18": {
+    "path": "/textures/animations/cooldown/cd_anim_18.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_2": {
+    "path": "/textures/animations/cooldown/cd_anim_2.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_76": {
+    "path": "/textures/animations/cooldown/cd_anim_76.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_50": {
+    "path": "/textures/animations/cooldown/cd_anim_50.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_74": {
+    "path": "/textures/animations/cooldown/cd_anim_74.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_37": {
+    "path": "/textures/animations/cooldown/cd_anim_37.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_45": {
+    "path": "/textures/animations/cooldown/cd_anim_45.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_43": {
+    "path": "/textures/animations/cooldown/cd_anim_43.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_30": {
+    "path": "/textures/animations/cooldown/cd_anim_30.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_81": {
+    "path": "/textures/animations/cooldown/cd_anim_81.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_56": {
+    "path": "/textures/animations/cooldown/cd_anim_56.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_29": {
+    "path": "/textures/animations/cooldown/cd_anim_29.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_15": {
+    "path": "/textures/animations/cooldown/cd_anim_15.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_68": {
+    "path": "/textures/animations/cooldown/cd_anim_68.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_49": {
+    "path": "/textures/animations/cooldown/cd_anim_49.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_40": {
+    "path": "/textures/animations/cooldown/cd_anim_40.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_54": {
+    "path": "/textures/animations/cooldown/cd_anim_54.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_4": {
+    "path": "/textures/animations/cooldown/cd_anim_4.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_22": {
+    "path": "/textures/animations/cooldown/cd_anim_22.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_65": {
+    "path": "/textures/animations/cooldown/cd_anim_65.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_13": {
+    "path": "/textures/animations/cooldown/cd_anim_13.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_86": {
+    "path": "/textures/animations/cooldown/cd_anim_86.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_32": {
+    "path": "/textures/animations/cooldown/cd_anim_32.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_59": {
+    "path": "/textures/animations/cooldown/cd_anim_59.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_51": {
+    "path": "/textures/animations/cooldown/cd_anim_51.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_78": {
+    "path": "/textures/animations/cooldown/cd_anim_78.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_71": {
+    "path": "/textures/animations/cooldown/cd_anim_71.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_77": {
+    "path": "/textures/animations/cooldown/cd_anim_77.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_88": {
+    "path": "/textures/animations/cooldown/cd_anim_88.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_82": {
+    "path": "/textures/animations/cooldown/cd_anim_82.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_28": {
+    "path": "/textures/animations/cooldown/cd_anim_28.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_73": {
+    "path": "/textures/animations/cooldown/cd_anim_73.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_3": {
+    "path": "/textures/animations/cooldown/cd_anim_3.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_38": {
+    "path": "/textures/animations/cooldown/cd_anim_38.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_57": {
+    "path": "/textures/animations/cooldown/cd_anim_57.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_25": {
+    "path": "/textures/animations/cooldown/cd_anim_25.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_6": {
+    "path": "/textures/animations/cooldown/cd_anim_6.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_66": {
+    "path": "/textures/animations/cooldown/cd_anim_66.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_36": {
+    "path": "/textures/animations/cooldown/cd_anim_36.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_70": {
+    "path": "/textures/animations/cooldown/cd_anim_70.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_48": {
+    "path": "/textures/animations/cooldown/cd_anim_48.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_34": {
+    "path": "/textures/animations/cooldown/cd_anim_34.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_26": {
+    "path": "/textures/animations/cooldown/cd_anim_26.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_33": {
+    "path": "/textures/animations/cooldown/cd_anim_33.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_0": {
+    "path": "/textures/animations/cooldown/cd_anim_0.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_27": {
+    "path": "/textures/animations/cooldown/cd_anim_27.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_42": {
+    "path": "/textures/animations/cooldown/cd_anim_42.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_62": {
+    "path": "/textures/animations/cooldown/cd_anim_62.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_69": {
+    "path": "/textures/animations/cooldown/cd_anim_69.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_58": {
+    "path": "/textures/animations/cooldown/cd_anim_58.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_8": {
+    "path": "/textures/animations/cooldown/cd_anim_8.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_12": {
+    "path": "/textures/animations/cooldown/cd_anim_12.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_47": {
+    "path": "/textures/animations/cooldown/cd_anim_47.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_21": {
+    "path": "/textures/animations/cooldown/cd_anim_21.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_10": {
+    "path": "/textures/animations/cooldown/cd_anim_10.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_55": {
+    "path": "/textures/animations/cooldown/cd_anim_55.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_19": {
+    "path": "/textures/animations/cooldown/cd_anim_19.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_1": {
+    "path": "/textures/animations/cooldown/cd_anim_1.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_63": {
+    "path": "/textures/animations/cooldown/cd_anim_63.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_11": {
+    "path": "/textures/animations/cooldown/cd_anim_11.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_9": {
+    "path": "/textures/animations/cooldown/cd_anim_9.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_24": {
+    "path": "/textures/animations/cooldown/cd_anim_24.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_61": {
+    "path": "/textures/animations/cooldown/cd_anim_61.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_80": {
+    "path": "/textures/animations/cooldown/cd_anim_80.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_53": {
+    "path": "/textures/animations/cooldown/cd_anim_53.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_83": {
+    "path": "/textures/animations/cooldown/cd_anim_83.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_67": {
+    "path": "/textures/animations/cooldown/cd_anim_67.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_41": {
+    "path": "/textures/animations/cooldown/cd_anim_41.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_35": {
+    "path": "/textures/animations/cooldown/cd_anim_35.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_79": {
+    "path": "/textures/animations/cooldown/cd_anim_79.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_52": {
+    "path": "/textures/animations/cooldown/cd_anim_52.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_75": {
+    "path": "/textures/animations/cooldown/cd_anim_75.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_39": {
+    "path": "/textures/animations/cooldown/cd_anim_39.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_23": {
+    "path": "/textures/animations/cooldown/cd_anim_23.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_72": {
+    "path": "/textures/animations/cooldown/cd_anim_72.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_14": {
+    "path": "/textures/animations/cooldown/cd_anim_14.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_60": {
+    "path": "/textures/animations/cooldown/cd_anim_60.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_16": {
+    "path": "/textures/animations/cooldown/cd_anim_16.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  },
+  "cd_anim_31": {
+    "path": "/textures/animations/cooldown/cd_anim_31.png",
+    "shape": {
+      "x": 32,
+      "y": 32
+    }
+  }
 }

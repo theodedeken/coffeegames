@@ -1,8 +1,7 @@
 package voide.ui.elements;
 
-import java.util.List;
 import java.util.ArrayList;
-
+import java.util.List;
 import voide.graphics.renderable.Renderable;
 import voide.math.VectorD;
 import voide.render.buffer.MasterBuffer;
@@ -13,6 +12,7 @@ import voide.render.buffer.RenderLayer;
  * Provides methods for rendering text
  */
 public class TextRenderer {
+
     private static final String SPACE = " ";
     private static final String NEWLINE = "\\\\";
     private static final String L_BRACKET = "{";
@@ -22,20 +22,27 @@ public class TextRenderer {
     private static final int TWO = 2;
     private static final int NEWLINE_OFFSET = 16;
 
-    public TextRenderer() {
-    }
+    public TextRenderer() {}
 
     /**
      * Render the text according to the given style
-     * 
+     *
      * @param position the position of the text
      * @param style    the style of the text
      * @param buffer   the master buffer of the game
      */
-    public void renderText(VectorD position, Style style, State currentState, MasterBuffer buffer) {
+    public void renderText(
+        VectorD position,
+        Style style,
+        State currentState,
+        MasterBuffer buffer
+    ) {
         String text = style.getProperty("text", currentState);
-        double scale = Double.parseDouble(style.getProperty("text-scale", currentState));
-        boolean alignLeft = "left".equals(style.getProperty("align", currentState));
+        double scale = Double.parseDouble(
+            style.getProperty("text-scale", currentState)
+        );
+        boolean alignLeft =
+            "left".equals(style.getProperty("align", currentState));
 
         String[] lines = text.split(NEWLINE);
         VectorD offset = new VectorD(0, 0);
@@ -46,13 +53,17 @@ public class TextRenderer {
             }
 
             for (Character character : characters) {
-                VectorD charOffset = offset.sum(new VectorD(character.getWidth() * scale / TWO, 0));
+                VectorD charOffset = offset.sum(
+                    new VectorD(character.getWidth() * scale / TWO, 0)
+                );
                 character.render(position.sum(charOffset), scale, buffer);
-                offset.setValue(0, offset.getValue(0) + character.getWidth() * scale);
+                offset.setValue(
+                    0,
+                    offset.getValue(0) + character.getWidth() * scale
+                );
             }
             offset.setValue(1, offset.getValue(1) - NEWLINE_OFFSET * scale);
         }
-
     }
 
     private List<Character> getCharacters(String line) {
@@ -67,16 +78,24 @@ public class TextRenderer {
                     i++;
                     c = line.substring(i, i + 1);
                 }
-                characters.add(new Character(resources.getResource(line.substring(start, i), Renderable.class)));
-
+                characters.add(
+                    new Character(
+                        resources.getResource(
+                            line.substring(start, i),
+                            Renderable.class
+                        )
+                    )
+                );
             } else if (c.equals(SPACE)) {
                 characters.add(new Character(SPACING));
-
             } else {
-                characters.add(new Character(resources.getResource("texture." + c, Renderable.class)));
+                characters.add(
+                    new Character(
+                        resources.getResource("texture." + c, Renderable.class)
+                    )
+                );
             }
             i++;
-
         }
         return characters;
     }
@@ -86,10 +105,14 @@ public class TextRenderer {
     }
 
     private double calculateLineWidth(List<Character> line) {
-        return line.stream().map(Character::getWidth).reduce(0., (Double accWidth, Double width) -> accWidth += width);
+        return line
+            .stream()
+            .map(Character::getWidth)
+            .reduce(0., (Double accWidth, Double width) -> accWidth += width);
     }
 
     private class Character {
+
         private double width;
         private Renderable sprite;
 
@@ -108,12 +131,16 @@ public class TextRenderer {
 
         /**
          * Renders this character at the specified position with the specified scale
-         * 
+         *
          * @param position the position of the character
          * @param scale    the scale of the character
          * @param buffer   the master buffer of the game
          */
-        public void render(VectorD position, double scale, MasterBuffer buffer) {
+        public void render(
+            VectorD position,
+            double scale,
+            MasterBuffer buffer
+        ) {
             if (sprite != null) {
                 RenderJob data = new RenderJob();
                 data.applyTranslation(position);

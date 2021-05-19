@@ -2,7 +2,6 @@ package voide.graphics.util;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import voide.graphics.load.Image;
 import voide.graphics.load.ImagePart;
 import voide.math.VectorD;
@@ -11,6 +10,7 @@ import voide.math.VectorD;
  * Represents a node in the tree representing the sprites in the packed texture
  */
 public class ImageNode {
+
     private static final int DIM_BASE = 2;
     private Image image;
     private String key;
@@ -25,13 +25,16 @@ public class ImageNode {
 
     /**
      * Create a new leaf ImageNode
-     * 
+     *
      * @param texture the leaf content
      */
     public ImageNode(String key, Image image) {
         this.key = key;
         this.image = image;
-        int maxDim = (int) Math.max(image.getShape().getValue(0), image.getShape().getValue(1));
+        int maxDim = (int) Math.max(
+            image.getShape().getValue(0),
+            image.getShape().getValue(1)
+        );
         this.dim = DIM_BASE;
         while (dim < maxDim) {
             dim *= DIM_BASE;
@@ -40,7 +43,7 @@ public class ImageNode {
 
     /**
      * Create a new ImageNode with the specified dimension
-     * 
+     *
      * @param dim the dimension of the ImageNode
      */
     public ImageNode(int dim) {
@@ -74,7 +77,10 @@ public class ImageNode {
     }
 
     private enum NodePlacement {
-        TOP_LEFT, TOP_RIGHT, BOT_LEFT, BOT_RIGHT
+        TOP_LEFT,
+        TOP_RIGHT,
+        BOT_LEFT,
+        BOT_RIGHT
     }
 
     public int getDim() {
@@ -143,13 +149,16 @@ public class ImageNode {
 
     /**
      * Initialize the texture coordinates of all the leaf textures in this tree
-     * 
+     *
      * @param packedTexture the packedTexture of this tree
      */
     public Map<String, ImagePart> toImageParts(String packed) {
         Map<String, ImagePart> output = new HashMap<>();
         if (image != null) {
-            output.put(key, new ImagePart(packed, this.getPos(), image.getShape()));
+            output.put(
+                key,
+                new ImagePart(packed, this.getPos(), image.getShape())
+            );
         } else {
             if (topLeft != null) {
                 output.putAll(topLeft.toImageParts(packed));
@@ -169,43 +178,85 @@ public class ImageNode {
 
     /**
      * Load a texture tree into memory
-     * 
-     * 
+     *
+     *
      * @return the texture data of the tree
      */
     public int[] loadImageTree() {
         int[] dest = new int[this.getDim() * this.getDim()];
         if (image == null) {
             if (this.getTopLeft() != null) {
-                blitData(0, 0, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
-                        this.getTopLeft().loadImageTree(), dest);
+                blitData(
+                    0,
+                    0,
+                    this.getDim(),
+                    this.getDim() / DIM_BASE,
+                    this.getDim() / DIM_BASE,
+                    this.getTopLeft().loadImageTree(),
+                    dest
+                );
             }
             if (this.getTopRight() != null) {
-                blitData(this.getDim() / DIM_BASE, 0, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
-                        this.getTopRight().loadImageTree(), dest);
+                blitData(
+                    this.getDim() / DIM_BASE,
+                    0,
+                    this.getDim(),
+                    this.getDim() / DIM_BASE,
+                    this.getDim() / DIM_BASE,
+                    this.getTopRight().loadImageTree(),
+                    dest
+                );
             }
             if (this.getBotLeft() != null) {
-                blitData(0, this.getDim() / DIM_BASE, this.getDim(), this.getDim() / DIM_BASE, this.getDim() / DIM_BASE,
-                        this.getBotLeft().loadImageTree(), dest);
+                blitData(
+                    0,
+                    this.getDim() / DIM_BASE,
+                    this.getDim(),
+                    this.getDim() / DIM_BASE,
+                    this.getDim() / DIM_BASE,
+                    this.getBotLeft().loadImageTree(),
+                    dest
+                );
             }
             if (this.getBotRight() != null) {
-                blitData(this.getDim() / DIM_BASE, this.getDim() / DIM_BASE, this.getDim(), this.getDim() / DIM_BASE,
-                        this.getDim() / DIM_BASE, this.getBotRight().loadImageTree(), dest);
+                blitData(
+                    this.getDim() / DIM_BASE,
+                    this.getDim() / DIM_BASE,
+                    this.getDim(),
+                    this.getDim() / DIM_BASE,
+                    this.getDim() / DIM_BASE,
+                    this.getBotRight().loadImageTree(),
+                    dest
+                );
             }
             return dest;
         } else {
-            blitData(0, 0, this.getDim(), (int) image.getShape().getValue(0), (int) image.getShape().getValue(1),
-                    image.getData(), dest);
+            blitData(
+                0,
+                0,
+                this.getDim(),
+                (int) image.getShape().getValue(0),
+                (int) image.getShape().getValue(1),
+                image.getData(),
+                dest
+            );
             return dest;
         }
     }
 
-    private void blitData(int x, int y, int width, int sourceWidth, int sourceHeight, int[] source, int[] dest) {
+    private void blitData(
+        int x,
+        int y,
+        int width,
+        int sourceWidth,
+        int sourceHeight,
+        int[] source,
+        int[] dest
+    ) {
         for (int i = 0; i < sourceHeight; i++) {
             for (int j = 0; j < sourceWidth; j++) {
                 dest[x + j + ((y + i) * width)] = source[j + i * sourceWidth];
             }
         }
     }
-
 }

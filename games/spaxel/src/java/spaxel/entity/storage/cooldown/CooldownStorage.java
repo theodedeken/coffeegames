@@ -5,10 +5,11 @@ import voide.entity.Storage;
 
 /**
  * Represents a cooldown for an entity
- * 
+ *
  * Created by theo on 16/06/17.
  */
 public class CooldownStorage extends Storage {
+
     private int currentCooldown;
     private int maxCooldown;
 
@@ -18,7 +19,7 @@ public class CooldownStorage extends Storage {
 
     /**
      * Create a new CooldownStorage with the specified cooldown
-     * 
+     *
      * @param currentCooldown the current cooldown
      * @param maxCooldown     the maximum cooldown
      */

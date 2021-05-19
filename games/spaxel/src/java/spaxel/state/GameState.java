@@ -5,10 +5,11 @@ import voide.math.VectorD;
 
 /**
  * Represents the state of the current game
- * 
+ *
  * Created by theo on 24/06/17.
  */
 public class GameState {
+
     private int score;
     private int gameTime;
     private long timeOverflow;
@@ -23,7 +24,8 @@ public class GameState {
      */
     public GameState() {
         super();
-        this.cursorFollow = new VectorD(Constants.HALF_GAME_WIDTH, Constants.HALF_GAME_HEIGHT);
+        this.cursorFollow =
+            new VectorD(Constants.HALF_GAME_WIDTH, Constants.HALF_GAME_HEIGHT);
         this.screenOffset = new VectorD(0, 0);
     }
 
@@ -33,7 +35,7 @@ public class GameState {
 
     /**
      * Add score to the game score
-     * 
+     *
      * @param value the score to add
      */
     public void addScore(int value) {
@@ -68,7 +70,7 @@ public class GameState {
 
     /**
      * Add time to the current game time
-     * 
+     *
      * @param updateTime the time to add
      */
     public void addTime(long updateTime) {

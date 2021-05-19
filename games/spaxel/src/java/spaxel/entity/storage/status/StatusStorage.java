@@ -7,8 +7,10 @@ import voide.entity.Storage;
  * Created by theod on 28-6-2017.
  */
 public class StatusStorage extends Storage {
+
     private boolean canShoot;
     private boolean canMove;
+
     // TODO implement slow and other status effects and modifiers via map
 
     public StatusStorage() {

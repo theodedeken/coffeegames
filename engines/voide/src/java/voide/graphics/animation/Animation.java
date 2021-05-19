@@ -3,7 +3,6 @@ package voide.graphics.animation;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import voide.debug.RepresentationBuilder;
 import voide.render.buffer.RenderJob;
 import voide.resources.Resource;
@@ -12,7 +11,10 @@ import voide.resources.Resource;
  * Represents an animation
  */
 public class Animation implements Resource {
-    private static final Logger LOGGER = Logger.getLogger(Animation.class.getName());
+
+    private static final Logger LOGGER = Logger.getLogger(
+        Animation.class.getName()
+    );
     private List<Animator> animators;
 
     /**
@@ -31,14 +33,16 @@ public class Animation implements Resource {
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("animators", animators).build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("animators", animators)
+            .build();
     }
 
     /**
      * Return the RenderData for the animation at the given completion percentage
-     * 
+     *
      * @param percentage the completion percentage of the animation
-     * 
+     *
      * @return a RenderData object with the state of the animation
      */
     public RenderJob getDataAt(double percentage) {

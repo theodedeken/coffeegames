@@ -1,11 +1,12 @@
 package spaxel.entity.behaviour.keyboard;
 
+import spaxel.engine.Engine;
 import spaxel.entity.Behaviour;
 import spaxel.entity.SpaxelComponent;
 import voide.entity.Entity;
-import spaxel.engine.Engine;
 
 public class KeyboardBehaviour extends Behaviour {
+
     private KeyboardHandler handler;
 
     public KeyboardBehaviour() {

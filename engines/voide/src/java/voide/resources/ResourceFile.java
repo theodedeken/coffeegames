@@ -3,14 +3,13 @@ package voide.resources;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 public class ResourceFile {
+
     private String path;
     private String key;
     private FileType type;
     private boolean single = false;
 
-    public ResourceFile() {
-
-    }
+    public ResourceFile() {}
 
     @JsonCreator
     public ResourceFile(String path) {
@@ -57,6 +56,8 @@ public class ResourceFile {
     }
 
     public enum FileType {
-        XML, JSON, YAML
+        XML,
+        JSON,
+        YAML
     }
 }

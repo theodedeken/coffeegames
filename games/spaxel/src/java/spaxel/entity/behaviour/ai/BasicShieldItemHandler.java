@@ -18,14 +18,20 @@ public class BasicShieldItemHandler extends ShieldHandler {
     public void handleProjectile(Entity entity, Entity projectile) {
         // TODO ((RenderComponent)
         // effect.getComponent(SpaxelComponent.RENDER)).setVisible(true);
-        ProjectileStorage phc = (ProjectileStorage) projectile.getComponent(SpaxelComponent.PROJECTILE);
-        ShieldStorage shldStore = (ShieldStorage) entity.getComponent(SpaxelComponent.SHIELD);
+        ProjectileStorage phc = (ProjectileStorage) projectile.getComponent(
+            SpaxelComponent.PROJECTILE
+        );
+        ShieldStorage shldStore = (ShieldStorage) entity.getComponent(
+            SpaxelComponent.SHIELD
+        );
 
         if (phc.getDamage() < shldStore.getCurrentCapacity()) {
             shldStore.subCapacity(phc.getDamage());
             projectile.destroy();
         } else {
-            CooldownStorage cc = (CooldownStorage) entity.getComponent(SpaxelComponent.COOLDOWN);
+            CooldownStorage cc = (CooldownStorage) entity.getComponent(
+                SpaxelComponent.COOLDOWN
+            );
             phc.subDamage(shldStore.getCurrentCapacity());
             shldStore.resetCapacity();
             cc.startCooldown();

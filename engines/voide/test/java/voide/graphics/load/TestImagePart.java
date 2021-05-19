@@ -20,7 +20,8 @@ public class TestImagePart {
         Resources.get().addResource("root", root);
         part = new ImagePart("root", new VectorD(20, 20), new VectorD(30, 30));
         Resources.get().addResource("part", part);
-        subpart = new ImagePart("part", new VectorD(10, 10), new VectorD(10, 10));
+        subpart =
+            new ImagePart("part", new VectorD(10, 10), new VectorD(10, 10));
         Resources.get().addResource("subpart", subpart);
     }
 
@@ -46,5 +47,4 @@ public class TestImagePart {
             assertEquals(one.getValue(0), two.getValue(0), 1e-5);
         }
     }
-
 }

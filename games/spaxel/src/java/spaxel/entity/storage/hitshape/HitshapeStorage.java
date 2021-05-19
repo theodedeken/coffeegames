@@ -1,16 +1,17 @@
 package spaxel.entity.storage.hitshape;
 
+import spaxel.entity.SpaxelComponent;
 import voide.collision.HitShape;
 import voide.entity.Storage;
 import voide.resources.ResourceProxy;
-import spaxel.entity.SpaxelComponent;
 
 /**
  * Represent a collidable for an entity
- * 
+ *
  * Created by theo on 3/06/17.
  */
 public class HitshapeStorage extends Storage {
+
     private ResourceProxy<HitShape> hitShape;
 
     public HitshapeStorage() {
@@ -19,7 +20,7 @@ public class HitshapeStorage extends Storage {
 
     /**
      * Create a new HitshapeStorage with the specified hitShape
-     * 
+     *
      * @param hitShape the hitshape of the component
      */
     public HitshapeStorage(ResourceProxy<HitShape> hitShape) {

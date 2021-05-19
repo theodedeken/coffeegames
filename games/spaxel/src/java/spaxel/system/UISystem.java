@@ -7,14 +7,14 @@ import spaxel.engine.Engine;
  */
 public class UISystem extends GameSystem {
 
-	/**
-	 * Create a new UISystem
-	 */
-	public UISystem() {
-		super(SystemType.UI);
-	}
+    /**
+     * Create a new UISystem
+     */
+    public UISystem() {
+        super(SystemType.UI);
+    }
 
-	public void update() {
-		Engine.get().getCurrentUI().update(Engine.get().getMouseWrapper());
-	}
+    public void update() {
+        Engine.get().getCurrentUI().update(Engine.get().getMouseWrapper());
+    }
 }

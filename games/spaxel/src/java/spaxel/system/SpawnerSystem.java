@@ -1,19 +1,20 @@
 package spaxel.system;
 
 import java.util.Set;
+import spaxel.engine.Engine;
 import spaxel.entity.Behaviour;
 import spaxel.entity.SpaxelComponent;
 import voide.entity.Entity;
 import voide.entity.EntityStream;
-import spaxel.engine.Engine;
 
 /**
  * The SpawnerSystem is responsible for updating the entities with
  * SpawnerComponents
- * 
+ *
  * Created by theo on 14-6-2016.
  */
 public class SpawnerSystem extends GameSystem {
+
     /**
      * Create a new SpawnerSystem
      */
@@ -29,5 +30,4 @@ public class SpawnerSystem extends GameSystem {
             ((Behaviour) ne.getComponent(SpaxelComponent.SPAWN)).execute(ne);
         }
     }
-
 }

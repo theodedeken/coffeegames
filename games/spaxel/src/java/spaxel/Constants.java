@@ -4,6 +4,7 @@ package spaxel;
  * Groups all the Game constants.
  */
 public final class Constants {
+
     // Math constants
     public static final double FULL_CIRCLE = 2 * Math.PI;
     public static final double HALF_CIRLCE = Math.PI / 2;
@@ -21,8 +22,14 @@ public final class Constants {
     public static final int GAME_MAJOR_V = 0;
     public static final int GAME_MINOR_V = 5;
     public static final int GAME_PATCH_V = 0;
-    public static final String DISPLAY_NAME = GAME_NAME + " - " + GAME_MAJOR_V + "." + GAME_MINOR_V + "."
-            + GAME_PATCH_V;
+    public static final String DISPLAY_NAME =
+        GAME_NAME +
+        " - " +
+        GAME_MAJOR_V +
+        "." +
+        GAME_MINOR_V +
+        "." +
+        GAME_PATCH_V;
     public static final int GAME_HEIGHT = 720;
     public static final int GAME_WIDTH = 1280;
     public static final int HALF_GAME_HEIGHT = GAME_HEIGHT / 2;
@@ -41,7 +48,5 @@ public final class Constants {
     public static final int XP_FUNC_B = 25;
     public static final int XP_FUNC_C = 50;
 
-    private Constants() {
-
-    }
+    private Constants() {}
 }

@@ -8,7 +8,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FileReader {
-    private static final Logger LOGGER = Logger.getLogger(FileReader.class.getName());
+
+    private static final Logger LOGGER = Logger.getLogger(
+        FileReader.class.getName()
+    );
     private String file;
 
     /**
@@ -20,9 +23,9 @@ public class FileReader {
 
     /**
      * Load a file as an inputstream
-     * 
+     *
      * @param path path to the file
-     * 
+     *
      * @return the file as inputstream
      */
     public InputStream toStream() {
@@ -31,7 +34,7 @@ public class FileReader {
 
     /**
      * Read the given file and return the contents as a string
-     * 
+     *
      * @return the contents of the file
      */
     public String toString() {

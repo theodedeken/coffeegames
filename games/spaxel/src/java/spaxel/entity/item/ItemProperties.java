@@ -8,10 +8,11 @@ import voide.resources.ResourceProxy;
 
 /**
  * Represents the properties of an item
- * 
+ *
  * Created by theod on 12-7-2017.
  */
 public class ItemProperties implements Resource {
+
     private String name;
     private ResourceProxy<EntityIndustry> industry;
     private int spawnRate;
@@ -25,8 +26,7 @@ public class ItemProperties implements Resource {
         super();
     }
 
-    public void initialize() {
-    }
+    public void initialize() {}
 
     public EntityIndustry getIndustry() {
         return industry.get();
@@ -69,11 +69,21 @@ public class ItemProperties implements Resource {
     }
 
     public String repr() {
-        return String.format("ItemProperties { %s, %s, %s }", name, rarety.name(), type.name());
+        return String.format(
+            "ItemProperties { %s, %s, %s }",
+            name,
+            rarety.name(),
+            type.name()
+        );
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("name", name).field("industry", industry)
-                .field("spawnRate", spawnRate).field("rarety", rarety).field("type", type).build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("name", name)
+            .field("industry", industry)
+            .field("spawnRate", spawnRate)
+            .field("rarety", rarety)
+            .field("type", type)
+            .build();
     }
 }

@@ -6,6 +6,7 @@ import voide.render.buffer.RenderJob;
  * The XPosAnimator animates the x position of the animation
  */
 public class XPosAnimator extends Animator {
+
     private double maxPos;
     private double minPos;
 

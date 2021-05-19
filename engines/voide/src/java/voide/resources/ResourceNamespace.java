@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResourceNamespace {
+
     private String className;
     private List<ClassMixin> mixins;
     private List<ResourceFile> files;
@@ -21,7 +22,9 @@ public class ResourceNamespace {
         try {
             return (Class<Resource>) Class.forName(className);
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(String.format("Resource class (%s) does not exist!", className));
+            throw new RuntimeException(
+                String.format("Resource class (%s) does not exist!", className)
+            );
         }
     }
 
@@ -44,5 +47,4 @@ public class ResourceNamespace {
     public List<ClassMixin> getMixins() {
         return mixins;
     }
-
 }

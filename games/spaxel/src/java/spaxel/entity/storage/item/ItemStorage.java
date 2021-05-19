@@ -4,6 +4,7 @@ import spaxel.entity.SpaxelComponent;
 import voide.entity.Storage;
 
 public class ItemStorage extends Storage {
+
     private ItemContainer container;
     private ItemName name;
 

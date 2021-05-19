@@ -3,6 +3,7 @@ package spaxel.entity.behaviour.hit;
 import voide.entity.Entity;
 
 public abstract class HitHandler {
+
     private HitType type;
 
     public HitHandler(HitType type) {
@@ -30,9 +31,10 @@ public abstract class HitHandler {
             case EQUIP:
                 return new EquipHandler();
             default:
-                throw new RuntimeException("Hit type " + type + " does not have a handler.");
+                throw new RuntimeException(
+                    "Hit type " + type + " does not have a handler."
+                );
         }
-
     }
 
     public abstract void hit(Entity entity, Entity victim);
@@ -50,5 +52,4 @@ public abstract class HitHandler {
     public void setType(HitType type) {
         this.type = type;
     }
-
 }

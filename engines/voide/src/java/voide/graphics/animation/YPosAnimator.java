@@ -6,6 +6,7 @@ import voide.render.buffer.RenderJob;
  * The YPosAnimator animates the y position of the animation
  */
 public class YPosAnimator extends Animator {
+
     private double maxPos;
     private double minPos;
 

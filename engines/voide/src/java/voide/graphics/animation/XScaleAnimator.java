@@ -6,6 +6,7 @@ import voide.render.buffer.RenderJob;
  * The XScaleAnimator animates the x scale of the animation
  */
 public class XScaleAnimator extends Animator {
+
     private double maxScale;
     private double minScale;
 
@@ -49,5 +50,4 @@ public class XScaleAnimator extends Animator {
     public void setMinScale(double minScale) {
         this.minScale = minScale;
     }
-
 }

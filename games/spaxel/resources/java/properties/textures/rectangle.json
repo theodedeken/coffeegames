@@ -1,37 +1,37 @@
 {
-    "dot": {
-        "shape": {
-            "x": 2,
-            "y": 2
-        },
-        "color": "ffffffff"
+  "dot": {
+    "shape": {
+      "x": 2,
+      "y": 2
     },
-    "progress_bar": {
-        "shape": {
-            "x": 1,
-            "y": 8
-        },
-        "color": "ffffffff"
+    "color": "ffffffff"
+  },
+  "progress_bar": {
+    "shape": {
+      "x": 1,
+      "y": 8
     },
-    "hp_bar": {
-        "shape": {
-            "x": 1,
-            "y": 4
-        },
-        "color": "ff00ff00"
+    "color": "ffffffff"
+  },
+  "hp_bar": {
+    "shape": {
+      "x": 1,
+      "y": 4
     },
-    "xp_bar": {
-        "shape": {
-            "x": 1,
-            "y": 4
-        },
-        "color": "ff0000ff"
+    "color": "ff00ff00"
+  },
+  "xp_bar": {
+    "shape": {
+      "x": 1,
+      "y": 4
     },
-    "load_overlay": {
-        "shape": {
-            "x": 1280,
-            "y": 720
-        },
-        "color": "ff000000"
-    }
+    "color": "ff0000ff"
+  },
+  "load_overlay": {
+    "shape": {
+      "x": 1280,
+      "y": 720
+    },
+    "color": "ff000000"
+  }
 }

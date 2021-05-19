@@ -5,25 +5,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
 import voide.graphics.load.Image;
 import voide.graphics.load.ImagePart;
 import voide.math.VectorD;
 import voide.resources.Resources;
 
 public class ImagePacker {
+
     // texture packing
     private static final int DIM_BASE = 2;
     private static final int SIZE_4 = 4;
     private static final int SIZE_3 = 3;
     private static final int SIZE_2 = 2;
 
-    public ImagePacker() {
-
-    }
+    public ImagePacker() {}
 
     private int fullSize(Map<Integer, List<ImageNode>> nodes) {
-        return nodes.values().stream().map(List::size).reduce(0, (Integer accSize, Integer size) -> accSize += size);
+        return nodes
+            .values()
+            .stream()
+            .map(List::size)
+            .reduce(0, (Integer accSize, Integer size) -> accSize += size);
     }
 
     public PackingResult pack(Map<String, Image> images) {
@@ -43,14 +45,21 @@ public class ImagePacker {
                 ImageNode newNode = new ImageNode(currentDim * DIM_BASE);
                 switch (size) {
                     case SIZE_4:
-                        newNode.setTopLeft(dimNodes.remove(dimNodes.size() - 1));
+                        newNode.setTopLeft(
+                            dimNodes.remove(dimNodes.size() - 1)
+                        );
                     case SIZE_3:
-                        newNode.setTopRight(dimNodes.remove(dimNodes.size() - 1));
+                        newNode.setTopRight(
+                            dimNodes.remove(dimNodes.size() - 1)
+                        );
                     case SIZE_2:
-                        newNode.setBotLeft(dimNodes.remove(dimNodes.size() - 1));
+                        newNode.setBotLeft(
+                            dimNodes.remove(dimNodes.size() - 1)
+                        );
                     case 1:
-                        newNode.setBotRight(dimNodes.remove(dimNodes.size() - 1));
-
+                        newNode.setBotRight(
+                            dimNodes.remove(dimNodes.size() - 1)
+                        );
                     default:
                         break;
                 }
@@ -65,7 +74,10 @@ public class ImagePacker {
         }
         ImageNode root = nodes.get(currentDim * DIM_BASE).get(0);
 
-        Image result = new Image(new VectorD(root.getDim(), root.getDim()), root.loadImageTree());
+        Image result = new Image(
+            new VectorD(root.getDim(), root.getDim()),
+            root.loadImageTree()
+        );
 
         String name = "voide.packed_image";
 
@@ -75,6 +87,7 @@ public class ImagePacker {
     }
 
     public class PackingResult {
+
         public Image rootImage;
         public Map<String, ImagePart> parts;
 
@@ -83,5 +96,4 @@ public class ImagePacker {
             this.parts = parts;
         }
     }
-
 }

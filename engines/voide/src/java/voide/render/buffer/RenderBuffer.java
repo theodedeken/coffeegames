@@ -1,15 +1,15 @@
 package voide.render.buffer;
 
-import voide.buffer.BufferUtils;
-
 import java.nio.FloatBuffer;
 import java.util.List;
+import voide.buffer.BufferUtils;
 
 /**
  * Respresents the Buffer data to be sent to the gpu as part of the rendering of
  * instanced elements
  */
 public class RenderBuffer {
+
     private static final int RENDERDATA_ELEMENTS = 4;
 
     private FloatBuffer trscBuffer;
@@ -20,14 +20,17 @@ public class RenderBuffer {
 
     /**
      * Create a new RenderBuffer with the given RenderData
-     * 
+     *
      * @param rdata list with the data for all the instances to render
      */
     public RenderBuffer(List<RenderJob> rdata) {
         size = rdata.size();
-        trscBuffer = BufferUtils.allocateFloatBuffer(size * RENDERDATA_ELEMENTS);
-        sinCosBuffer = BufferUtils.allocateFloatBuffer(size * RENDERDATA_ELEMENTS);
-        texOffsetBuffer = BufferUtils.allocateFloatBuffer(size * RENDERDATA_ELEMENTS);
+        trscBuffer =
+            BufferUtils.allocateFloatBuffer(size * RENDERDATA_ELEMENTS);
+        sinCosBuffer =
+            BufferUtils.allocateFloatBuffer(size * RENDERDATA_ELEMENTS);
+        texOffsetBuffer =
+            BufferUtils.allocateFloatBuffer(size * RENDERDATA_ELEMENTS);
         for (RenderJob r : rdata) {
             trscBuffer.put(r.getTrSc());
             sinCosBuffer.put(r.getSinCos());
@@ -36,7 +39,6 @@ public class RenderBuffer {
         trscBuffer.flip();
         sinCosBuffer.flip();
         texOffsetBuffer.flip();
-
     }
 
     public FloatBuffer getTrscBuffer() {
@@ -53,11 +55,10 @@ public class RenderBuffer {
 
     /**
      * return the size of the buffer
-     * 
+     *
      * @return the size
      */
     public int size() {
         return size;
     }
-
 }

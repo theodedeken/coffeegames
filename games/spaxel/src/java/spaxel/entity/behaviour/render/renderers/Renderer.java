@@ -7,6 +7,7 @@ import voide.render.buffer.RenderJob;
  * Created by theo on 5/06/17.
  */
 public abstract class Renderer {
+
     private RendererType type;
 
     public abstract void apply(RenderJob data, Entity entity);

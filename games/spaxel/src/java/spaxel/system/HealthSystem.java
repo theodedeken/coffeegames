@@ -1,20 +1,20 @@
 package spaxel.system;
 
-import spaxel.entity.SpaxelComponent;
+import java.util.Set;
+import spaxel.engine.Engine;
 import spaxel.entity.Behaviour;
+import spaxel.entity.SpaxelComponent;
 import spaxel.entity.storage.health.HealthStorage;
 import voide.entity.Entity;
-import spaxel.engine.Engine;
-
-import java.util.Set;
 
 /**
  * The HealthSystem is responsible for updating all entities with a
  * HealthComponent
- * 
+ *
  * Created by theo on 8/06/17.
  */
 public class HealthSystem extends GameSystem {
+
     /**
      * Create a new HealthSystem
      */
@@ -23,10 +23,20 @@ public class HealthSystem extends GameSystem {
     }
 
     public void update() {
-        Set<Entity> entities = Engine.get().getNEntityStream().getEntities(SpaxelComponent.HEALTH);
+        Set<Entity> entities = Engine
+            .get()
+            .getNEntityStream()
+            .getEntities(SpaxelComponent.HEALTH);
         for (Entity e : entities) {
-            if (((HealthStorage) e.getComponent(SpaxelComponent.HEALTH)).getCurrentHealth() < 0) {
-                Behaviour dc = (Behaviour) e.getComponent(SpaxelComponent.DEATH);
+            if (
+                (
+                    (HealthStorage) e.getComponent(SpaxelComponent.HEALTH)
+                ).getCurrentHealth() <
+                0
+            ) {
+                Behaviour dc = (Behaviour) e.getComponent(
+                    SpaxelComponent.DEATH
+                );
                 if (dc != null) {
                     dc.execute(e);
                 }

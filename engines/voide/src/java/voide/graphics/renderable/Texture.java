@@ -8,11 +8,17 @@ import voide.render.buffer.RenderJob;
  * Represents a part of a gpu texture
  */
 public class Texture extends Renderable {
+
     private int textureId;
     private VectorD textureOffset;
     private VectorD textureShape;
 
-    public Texture(VectorD shape, int textureId, VectorD textureOffset, VectorD textureShape) {
+    public Texture(
+        VectorD shape,
+        int textureId,
+        VectorD textureOffset,
+        VectorD textureShape
+    ) {
         super(shape);
         this.textureId = textureId;
         this.textureOffset = textureOffset;
@@ -33,7 +39,10 @@ public class Texture extends Renderable {
         data.applyScale(shape);
     }
 
-    public Texture getSubTexture(VectorD subTextureOffset, VectorD subTextureShape) {
+    public Texture getSubTexture(
+        VectorD subTextureOffset,
+        VectorD subTextureShape
+    ) {
         VectorD subShape = subTextureShape.elementMult(shape);
         VectorD rescaledOffset = subTextureOffset.elementMult(textureShape);
         VectorD rescaledShape = subTextureShape.elementMult(textureShape);
@@ -54,9 +63,12 @@ public class Texture extends Renderable {
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("shape", shape).field("name", name)
-                .field("textureId", textureId).field("textureOffset", textureOffset).field("textureShape", textureShape)
-                .build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("shape", shape)
+            .field("name", name)
+            .field("textureId", textureId)
+            .field("textureOffset", textureOffset)
+            .field("textureShape", textureShape)
+            .build();
     }
-
 }

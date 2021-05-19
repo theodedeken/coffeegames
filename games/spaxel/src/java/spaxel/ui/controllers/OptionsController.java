@@ -9,13 +9,12 @@ import voide.ui.elements.Element;
 
 /**
  * Callbacks for elements in the options UI
- * 
+ *
  * Created by theod on 19-9-2017.
  */
 public final class OptionsController {
-    private OptionsController() {
 
-    }
+    private OptionsController() {}
 
     /**
      * Opens the game settings
@@ -48,7 +47,7 @@ public final class OptionsController {
     /**
      * Checks whether the esc key is pressed and goes to the previous screen if that
      * is the case
-     * 
+     *
      * @param element the calling element
      */
     public static void escCheck(Element element) {
@@ -63,6 +62,12 @@ public final class OptionsController {
      * Go to the previous screen
      */
     public static void back() {
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.MAIN.key(), UI.class)
+            );
     }
 }

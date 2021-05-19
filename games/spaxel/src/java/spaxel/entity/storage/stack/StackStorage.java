@@ -7,6 +7,7 @@ import voide.entity.Storage;
  * Created by theo on 16/06/17.
  */
 public class StackStorage extends Storage {
+
     private int stacks;
 
     public StackStorage() {

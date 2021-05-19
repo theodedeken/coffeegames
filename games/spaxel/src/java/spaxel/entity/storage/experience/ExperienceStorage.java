@@ -8,6 +8,7 @@ import voide.entity.Storage;
  * Created by theo on 26/06/17.
  */
 public class ExperienceStorage extends Storage {
+
     private int currentXp;
     private int maxXp;
     private int level;
@@ -30,7 +31,14 @@ public class ExperienceStorage extends Storage {
     }
 
     private int getXpToLevel() {
-        return level * level * Constants.XP_FUNC_A + level * Constants.XP_FUNC_B + Constants.XP_FUNC_C;
+        return (
+            level *
+            level *
+            Constants.XP_FUNC_A +
+            level *
+            Constants.XP_FUNC_B +
+            Constants.XP_FUNC_C
+        );
     }
 
     public int getCurrentXp() {

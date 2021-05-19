@@ -7,10 +7,11 @@ import static org.lwjgl.opengl.GL33.glVertexAttribDivisor;
 
 /**
  * Represents a quad that can be used in instanced rendering
- * 
+ *
  * Created by theod on 16-7-2017.
  */
 public class InstancedQuad extends Quad {
+
     private int texOffsetScale;
     private int transScale;
     private int sinCosAlphaColor;
@@ -27,26 +28,43 @@ public class InstancedQuad extends Quad {
      */
     public InstancedQuad() {
         super();
-
         transScale = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER, transScale);
         glEnableVertexAttribArray(TRSC_ATTRIB_INDEX);
-        glVertexAttribPointer(TRSC_ATTRIB_INDEX, ATTRIB_SIZE, GL_FLOAT, false,
-                ATTRIB_SIZE * BYTES_INA_FLOAT, 0);
+        glVertexAttribPointer(
+            TRSC_ATTRIB_INDEX,
+            ATTRIB_SIZE,
+            GL_FLOAT,
+            false,
+            ATTRIB_SIZE * BYTES_INA_FLOAT,
+            0
+        );
         glVertexAttribDivisor(TRSC_ATTRIB_INDEX, 1);
 
         texOffsetScale = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER, texOffsetScale);
         glEnableVertexAttribArray(TEX_ATTRIB_INDEX);
-        glVertexAttribPointer(TEX_ATTRIB_INDEX, ATTRIB_SIZE, GL_FLOAT, false,
-                ATTRIB_SIZE * BYTES_INA_FLOAT, 0);
+        glVertexAttribPointer(
+            TEX_ATTRIB_INDEX,
+            ATTRIB_SIZE,
+            GL_FLOAT,
+            false,
+            ATTRIB_SIZE * BYTES_INA_FLOAT,
+            0
+        );
         glVertexAttribDivisor(TEX_ATTRIB_INDEX, 1);
 
         sinCosAlphaColor = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER, sinCosAlphaColor);
         glEnableVertexAttribArray(SINCOS_ATTRIB_INDEX);
-        glVertexAttribPointer(SINCOS_ATTRIB_INDEX, ATTRIB_SIZE, GL_FLOAT, false,
-                ATTRIB_SIZE * BYTES_INA_FLOAT, 0);
+        glVertexAttribPointer(
+            SINCOS_ATTRIB_INDEX,
+            ATTRIB_SIZE,
+            GL_FLOAT,
+            false,
+            ATTRIB_SIZE * BYTES_INA_FLOAT,
+            0
+        );
         glVertexAttribDivisor(SINCOS_ATTRIB_INDEX, 1);
     }
 
@@ -61,5 +79,4 @@ public class InstancedQuad extends Quad {
     public int getSinCosAlphaColor() {
         return sinCosAlphaColor;
     }
-
 }

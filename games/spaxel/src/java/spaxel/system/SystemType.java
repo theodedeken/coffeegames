@@ -4,49 +4,49 @@ package spaxel.system;
  * The different types of systems
  */
 public enum SystemType {
-	UI("ui"),
+    UI("ui"),
 
-	AI("ai"),
+    AI("ai"),
 
-	RENDER("render"),
+    RENDER("render"),
 
-	SOUND("sound"),
+    SOUND("sound"),
 
-	SPAWNER("spawner"),
+    SPAWNER("spawner"),
 
-	AGE("age"),
+    AGE("age"),
 
-	VELOCITY("velocity"),
+    VELOCITY("velocity"),
 
-	DAMAGE("damage"),
+    DAMAGE("damage"),
 
-	HEALTH("health"),
+    HEALTH("health"),
 
-	COOLDOWN("cooldown"),
+    COOLDOWN("cooldown"),
 
-	HIT("hit"),
+    HIT("hit"),
 
-	MOUSE("mouse"),
+    MOUSE("mouse"),
 
-	KEYBOARD("keyboard"),
+    KEYBOARD("keyboard"),
 
-	EQUIP("equip"),
+    EQUIP("equip"),
 
-	EXPERIENCE("experience"),
+    EXPERIENCE("experience"),
 
-	SHIP("ship"),
+    SHIP("ship"),
 
-	DIFFICULTY("difficulty"),
+    DIFFICULTY("difficulty"),
 
-	MARKER("marker");
+    MARKER("marker");
 
-	private final String name;
+    private final String name;
 
-	SystemType(String name) {
-		this.name = name;
-	}
+    SystemType(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 }

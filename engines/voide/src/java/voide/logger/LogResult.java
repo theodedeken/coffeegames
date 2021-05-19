@@ -2,16 +2,17 @@ package voide.logger;
 
 /**
  * Represent a log entry of a time measurement
- * 
+ *
  * Created by theo on 24/06/17.
  */
 public class LogResult {
+
     private long start;
     private long end;
 
     /**
      * Create a new LogResult starting at the given time
-     * 
+     *
      * @param start the time to start the logresult
      */
     public LogResult(long start) {

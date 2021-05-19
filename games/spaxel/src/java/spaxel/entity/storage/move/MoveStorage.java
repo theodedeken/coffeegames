@@ -7,6 +7,7 @@ import voide.entity.Storage;
  * Created by theo on 3/06/17.
  */
 public class MoveStorage extends Storage {
+
     private double speed;
     private double acceleration;
     private double turnRate;

@@ -3,17 +3,17 @@ package voide.entity;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import voide.debug.RepresentationBuilder;
 import voide.resources.Resource;
 import voide.resources.Resources;
 
 /**
  * Groups ComponentFactories together in an industry to build entities
- * 
+ *
  * Created by theo on 3/06/17.
  */
 public class EntityIndustry implements Resource {
+
     private EntityType type;
     private List<Component> blueprints;
     private List<String> links;
@@ -25,37 +25,47 @@ public class EntityIndustry implements Resource {
         super();
     }
 
-    public void initialize() {
-
-    }
+    public void initialize() {}
 
     public String repr() {
-        return String.format("EntityIndustry { %s, %d blueprints, %d links }", type.id(), blueprints.size(),
-                links.size());
+        return String.format(
+            "EntityIndustry { %s, %d blueprints, %d links }",
+            type.id(),
+            blueprints.size(),
+            links.size()
+        );
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("type", type).field("blueprints", blueprints)
-                .field("links", links).build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("type", type)
+            .field("blueprints", blueprints)
+            .field("links", links)
+            .build();
     }
 
     /**
      * Create a new entity with the components produced by the componentfactories
-     * 
+     *
      * @return the created entity
      */
     public Entity produce() {
         Entity entity = new Entity(type);
         entity.setComponents(buildComponents());
         for (String link : links) {
-            entity.addLink(Resources.get().getResource(link, EntityIndustry.class).produce());
+            entity.addLink(
+                Resources
+                    .get()
+                    .getResource(link, EntityIndustry.class)
+                    .produce()
+            );
         }
         return entity;
     }
 
     /**
      * Builds the componentmap using the factories of this industry
-     * 
+     *
      * @return the created componentmap
      */
     public Map<String, Component> buildComponents() {

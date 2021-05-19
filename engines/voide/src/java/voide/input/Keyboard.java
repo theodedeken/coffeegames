@@ -4,38 +4,39 @@ package voide.input;
  * Keeps the state of the keyboard
  */
 public class Keyboard {
-	private KeyConfiguration keys;
 
-	private long window;
+    private KeyConfiguration keys;
 
-	/**
-	 * Create a new Keyboard for the given window with the given key configuration
-	 * 
-	 * @param window the window in which the keyboard is keeping state
-	 * @param keys   the key configuration
-	 */
-	public Keyboard(long window, KeyConfiguration keys) {
-		this.window = window;
-		this.keys = keys;
-	}
+    private long window;
 
-	/**
-	 * Update the state of the keys
-	 */
-	public void update() {
-		for (KeyState value : keys.values()) {
-			value.update(window);
-		}
-	}
+    /**
+     * Create a new Keyboard for the given window with the given key configuration
+     *
+     * @param window the window in which the keyboard is keeping state
+     * @param keys   the key configuration
+     */
+    public Keyboard(long window, KeyConfiguration keys) {
+        this.window = window;
+        this.keys = keys;
+    }
 
-	/**
-	 * Get the keystate of the given key
-	 * 
-	 * @param key the key to get the state from
-	 * 
-	 * @return the keystate
-	 */
-	public KeyState get(Key key) {
-		return keys.get(key.id());
-	}
+    /**
+     * Update the state of the keys
+     */
+    public void update() {
+        for (KeyState value : keys.values()) {
+            value.update(window);
+        }
+    }
+
+    /**
+     * Get the keystate of the given key
+     *
+     * @param key the key to get the state from
+     *
+     * @return the keystate
+     */
+    public KeyState get(Key key) {
+        return keys.get(key.id());
+    }
 }

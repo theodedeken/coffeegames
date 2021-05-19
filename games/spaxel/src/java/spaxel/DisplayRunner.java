@@ -18,9 +18,7 @@ import static org.lwjgl.system.MemoryUtil.NULL;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.lwjgl.glfw.GLFWErrorCallback;
-
 import spaxel.engine.Engine;
 import spaxel.resources.Resources;
 import spaxel.system.RenderSystem;
@@ -33,7 +31,10 @@ import voide.ui.UI;
  * Runnable for the thread that renders all the display frames
  */
 public class DisplayRunner implements Runnable {
-    private static final Logger LOGGER = Logger.getLogger(DisplayRunner.class.getName());
+
+    private static final Logger LOGGER = Logger.getLogger(
+        DisplayRunner.class.getName()
+    );
     // Status of the runnable
     private volatile boolean running = true;
 
@@ -71,7 +72,10 @@ public class DisplayRunner implements Runnable {
         LOGGER.log(Level.INFO, "OpenGL: {0}", glGetString(GL_VERSION));
 
         // Setup mouse callback
-        MouseWrapper mouseWrapper = new MouseWrapper(window, Constants.GAME_HEIGHT);
+        MouseWrapper mouseWrapper = new MouseWrapper(
+            window,
+            Constants.GAME_HEIGHT
+        );
         glfwSetCursorPosCallback(window, mouseWrapper);
         // Set mouse and window in engine
         Engine.get().setMouseWrapper(mouseWrapper);
@@ -83,15 +87,23 @@ public class DisplayRunner implements Runnable {
         initialize();
         // load the resources needed to show the loading screen
         Resources.get().initLoadingResources();
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.LOAD.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.LOAD.key(), UI.class)
+            );
         // create a new rendersystem
         renderSystem = new RenderSystem();
         // create a new thread to load the rest of the resources
-        Thread load = new Thread(() -> {
-            Resources.get().startLoading();
-            Engine.get().finishLoading();
-            Game.startUpdating();
-        });
+        Thread load = new Thread(
+            () -> {
+                Resources.get().startLoading();
+                Engine.get().finishLoading();
+                Game.startUpdating();
+            }
+        );
         load.start();
 
         long start;
@@ -103,8 +115,10 @@ public class DisplayRunner implements Runnable {
             start = System.nanoTime();
             render();
             deltatime = System.nanoTime() - start;
-            Engine.get().getGameState().setUpdateTime((double) deltatime / Constants.NS_PER_TICK);
-
+            Engine
+                .get()
+                .getGameState()
+                .setUpdateTime((double) deltatime / Constants.NS_PER_TICK);
         }
     }
 

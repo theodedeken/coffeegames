@@ -9,18 +9,17 @@ import voide.ui.elements.Element;
 
 /**
  * Callbacks for elements of the credits UI
- * 
+ *
  * Created by theo on 8-6-2016.
  */
 public final class CreditsController {
 
-    private CreditsController() {
-    }
+    private CreditsController() {}
 
     /**
      * Checks whether the esc key is pressed and goes to the previous screen if that
      * is the case
-     * 
+     *
      * @param element the calling element
      */
     public static void escCheck(Element element) {
@@ -36,6 +35,12 @@ public final class CreditsController {
      * Go to the previous screen
      */
     public static void back() {
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.MAIN.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.MAIN.key(), UI.class)
+            );
     }
 }

@@ -1,81 +1,87 @@
 package voide.input;
 
+import static org.lwjgl.glfw.GLFW.*;
+
 import org.lwjgl.glfw.GLFWCursorPosCallback;
 import voide.math.VectorD;
-import static org.lwjgl.glfw.GLFW.*;
 
 /**
  * Represents the state of the mouse in the game
  */
 public class MouseWrapper extends GLFWCursorPosCallback {
 
-	private int x;
-	private int y;
-	private KeyState mouse1;
-	private KeyState mouse2;
-	private KeyState mouse3;
-	private long window;
-	private int gameHeight;
+    private int x;
+    private int y;
+    private KeyState mouse1;
+    private KeyState mouse2;
+    private KeyState mouse3;
+    private long window;
+    private int gameHeight;
 
-	/**
-	 * Create a new MouseWrapper
-	 * 
-	 * @param window the window in which the mouse lives
-	 */
-	public MouseWrapper(long window, int gameHeight) {
-		this.window = window;
-		this.gameHeight = gameHeight;
-		mouse1 = new KeyState();
-		mouse2 = new KeyState();
-		mouse3 = new KeyState();
-	}
+    /**
+     * Create a new MouseWrapper
+     *
+     * @param window the window in which the mouse lives
+     */
+    public MouseWrapper(long window, int gameHeight) {
+        this.window = window;
+        this.gameHeight = gameHeight;
+        mouse1 = new KeyState();
+        mouse2 = new KeyState();
+        mouse3 = new KeyState();
+    }
 
-	/**
-	 * Updates the keystates of the mouse keys
-	 */
-	public void update() {
-		mouse1.setState(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1) == GLFW_PRESS);
-		mouse2.setState(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_2) == GLFW_PRESS);
-		mouse3.setState(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_3) == GLFW_PRESS);
-	}
+    /**
+     * Updates the keystates of the mouse keys
+     */
+    public void update() {
+        mouse1.setState(
+            glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1) == GLFW_PRESS
+        );
+        mouse2.setState(
+            glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_2) == GLFW_PRESS
+        );
+        mouse3.setState(
+            glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_3) == GLFW_PRESS
+        );
+    }
 
-	public int getX() {
-		return x;
-	}
+    public int getX() {
+        return x;
+    }
 
-	public int getY() {
-		return y;
-	}
+    public int getY() {
+        return y;
+    }
 
-	public VectorD getPos() {
-		return new VectorD(x, y);
-	}
+    public VectorD getPos() {
+        return new VectorD(x, y);
+    }
 
-	@Override
-	public void invoke(long l, double xPos, double yPos) {
-		x = (int) xPos;
-		y = this.gameHeight - (int) yPos;
-	}
+    @Override
+    public void invoke(long l, double xPos, double yPos) {
+        x = (int) xPos;
+        y = this.gameHeight - (int) yPos;
+    }
 
-	/**
-	 * @return the mouse3
-	 */
-	public KeyState getMouse3() {
-		return mouse3;
-	}
+    /**
+     * @return the mouse3
+     */
+    public KeyState getMouse3() {
+        return mouse3;
+    }
 
-	/**
-	 * @return the mouse2
-	 */
-	public KeyState getMouse2() {
-		return mouse2;
-	}
+    /**
+     * @return the mouse2
+     */
+    public KeyState getMouse2() {
+        return mouse2;
+    }
 
-	/**
-	 * @return the mouse1
-	 */
-	public KeyState getMouse1() {
-		return mouse1;
-	}
-
+    /**
+     * @return the mouse1
+     */
+    public KeyState getMouse1() {
+        return mouse1;
+    }
 }

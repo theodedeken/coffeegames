@@ -6,10 +6,10 @@ package voide.debug;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
 
 public class TestRepresentationBuilder {
+
     @Test
     void basicTest() {
         RepresentationBuilder builder = new RepresentationBuilder("Test");
@@ -19,8 +19,13 @@ public class TestRepresentationBuilder {
         builder.field("field3", "three");
         String repr2 = builder.build();
 
-        assertEquals(repr1, "Test {\n  field1 = one\n  field2 = [\n    one\n    two\n  ]\n}");
-        assertEquals(repr2, "Test {\n  field1 = one\n  field2 = [\n    one\n    two\n  ]\n  field3 = three\n}");
+        assertEquals(
+            repr1,
+            "Test {\n  field1 = one\n  field2 = [\n    one\n    two\n  ]\n}"
+        );
+        assertEquals(
+            repr2,
+            "Test {\n  field1 = one\n  field2 = [\n    one\n    two\n  ]\n  field3 = three\n}"
+        );
     }
-
 }

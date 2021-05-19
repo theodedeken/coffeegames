@@ -8,6 +8,7 @@ import voide.entity.Entity;
  * Created by theod on 28-6-2017.
  */
 public class AffectBehaviour extends Behaviour {
+
     private AffectHandler handler;
 
     public AffectBehaviour() {

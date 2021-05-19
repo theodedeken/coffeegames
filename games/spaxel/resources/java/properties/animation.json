@@ -1,58 +1,58 @@
 {
-    "progress_bar": {
-        "animators": [
-            {
-                "type": "FRAME",
-                "numFrames": 1,
-                "spriteBase": "rectangle.progress_bar"
-            },
-            {
-                "type": "X_SCALE",
-                "maxScale": 640
-            }
-        ]
-    },
-    "hp_bar": {
-        "animators": [
-            {
-                "type": "FRAME",
-                "numFrames": 1,
-                "spriteBase": "rectangle.hp_bar"
-            },
-            {
-                "type": "X_SCALE",
-                "maxScale": 292
-            },
-            {
-                "type": "X_POS",
-                "minPos": -291
-            }
-        ]
-    },
-    "xp_bar": {
-        "animators": [
-            {
-                "type": "FRAME",
-                "numFrames": 1,
-                "spriteBase": "rectangle.xp_bar"
-            },
-            {
-                "type": "X_SCALE",
-                "maxScale": 292
-            },
-            {
-                "type": "X_POS",
-                "minPos": 292
-            }
-        ]
-    },
-    "cooldown": {
-        "animators": [
-            {
-                "type": "FRAME",
-                "numFrames": 89,
-                "spriteBase": "cd_anim"
-            }
-        ]
-    }
+  "progress_bar": {
+    "animators": [
+      {
+        "type": "FRAME",
+        "numFrames": 1,
+        "spriteBase": "rectangle.progress_bar"
+      },
+      {
+        "type": "X_SCALE",
+        "maxScale": 640
+      }
+    ]
+  },
+  "hp_bar": {
+    "animators": [
+      {
+        "type": "FRAME",
+        "numFrames": 1,
+        "spriteBase": "rectangle.hp_bar"
+      },
+      {
+        "type": "X_SCALE",
+        "maxScale": 292
+      },
+      {
+        "type": "X_POS",
+        "minPos": -291
+      }
+    ]
+  },
+  "xp_bar": {
+    "animators": [
+      {
+        "type": "FRAME",
+        "numFrames": 1,
+        "spriteBase": "rectangle.xp_bar"
+      },
+      {
+        "type": "X_SCALE",
+        "maxScale": 292
+      },
+      {
+        "type": "X_POS",
+        "minPos": 292
+      }
+    ]
+  },
+  "cooldown": {
+    "animators": [
+      {
+        "type": "FRAME",
+        "numFrames": 89,
+        "spriteBase": "cd_anim"
+      }
+    ]
+  }
 }

@@ -1,104 +1,104 @@
 {
-    "#root": {
-        "x": 640,
-        "y": 360,
-        "sprite": "texture.ui_play_overlay",
-        "scale": 2,
-        "rot": 0
-    },
-    "#score_counter": {
-        "y": 650,
-        "text-scale": 4,
-        "text": "",
-        "onUpdate": "updateScore"
-    },
-    "#game_time": {
-        "x": 864,
-        "y": 700,
-        "text-scale": 2,
-        "text": "",
-        "onUpdate": "updateTime"
-    },
-    "#hp_label": {
-        "x": 640,
-        "y": 96,
-        "text-scale": 1,
-        "text": ""
-    },
-    "#xp_label": {
-        "x": 640,
-        "y": 84,
-        "text-scale": 1,
-        "text": ""
-    },
-    ".play_bar": {
-        "width": 580,
-        "scale": 2
-    },
-    "#hp_bar": {
-        "x": 640,
-        "y": 96,
-        "onUpdate": "updateHpBar",
-        "animation": "animation.hp_bar",
-        "completion": 1
-    },
-    "#xp_bar": {
-        "x": 640,
-        "y": 85,
-        "rot": "3.1415",
-        "onUpdate": "updateXpBar",
-        "animation": "animation.xp_bar",
-        "completion": 0
-    },
-    "#pause_controls": {
-        "visible": false,
-        "x": 640,
-        "onUpdate": "escCheck"
-    },
-    "#resume": {
-        "onClick": "resume",
-        "text": "Resume",
-        "y": 400
-    },
-    "#quit": {
-        "onClick": "quit",
-        "text": "Quit",
-        "y": 320
-    },
-    "#debug_overlay": {
-        "visible": false,
-        "onUpdate": "debugCheck",
-        "onInit": "initDebug",
-        "x": 100,
-        "y": 700
-    },
-    "#logging_overlay": {
-        "visible": false,
-        "onInit": "initLogging",
-        "onUpdate": "logCheck",
-        "x": 400,
-        "y": 500
-    },
-    ".inventory_container": {
-        "row-offset": 72,
-        "col-offset": 72
-    },
-    "#primary_container": {
-        "x": 40,
-        "y": 680,
-        "cols": "1",
-        "onUpdate": "updatePrimaryContainer"
-    },
-    "#secondary_container": {
-        "x": 1240,
-        "y": 680,
-        "cols": "1",
-        "onUpdate": "updateSecondaryContainer"
-    },
-    "#ship_container": {
-        "x": 388,
-        "y": 40,
-        "cols": "4",
-        "onUpdate": "updateShipContainer"
-    }
+  "#root": {
+    "x": 640,
+    "y": 360,
+    "sprite": "texture.ui_play_overlay",
+    "scale": 2,
+    "rot": 0
+  },
+  "#score_counter": {
+    "y": 650,
+    "text-scale": 4,
+    "text": "",
+    "onUpdate": "updateScore"
+  },
+  "#game_time": {
+    "x": 864,
+    "y": 700,
+    "text-scale": 2,
+    "text": "",
+    "onUpdate": "updateTime"
+  },
+  "#hp_label": {
+    "x": 640,
+    "y": 96,
+    "text-scale": 1,
+    "text": ""
+  },
+  "#xp_label": {
+    "x": 640,
+    "y": 84,
+    "text-scale": 1,
+    "text": ""
+  },
+  ".play_bar": {
+    "width": 580,
+    "scale": 2
+  },
+  "#hp_bar": {
+    "x": 640,
+    "y": 96,
+    "onUpdate": "updateHpBar",
+    "animation": "animation.hp_bar",
+    "completion": 1
+  },
+  "#xp_bar": {
+    "x": 640,
+    "y": 85,
+    "rot": "3.1415",
+    "onUpdate": "updateXpBar",
+    "animation": "animation.xp_bar",
+    "completion": 0
+  },
+  "#pause_controls": {
+    "visible": false,
+    "x": 640,
+    "onUpdate": "escCheck"
+  },
+  "#resume": {
+    "onClick": "resume",
+    "text": "Resume",
+    "y": 400
+  },
+  "#quit": {
+    "onClick": "quit",
+    "text": "Quit",
+    "y": 320
+  },
+  "#debug_overlay": {
+    "visible": false,
+    "onUpdate": "debugCheck",
+    "onInit": "initDebug",
+    "x": 100,
+    "y": 700
+  },
+  "#logging_overlay": {
+    "visible": false,
+    "onInit": "initLogging",
+    "onUpdate": "logCheck",
+    "x": 400,
+    "y": 500
+  },
+  ".inventory_container": {
+    "row-offset": 72,
+    "col-offset": 72
+  },
+  "#primary_container": {
+    "x": 40,
+    "y": 680,
+    "cols": "1",
+    "onUpdate": "updatePrimaryContainer"
+  },
+  "#secondary_container": {
+    "x": 1240,
+    "y": 680,
+    "cols": "1",
+    "onUpdate": "updateSecondaryContainer"
+  },
+  "#ship_container": {
+    "x": 388,
+    "y": 40,
+    "cols": "4",
+    "onUpdate": "updateShipContainer"
+  }
 }

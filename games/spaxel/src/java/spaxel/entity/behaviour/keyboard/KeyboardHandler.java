@@ -4,6 +4,7 @@ import voide.entity.Entity;
 import voide.input.Keyboard;
 
 public abstract class KeyboardHandler {
+
     private KeyboardHandlerType type;
 
     public KeyboardHandler(KeyboardHandlerType type) {
@@ -25,5 +26,4 @@ public abstract class KeyboardHandler {
     public void setType(KeyboardHandlerType type) {
         this.type = type;
     }
-
 }

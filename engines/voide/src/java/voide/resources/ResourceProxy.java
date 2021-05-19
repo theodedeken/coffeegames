@@ -4,6 +4,7 @@ import voide.debug.Representable;
 import voide.debug.RepresentationBuilder;
 
 public class ResourceProxy<T extends Resource> implements Representable {
+
     private String key;
     private Class<T> resourceType;
     private T resource;
@@ -33,12 +34,17 @@ public class ResourceProxy<T extends Resource> implements Representable {
     }
 
     public String repr() {
-        return String.format("ResourceProxy { %s --> %s }", key, resourceType.getName());
+        return String.format(
+            "ResourceProxy { %s --> %s }",
+            key,
+            resourceType.getName()
+        );
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("key", key).field("resourceType", resourceType)
-                .build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("key", key)
+            .field("resourceType", resourceType)
+            .build();
     }
-
 }

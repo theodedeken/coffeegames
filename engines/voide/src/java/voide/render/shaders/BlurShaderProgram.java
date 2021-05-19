@@ -1,14 +1,16 @@
 package voide.render.shaders;
 
-import voide.math.VectorD;
 import static org.lwjgl.opengl.GL20.*;
+
+import voide.math.VectorD;
 
 /**
  * Shader program to render a blurred image
- * 
+ *
  * Created by theod on 25-7-2017.
  */
 public class BlurShaderProgram extends ShaderProgram {
+
     private int texSamplerLocation;
     private int radiusLocation;
     private int resolutionLocation;
@@ -17,7 +19,7 @@ public class BlurShaderProgram extends ShaderProgram {
 
     /**
      * Create a new Shaderprogram using the code of the given shaders
-     * 
+     *
      * @param vertexShader   the path to the vertexShader
      * @param fragmentShader the path to the fragmentShader
      */
@@ -47,6 +49,10 @@ public class BlurShaderProgram extends ShaderProgram {
     }
 
     public void setDir(VectorD dir) {
-        glUniform2f(dirLocation, (float) dir.getValue(0), (float) dir.getValue(1));
+        glUniform2f(
+            dirLocation,
+            (float) dir.getValue(0),
+            (float) dir.getValue(1)
+        );
     }
 }

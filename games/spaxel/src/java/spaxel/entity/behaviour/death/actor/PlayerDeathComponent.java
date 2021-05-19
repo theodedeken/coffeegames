@@ -11,6 +11,7 @@ import voide.ui.UI;
  * Created by theo on 24/06/17.
  */
 public class PlayerDeathComponent extends DeathHandler {
+
     public PlayerDeathComponent() {
         super(DeathType.PLAYER);
     }
@@ -20,8 +21,13 @@ public class PlayerDeathComponent extends DeathHandler {
         // show game over
         // TODO revisit maybe
         Engine.get().stopGame();
-        Engine.get().setCurrentUI(voide.resources.Resources.get().getResource(UIType.GAME_OVER.key(), UI.class));
+        Engine
+            .get()
+            .setCurrentUI(
+                voide.resources.Resources
+                    .get()
+                    .getResource(UIType.GAME_OVER.key(), UI.class)
+            );
         Engine.get().setEngineState(Engine.EngineState.MENU);
     }
-
 }

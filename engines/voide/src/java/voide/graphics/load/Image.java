@@ -4,9 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.imageio.ImageIO;
-
 import voide.debug.RepresentationBuilder;
 import voide.graphics.renderable.Texture;
 import voide.graphics.util.TextureUtil;
@@ -14,7 +12,10 @@ import voide.math.VectorD;
 import voide.resources.Resource;
 
 public class Image implements Resource {
-    private static final Logger LOGGER = Logger.getLogger(Image.class.getName());
+
+    private static final Logger LOGGER = Logger.getLogger(
+        Image.class.getName()
+    );
     // bytes
     private static final int ONE_BYTE = 8;
     private static final int TWO_BYTES = ONE_BYTE * 2;
@@ -24,9 +25,7 @@ public class Image implements Resource {
     protected VectorD shape;
     private int[] data;
 
-    public Image() {
-
-    }
+    public Image() {}
 
     public Image(VectorD shape, int[] data) {
         this.shape = shape;
@@ -40,7 +39,9 @@ public class Image implements Resource {
             int[] pixels = new int[width * height];
             LOGGER.log(Level.INFO, "loading {0}", path);
             try {
-                BufferedImage image = ImageIO.read(Image.class.getResource(path));
+                BufferedImage image = ImageIO.read(
+                    Image.class.getResource(path)
+                );
                 image.getRGB(0, 0, width, height, pixels, 0, width);
                 LOGGER.log(Level.INFO, "Initialized " + repr());
             } catch (IOException e) {
@@ -60,15 +61,27 @@ public class Image implements Resource {
     }
 
     public String repr() {
-        return String.format("Image { %dx%d, %s }", (int) shape.getValue(0), (int) shape.getValue(1), path);
+        return String.format(
+            "Image { %dx%d, %s }",
+            (int) shape.getValue(0),
+            (int) shape.getValue(1),
+            path
+        );
     }
 
     public String fullRepr() {
-        return new RepresentationBuilder(getClass().getName()).field("path", path).field("shape", shape.repr()).build();
+        return new RepresentationBuilder(getClass().getName())
+            .field("path", path)
+            .field("shape", shape.repr())
+            .build();
     }
 
     public Texture toTexture() {
-        int id = TextureUtil.createGPUTexture((int) shape.getValue(0), (int) shape.getValue(1), data);
+        int id = TextureUtil.createGPUTexture(
+            (int) shape.getValue(0),
+            (int) shape.getValue(1),
+            data
+        );
         return new Texture(shape, id, getTextureOffset(), getTextureShape());
     }
 
@@ -103,5 +116,4 @@ public class Image implements Resource {
     public VectorD getTextureShape() {
         return new VectorD(1, 1);
     }
-
 }

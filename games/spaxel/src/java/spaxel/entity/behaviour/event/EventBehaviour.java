@@ -8,6 +8,7 @@ import spaxel.entity.storage.event.EventStorage;
 import voide.entity.Entity;
 
 public class EventBehaviour extends Behaviour {
+
     private Map<Event, EventHandler> handlers;
 
     public EventBehaviour() {
@@ -20,7 +21,9 @@ public class EventBehaviour extends Behaviour {
     }
 
     public void execute(Entity entity) {
-        EventStorage evStore = (EventStorage) entity.getComponent(SpaxelComponent.EVENT_STORE);
+        EventStorage evStore = (EventStorage) entity.getComponent(
+            SpaxelComponent.EVENT_STORE
+        );
         for (Event event : evStore.getEvents()) {
             if (handlers.containsKey(event)) {
                 handlers.get(event).activate(entity);

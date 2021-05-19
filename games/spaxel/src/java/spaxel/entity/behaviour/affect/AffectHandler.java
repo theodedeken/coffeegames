@@ -3,6 +3,7 @@ package spaxel.entity.behaviour.affect;
 import voide.entity.Entity;
 
 public abstract class AffectHandler {
+
     private AffectType type;
 
     public AffectHandler(AffectType type) {

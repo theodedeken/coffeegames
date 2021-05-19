@@ -1,17 +1,17 @@
 package spaxel.entity.storage.damage;
 
+import java.util.ArrayList;
+import java.util.List;
 import spaxel.entity.SpaxelComponent;
 import voide.entity.Storage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Represents the ability to get damaged
- * 
+ *
  * Created by theo on 8/06/17.
  */
 public class DamageStorage extends Storage {
+
     private List<Damage> damages;
 
     /**
@@ -24,7 +24,7 @@ public class DamageStorage extends Storage {
 
     /**
      * Add damage to this component
-     * 
+     *
      * @param damage the damage to add
      */
     public synchronized void addDamage(Damage damage) {
@@ -37,7 +37,7 @@ public class DamageStorage extends Storage {
 
     /**
      * remove Damage from this component
-     * 
+     *
      * @param damage the damage to remove
      */
     public synchronized void removeDamage(Damage damage) {
