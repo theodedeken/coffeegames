@@ -31,7 +31,6 @@ oregano(
         "//games/spaxel/src/java/spaxel/entity:entity.checkstyle.rgno",
         "//games/spaxel/src/java/spaxel/factories/elements:elements.checkstyle.rgno",
         "//games/spaxel/src/java/spaxel/input:input.checkstyle.rgno",
-        "//games/spaxel/src/java/spaxel/loaders:loaders.checkstyle.rgno",
         "//games/spaxel/src/java/spaxel/resources:resources.checkstyle.rgno",
         "//games/spaxel/src/java/spaxel/sound:sound.checkstyle.rgno",
         "//games/spaxel/src/java/spaxel/state:state.checkstyle.rgno",
