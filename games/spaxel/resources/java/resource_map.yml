@@ -45,12 +45,23 @@ keys:
   files:
     - key: default
       path: /keys/default.yml
-#industry:
-#  - /properties/entities/particle.json
-#  - /properties/entities/spawner.json
-#  - /properties/entities/actor.json
-#  - /properties/entities/projectile.json
-#  - /properties/entities/item.json
+industry:
+  className: voide.entity.EntityIndustry
+  mixins:
+    - parent: voide.entity.Component
+      mixin: spaxel.entity.ComponentMixin
+    - parent: voide.entity.EntityIndustry
+      mixin: spaxel.entity.industry.EntityIndustryMixin
+    - parent: voide.entity.EntityType
+      mixin: spaxel.entity.SpaxelEntity
+    - parent: voide.entity.ComponentType
+      mixin: spaxel.entity.SpaxelComponent
+  files:
+    - /properties/entities/particle.json
+    - /properties/entities/spawner.json
+    - /properties/entities/actor.json
+    - /properties/entities/projectile.json
+    - /properties/entities/item.json
 #TODO- /properties/entities/player.json
 #- /properties/entities/effect.json
 #- /properties/entities/marker.json

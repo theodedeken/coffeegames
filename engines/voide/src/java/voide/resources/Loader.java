@@ -2,8 +2,10 @@ package voide.resources;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
@@ -43,40 +45,29 @@ public final class Loader {
     }
 
     public static Map<String, Resource> loadResources(String namespace, ResourceNamespace info) {
-        try {
-            Class<Resource> outputClass = (Class<Resource>) Class.forName(info.getClassName());
-            Class<Resource> mixinClass = null;
-            if (info.getMixin() != null) {
-                mixinClass = (Class<Resource>) Class.forName(info.getMixin());
-            }
-            Map<String, Resource> resources = new HashMap<>();
-            for (ResourceFile resFile : info.getFiles()) {
-                if (resFile.isSingle()) {
-                    Resource resource = loadSingleResource(resFile, outputClass, mixinClass);
-                    resources.put(namespace + "." + resFile.getKey(), resource);
-                } else {
-                    Map<String, Resource> loaded = loadMultiResource(resFile, outputClass, mixinClass);
-                    for (Entry<String, Resource> entry : loaded.entrySet()) {
-                        resources.put(namespace + "." + entry.getKey(), entry.getValue());
-                    }
+        Class<Resource> outputClass = info.getClassType();
+        Map<String, Resource> resources = new HashMap<>();
+        for (ResourceFile resFile : info.getFiles()) {
+            if (resFile.isSingle()) {
+                Resource resource = loadSingleResource(resFile, outputClass, info.getMixins());
+                resources.put(namespace + "." + resFile.getKey(), resource);
+            } else {
+                Map<String, Resource> loaded = loadMultiResource(resFile, outputClass, info.getMixins());
+                for (Entry<String, Resource> entry : loaded.entrySet()) {
+                    resources.put(namespace + "." + entry.getKey(), entry.getValue());
                 }
             }
-
-            return resources;
-        } catch (ClassNotFoundException e) {
-            LOGGER.log(Level.SEVERE, "Resource class not found: " + info);
-            LOGGER.log(Level.SEVERE, e.toString(), e);
         }
-        return null;
 
+        return resources;
     }
 
     public static Resource loadSingleResource(ResourceFile file, Class<Resource> outputClass,
-            Class<Resource> mixinClass) {
+            List<ClassMixin> mixinClasses) {
         try {
             ObjectMapper mapper = getMapper(file.getType());
-            if (mixinClass != null) {
-                mapper.addMixIn(outputClass, mixinClass);
+            for (ClassMixin mixinClass : mixinClasses) {
+                mapper.addMixIn(mixinClass.getParent(), mixinClass.getMixin());
             }
             InputStream stream = new FileReader(file.getPath()).toStream();
             Resource resource = mapper.readValue(stream, outputClass);
@@ -90,15 +81,16 @@ public final class Loader {
     }
 
     public static Map<String, Resource> loadMultiResource(ResourceFile file, Class<Resource> outputClass,
-            Class<Resource> mixinClass) {
+            List<ClassMixin> mixinClasses) {
+        Map<String, Resource> output = new HashMap<>();
         try {
             ObjectMapper mapper = getMapper(file.getType());
-            if (mixinClass != null) {
-                mapper.addMixIn(outputClass, mixinClass);
+            for (ClassMixin mixinClass : mixinClasses) {
+                mapper.addMixIn(mixinClass.getParent(), mixinClass.getMixin());
             }
             InputStream stream = new FileReader(file.getPath()).toStream();
             JsonNode tree = mapper.readTree(stream);
-            Map<String, Resource> output = new HashMap<>();
+
             Iterator<Entry<String, JsonNode>> nodes = tree.fields();
             while (nodes.hasNext()) {
                 Entry<String, JsonNode> node = nodes.next();
@@ -112,7 +104,7 @@ public final class Loader {
             LOGGER.log(Level.SEVERE, "Could not load resource file: " + file);
             LOGGER.log(Level.SEVERE, e.toString(), e);
         }
-        return null;
+        return output;
     }
 
     public static ObjectMapper getMapper(ResourceFile.FileType type) {
