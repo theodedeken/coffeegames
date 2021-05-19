@@ -26,7 +26,7 @@ public class ExperienceSystem extends GameSystem {
     public void update() {
         Set<Entity> entities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.EXPERIENCE);
         for (Entity entity : entities) {
             ExperienceStorage ec = (ExperienceStorage) entity.getComponent(

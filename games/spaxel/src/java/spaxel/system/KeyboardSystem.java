@@ -24,7 +24,7 @@ public class KeyboardSystem extends GameSystem {
     public void update() {
         Set<Entity> entities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.KEYBOARD);
         for (Entity entity : entities) {
             ((Behaviour) entity.getComponent(SpaxelComponent.KEYBOARD)).execute(

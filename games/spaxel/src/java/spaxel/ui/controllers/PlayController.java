@@ -66,7 +66,7 @@ public final class PlayController {
      */
     public static void updateHpBar(Element element) {
         HealthStorage hc = (HealthStorage) EntityUtil
-            .getPlayer(Engine.get().getNEntityStream())
+            .getPlayer(Engine.get().getEntityStream())
             .getComponent(SpaxelComponent.HEALTH);
 
         element
@@ -93,7 +93,7 @@ public final class PlayController {
      */
     public static void updateXpBar(Element element) {
         ExperienceStorage ec = (ExperienceStorage) EntityUtil
-            .getPlayer(Engine.get().getNEntityStream())
+            .getPlayer(Engine.get().getEntityStream())
             .getComponent(SpaxelComponent.EXPERIENCE);
         element
             .getStyle()
@@ -125,7 +125,7 @@ public final class PlayController {
         updateContainer(
             element,
             EntityUtil
-                .getPlayer(Engine.get().getNEntityStream())
+                .getPlayer(Engine.get().getEntityStream())
                 .getLinks(
                     e ->
                         (
@@ -145,7 +145,7 @@ public final class PlayController {
         updateContainer(
             element,
             EntityUtil
-                .getPlayer(Engine.get().getNEntityStream())
+                .getPlayer(Engine.get().getEntityStream())
                 .getLinks(
                     e ->
                         (
@@ -165,7 +165,7 @@ public final class PlayController {
         updateContainer(
             element,
             EntityUtil
-                .getPlayer(Engine.get().getNEntityStream())
+                .getPlayer(Engine.get().getEntityStream())
                 .getLinks(
                     e ->
                         (
@@ -289,7 +289,7 @@ public final class PlayController {
         SpaxelComponent type = SpaxelComponent.valueOf(
             element.getId().toUpperCase()
         );
-        int size = Engine.get().getNEntityStream().getEntities(type).size();
+        int size = Engine.get().getEntityStream().getEntities(type).size();
         element.getStyle().setProperty("text", type.getName() + ": " + size);
     }
 

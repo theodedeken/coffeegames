@@ -26,7 +26,7 @@ public class DamageSystem extends GameSystem {
     public void update() {
         Set<Entity> entities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.DAMAGE);
         for (Entity e : entities) {
             DamageStorage dc = (DamageStorage) e.getComponent(

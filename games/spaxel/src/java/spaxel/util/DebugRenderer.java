@@ -36,7 +36,7 @@ public final class DebugRenderer {
             Element label = new Element();
             label.setId(type.getName());
             label.setClasses("debug_label");
-            int size = Engine.get().getNEntityStream().getEntities(type).size();
+            int size = Engine.get().getEntityStream().getEntities(type).size();
             label.getStyle().setProperty("text", type.getName() + ": " + size);
             debug.addElement(label);
         }

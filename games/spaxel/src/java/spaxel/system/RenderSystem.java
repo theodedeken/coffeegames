@@ -75,7 +75,7 @@ public class RenderSystem extends GameSystem {
                 );
 
             Entity player = EntityUtil.getPlayer(
-                Engine.get().getNEntityStream()
+                Engine.get().getEntityStream()
             );
             TransformationStorage playerPos = (TransformationStorage) player.getComponent(
                 SpaxelComponent.TRANSFORMATION
@@ -118,7 +118,7 @@ public class RenderSystem extends GameSystem {
     public void renderEntities() {
         Set<Entity> toRender = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntitiesCopy(SpaxelComponent.RENDER);
         for (Entity ne : toRender) {
             ((RenderBehaviour) ne.getComponent(SpaxelComponent.RENDER)).render(

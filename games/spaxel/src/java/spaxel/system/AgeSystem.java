@@ -24,7 +24,7 @@ public class AgeSystem extends GameSystem {
     public void update() {
         Set<Entity> nEntities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.AGE);
         for (Entity ne : nEntities) {
             AgeStorage ac = (AgeStorage) ne.getComponent(SpaxelComponent.AGE);

@@ -25,7 +25,7 @@ public class HealthSystem extends GameSystem {
     public void update() {
         Set<Entity> entities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.HEALTH);
         for (Entity e : entities) {
             if (

@@ -26,8 +26,8 @@ public final class ClassSelectionController {
             .get()
             .getResource("player_white_industry", EntityIndustry.class)
             .produce();
-        Engine.get().getNEntityStream().addEntity(player);
-        Engine.get().getNEntityStream().cleanup();
+        Engine.get().getEntityStream().addEntity(player);
+        Engine.get().getEntityStream().cleanup();
         Engine
             .get()
             .setCurrentUI(
@@ -46,8 +46,8 @@ public final class ClassSelectionController {
             .get()
             .getResource("player_red_industry", EntityIndustry.class)
             .produce();
-        Engine.get().getNEntityStream().addEntity(player);
-        Engine.get().getNEntityStream().cleanup();
+        Engine.get().getEntityStream().addEntity(player);
+        Engine.get().getEntityStream().cleanup();
         Engine
             .get()
             .setCurrentUI(
@@ -66,8 +66,8 @@ public final class ClassSelectionController {
             .get()
             .getResource("player_green_industry", EntityIndustry.class)
             .produce();
-        Engine.get().getNEntityStream().addEntity(player);
-        Engine.get().getNEntityStream().cleanup();
+        Engine.get().getEntityStream().addEntity(player);
+        Engine.get().getEntityStream().cleanup();
         Engine
             .get()
             .setCurrentUI(
@@ -86,8 +86,8 @@ public final class ClassSelectionController {
             .get()
             .getResource("player_blue_industry", EntityIndustry.class)
             .produce();
-        Engine.get().getNEntityStream().addEntity(player);
-        Engine.get().getNEntityStream().cleanup();
+        Engine.get().getEntityStream().addEntity(player);
+        Engine.get().getEntityStream().cleanup();
         Engine
             .get()
             .setCurrentUI(

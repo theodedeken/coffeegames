@@ -25,7 +25,7 @@ public class VelocitySystem extends GameSystem {
     public void update() {
         Set<Entity> nEntities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.CHANGE);
         for (Entity ne : nEntities) {
             TransformationStorage pc = (TransformationStorage) ne.getComponent(

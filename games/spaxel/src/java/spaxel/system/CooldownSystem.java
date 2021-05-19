@@ -24,7 +24,7 @@ public class CooldownSystem extends GameSystem {
     public void update() {
         Set<Entity> entities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.COOLDOWN);
         for (Entity entity : entities) {
             CooldownStorage cc = (CooldownStorage) entity.getComponent(

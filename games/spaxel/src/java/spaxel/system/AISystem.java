@@ -21,7 +21,7 @@ public class AISystem extends GameSystem {
     public void update() {
         Set<Entity> enemies = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.AI);
 
         for (Entity e : enemies) {

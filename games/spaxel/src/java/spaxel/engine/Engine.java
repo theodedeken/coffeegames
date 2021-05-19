@@ -99,7 +99,7 @@ public final class Engine {
         this.mouseWrapper = wrapper;
     }
 
-    public EntityStream getNEntityStream() {
+    public EntityStream getEntityStream() {
         return nentities;
     }
 

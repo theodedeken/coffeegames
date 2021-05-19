@@ -54,9 +54,9 @@ public class DifficultySystem extends GameSystem {
         }
         Set<Entity> enemies = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelEntity.ENEMY);
-        Entity player = EntityUtil.getPlayer(Engine.get().getNEntityStream());
+        Entity player = EntityUtil.getPlayer(Engine.get().getEntityStream());
         TransformationStorage playerPos = (TransformationStorage) player.getComponent(
             SpaxelComponent.TRANSFORMATION
         );

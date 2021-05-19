@@ -131,7 +131,7 @@ public class UpdateRunner implements Runnable {
             update(SystemType.MARKER);
             Engine.get().getGameState().addTime(Constants.NS_PER_TICK);
         }
-        Engine.get().getNEntityStream().cleanup();
+        Engine.get().getEntityStream().cleanup();
         if (Engine.get().getGameState().isLogging()) {
             Engine.get().getLogger().cleanup();
         }

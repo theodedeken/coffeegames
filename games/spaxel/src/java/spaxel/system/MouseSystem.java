@@ -24,7 +24,7 @@ public class MouseSystem extends GameSystem {
     public void update() {
         Set<Entity> entities = Engine
             .get()
-            .getNEntityStream()
+            .getEntityStream()
             .getEntities(SpaxelComponent.MOUSE);
         for (Entity entity : entities) {
             ((Behaviour) entity.getComponent(SpaxelComponent.MOUSE)).execute(
