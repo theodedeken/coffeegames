@@ -6,6 +6,7 @@ oregano(
     deps = [
         "//engines/voide/src/java/voide/buffer:buffer_utils.checkstyle.rgno",
         "//engines/voide/src/java/voide/collision:collision.checkstyle.rgno",
+        "//engines/voide/src/java/voide/debug:debug.checkstyle.rgno",
         "//engines/voide/src/java/voide/entity:entity.checkstyle.rgno",
         "//engines/voide/src/java/voide/graphics/animation:animation.checkstyle.rgno",
         "//engines/voide/src/java/voide/graphics/geometry:geometry.checkstyle.rgno",
