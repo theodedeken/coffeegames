@@ -19,11 +19,22 @@ def _python_typed_deps(target, ctx):
         for data_el in ctx.rule.attr.data:
             for data_file in data_el.files.to_list():
                 if data_file.basename == "py.typed":
-                    imports += ctx.rule.attr.imports
+                    imports += import_paths(ctx, ctx.rule.attr.imports)
     if hasattr(ctx.rule.attr, "deps"):
         for dep in ctx.rule.attr.deps:
             imports += dep[PyTypeInfo].imports
     return [PyTypeInfo(imports = imports)]
+
+def import_paths(ctx, imports):
+    base = ctx.label.workspace_root + "/" + ctx.label.package
+    out = []
+    for import_path in imports:
+        if import_path == ".":
+            out.append(base)
+        else:
+            out.append(base + "/" + import_path)
+
+    return out
 
 def _python_source_files(target, ctx):
     files = []

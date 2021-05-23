@@ -77,7 +77,6 @@ def result_to_oregano(
 
 if __name__ == "__main__":
     with TemporaryDirectory() as temp_dir:
-
         sys.argv.append("--show-error-codes")
         sys.argv.append("--show-column-numbers")
         sys.argv.append("--no-error-summary")

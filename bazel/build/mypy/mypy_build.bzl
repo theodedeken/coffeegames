@@ -26,6 +26,7 @@ def _mypy_build_impl(ctx):
         arguments = [args],
         env = {
             "OREGANO_OUTPUT": oregano_output.path,
+            "MYPYPATH": ":".join(typed_deps),
         },
     )
 
