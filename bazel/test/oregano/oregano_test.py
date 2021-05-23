@@ -104,14 +104,28 @@ def print_check(check, file_path):
     print()
 
 
+def print_run_coverage(files):
+    for f in files:
+        if "coverage" in f:
+            total = len(f["coverage"]["lines"])
+            covered = sum(
+                map(lambda el: el["covered"], f["coverage"]["lines"])
+            )
+            perc = covered * 100 / total
+            file_name = f["file_name"]
+            print(f"{file_name}: {perc:.2f}%")
+
+
 def print_file(file_obj):
-    for check in file_obj["checks"]:
-        print_check(check, file_obj["file_name"])
+    if "checks" in file_obj:
+        for check in file_obj["checks"]:
+            print_check(check, file_obj["file_name"])
 
 
 def print_run(run):
     for f in run["files"]:
         print_file(f)
+    print_run_coverage(run["files"])
 
 
 if __name__ == "__main__":

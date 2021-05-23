@@ -2,7 +2,7 @@
 namespace Oregano;
 
 table Check {
-    name:string;
+    source:string;
     tool:string;
     message:string;
     severity:string;
@@ -10,9 +10,20 @@ table Check {
     column:uint16;
 }
 
+table LineCoverage {
+    number:uint16;
+    covered:bool;
+}
+
+table Coverage {
+    tool:string;
+    lines:[LineCoverage]
+}
+
 table File {
     file_name:string;
     checks:[Check];
+    coverage:[Coverage];
 }
 
 table Run {

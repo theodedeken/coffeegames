@@ -1,22 +1,22 @@
 import os
 import argparse
 import subprocess
+from typing import List
 
 
-def autoupdate_file(target_name):
+def autoupdate_file(target_name: str) -> None:
     deps = get_deps()
     depstr = " ".join(deps)
 
-    out = subprocess.check_output(
+    subprocess.check_output(
         f"buildozer 'set deps {depstr}' {target_name}",
         cwd=os.environ["BUILD_WORKSPACE_DIRECTORY"],
         text=True,
         shell=True,
     )
-    print(out)
 
 
-def get_deps():
+def get_deps() -> List[str]:
     out = subprocess.check_output(
         ["bazel", "query", "attr(tags, 'RGNO', //...)"],
         cwd=os.environ["BUILD_WORKSPACE_DIRECTORY"],

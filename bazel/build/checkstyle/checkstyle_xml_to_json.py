@@ -17,7 +17,10 @@ def convert(input_file, error_code, file_prefix, output_file):
         file_info = {"file_name": full_path, "checks": []}
 
         for error in file_check:
-            file_info["checks"].append(error.attrib)
+            check = error.attrib
+            check["tool"] = "checkstyle"
+            file_info["checks"].append(check)
+
         out["files"].append(file_info)
     json.dump([out], open(output_file, "w"))
 
