@@ -13,7 +13,7 @@ def _mypy_build_impl(ctx):
         args.add(input_file.path)
     if ctx.attr.configuration_file != None:
         config_file = ctx.attr.configuration_file.files.to_list()[0]
-        all_inputs.append(config_file)
+        all_inputs = depset([config_file], transitive = [all_inputs])
         args.add("--config-file")
         args.add(config_file.path)
 

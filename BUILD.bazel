@@ -4,6 +4,11 @@ oregano(
     name = "oregano",
     autoupdate = True,
     deps = [
+        "//bazel/build/checkstyle:checkstyle_xml_to_json.mypy.rgno",
+        "//bazel/build/mypy:mypy_runner.mypy.rgno",
+        "//bazel/build/oregano:oregano_autoupdate.mypy.rgno",
+        "//bazel/build/oregano:oregano_merger.mypy.rgno",
+        "//bazel/test/oregano:oregano_test.mypy.rgno",
         "//engines/voide/src/java/voide/buffer:buffer_utils.checkstyle.rgno",
         "//engines/voide/src/java/voide/collision:collision.checkstyle.rgno",
         "//engines/voide/src/java/voide/debug:debug.checkstyle.rgno",

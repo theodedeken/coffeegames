@@ -12,4 +12,5 @@ def mypy_test(name, label, configuration_file = None):
     oregano_test(
         name = name,
         checks = "%s.rgno" % name,
+        tags = ["lang:python"],
     )

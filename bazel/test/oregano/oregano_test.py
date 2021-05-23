@@ -1,5 +1,7 @@
 import argparse
 import json
+import textwrap
+from typing import Optional
 
 """
 TODO format to go for
@@ -56,7 +58,7 @@ def format_severity(severity):
     elif severity == "error":
         return "\u001b[31mERROR\u001b[0m "
     else:
-        raise RuntimeError("Unknown severity level")
+        raise RuntimeError(f"Unknown severity level: {severity}")
 
 
 def print_code_excerpt(
@@ -71,15 +73,30 @@ def print_code_excerpt(
             print_message(message, severity, column)
 
 
+def line_wrap_message(message: str, color: Optional[str] = None):
+    lines = textwrap.wrap(message)
+    for line in lines:
+        if color is not None:
+            print(color_string(" " * 6 + line, color))
+        else:
+            print(" " * 6 + line)
+
+
 def print_message(message, severity, column=None):
     if column:
-        shifted = " " * (5 + column) + "^ " + message
+        caret = " " * (5 + column) + "^"
     else:
-        shifted = "   ^  " + message
+        cared = "   ^"
+
     if severity == "warn":
-        print(color_string(shifted, "yellow"))
-    if severity == "error":
-        print(color_string(shifted, "red"))
+        print(color_string(caret, "yellow"))
+        line_wrap_message(message, "yellow")
+    elif severity == "error":
+        print(color_string(caret, "red"))
+        line_wrap_message(message, "red")
+    else:
+        print(caret)
+        line_wrap_message(message)
 
 
 def print_check(check, file_path):

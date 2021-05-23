@@ -1,10 +1,12 @@
-py_binary(
+load("//bazel:oregano_macros.bzl", "rgno_py_binary")
+
+rgno_py_binary(
     name = "oregano_merger",
     srcs = ["oregano_merger.py"],
     visibility = ["//visibility:public"],
 )
 
-py_binary(
+rgno_py_binary(
     name = "oregano_autoupdate",
     srcs = ["oregano_autoupdate.py"],
     visibility = ["//visibility:public"],

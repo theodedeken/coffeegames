@@ -7,7 +7,14 @@ from tempfile import TemporaryDirectory
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-message_re = r"(?P<file_name>.*):(?P<line>[0-9]*):(?P<column>[0-9]*):(?P<severity>.*):(?P<message>.*)\[(?P<source>.*)\]"
+message_w_source = r"(?P<file_name>.*):(?P<line>[0-9]*):(?P<column>[0-9]*):(?P<severity>[a-z ]*):(?P<message>.*)\[(?P<source>.*)\]"
+message_wo_source = r"(?P<file_name>.*):(?P<line>[0-9]*):(?P<column>[0-9]*):(?P<severity>[a-z ]*):(?P<message>.*)"
+
+
+def map_severity(severity: str) -> str:
+    if severity == "note":
+        return "info"
+    return severity
 
 
 def result_to_oregano(
@@ -20,16 +27,24 @@ def result_to_oregano(
 
     file_dict = {}
     for message in result.split("\n")[:-1]:
-        matched = re.match(message_re, message)
+        matched = re.match(message_w_source, message)
+        if matched is None:
+            matched = re.match(message_wo_source, message)
         file_name = matched.group("file_name")
         if file_name not in file_dict:
-            file_dict[file_name] = {"file_name": file_name, "checks": []}
+            file_dict[file_name] = {
+                "file_name": file_name,
+                "checks": [],
+                "language": "python",
+            }
         check = {
             "line": matched.group("line"),
             "column": matched.group("column"),
-            "severity": matched.group("severity").strip(),
+            "severity": map_severity(matched.group("severity").strip()),
             "message": matched.group("message").strip(),
-            "source": matched.group("source"),
+            "source": matched.group("source")
+            if "source" in matched.groupdict()
+            else "note",
             "tool": "mypy",
         }
         file_dict[file_name]["checks"].append(check)
@@ -49,6 +64,8 @@ def result_to_oregano(
             if file_name not in file_dict:
                 file_dict[file_name] = {
                     "file_name": file_name,
+                    "language": "python",
+                    "checks": [],
                     "coverage": {"lines": lines},
                 }
             else:

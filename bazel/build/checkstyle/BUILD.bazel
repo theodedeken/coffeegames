@@ -1,4 +1,6 @@
-py_binary(
+load("//bazel:oregano_macros.bzl", "rgno_py_binary")
+
+rgno_py_binary(
     name = "checkstyle_xml_to_json",
     srcs = ["checkstyle_xml_to_json.py"],
     visibility = ["//visibility:public"],

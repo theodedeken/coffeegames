@@ -17,12 +17,16 @@ def autoupdate_file(target_name: str) -> None:
 
 
 def get_deps() -> List[str]:
-    out = subprocess.check_output(
+    out: str = subprocess.check_output(
         ["bazel", "query", "attr(tags, 'RGNO', //...)"],
         cwd=os.environ["BUILD_WORKSPACE_DIRECTORY"],
         text=True,
     )
-    return list(filter(lambda el: el, out.split("\n")))
+    return list(filter(nonempty, out.split("\n")))
+
+
+def nonempty(value: str) -> bool:
+    return value != ""
 
 
 if __name__ == "__main__":
@@ -35,4 +39,6 @@ if __name__ == "__main__":
         help="The target name to edit in the build file",
     )
     args = parser.parse_args()
-    autoupdate_file(args.target_name)
+    target_name: str = args.target_name
+    assert isinstance(target_name, str)
+    autoupdate_file(target_name)

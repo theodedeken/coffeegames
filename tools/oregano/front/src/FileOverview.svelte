@@ -20,7 +20,7 @@
     name = params.wild;
 
     const highlightedCode = hljs.highlight(content.join("\n"), {
-      language: "java",
+      language: file.language,
     }).value;
     lines = highlightedCode.split("\n");
     rest = "";

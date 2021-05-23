@@ -14,7 +14,7 @@ def convert(input_file, error_code, file_prefix, output_file):
     }
     for file_check in root:
         full_path = file_check.attrib["name"].replace(prefix + "/", "")
-        file_info = {"file_name": full_path, "checks": []}
+        file_info = {"file_name": full_path, "checks": [], "language": "java"}
 
         for error in file_check:
             check = error.attrib

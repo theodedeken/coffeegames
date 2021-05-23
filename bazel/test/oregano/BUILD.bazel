@@ -1,4 +1,6 @@
-py_binary(
+load("//bazel:oregano_macros.bzl", "rgno_py_binary")
+
+rgno_py_binary(
     name = "oregano_test",
     srcs = ["oregano_test.py"],
     visibility = ["//visibility:public"],
