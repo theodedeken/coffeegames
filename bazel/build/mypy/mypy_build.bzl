@@ -25,8 +25,8 @@ def _mypy_build_impl(ctx):
         executable = ctx.attr._mypy_runner.files_to_run.executable,
         arguments = [args],
         env = {
-            "OREGANO_OUTPUT": oregano_output.path,
             "MYPYPATH": ":".join(typed_deps),
+            "OREGANO_OUTPUT": oregano_output.path,
         },
     )
 
@@ -41,10 +41,10 @@ def _mypy_build_impl(ctx):
 mypy_build = rule(
     implementation = _mypy_build_impl,
     attrs = {
-        "label": attr.label(mandatory = True, aspects = [python_typed_deps, python_source_files]),
         "configuration_file": attr.label(
             allow_single_file = True,
         ),
+        "label": attr.label(mandatory = True, aspects = [python_typed_deps, python_source_files]),
         "_mypy_runner": attr.label(
             cfg = "exec",
             executable = True,

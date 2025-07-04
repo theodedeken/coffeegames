@@ -1,3 +1,4 @@
 java-bin
 bazel-*
 node_modules
+.mypy_cache

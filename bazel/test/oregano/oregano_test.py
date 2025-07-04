@@ -43,6 +43,7 @@ colors = {
     "yellow": "\u001b[33m",
     "red": "\u001b[31m",
     "bright_black": "\u001b[30;1m",
+    "bold": "\u001b[1m",
 }
 
 
@@ -68,7 +69,7 @@ def print_code_excerpt(
     start = max(line - spread, 1)
     end = min(line + 2, len(lines) + 1)
     for i in range(start, end):
-        print(f"{i: 4}| {lines[i - 1][:-1]}")
+        print(color_string(f"{i: 4}|", "bright_black"), f"{lines[i - 1][:-1]}")
         if i == line:
             print_message(message, severity, column)
 
@@ -77,16 +78,19 @@ def line_wrap_message(message: str, color: Optional[str] = None):
     lines = textwrap.wrap(message)
     for line in lines:
         if color is not None:
-            print(color_string(" " * 6 + line, color))
+            print(
+                color_string("    |", "bright_black"),
+                color_string(line, color),
+            )
         else:
-            print(" " * 6 + line)
+            print(color_string("    |", "bright_black"), line)
 
 
 def print_message(message, severity, column=None):
     if column:
         caret = " " * (5 + column) + "^"
     else:
-        cared = "   ^"
+        caret = "   ^"
 
     if severity == "warn":
         print(color_string(caret, "yellow"))
@@ -104,7 +108,8 @@ def print_check(check, file_path):
     if "column" in check:
         location += f":{check['column']}"
     print(
-        f"{format_severity(check['severity'])}\u001b[30;1m{check['source']}\u001b[0m"
+        f"{format_severity(check['severity'])}"
+        + color_string(check["source"], "bold")
     )
     print(f"  --> \u001b[36m{file_path}{location}\u001b[0m")
     if "column" in check:

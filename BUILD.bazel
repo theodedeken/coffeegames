@@ -47,3 +47,8 @@ oregano(
         "//games/spaxel/src/java/spaxel/util:gl_util.checkstyle.rgno",
     ],
 )
+
+sh_binary(
+    name = "format_test",
+    srcs = ["format_test.sh"],
+)

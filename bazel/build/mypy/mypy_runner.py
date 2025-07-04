@@ -51,25 +51,26 @@ def result_to_oregano(
 
     coverage = tree.getroot()
     packages = coverage.find("packages")
-    for package in packages:
-        for class_el in package.find("classes"):
-            file_name = class_el.get("filename")
-            lines = []
-            for line in class_el.find("lines"):
-                hit = {
-                    "line": int(line.get("number")),
-                    "covered": int(line.get("hits")) > 0,
-                }
-                lines.append(hit)
-            if file_name not in file_dict:
-                file_dict[file_name] = {
-                    "file_name": file_name,
-                    "language": "python",
-                    "checks": [],
-                    "coverage": {"lines": lines},
-                }
-            else:
-                file_dict[file_name]["coverage"] = {"lines": lines}
+    if packages is not None:
+        for package in packages:
+            for class_el in package.find("classes"):
+                file_name = class_el.get("filename")
+                lines = []
+                for line in class_el.find("lines"):
+                    hit = {
+                        "line": int(line.get("number")),
+                        "covered": int(line.get("hits")) > 0,
+                    }
+                    lines.append(hit)
+                if file_name not in file_dict:
+                    file_dict[file_name] = {
+                        "file_name": file_name,
+                        "language": "python",
+                        "checks": [],
+                        "coverage": {"lines": lines},
+                    }
+                else:
+                    file_dict[file_name]["coverage"] = {"lines": lines}
 
     out["files"] = list(file_dict.values())
     json.dump([out], open(output_file, "w"))

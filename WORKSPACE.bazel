@@ -5,6 +5,23 @@ workspace(
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
+##########
+# Skylib #
+##########
+
+http_archive(
+    name = "bazel_skylib",
+    sha256 = "1c531376ac7e5a180e0237938a2536de0c54d93f5c278634818e0efc952dd56c",
+    urls = [
+        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.0.3/bazel-skylib-1.0.3.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.0.3/bazel-skylib-1.0.3.tar.gz",
+    ],
+)
+
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
+
 '''TODO start using source version 16 once bazel 4.1.0 is releasedW
 load("@bazel_tools//tools/jdk:remote_java_repository.bzl", "remote_java_repository")
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
@@ -25,6 +42,10 @@ maybe(
     version = "16",
 )'''
 
+################
+# JVM external #
+################
+
 RULES_JVM_EXTERNAL_TAG = "4.0"
 
 RULES_JVM_EXTERNAL_SHA = "31701ad93dbfe544d597dbe62c9a1fdd76d81d8a9150c2bf1ecf928ecdf97169"
@@ -37,6 +58,10 @@ http_archive(
     strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
+
+#####################
+# Spaxel Maven deps #
+#####################
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@rules_jvm_external//:specs.bzl", "maven")
@@ -165,17 +190,18 @@ yarn_install(
 http_archive(
     name = "io_bazel_rules_closure",
     patches = ["//:rules_closure_roots_fix.patch"],
-    sha256 = "7d206c2383811f378a5ef03f4aacbcf5f47fd8650f6abbc3fa89f3a27dd8b176",
-    strip_prefix = "rules_closure-0.10.0",
+    sha256 = "d66deed38a0bb20581c15664f0ab62270af5940786855c7adc3087b27168b529",
+    strip_prefix = "rules_closure-0.11.0",
     urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_closure/archive/0.10.0.tar.gz",
-        "https://github.com/bazelbuild/rules_closure/archive/0.10.0.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_closure/archive/0.11.0.tar.gz",
+        "https://github.com/bazelbuild/rules_closure/archive/0.11.0.tar.gz",
     ],
 )
 
 load("@io_bazel_rules_closure//closure:repositories.bzl", "rules_closure_dependencies", "rules_closure_toolchains")
 
-rules_closure_dependencies()
+# NOTE this is an interesting mechanism of selecting sub dependencies
+rules_closure_dependencies(omit_rules_python = True)
 
 rules_closure_toolchains()
 
@@ -199,4 +225,30 @@ pip_install(
     name = "mypy_deps",
     python_interpreter = "python3.9",
     requirements = "//bazel/build/mypy:mypy_version.txt",
+)
+
+##############
+# Buildifier #
+##############
+
+# TODO needs to be advanced enough to pick the right binary for the platform and current bazel version
+http_file(
+    name = "buildifier",
+    downloaded_file_path = "buildifier.bin",
+    executable = True,
+    sha256 = "db81208c4e6f0f31dc33efaf9373c29c78b5295198cf16e4778e3e9211b57b0b",
+    urls = ["https://github.com/bazelbuild/buildtools/releases/download/4.0.0/buildifier-linux-amd64"],
+)
+
+#############
+# Buildozer #
+#############
+
+# TODO needs to be advanced enough to pick the right binary for the platform and current bazel version
+http_file(
+    name = "buildozer",
+    downloaded_file_path = "buildozer.bin",
+    executable = True,
+    sha256 = "0731bbcecec3ae96eec2ed48e3a69817494d4b1ec9c7eb3da7bc2c3648915c51",
+    urls = ["https://github.com/bazelbuild/buildtools/releases/download/4.0.0/buildozer-linux-amd64"],
 )
