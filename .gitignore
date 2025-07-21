@@ -4,3 +4,4 @@ tools/oregano/front/public
 java-bin
 .project
 .classpath
+target
