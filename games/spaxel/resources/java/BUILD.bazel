@@ -2,7 +2,7 @@ package(default_visibility = ["//games/spaxel:__subpackages__"])
 
 java_library(
     name = "resources",
-    resource_jars = [
+    runtime_deps = [
         "//games/spaxel/resources/java/ui",
         "//games/spaxel/resources/java/resources",
         "//games/spaxel/resources/java/shaders",

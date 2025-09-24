@@ -10,10 +10,8 @@ cg_java_binary(
         "UpdateRunner.java",
     ],
     main_class = "spaxel.Game",
-    resource_jars = [
-        "//games/spaxel/resources/java:resources",
-    ],
     runtime_deps = [
+        "//games/spaxel/resources/java:resources",
         "@maven//:org_lwjgl_lwjgl_glfw_natives_linux",
         "@maven//:org_lwjgl_lwjgl_natives_linux",
         "@maven//:org_lwjgl_lwjgl_opengl_natives_linux",

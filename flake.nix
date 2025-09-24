@@ -44,6 +44,9 @@
               wayland # To use the wayland feature
               rust
               cargo
+              bazel_5
+              jdk11
+              libglvnd
             ];
             LD_LIBRARY_PATH = lib.makeLibraryPath buildInputs;
           };
