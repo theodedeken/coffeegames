@@ -32,6 +32,7 @@
             nativeBuildInputs = [
               pkg-config
             ];
+            packages = [bazel_7 rust];
             buildInputs = [
               udev
               alsa-lib
@@ -42,10 +43,7 @@
               xorg.libXrandr # To use the x11 feature
               libxkbcommon
               wayland # To use the wayland feature
-              rust
-              cargo
-              bazel_5
-              jdk11
+              jdk
               libglvnd
             ];
             LD_LIBRARY_PATH = lib.makeLibraryPath buildInputs;

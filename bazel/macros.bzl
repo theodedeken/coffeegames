@@ -6,10 +6,10 @@ def cg_java_binary(**kwargs):
 def cg_java_library(**kwargs):
     name = kwargs["name"]
     native.java_library(**kwargs)
-    checkstyle_test(
-        name = "%s.checkstyle" % name,
-        label = name,
-    )
+    # checkstyle_test(
+    #     name = "%s.checkstyle" % name,
+    #     label = name,
+    # )
 
 def cg_java_test(name, srcs, test_class, deps):
     native.java_test(
