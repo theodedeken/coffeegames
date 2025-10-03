@@ -32,7 +32,7 @@
             nativeBuildInputs = [
               pkg-config
             ];
-            packages = [bazel_7 rust];
+            packages = [bazel_7 rust python310];
             buildInputs = [
               udev
               alsa-lib

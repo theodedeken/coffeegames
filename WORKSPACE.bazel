@@ -21,26 +21,6 @@ load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
 
-'''TODO start using source version 16 once bazel 4.1.0 is releasedW
-load("@bazel_tools//tools/jdk:remote_java_repository.bzl", "remote_java_repository")
-load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
-
-maybe(
-    remote_java_repository,
-    name = "remotejdk16_linux",
-    exec_compatible_with = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    sha256 = "236b5ea97aff3cb312e743848d7efa77faf305170e41371a732ca93c1b797665",
-    strip_prefix = "zulu16.28.11-ca-jdk16.0.0-linux_x64",
-    urls = [
-        "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-linux_x64.tar.gz",
-        "https://cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-linux_x64.tar.gz",
-    ],
-    version = "16",
-)'''
-
 ################
 # JVM external #
 ################
@@ -163,91 +143,4 @@ maven_install(
     ],
 )
 
-http_file(
-    name = "checkstyle",
-    downloaded_file_path = "checkstyle.jar",
-    sha256 = "cd6ea08d1bb96041f4e3109bb16db415e15f98183e8be696dd6a558814228172",
-    urls = ["https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.41.1/checkstyle-8.41.1-all.jar"],
-)
-
-# Rules nodejs
-http_archive(
-    name = "build_bazel_rules_nodejs",
-    sha256 = "1134ec9b7baee008f1d54f0483049a97e53a57cd3913ec9d6db625549c98395a",
-    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/3.4.0/rules_nodejs-3.4.0.tar.gz"],
-)
-
-load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
-
-yarn_install(
-    name = "npm",
-    package_json = "//tools/oregano/front:package.json",
-    yarn_lock = "//tools/oregano/front:yarn.lock",
-)
-
-# Closure rules
-http_archive(
-    name = "io_bazel_rules_closure",
-    patches = ["//:rules_closure_roots_fix.patch"],
-    sha256 = "d66deed38a0bb20581c15664f0ab62270af5940786855c7adc3087b27168b529",
-    strip_prefix = "rules_closure-0.11.0",
-    urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_closure/archive/0.11.0.tar.gz",
-        "https://github.com/bazelbuild/rules_closure/archive/0.11.0.tar.gz",
-    ],
-)
-
-load("@io_bazel_rules_closure//closure:repositories.bzl", "rules_closure_dependencies", "rules_closure_toolchains")
-
-# NOTE this is an interesting mechanism of selecting sub dependencies
-rules_closure_dependencies(omit_rules_python = True)
-
-rules_closure_toolchains()
-
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
-
-########
-# Mypy #
-########
-
-# Maybe get rules_python
-maybe(
-    http_archive,
-    name = "rules_python",
-    sha256 = "778197e26c5fbeb07ac2a2c5ae405b30f6cb7ad1f5510ea6fdac03bded96cc6f",
-    url = "https://github.com/bazelbuild/rules_python/releases/download/0.2.0/rules_python-0.2.0.tar.gz",
-)
-
-load("@rules_python//python:pip.bzl", "pip_install")
-
-pip_install(
-    name = "mypy_deps",
-    python_interpreter = "python3.9",
-    requirements = "//bazel/build/mypy:mypy_version.txt",
-)
-
-##############
-# Buildifier #
-##############
-
-# TODO needs to be advanced enough to pick the right binary for the platform and current bazel version
-http_file(
-    name = "buildifier",
-    downloaded_file_path = "buildifier.bin",
-    executable = True,
-    sha256 = "db81208c4e6f0f31dc33efaf9373c29c78b5295198cf16e4778e3e9211b57b0b",
-    urls = ["https://github.com/bazelbuild/buildtools/releases/download/4.0.0/buildifier-linux-amd64"],
-)
-
-#############
-# Buildozer #
-#############
-
-# TODO needs to be advanced enough to pick the right binary for the platform and current bazel version
-http_file(
-    name = "buildozer",
-    downloaded_file_path = "buildozer.bin",
-    executable = True,
-    sha256 = "0731bbcecec3ae96eec2ed48e3a69817494d4b1ec9c7eb3da7bc2c3648915c51",
-    urls = ["https://github.com/bazelbuild/buildtools/releases/download/4.0.0/buildozer-linux-amd64"],
-)

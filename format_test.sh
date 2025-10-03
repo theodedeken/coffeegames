@@ -1,2 +1,0 @@
-cd $BUILD_WORKSPACE_DIRECTORY
-black $1
