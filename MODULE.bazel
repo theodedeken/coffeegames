@@ -4,3 +4,114 @@
 #
 # For more details, please check https://github.com/bazelbuild/bazel/issues/18958
 ###############################################################################
+module(
+    name = "coffeegames",
+    repo_name = "coffeegames"
+)
+
+# -- bazel_dep definitions -- #
+bazel_dep(name = "rules_java", version = "7.12.5")
+bazel_dep(name = "rules_jvm_external", version = "6.8")
+
+# -- use_repo_rule statements -- #
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+# FIXME temporary variables
+OPERATING_SYSTEM = "linux"
+LWJGL_VERSION = "3.2.1"
+
+platform = "natives-%s" % OPERATING_SYSTEM
+maven.install(
+  artifacts = [
+    # Jackson serialization
+    "com.fasterxml.jackson.core:jackson-core:2.7.3",
+    "com.fasterxml.jackson.core:jackson-annotations:2.7.3",
+    "com.fasterxml.jackson.core:jackson-databind:2.7.3",
+    "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.7.3",
+    "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.3.0",
+    # Junit
+    "org.junit.jupiter:junit-jupiter-api:5.5.0",
+    "org.junit.jupiter:junit-jupiter-engine:5.5.0",
+    "org.junit.jupiter:junit-jupiter-params:5.5.0",
+    "org.apiguardian:apiguardian-api:1.0.0",
+    "org.opentest4j:opentest4j:1.1.1",
+    "org.junit.platform:junit-platform-commons:1.5.0",
+    "org.junit.platform:junit-platform-console:1.5.0",
+    "org.junit.platform:junit-platform-engine:1.5.0",
+    "org.junit.platform:junit-platform-launcher:1.5.0",
+    "org.junit.platform:junit-platform-suite-api:1.5.0",
+    # LWJGL
+    "org.lwjgl:lwjgl:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-assimp:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-bgfx:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-egl:%s" % LWJGL_VERSION,
+    "org.lwjgl:lwjgl-glfw:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-jawt:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-jemalloc:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-lmdb:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-nanovg:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-nfd:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-nuklear:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-openal:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-opencl:%s" % LWJGL_VERSION,
+    "org.lwjgl:lwjgl-opengl:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-opengles:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-openvr:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-ovr:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-par:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-sse:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-stb:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-tinyexr:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-tinyfd:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-vulkan:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-xxhash:%s" % LWJGL_VERSION,
+    #"org.lwjgl:lwjgl-yoga:%s" % LWJGL_VERSION,
+    "org.lwjgl:lwjgl:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-assimp:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-bgfx:%s:%s" % (LWJGL_VERSION, platform),
+    "org.lwjgl:lwjgl-glfw:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-jemalloc:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-lmdb:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-nanovg:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-nfd:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-nuklear:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-openal:%s:%s" % (LWJGL_VERSION, platform),
+    "org.lwjgl:lwjgl-opengl:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-opengles:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-openvr:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-ovr:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-par:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-sse:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-stb:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-tinyexr:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-tinyfd:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-xxhash:%s:%s" % (LWJGL_VERSION, platform),
+    #"org.lwjgl:lwjgl-yoga:%s:%s" % (LWJGL_VERSION, platform),
+
+  ],
+  repositories = [
+    # Private repositories are supported through HTTP Basic auth
+    "https://maven.google.com",
+    "https://repo1.maven.org/maven2",
+  ],
+
+)
+maven.artifact(
+    group = "org.lwjgl",
+    artifact = "lwjgl",
+    version = LWJGL_VERSION,
+    classifier = platform,
+)
+maven.artifact(
+    group = "org.lwjgl",
+    artifact = "lwjgl-glfw",
+    version = LWJGL_VERSION,
+    classifier = platform,
+)
+maven.artifact(
+    group = "org.lwjgl",
+    artifact = "lwjgl-opengl",
+    version = LWJGL_VERSION,
+    classifier = platform,
+)
+# -- repo definitions -- #
+use_repo(maven, "maven")
