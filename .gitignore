@@ -1,8 +1,19 @@
+# Bazel related
 bazel-*
-node_modules
-tools/oregano/front/public
+
+# Java related
 java-bin
 .project
 .classpath
+.jdtls
+.settings
+bin
+
+# Rust related
 target
+
+# Python related
 __pycache__
+
+# Nix related
+.direnv

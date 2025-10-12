@@ -3,7 +3,9 @@ def cg_java_binary(**kwargs):
 
 def cg_java_library(**kwargs):
     name = kwargs["name"]
-    native.java_library(**kwargs)
+    # Re-export maven deps so we can generate pom files with all dependencies
+    maven_deps = [dep for dep in kwargs.get("deps", []) if dep.startswith("@maven")]
+    native.java_library(exports=maven_deps, **kwargs)
 
 def cg_java_test(name, srcs, test_class, deps):
     native.java_test(

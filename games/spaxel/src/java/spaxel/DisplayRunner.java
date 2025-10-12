@@ -27,30 +27,22 @@ import spaxel.util.GLUtil;
 import voide.input.MouseWrapper;
 import voide.ui.UI;
 
-/**
- * Runnable for the thread that renders all the display frames
- */
+/** Runnable for the thread that renders all the display frames */
 public class DisplayRunner implements Runnable {
 
-    private static final Logger LOGGER = Logger.getLogger(
-        DisplayRunner.class.getName()
-    );
+    private static final Logger LOGGER = Logger.getLogger(DisplayRunner.class.getName());
     // Status of the runnable
     private volatile boolean running = true;
 
     private long window = NULL;
     private RenderSystem renderSystem;
 
-    /**
-     * Create a new DisplayRunner
-     */
+    /** Create a new DisplayRunner */
     public DisplayRunner() {
         super();
     }
 
-    /**
-     * Initialize the OpenGL window and context. Setup the input callback.
-     */
+    /** Initialize the OpenGL window and context. Setup the input callback. */
     public void initialize() {
         GLFWErrorCallback.createPrint().set();
 
@@ -72,10 +64,7 @@ public class DisplayRunner implements Runnable {
         LOGGER.log(Level.INFO, "OpenGL: {0}", glGetString(GL_VERSION));
 
         // Setup mouse callback
-        MouseWrapper mouseWrapper = new MouseWrapper(
-            window,
-            Constants.GAME_HEIGHT
-        );
+        MouseWrapper mouseWrapper = new MouseWrapper(window, Constants.GAME_HEIGHT);
         glfwSetCursorPosCallback(window, mouseWrapper);
         // Set mouse and window in engine
         Engine.get().setMouseWrapper(mouseWrapper);
@@ -87,23 +76,17 @@ public class DisplayRunner implements Runnable {
         initialize();
         // load the resources needed to show the loading screen
         Resources.get().initLoadingResources();
-        Engine
-            .get()
-            .setCurrentUI(
-                voide.resources.Resources
-                    .get()
-                    .getResource(UIType.LOAD.key(), UI.class)
-            );
+        Engine.get()
+                .setCurrentUI(voide.resources.Resources.get().getResource(UIType.LOAD.key(), UI.class));
         // create a new rendersystem
         renderSystem = new RenderSystem();
         // create a new thread to load the rest of the resources
         Thread load = new Thread(
-            () -> {
-                Resources.get().startLoading();
-                Engine.get().finishLoading();
-                Game.startUpdating();
-            }
-        );
+                () -> {
+                    Resources.get().startLoading();
+                    Engine.get().finishLoading();
+                    Game.startUpdating();
+                });
         load.start();
 
         long start;
@@ -115,16 +98,11 @@ public class DisplayRunner implements Runnable {
             start = System.nanoTime();
             render();
             deltatime = System.nanoTime() - start;
-            Engine
-                .get()
-                .getGameState()
-                .setUpdateTime((double) deltatime / Constants.NS_PER_TICK);
+            Engine.get().getGameState().setUpdateTime((double) deltatime / Constants.NS_PER_TICK);
         }
     }
 
-    /**
-     * Render a new frame and swap the buffer to show it in the window.
-     */
+    /** Render a new frame and swap the buffer to show it in the window. */
     public void render() {
         // clear the framebuffer
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -136,9 +114,7 @@ public class DisplayRunner implements Runnable {
         glfwPollEvents();
     }
 
-    /**
-     * Exit this thread and destroy the window
-     */
+    /** Exit this thread and destroy the window */
     public void exit() {
         running = false;
         try {

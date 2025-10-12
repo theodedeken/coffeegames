@@ -2,6 +2,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     flake-utils.url = "github:numtide/flake-utils";
+    # theovim.url = "github:theodedeken/theovim";
+    theovim.url = "path:/home/theo/PROJECTS/theovim";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,11 +14,12 @@
     nixpkgs,
     flake-utils,
     rust-overlay,
-  }:
+    ...
+  } @ inputs:
     flake-utils.lib.eachDefaultSystem
     (
       system: let
-        overlays = [(import rust-overlay)];
+        overlays = [(import rust-overlay) inputs.theovim.overlays.default];
         pkgs = import nixpkgs {
           inherit system overlays;
         };
@@ -32,7 +35,24 @@
             nativeBuildInputs = [
               pkg-config
             ];
-            packages = [bazel_7 rust python310];
+            packages = [
+              bazel_7
+              rust
+              python310
+              (
+                theovim.extend {
+                  theovim.lang.java.enable = true;
+                  plugins.jdtls.settings.settings.java.configuration.runtimes = [
+                    {
+                      name = "JavaSE-21";
+                      path = jdk;
+                      default = true;
+                    }
+                  ];
+                }
+              )
+              jdk
+            ];
             buildInputs = [
               udev
               alsa-lib
@@ -43,7 +63,6 @@
               xorg.libXrandr # To use the x11 feature
               libxkbcommon
               wayland # To use the wayland feature
-              jdk
               libglvnd
             ];
             LD_LIBRARY_PATH = lib.makeLibraryPath buildInputs;

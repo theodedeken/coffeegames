@@ -12,7 +12,10 @@ module(
 # -- bazel_dep definitions -- #
 bazel_dep(name = "rules_java", version = "7.12.5")
 bazel_dep(name = "rules_jvm_external", version = "6.8")
-
+bazel_dep(
+    name = "google_bazel_common",
+    version = "0.0.1",
+)
 # -- use_repo_rule statements -- #
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 # FIXME temporary variables

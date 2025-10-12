@@ -20,9 +20,9 @@ public class AISystem extends GameSystem {
 
     public void update() {
         Set<Entity> enemies = Engine
-            .get()
-            .getEntityStream()
-            .getEntities(SpaxelComponent.AI);
+                .get()
+                .getEntityStream()
+                .getEntities(SpaxelComponent.AI);
 
         for (Entity e : enemies) {
             AIBehaviour aic = (AIBehaviour) e.getComponent(SpaxelComponent.AI);

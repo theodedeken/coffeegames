@@ -1,4 +1,14 @@
+load("@google_bazel_common//tools/maven:pom_file.bzl", "pom_file")
+
 alias(
     name = "spaxel",
     actual = "//games/spaxel/src/java/spaxel",
+)
+
+pom_file(
+    name = "spaxel_pom",
+    targets = [
+        ":spaxel",
+    ],
+    template_file = "pom.xml.template",
 )
