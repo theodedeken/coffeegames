@@ -1,0 +1,16 @@
+load("//bazel:macros.bzl", "cg_java_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cg_java_library(
+    name = "render",
+    srcs = ["MasterRenderer.java"],
+    deps = [
+        "//engines/voide/src/main/java/voide/graphics/geometry",
+        "//engines/voide/src/main/java/voide/math",
+        "//engines/voide/src/main/java/voide/render/buffer",
+        "//engines/voide/src/main/java/voide/render/postprocess",
+        "//engines/voide/src/main/java/voide/render/shaders",
+        "@maven//:org_lwjgl_lwjgl_opengl",
+    ],
+)

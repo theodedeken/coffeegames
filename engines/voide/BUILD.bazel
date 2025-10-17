@@ -1,13 +1,20 @@
 load("@google_bazel_common//tools/maven:pom_file.bzl", "pom_file")
 load("@rules_java//java:java_single_jar.bzl", "java_single_jar")
-
+package(default_visibility = ["//visibility:public"])
 java_single_jar(
     name = "voide",
     deps = [
-        "//engines/voide/src/java/voide/input",
-        "//engines/voide/src/java/voide/resources",
-        "//engines/voide/src/java/voide/ui",
-"//engines/voide/src/java/voide/render",
+        "//engines/voide/src/main/java/voide/input",
+        "//engines/voide/src/main/java/voide/resources",
+        "//engines/voide/src/main/java/voide/ui",
+        "//engines/voide/src/main/java/voide/render",
+    ] + [
+        "@maven//:org_junit_jupiter_junit_jupiter_api",
+        "@maven//:org_junit_jupiter_junit_jupiter_engine",
+        "@maven//:org_junit_jupiter_junit_jupiter_params",
+        "@maven//:org_junit_platform_junit_platform_suite_api",
+        "@maven//:org_apiguardian_apiguardian_api",
+        "@maven//:org_opentest4j_opentest4j",
     ],
 )
 
@@ -16,5 +23,5 @@ pom_file(
     targets = [
         ":voide",
     ],
-    template_file = "pom.xml.template",
+    template_file = "template-pom.xml",
 )

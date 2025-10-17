@@ -327,8 +327,8 @@
         "systems": "systems_4"
       },
       "locked": {
-        "lastModified": 1760208078,
-        "narHash": "sha256-GDYPOtY/xTpCDomsFHtFOmxHE92B9Tf73xOG/T4Z/sg=",
+        "lastModified": 1760727101,
+        "narHash": "sha256-5zl9S+lkJFW+uwziaXKlbsKmq7YK4UTayXxK4fCqAF4=",
         "path": "/home/theo/PROJECTS/theovim",
         "type": "path"
       },

@@ -1,0 +1,35 @@
+load("//bazel:macros.bzl", "cg_java_library")
+
+package(default_visibility = ["//games/spaxel:__subpackages__"])
+
+cg_java_library(
+    name = "debug_renderer",
+    srcs = [
+        "DebugRenderer.java",
+    ],
+    deps = [
+        "//engines/voide/src/main/java/voide/graphics/renderable",
+        "//engines/voide/src/main/java/voide/logger",
+        "//engines/voide/src/main/java/voide/math",
+        "//engines/voide/src/main/java/voide/render/buffer",
+        "//engines/voide/src/main/java/voide/resources",
+        "//engines/voide/src/main/java/voide/ui/elements",
+        "//games/spaxel/src/main/java/spaxel:constants",
+        "//games/spaxel/src/main/java/spaxel/engine",
+        "//games/spaxel/src/main/java/spaxel/entity",
+        "//games/spaxel/src/main/java/spaxel/system",
+    ],
+)
+
+cg_java_library(
+    name = "gl_util",
+    srcs = [
+        "GLUtil.java",
+    ],
+    deps = [
+        "//games/spaxel/src/main/java/spaxel:constants",
+        "@maven//:org_lwjgl_lwjgl",
+        "@maven//:org_lwjgl_lwjgl_glfw",
+        "@maven//:org_lwjgl_lwjgl_opengl",
+    ],
+)

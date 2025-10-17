@@ -3,11 +3,9 @@ bazel-*
 
 # Java related
 java-bin
-.project
-.classpath
 .jdtls
-.settings
 bin
+.metadata
 
 # Rust related
 target

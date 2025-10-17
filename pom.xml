@@ -5,9 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sourceye.coffeegames</groupId>
-    <artifactId>coffeegames</artifactId>
-    <version>master</version>
-
+    <name>coffeegames</name>
     <modules>
     <module>engines/voide</module>
     <module>games/spaxel</module>
@@ -20,4 +18,6 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <version>0.1.0</version>
+    <artifactId>coffeegames</artifactId>
 </project>

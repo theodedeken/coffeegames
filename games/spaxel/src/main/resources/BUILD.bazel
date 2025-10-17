@@ -1,0 +1,19 @@
+package(default_visibility = ["//games/spaxel:__subpackages__"])
+
+java_library(
+    name = "resources",
+    runtime_deps = [
+        "//games/spaxel/src/main/resources/ui",
+        "//games/spaxel/src/main/resources/resources",
+        "//games/spaxel/src/main/resources/shaders",
+        "//games/spaxel/src/main/resources/spritesheets",
+        "//games/spaxel/src/main/resources/keys",
+        "//games/spaxel/src/main/resources/music",
+        "//games/spaxel/src/main/resources/properties",
+        "//games/spaxel/src/main/resources/loading",
+        "//games/spaxel/src/main/resources/textures",
+    ],
+    resources = glob(["**"]),
+    #TODO: remove
+    visibility = ["//visibility:public"],
+)

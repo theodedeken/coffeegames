@@ -1,0 +1,6 @@
+package(default_visibility = ["//games/spaxel/src/main/resources:__subpackages__"])
+
+java_library(
+    name = "keys",
+    resources = glob(["**"]),
+)

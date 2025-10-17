@@ -1,6 +1,0 @@
-package(default_visibility = ["//games/spaxel/resources:__subpackages__"])
-
-java_library(
-    name = "shaders",
-    resources = glob(["**"]),
-)
